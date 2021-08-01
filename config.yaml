@@ -23,7 +23,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:
+    favicon: https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG
 
     footer:
         since: 2017
@@ -50,7 +50,7 @@ params:
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
-        enabled: true
+        enabled: false
         provider: disqus
 
         utterances:
@@ -89,9 +89,9 @@ params:
 
     widgets:
         enabled:
-            - search
-            - archives
-            - tag-cloud
+            # - search
+            # - archives
+            # - tag-cloud
 
         archives:
             limit: 5
@@ -111,14 +111,14 @@ params:
         opengraph:
             enabled: false
             local: false
-            src:
+            src: https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG
 
     colorScheme:
         # Display toggle
-        toggle: true
+        toggle: false
 
         # Available values: auto, light, dark
-        default: auto
+        default: dark
 
     imageProcessing:
         cover:
