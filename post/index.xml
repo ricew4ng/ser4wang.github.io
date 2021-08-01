@@ -1,8 +1,57 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 赛博自留地</title><link>https://selfsolo.com/post/</link><description>Recent content in Posts on 赛博自留地</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://selfsolo.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Chinese Test</title><link>https://selfsolo.com/p/test-chinese/</link><pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate><guid>https://selfsolo.com/p/test-chinese/</guid><description>正文测试 而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。
-奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。
-引用 思念是最暖的忧伤像一双翅膀
-让我停不了飞不远在过往游荡
-不告而别的你 就算为了我着想
-这么沉痛的呵护 我怎么能翱翔
-最暖的憂傷 - 田馥甄
-图片 Photo by Florian Klauer on Unsplash Photo by Luca Bravo on Unsplash</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 赛博自留地</title><link>https://selfsolo.com/post/</link><description>Recent content in Posts on 赛博自留地</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 30 May 2020 11:04:06 +0000</lastBuildDate><atom:link href="https://selfsolo.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>机器学习 - 入门</title><link>https://selfsolo.com/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8/</link><pubDate>Sat, 30 May 2020 11:04:06 +0000</pubDate><guid>https://selfsolo.com/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8/</guid><description>相关资料 课程 Machine Learning - Andrew Ng 课程地址
+书籍 《Python机器学习》— Sebastian Raschka
+师兄当年安利 《数学之美》— 吴军
+一些振奋人心的话和介绍
+无需多言，大家都已知道，机器学习已发展成为当前最能激发人们兴趣的技术之一。出于各种考虑，Google、Facebook、Apple、Amazon、IBM等众多公司都投入了巨资用于机器学习理论和应用的研究。机器学习看起来已经成为当前的一个流行语，但这绝对不是炒作。这一令人兴奋的技术为我们带来了全新的可能，并已成为我们日常生活中不可或缺的一部分。例如，与智能手机的语音助手对话、向客户推荐合适的商品、防止信用卡诈骗、过滤垃圾邮件，以及检测与诊断疾病等，这样的例子不胜枚举。—— Sebastian Raschka
+Python机器学习 第一章 机器学习 机器学习的概念 当前的时代拥有大量的结构化和非结构化的数据，20世纪下半叶，机器学习逐渐演化为人工智能的一个分支，其目的是通过对自学习算法的开发，从数据中获取知识，进而对未来进行预测。与传统的通过大量数据分析然后人工推导规则（如WAF规则）并构造模型不同，机器学习提供了一种从数据中获取知识的方法，同时能够逐步提高预测模型的性能，并将模型应用于基于数据驱动的决策中去。
+机器学习的三种方法 监督学习 - Supervised Learning 简介 监督学习的目的是使用有类标的训练数据构建模型，我们可以使用经训练得到的模型对未来数据进行预测。
+监督是指训练数据集中的每个样本均有一个已知的输出项。
+示例：过滤垃圾邮件
+基于有类标的电子邮件样本库（每一个样本都已被准确地标记是否为垃圾邮件），可以使用监督学习算法训练生成一个判定模型，用来判定一封新的电子邮件是否为垃圾邮件。
+类似过滤垃圾邮件的这类问题也被称为分类（classfication），监督学习的另一个子类是回归（regression）。
+利用分类对类标进行预测 分类是基于对过往类标已知示例的观察与学习，实现对新样本类标的预测。这些类标是离散的、无序的值，它们可以视为样本的组别信息（group membership）。上文检测垃圾邮件的例子是一个典型的二类别分类（binary classification）任务，机器学习算法会生成一系列的规则用以判定邮件是否属于垃圾邮件。
+然而，类标集合并非一定是二类别分类的。通过监督学习算法构造的预测模型可以将训练样本库中出现的任何类标赋给一个尚未被标记的新样本。
+比如手写字符识别就是一个典型的多类别分类（multi-class classfication）的例子。我们可以将字母表中每个字母的多个不同的手写样本收集起来作为训练数据集。此时，若用户给出一个新的手写字符，我们的预测模型能够以一定的准确率将其判定为字母表中的某个字母。然而，如果我们的训练样本库中没有出现0～9的数字字符，那么模型将无法正确辨别任何输入的数字。
+下图通过一个具有30个训练样本的示例说明二类别分类任务的概念：15个样本被标记为负类别（negative class - 圆圈）；15个被标记为正类别（positive class - 加号）。此时，我们的数据集是二维的，这意味着每个样本都有两个与其关联的值：x1和x2。现在，我们可以通过监督学习算法获得一条规则，并将其表示为一条黑色虚线标识的分界线。可以根据给定的x1、x2值将新样本划分到某个类别中。
+使用回归预测连续输出值 回归分析（regression analysis）的目的是针对连续型输出变量进行预测。在回归分析中，数据会给出大量的自变量（解释变量）和因变量（输出结果），通过尝试寻找这两种变量之间的关系，就能够预测输出变量。
+例如，如果我们想预测学生的数学考试成绩，如果花费在学习上的时间和最终的考试成绩有关联，则可以将其作为训练数据来训练模型，以根据学习时间预测将来要参加考试的学生的成绩。
+下图用图例阐述了线性回归（linear regression）的概念：给定一个自变量x和因变量y，拟合一条直线使得样例数据点与拟合直线之间的距离最短，最常用的就是采用平均平方距离来计算。这样，我们就可以通过对样本数据的训练来获得拟合直线的截距和斜率，从而对新的输入变量值所对应的输出变量值进行预测。
+强化学习 - Reinforcement Learning 强化学习的目的是构建一个系统（Agent），在于环境（environment）交互的国策和观念中提高系统的性能。环境的当前状态信息中通常包含一个反馈（reward）信号，我们可以将强化学习视为与监督学习相关的一个领域。然而，在强化学习中，这个反馈值不是一个确定的类标或连续的值，而是一个通过反馈函数产生的对当前系统行为的评价。通过与环境的交互，Agent可以通过强化学习来得到一系列行为，通过探索性的试错或者借助精心设计的激励系统使得正向反馈最大化。
+一个最常见的例子就是围棋对弈的游戏（还有Dota的Open AI）。在此，Agent根据棋盘上的当前局势（environment）决定落子的位置，而游戏结束时胜负的判定可以作为激励信号。
+无监督学习 - Unsupervised Learning 无监督学习的目的是在没有已知输出变量和反馈函数指导的情况下提取有效信息来探索数据的整体结构。</description></item><item><title>【WIP】开源DNS服务器源码解析</title><link>https://selfsolo.com/p/what_powerdns_do/</link><pubDate>Wed, 18 Sep 2019 20:32:56 +0000</pubDate><guid>https://selfsolo.com/p/what_powerdns_do/</guid><description>我们选择一个开源的DNS服务器，这里笔者选择的是 PowerDNS，也是很多组织或企业搭建DNS服务的一个常见选择。
+编译安装 暂略
+分支：rec-4.0.x
+递归解析 源码 分析的几点，
+开启Lua与否的区别
+入口看 pdns_recursor.cc 文件，main() 函数主要读取各种配置以及各种初始化。
+startDoResolve 函数 1. Line 690-760 ![image-20200110211550470](/Users/wangwenqi/Library/Application Support/typora-user-images/image-20200110211550470.png)
+主要初始化一些变量，介绍一部分。
+edns是rfc里用来储存DNS额外信息（客户端IP）。默认不开。
+pw是 DNSPacketWriter，顾名思义，用来写返回包的。
+740 - 746行 设置了一些DNS包的标志位。
+下面初始化了一个SyncRes类（核心），初始化了Lua引擎
+756行 因为DNSSEC的默认值是 process-no-validate，所以默认会进行DNSSEC行为。
+2. Line 779-821 781行 shouldNotValidate变量设置默认值false
+3. Line 822-973 到了一个if判断。这是关键位置。
+if的条件是 没开Lua hook 或者 preresolve 这个Lua hook 直接return false，则执行。
+先进行了一次 wantsRPZ (默认true)，根据不同policy进行相应处理。
+下面的try catch会进入一个 beginResolve方法，即进行递归解析，先不跟进。
+874行 判断res，是否等于 -2。代码会switch policy的值进行不同操作。
+918行 如果res == RCode::NoError ，遍历结果，按情况会执行一个 nodata hook.</description></item><item><title>如何实现一个黑盒扫描器?</title><link>https://selfsolo.com/p/blackbox-scanner/</link><pubDate>Sun, 15 Sep 2019 11:02:51 +0000</pubDate><guid>https://selfsolo.com/p/blackbox-scanner/</guid><description>整体架构 黑盒扫描的目的主要有两个：
+资产发现 漏洞扫描 扫描器的效率和表现方面，单机可以用多进程+协程的方式去提qps，资源够也可以使用分布式，如：kafka / celery（后者感觉更重一点，虽然能帮你做很多事情）
+我踩坑设计了一个主要依靠redis做任务的分发和pull执行（主要想糙快猛地实现），现在看来效率的确是因为架构设计有问题导致整体表现不尽如人意。
+自己后来想的一个理想的架构设计：
+子域名搜集 子域名搜集是信息搜集里很关键的一步，因为它拓展了很大一部分的攻击面。下面是我对子域名搜集的实践。
+我用python实现了一个子域名搜集工具，主要用到的方法有：
+基于字典 开源情报 和 搜索引擎 IP反查 TLS证书获取 我使用的前者，部署最方便。
+整体架构：
+这是单机跑的非理想情况，4核8g，60%cpu，800-1500qps
+几个大小问题：
+域名泛解析 域名去重 比较依赖redis 泛解析有两种解决方式，一种是ip-domain的hash map超过了阈值，最后做清洗；另一种是查完了，就做一次 &amp;lt;随机前缀.目标域名&amp;gt;的查询，判断是否存在，这样（和清洗一个道理）。实际做下来是1方便，因为第二种方式，如果在做判断的同时，有其他做dns query的查到了结果，就会被绕过存入data。
+域名去重是因为首先引入了开源情报和搜索引擎，还有后续得到的CNAME啊，NS啊之类的，不做去重，任务队列可能就大了两三倍。我去重主要依赖redis的set，这样又回引入大key问题，解决大key，可以根据域名的级数（多少个&amp;lt;.&amp;gt;）分去重set，也可以大key分小key，因为并发，暂时没想到好的设计，优化考虑用布隆过滤器去做去重。
+依赖redis，前面有提到，后面就不赘述了。
+敏感文件扫描 这个我实现的很简单，主要看了github上几个老前辈的实现，总结了一下，可以这样做：
+对目标做一次全站链接爬取（需要考虑url去重） 根据links生成一级级目录 配合对应字典，做验证。 其实有了目录+对应漏洞的字典，主要就是验证了。这块同时可以验证的漏洞有很多，除了敏感文件泄漏，还有目录遍历，未授权访问等等。后者可以通过打分策略来做（实现比较low，也可以用图像识别，ML做）。
+漏洞验证 可以找一个社区比较大的（poc贡献多），因为一个是自己写poc需要很多时间。</description></item><item><title>旧文章已封存，重新出发</title><link>https://selfsolo.com/p/%E6%97%A7%E6%96%87%E7%AB%A0%E5%B7%B2%E5%B0%81%E5%AD%98%E9%87%8D%E6%96%B0%E5%87%BA%E5%8F%91/</link><pubDate>Sun, 01 Sep 2019 16:40:17 +0800</pubDate><guid>https://selfsolo.com/p/%E6%97%A7%E6%96%87%E7%AB%A0%E5%B7%B2%E5%B0%81%E5%AD%98%E9%87%8D%E6%96%B0%E5%87%BA%E5%8F%91/</guid><description>从大一时租了台腾讯云的学生机用 WordPress 搭了个站点，中间换成了hexo+next 并使用了很长时间，到目前换成了 hugo+Stack，每次折腾都是一个于我而言很重要的时间节点。
+有本书里把“心流”定义为一种将个人精神力完全投注在某种活动上的感觉。我确实地感受过很多次，写码、看书、在西门町的无人街边深深看着夕阳，妙不可言。
+工作用的IM、短视频应用、密集的feed流就很打扰，就很不美，这种从一种无序走向另一种无序的感觉让我难以忍受。毕业到工作的一年时间里因为大小周和自己的原因很少有时间去沉淀自己的想法，于是才有了这次的折腾，想让自己静下来，沉淀些什么。</description></item></channel></rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DNS on 赛博自留地</title><link>https://selfsolo.com/categories/dns/</link><description>Recent content in DNS on 赛博自留地</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 18 Sep 2019 20:32:56 +0000</lastBuildDate><atom:link href="https://selfsolo.com/categories/dns/index.xml" rel="self" type="application/rss+xml"/><item><title>【WIP】开源DNS服务器源码解析</title><link>https://selfsolo.com/p/what_powerdns_do/</link><pubDate>Wed, 18 Sep 2019 20:32:56 +0000</pubDate><guid>https://selfsolo.com/p/what_powerdns_do/</guid><description>我们选择一个开源的DNS服务器，这里笔者选择的是 PowerDNS，也是很多组织或企业搭建DNS服务的一个常见选择。
+编译安装 暂略
+分支：rec-4.0.x
+递归解析 源码 分析的几点，
+开启Lua与否的区别
+入口看 pdns_recursor.cc 文件，main() 函数主要读取各种配置以及各种初始化。
+startDoResolve 函数 1. Line 690-760 ![image-20200110211550470](/Users/wangwenqi/Library/Application Support/typora-user-images/image-20200110211550470.png)
+主要初始化一些变量，介绍一部分。
+edns是rfc里用来储存DNS额外信息（客户端IP）。默认不开。
+pw是 DNSPacketWriter，顾名思义，用来写返回包的。
+740 - 746行 设置了一些DNS包的标志位。
+下面初始化了一个SyncRes类（核心），初始化了Lua引擎
+756行 因为DNSSEC的默认值是 process-no-validate，所以默认会进行DNSSEC行为。
+2. Line 779-821 781行 shouldNotValidate变量设置默认值false
+3. Line 822-973 到了一个if判断。这是关键位置。
+if的条件是 没开Lua hook 或者 preresolve 这个Lua hook 直接return false，则执行。
+先进行了一次 wantsRPZ (默认true)，根据不同policy进行相应处理。
+下面的try catch会进入一个 beginResolve方法，即进行递归解析，先不跟进。
+874行 判断res，是否等于 -2。代码会switch policy的值进行不同操作。
+918行 如果res == RCode::NoError ，遍历结果，按情况会执行一个 nodata hook.</description></item></channel></rss>
