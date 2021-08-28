@@ -1,6 +1,7 @@
 ---
 title: "一首诗 —— Uphill"
 description: 一首诗
+image: https://ser4wang.oss-cn-beijing.aliyuncs.com/20210828231645.png
 date: 2018-08-25T21:14:23+08:00
 tags:
     - 罗塞蒂
