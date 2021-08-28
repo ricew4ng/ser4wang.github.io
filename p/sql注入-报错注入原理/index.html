@@ -1,0 +1,324 @@
+<!doctype html><html lang=en-us>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>SQL注入-报错注入原理</title>
+<link rel=canonical href=https://selfsolo.com/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="SQL注入-报错注入原理">
+<meta property="og:description" content="读书时的碎碎念">
+<meta property="og:url" content="https://selfsolo.com/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/">
+<meta property="og:site_name" content="Sera Wang">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Security"><meta property="article:published_time" content="2018-03-26T21:14:23+08:00"><meta property="article:modified_time" content="2018-03-26T21:14:23+08:00">
+<meta name=twitter:title content="SQL注入-报错注入原理">
+<meta name=twitter:description content="读书时的碎碎念">
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+</head>
+<body class="article-page has-toc">
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+extended">
+<div id=article-toolbar>
+<a href=https://selfsolo.com class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<span>Back</span>
+</a>
+</div>
+<main class="main full-width">
+<article class=main-article>
+<header class=article-header>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/security/ style=background-color:#2a9d8f;color:#fff>
+Security
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/>SQL注入-报错注入原理</a>
+</h2>
+<h3 class=article-subtitle>
+读书时的碎碎念
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Mar 26, 2018</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+2 min read
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<p>先解释几个概念和语句</p>
+<h2 id=聚合函数>聚合函数</h2>
+<blockquote>
+<p>定义：SQL基本函数，聚合函数对一组值执行计算，并返回单个值。除了 COUNT 以外，聚合函数都会忽略空值。 聚合函数经常与 SELECT 语句的 GROUP BY 子句一起使用。</p>
+</blockquote>
+<blockquote>
+<p>性质: 所有聚合函数都具有确定性。任何时候用一组给定的输入值调用它们时，都返回相同的值。</p>
+</blockquote>
+<p>举例:</p>
+<p>count() 返回指定组中项目的数量</p>
+<blockquote>
+<p>select count(id) from users; // 11</p>
+</blockquote>
+<p>max() 返回指定数据的最大值</p>
+<blockquote>
+<p>select max(id) from users; //20</p>
+</blockquote>
+<p>min()同理，其它还有像sum()求和，一般都是用于数字列。</p>
+<h2 id=group-by-语句>group by 语句</h2>
+<p>“Group By”从字面意义上理解就是根据“By”指定的规则对数据进行分组，所谓的分组就是将一个“数据集”划分成若干个“小区域”，然后针对若干个“小区域”进行数据处理。</p>
+<p>实质上就是按照某种属性分类汇总</p>
+<p>比如说要统计在全体中统计几个小类的各自情况，可以</p>
+<blockquote>
+<p>select 列名(能化成几个分类的)，某种属性比如sum(数量) as 数量之和 from table_name group by 列名</p>
+</blockquote>
+<p>group by 列名就是按列名来分组。</p>
+<h2 id=count>count(*)</h2>
+<blockquote>
+<p>select count(*) from table_name;</p>
+</blockquote>
+<p>返回table_name的行数；</p>
+<p>也可以</p>
+<blockquote>
+<p>select count(*) from table_name where id > 10;</p>
+</blockquote>
+<h2 id=正文>#正文</h2>
+<p>我找来一句报错语句:</p>
+<pre><code>select count(),concat((select version()),floor(rand()2))a from test_table group by a;
+</code></pre><p>解释</p>
+<blockquote>
+<p>concat：为聚合函数，连接字符串功能</p>
+</blockquote>
+<blockquote>
+<p>floor：取float的整数值</p>
+</blockquote>
+<blockquote>
+<p>rand:取0~1之间随机浮点值，长度测试大概为16-19的样子，官方手册也没说明 ：P</p>
+</blockquote>
+<blockquote>
+<p>group by：为聚合函数,根据一个或多个列对结果集进行分组并有排序功能</p>
+</blockquote>
+<blockquote>
+<p>a为as a 别名的简写方式</p>
+</blockquote>
+<blockquote>
+<p>floor(rand()*2) rand为0~1，rand（）*2为0~2，那么整个语句就是取0，1，2三个数字，rand（）为2的几率可以忽律不计，所以是 0，1两个随机数</p>
+</blockquote>
+<p>ps: 测试语句中的test_table是我自建的一个表，行数为11，所以count(*)返回11；</p>
+<p>知道了语句作用之后，测试语句，在sql中执行发现，有时会报错有时却输出正常。这是为什么?</p>
+<p>不报错的话，结果是两行数据，如图：</p>
+<p><img src=http://p6jpvwsnk.bkt.clouddn.com/18-5-21/50036228.jpg alt=img></p>
+<p><img src=http://p6jpvwsnk.bkt.clouddn.com/18-5-21/29323571.jpg alt=img></p>
+<p>就放两张，报错的话，如图：</p>
+<p><img src=http://p6jpvwsnk.bkt.clouddn.com/18-5-21/8582190.jpg alt=img></p>
+<p>就放一张，其它报错信息类似，除了最后随机数不同之外..</p>
+<hr>
+<p>分析一下，发现test_table的行数是11，而count(*) 每次都是两行数据和是11。</p>
+<p>报错信息说，Error: 重复录入 ‘10.1.21-MariaDB0’ for key ‘group_key’</p>
+<p>也就是说 group by x 的这个x是作为新表的一个主键存在的，</p>
+<p>我们可以把语句精简一下，来测试看看</p>
+<blockquote>
+<p>select count(*) from test_table group by floor(rand()*2);</p>
+</blockquote>
+<p>情况跟上面有点不一样，报错情况剧增，先来看为什么会出现这个报错呢?</p>
+<p>我们知道</p>
+<blockquote>
+<p>group by floor(rand()*2)</p>
+</blockquote>
+<p>会随机产生两个值，（0，1），test_table中有11行数据，而select count(*)会产生两种总和为11的结果，结果集根据group by的值进行分组并且排序。</p>
+<p>所以正常结果有4种情况，(0,0) (0,1) (1,0) (1,1)，只是group by把(0,1)和(1,0)排序了。</p>
+<p>想不出来接下去怎么测试，参考前辈文章，把count(<em>)换成1继续测试，发现返回结果都是正常的。
+也就是说可不可以有这样一个结论，count(</em>)是聚合函数，只要是聚合函数就会有这类报错</p>
+<p>于是测试</p>
+<blockquote>
+<p>select max(test_column) from test_table group by floor(rand()*2);</p>
+</blockquote>
+<p>又报错了，ok。测试其他函数像min(),sum(),avg()报错相同。</p>
+<p>那么为什么呢?</p>
+<p>…</p>
+<p>我不知道.</p>
+<p>前辈猜测：
+（1）无其他聚合函数时，不会生成字典，只对指定字段进行分组
+（2）有其他聚合函数时，根据指定字段生成字典，进行其他聚合函数计算，即使其他聚合函数没有使用该分组数据</p>
+<hr>
+<p>那么最后，我来做个总结:</p>
+<h2 id=报错几率>报错几率</h2>
+<p>这里我发现前辈结论是错的，floor(rand()*2)产生两个随机值，而对于group by floor(rand()*2)我的猜测是，比如目标列有11行，则它进行11次取值，以随机种子数为2举例，每次有(0,0) (0,1) (1,0) (1,1) 4种情况，取11次值，其中有2次值相同就会产生报错。
+至少2次取到相同值的概率就是p=1-0.25 ^11次方，这个0.25的基数是跟随机种子数成正比，跟报错几率成反比。</p>
+<p>也就是说, 只要随机种子数够小，就会一直产生报错。</p>
+<p>好，于是以后我们就可以直接 rand()*0 这样就是百分百报错了。</p>
+<hr>
+<p>第二天想了下，可能不严谨，感觉结论推出过程有问题…比如group by 随机数 是这样取11次值吗之类的问题。需要研究一下mysql的实现源码，看看group by具体是如何实现的。</p>
+<p>测试了一下…结论肯定有问题…</p>
+<hr>
+<p>3/28:</p>
+<p>测试语句1：</p>
+<blockquote>
+<p>select count(*) from test_table group by floor(rand()*2);</p>
+</blockquote>
+<p>测试语句2：</p>
+<blockquote>
+<p>select count(*) from test_table group by floor(rand(0)*2);</p>
+</blockquote>
+<p>这里补充一些对rand()函数的解释，当rand()函数有参数时，结果是确定的</p>
+<p>比如rand(0),rand(1),rand(2)，它们都会返回一个确定的浮点数，没有了随机性。</p>
+<p>对于一个表，执行测试1和测试2，</p>
+<p>表中只有一条数据时，2个测试都是没有报错</p>
+<p>2条时:语句1有报错，但几率不高，语句2无报错</p>
+<p>3条时:语句1有报错，几率变高，语句2有报错，近乎百分百报错</p>
+<p>因为我认为floor(rand(0)<em>2)是一个确定的数字，所以我尝试替换成0或者floor(0)，结果是不再报错了，可以推测 报错注入中 count(</em>)和 group by floor(rand(0)*2)可能是必要的一个搭配。</p>
+<p>而floor(rand()*2)和floor(rand(0)*2)之间的差别只是，前者具有不确定性(0~1间取值)，而后者具有确定性。</p>
+<p>那么对于 select count(*) from test_table group by key;//key是表中主键的名字</p>
+<p>我们猜测mysql遇到该语句时会建立一个虚拟表(实际上就是会建立虚拟表)</p>
+<p>对于这句语句来说，虚拟表有两列，一列是key(主键)，另一类是count(*)</p>
+<p>mysql执行此语句，开始查询数据，取数据库数据，然后查看虚拟表中key列下对应的值存在与否，不存在则插入新记录，存在则count(*)字段直接加1。</p>
+<p>mysql官方有给过提示，就是查询的时候使用rand()的话，该值会被计算多次，什么意思呢，就是在使用group by的时候，其实就是建立虚拟表然后查询，floor(rand(0)*2)会被执行一次，如果虚拟表不存在记录，插入虚表的时候会再被执行一次，我们来瞰下floor(rand(0)*2)报错的过程就知道了，</p>
+<p>首先，我们来看这句sql语句</p>
+<blockquote>
+<p>select floor(rand(0)*2) from test_table;（test_table有11条数据）</p>
+</blockquote>
+<p><img src=http://p6jpvwsnk.bkt.clouddn.com/18-5-21/82566196.jpg alt=img></p>
+<p>结果是这个的结果也有11条，怎么算的，之前说，查询的时候使用rand()，该值会被计算多次，这个语句可以理解成它执行了11次查询的结果为0 1 1 0 1 1 0 0 1 1 1</p>
+<p>那么再来看</p>
+<blockquote>
+<p>select count(*) from test_table group by floor(rand(0)*2);</p>
+</blockquote>
+<p>查询前，mysql建立了一个虚拟表(空的)，取第一条记录，执行floor(rand(0)*2)，此时floor(rand(0)*2)结果为0，发现值不存在，所以要将0插入虚表，此时先执行一次floor(rand(0)*2)，结果变为1，最后其实插入了1。</p>
+<p>取第二条记录，执行floor(rand(0)*2)，此时floor(rand(0)<em>2)结果为1，值存在，于是count(</em>) +1 ， 取第三条记录，执行floor(rand(0)*2)，此时结果为0，查询记录，不存在，于是要将0插入虚表，但插入时又要先执行一次floor(rand(0)*2)，此时结果变为1，跟先前的1就发生了冲突，也就是主键必须唯一这个规则被违反了，就造成了dumplicate entry，重复输入主键。</p>
+<p>floor(rand(0)*2) 具有确定性，它的值可以被推算出来，所以有三条记录时就必定能产生报错。(前提是 如果之前没有不小心查询建了个虚表，并且虚表中已经有了0和1，那么此时再执行就不会报错了)</p>
+<p>而floor(rand()*2)具有随机性，它的序列是随机的，所以有2条记录时就有几率产生报错了，比如第一次插了个0，第二次算出来结果是个1，然后要插了，又计算一次正好结果是0，于是报错。</p>
+<p>以上，就是原理。</p>
+<p>总之，报错注入需要 count(*),rand(),group by ，三者缺一不可。</p>
+<p>构造出来的语句一般是，</p>
+<blockquote>
+<p>select count(*) from target_table group by floor(rand(0)*2);</p>
+</blockquote>
+<p>最后，感谢前辈白帽子们的分享和研究经验。</p>
+<p>参考链接:</p>
+<blockquote>
+<p><a class=link href=https://blog.csdn.net/kuangmang/article/details/43675061 target=_blank rel=noopener>https://blog.csdn.net/kuangmang/article/details/43675061</a></p>
+</blockquote>
+<blockquote>
+<p><a class=link href="https://mp.weixin.qq.com/s?__biz=MzA5NDY0OTQ0Mw==&mid=403404979&idx=1&sn=27d10b6da357d72304086311cefd573e&scene=1&srcid=04131X3lQlrDMYOCntCqWf6n#wechat_redirect" target=_blank rel=noopener>https://mp.weixin.qq.com/s?__biz=MzA5NDY0OTQ0Mw==&mid=403404979&idx=1&sn=27d10b6da357d72304086311cefd573e&scene=1&srcid=04131X3lQlrDMYOCntCqWf6n#wechat_redirect</a></p>
+</blockquote>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/security/>Security</a>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>Related contents</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article>
+<a href=/p/spring-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/>
+<div class=article-details>
+<h2 class=article-title>Spring 漏洞总结</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/>
+<div class=article-details>
+<h2 class=article-title>Yii2 漏洞总结</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/thinkphp-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/>
+<div class=article-details>
+<h2 class=article-title>ThinkPHP 漏洞总结</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E5%85%A5%E9%97%A8%E9%80%86%E5%90%91/>
+<div class=article-details>
+<h2 class=article-title>入门逆向</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E5%B8%B8%E8%A7%81%E6%91%98%E8%A6%81/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/>
+<div class=article-details>
+<h2 class=article-title>常见摘要/加密算法总结</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2017 -
+2021 Sera Wang
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.5.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+</div>
+<h2 class="widget-title section-title">Table of contents</h2>
+<div class=widget--toc>
+<nav id=TableOfContents>
+<ol>
+<li><a href=#聚合函数>聚合函数</a></li>
+<li><a href=#group-by-语句>group by 语句</a></li>
+<li><a href=#count>count(*)</a></li>
+<li><a href=#正文>#正文</a></li>
+<li><a href=#报错几率>报错几率</a></li>
+</ol>
+</nav>
+</div>
+</section>
+</aside>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

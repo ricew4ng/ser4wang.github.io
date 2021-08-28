@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>requests on Sera Wang</title><link>https://selfsolo.com/tags/requests/</link><description>Recent content in requests on Sera Wang</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 29 Jan 2018 21:14:23 +0800</lastBuildDate><atom:link href="https://selfsolo.com/tags/requests/index.xml" rel="self" type="application/rss+xml"/><item><title>Python-requests库的使用</title><link>https://selfsolo.com/p/python-requests%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Mon, 29 Jan 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/python-requests%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>requests库的官方中文文档半夜让我笑出声，可爱的编写人员!
+感谢kennethreitz大神的requests库，足够方便，足够有用，足够pythonic!
+官方中文文档链接:http://cn.python-requests.org/zh_CN/latest/
+official doc肯定比我的详细和细致，而我从一个requests库初学者的角度来写，当然，不管哪种方式，都欢迎你接触到了requests库!
+ps：有一些高级用法算是requests库的进阶，可以自行阅览。
+import requests #导入requests库
+发送请求
+常用的GET方式和POST方式举例:
+response = requests.get(url=’https://www.baidu.com/') response = requests.post(url=’https://www.baidu.com/') 其它http请求类型(put,delete,head,options)类似.
+传递url参数
+get方式 请求x.com?key1=value1&amp;amp;key2=value2
+params = {'key1':'value1','key2':'value2'} response = requests.get(url='https://www.baidu.com/',params=params) text属性(界面内容)
+requests相当方便的一点，它可以自动解码来自服务器的内容，大多数时候都不需要自己再因为目标url的编码问题而烦恼了!
+response = requests.get(url='https://www.baidu.com/') print(response.text) #打印解码后的界面内容 response.encoding 返回解码界面内容的相应的编码(比如ISO-8859-1)，可以改变值，再次打印时也会变成改变了的解码方式。
+注: 然而我在实际爬取过程中，偶尔也会遇到明明对应页面是charset=’utf8’，结果解码时变成’ISO-8859-1’，所以根据实际情况还是要有所变化，可以自己写一个识别编码头的函数一劳永逸…
+response.content 不解码直接得到界面内容的二进制相应数据,返回值类似于：b’界面内容’.
+定制http请求头
+url = 'http://www.baidu.com/' headers = {'User-Agent':'xxx','Cookie':'xxxx'} response = requests.get(url=url,headers=headers) post请求传递表单数据
+data = {'key1':'value1','key2':'value2'} response = requests.</description></item></channel></rss>

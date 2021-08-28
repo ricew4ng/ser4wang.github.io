@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Sera Wang</title><link>https://selfsolo.com/post/</link><description>Recent content in Posts on Sera Wang</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 30 May 2020 11:04:06 +0000</lastBuildDate><atom:link href="https://selfsolo.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>机器学习 - 入门</title><link>https://selfsolo.com/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8/</link><pubDate>Sat, 30 May 2020 11:04:06 +0000</pubDate><guid>https://selfsolo.com/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8/</guid><description>相关资料 课程 Machine Learning - Andrew Ng 课程地址
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Sera Wang</title><link>https://selfsolo.com/post/</link><description>Recent content in Posts on Sera Wang</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 28 Aug 2021 23:09:30 +0800</lastBuildDate><atom:link href="https://selfsolo.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>飞地与海岛</title><link>https://selfsolo.com/p/%E9%A3%9E%E5%9C%B0%E4%B8%8E%E6%B5%B7%E5%B2%9B/</link><pubDate>Sat, 28 Aug 2021 23:09:30 +0800</pubDate><guid>https://selfsolo.com/p/%E9%A3%9E%E5%9C%B0%E4%B8%8E%E6%B5%B7%E5%B2%9B/</guid><description>他美好的记忆都在陆地之外——
+在飞地，在海岛
+飞地上的人弹琴、爬山、做木匠
+海岛上的人跳舞、制作船帆、吹海螺
+飞地上的树木会说话
+海岛上的微风会低语
+在甲板上入睡
+梦里看见了一生的全部意义
+Sera
+2021-08-28</description></item><item><title>机器学习 - 入门</title><link>https://selfsolo.com/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8/</link><pubDate>Sat, 30 May 2020 11:04:06 +0000</pubDate><guid>https://selfsolo.com/p/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8/</guid><description>相关资料 课程 Machine Learning - Andrew Ng 课程地址
 书籍 《Python机器学习》— Sebastian Raschka
 师兄当年安利 《数学之美》— 吴军
 一些振奋人心的话和介绍
@@ -54,4 +63,762 @@ if的条件是 没开Lua hook 或者 preresolve 这个Lua hook 直接return fals
 对目标做一次全站链接爬取（需要考虑url去重） 根据links生成一级级目录 配合对应字典，做验证。 其实有了目录+对应漏洞的字典，主要就是验证了。这块同时可以验证的漏洞有很多，除了敏感文件泄漏，还有目录遍历，未授权访问等等。后者可以通过打分策略来做（实现比较low，也可以用图像识别，ML做）。
 漏洞验证 可以找一个社区比较大的（poc贡献多），因为一个是自己写poc需要很多时间。</description></item><item><title>旧文章已封存，重新出发</title><link>https://selfsolo.com/p/%E6%97%A7%E6%96%87%E7%AB%A0%E5%B7%B2%E5%B0%81%E5%AD%98%E9%87%8D%E6%96%B0%E5%87%BA%E5%8F%91/</link><pubDate>Sun, 01 Sep 2019 16:40:17 +0800</pubDate><guid>https://selfsolo.com/p/%E6%97%A7%E6%96%87%E7%AB%A0%E5%B7%B2%E5%B0%81%E5%AD%98%E9%87%8D%E6%96%B0%E5%87%BA%E5%8F%91/</guid><description>从大一时租了台腾讯云的学生机用 WordPress 搭了个站点，中间换成了hexo+next 并使用了很长时间，到目前换成了 hugo+Stack，每次折腾都是一个于我而言很重要的时间节点。
 有本书里把“心流”定义为一种将个人精神力完全投注在某种活动上的感觉。我确实地感受过很多次，写码、看书、在西门町的无人街边深深看着夕阳，妙不可言。
-工作用的IM、短视频应用、密集的feed流就很打扰，就很不美，这种从一种无序走向另一种无序的感觉让我难以忍受。毕业到工作的一年时间里因为大小周和自己的原因很少有时间去沉淀自己的想法，于是才有了这次的折腾，想让自己静下来，沉淀些什么。</description></item></channel></rss>
+工作用的IM、短视频应用、密集的feed流就很打扰，就很不美，这种从一种无序走向另一种无序的感觉让我难以忍受。毕业到工作的一年时间里因为大小周和自己的原因很少有时间去沉淀自己的想法，于是才有了这次的折腾，想让自己静下来，沉淀些什么。</description></item><item><title>Spring 漏洞总结</title><link>https://selfsolo.com/p/spring-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 24 Feb 2019 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/spring-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>Spring Data REST | RCE | CVE-2017-8046 漏洞简析 SpEL是独立于spring容器的一个可执行模块。 它使用SpelExpressionParser把字符串解析成表达式，当其中一个方法获取到值之后，表达式就会被执行，getValueType或者setValue会被调用：
+Expression expr = expressionParser.parseExpression(stringScript); expr.getValue(); //Execute the code in stringScript 通常，SpEL仅限于内部使用并且stringScript会被程序完全控制。 但如果 stringScript是用户可控的话，那么攻击者就可以在有漏洞的服务器上执行任意代码。
+即：
+String stringScript = &amp;quot;T(java.lang.Runtime).getRuntime().exec(&amp;quot;+cmd+&amp;quot;).x&amp;quot;; 之后cmd就被执行。
+这就是这个Spring Data REST漏洞的基本原理，Spring Data REST把远程输入的数据解析成SpEL表达式，并且将其解析。
+漏洞复现 使用的项目为 https://github.com/spring-guides/gs-accessing-data-rest.git 里面的complete，直接用IDEA导入，并修改pom.xml中版本信息为漏洞版本。 1.5.6.RELEASE，然后导入pom.xml
+运行项目
+新建一个people对象
+POST /people HTTP/1.1 Host: localhost:8080 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.9 Safari/537.36 Connection: close Content-type: application/json Content-Length: 32 {&amp;quot;firstName&amp;quot;:&amp;quot;test1&amp;quot;,&amp;quot;lastName&amp;quot;:&amp;quot;test2&amp;quot;} 发送payload</description></item><item><title>Yii2 漏洞总结</title><link>https://selfsolo.com/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 08 Feb 2019 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>欲寻框架之漏洞，必先用其开发一波。———— Rose家的程序喵
+框架基础 Yii2 版本: 2.0.16
+应用结构 下列是框架中最重要的目录和文件
+Yii 实现了MVC设计模式，这点在上述目录结构中也体现了。models目录包含了所有模型类，views目录包含了所有视图脚本，controllers目录包含了所有控制机器类。
+下图显示了一个应用的静态结构
+每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的PHP脚本。入口脚本接受一个Web请求并创建应用实例去处理它。应用在它的组建辅助下解析请求，并分派请求至MVC元素。视图使用小部件（即各种前台标签的类）去创建复杂和动态的用户界面。
+请求生命周期 用户向入口脚本 web/index.php 发起请求 入口脚本加载应用配置并创建一个应用实例去处理请求。 应用通过请求组件解析请求的路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤其都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。 HelloWorld 安装好Yii后，看看初始页面
+看上去就已经很漂亮了。
+话说回来，要在应用中创建一个HelloWorld页面，将需要创建一个操作和一个视图：
+应用将会分派页面请求给动作 动作将会依次渲染视图呈现”Hello”给最终用户 我们需要知道：
+如何创建一个动作去响应请求 如何创建一个视图去构造相应内容 以及一个应用如何分派请求给动作 创建动作 我们将要创建一个say操作，从请求中接收message参数并先显示给最终用户。如果请求没有提供message参数，操作将显示默认参数”Hello”
+操作是最终用户可以直接访问并执行的对象。操作被组织在控制器中，一个操作的执行结果就是最终用户收到的响应内容。
+操作必须声明在控制器中。为了简单起见，可以直接在SiteController控制器里生命say操作。 这个控制器是由文件 controllers/SiteController.php定义的。以下是一个操作的声明：
+&amp;lt;?php namespace app\controllers; use yii\web\Controller; class SiteController extends Controller{ // ...现存的代码... public function actionSay($message = 'Hello'){ return $this-&amp;gt;render('say',['message' =&amp;gt; $message]); } } 在上述代码中，say操作被定义为actionSay方法。 Yii使用action前缀区分普通方法和操作。action前缀后面的名称被映射为操作的ID。</description></item><item><title>ThinkPHP 漏洞总结</title><link>https://selfsolo.com/p/thinkphp-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Sat, 02 Feb 2019 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/thinkphp-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>对已经公开的tp漏洞的分析总结
+2019/1/11 thinkphp 5.0.0~5.0.23 RCE漏洞 payload:
+http://localhost:89/index.php?s=captcha
+post:
+_method=__construct&amp;amp;filter[]=system&amp;amp;method=get&amp;amp;get[]=whoami
+在thinkphp中，访问index.php，会调用App.php中的run方法
+其中，会调用routeCheck方法检测路由信息，跟进
+此处，会调用check方法检测路由，跟进
+857行调用了request类的method方法，跟进
+这处就比较关键了，我们发现，此method方法如果post了一个伪装变量 _method 就可以调用request类的任意方法，并且参数传递的是$_POST数组。
+config设置中的默认伪装变量为_method
+然后我们看看payload是如何构造并实现的。
+PAYLOAD 再看看payload，即post过去的数组
+_method=__construct&amp;amp;filter[]=system&amp;amp;method=get&amp;amp;get[]=whoami
+通过上文可知，tp会调用 伪装变量_method的值即__construct方法，参数是$_POST数组
+我们可以看到，在这个__construct方法其实只过了一件事情，就是在第一个foreach循环里将POST数组，赋值给了$this-&amp;gt;$name这个可变变量。
+接下来，我们一步步继续后，跑完了method，跑完了check，跑完了routeCheck，我们回到App.php的run方法。
+此处dispatch值会是method，这里不是特别清楚。 看到说是因为vendor/topthink/think-captcha/src/helper.php中配置了路由。
+继续往下看，执行了exec方法，跟进
+这里因为dispatch是method，所以到case method处继续执行代码，跟进param()
+重点关注$this-&amp;gt;param变量，它是空值，但是在红框处，通过一个array_merge，将$this-&amp;gt;get(false)，即$this-&amp;gt;get的值赋给了$this-&amp;gt;param变量。也即用户输入直接传递给了$this-&amp;gt;param
+再跟进末尾 return的input方法，我们继续跟进。
+1028行的getFilter会将$this-&amp;gt;filter，即我们之前的输入赋给filter变量，最后在1034行调用filterValue，跟进
+这里会遍历filter，如果它是一个可用方法，则会调用它，而它的确是的，这里$filter的值是 system，$value的值是 whoami，代码执行成功。
+2018/12/9 thinkphp 5.x 全版本 任意代码执行漏洞 官方12.9 github上发布了修复代码，对controller类进行过滤
+payload:
+http://localhost:89/index.php?s=index/\think\Container/invokefunction&amp;amp;function=call_user_func_array&amp;amp;vars[0]=phpinfo&amp;amp;vars[1][]=1
+下面从App.php的run方法开始分析
+我们跟进routeCheck
+这里关键的是两个方法，我们先跟进第一个path
+这里pathinfo方法会将默认的兼容模式值s赋给$pathinfo并返回。 即 path方法最终会获取到 GET提交的s参数值
+之后跟进check方法
+最关键的是return处，它最终会调用think\route\dispatch\Url.php的初始化方法，跟进
+关键代码有两行，跟进parseUrl方法
+这里会对刚才获取的path进行处理，parseUrlPath方法，会根据正斜杠对path进行切割，然后返回切割的数组
+然后tp会按顺序，pop刚才获取的path数组，依次得到$module，$controller，和$action的值
+在parseUrl这个方法里，接下来还会获取其它提交的参数。
+最后将module,controller,action封装并返回
+从parseUrl出来后，我们继续看刚才的第二个关键方法，就是Module类的初始化init方法，跟进
+这里没有对controller做什么过滤，返回后，</description></item><item><title>入门逆向</title><link>https://selfsolo.com/p/%E5%85%A5%E9%97%A8%E9%80%86%E5%90%91/</link><pubDate>Mon, 19 Nov 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%85%A5%E9%97%A8%E9%80%86%E5%90%91/</guid><description>我想成为魔法师！ 这个逆向专题用来记录自己学习逆向魔法的过程。
+关于魔法 有人问教主: “ 现在都是win10了，win7连debug都没有，学习汇编有什么用，对于手机app开发有什么帮助？ “
+教主:
+“ 学习魔法辛苦又困难， 而且似乎对当个铁匠、农夫、牧羊人也毫无帮助。 “ ———— 2016-01-18
+作为入门篇，这次逆向的是一个小pe，目标是改变它的执行逻辑，从而达到我们想要的效果（比如破解）。
+用C写一个小程序 crack.c 代码如下:
+#include &amp;lt;stdio.h&amp;gt; #define PASSWORD &amp;quot;1234567&amp;quot; int verify_password(char *password){ int authenticated; authenticated = strcmp(password,PASSWORD); return authenticated; } main(){ int valid_flag = 0; char password[1024]; while(1){ printf(&amp;quot;please input password: &amp;quot;); scanf(&amp;quot;%s&amp;quot;,password); valid_flag = verify_password(password); if(valid_flag){ printf(&amp;quot;incorrect password!\n\n&amp;quot;); }else{ printf(&amp;quot;Congradulation! You have passed the vrification\n&amp;quot;); break; } } } 编译获得 crack.exe ，也就是今天要破解的目标了。
+IDA PRO静态分析 打开ida pro，把这个exe拖进去，就获得了一张清晰的执行逻辑结构图</description></item><item><title>校园杂记21: 我的安全之路</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B021-%E6%88%91%E7%9A%84%E5%AE%89%E5%85%A8%E4%B9%8B%E8%B7%AF/</link><pubDate>Tue, 04 Sep 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B021-%E6%88%91%E7%9A%84%E5%AE%89%E5%85%A8%E4%B9%8B%E8%B7%AF/</guid><description>下午日常逛着freebuf，看别人的挖洞经验。
+看累了，随手点开了我的”拿shell”文件夹里的一个站，是个不知名公司，用的某php框架，google hacking找到了后台，看到了框架的版本，神不知鬼不觉的搜了波这框架的漏洞，找到一个exp，一用就拿到了后台，连nmap和whois都没开……
+然而，并没有一种喜悦的感觉，这一切来得似乎太容易。
+以至于后来，吃完饭就直奔操场散了会儿步，慢慢地，心境渐渐开阔，前所未有的明朗，和一位一直以来很感谢的前辈又交流了下，问了点小白问题，确定了自己接下来主要的研究方向: 代码审计 以及 机器学习。
+…
+…
+…
+因为在散步的时候，回想了过去，似乎什么都接触过，但都算不上深入，了解过代码审计，看过seay大佬的书，但依旧没有领悟。
+下午这个后台一拿，似乎解了某一个心结，我一直以来觉得自己不适合学习安全，因为学了一年拿不到一个shell，但经常看到有初中生高中生拿shell如喝水，心里总认为”他们就是一帮脚本小子，代码没我打的多，原理没我了解的多，书没我读的多，他们拿shell就是靠工具”，用这种方式来欺骗自己，安慰自己，好让自己能继续学习下去。 今天这个后台拿的方式，我和曾经”瞧不起”的人又有什么区别，靠别人写的exp拿的shell，所以才没有一丝喜悦的感觉吧。
+然而，就算这样，我也明白了一些东西，我也许可以算一个script kid了，我一定是向着安全迈出了一步的，离大牛的距离只在于”汗水的积累”了吧 。
+此时此刻的状态，充满了信心，明天又要去见汤老师了😂…不知道他还记得我吗😂，也不敢让他太记得，怕被打唉。 也不知道明天会发生什么事情，但是还是期待的，也不知道匡学长毕业了还是如何，祝前程似锦。
+回顾这一年，一年前，我接触到了渗透，认识到了所谓的”安全娱乐圈”，加了不少群，以为能学到不少知识，但看到的是无尽的浮躁。
+于是，没过多久，退了群，自己折腾，中间尝试数次没有拿过shell，觉得自己没有学习安全的”天赋”，流过眼泪，第二天继续研究下去。
+暑假里找到了几个业务逻辑方面的漏洞，原理很简单，同时薅了波漏洞平台的羊毛(40包辣条)…也总算有了点信心。
+读了很多很多的书，总希望自己能靠着阅读量来速成，然而现实总是喜欢打幻想者的脸。 一次次的弱口令爆破失败，一次次的漏洞尝试，渐渐放弃了拿shell的想法，准备专门找漏洞，因此研究更多的细节，钻研更多的原理，今天却仿佛缘分到了，拿到了后台。 没有太多的喜悦，但这算是给自己坚定了信心。
+两年前听过了汤老师讲的专业导读，喜欢上了安全，见过很多大佬写的关于自己起初如何学习安全的故事。 回顾这一年，我终于在今天确定了，自己一定是有所成长的，而这所有的一切，我的代码，我读的书，我写的字，我的体会，我的感受，我遇到的人，就是属于我自己的安全之路。</description></item><item><title>一首诗 —— Uphill</title><link>https://selfsolo.com/p/%E4%B8%80%E9%A6%96%E8%AF%97-uphill/</link><pubDate>Sat, 25 Aug 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E4%B8%80%E9%A6%96%E8%AF%97-uphill/</guid><description>上坡 —— 克里斯蒂娜·罗塞蒂
+这一路，全是陡坡不得闲？
+——没错，直到路的尽头。
+这一路，何时可以打个尖？
+——从早走到晚，我的朋友。
+到夜里，能有地儿歇脚吗？
+——进到黑沉乡，屋瓦自出现。
+漆黑一片，会遮住它吗？
+——那栈房没人会看不见。
+黑夜里，还有别的行者不？
+——那些比你早到的人。
+到了，该扣门，还是打招呼？
+——他们一定会为你开门。
+精疲又力竭，可否得休憩？
+——颠簸辛劳，终有回报。
+我，所有赶路人，都能有铺席？
+——放心吧，早都安排好。
+看了几篇翻译，个人还是最喜欢江苏人民出版社的翻的这个版本。
+坚定信仰，别放弃吧。
+原文：
+Uphill ——Christina Rosseti
+Dose the road wind uphill all the way?
+——Yes，to the very end.
+Will the day’s journey take the whole long day?
+——From morn to night，my friend.
+But is there for the night a resting-place?
+——A roof for when the slow，dark hours begin.
+May not the darkness hide it from my face?</description></item><item><title>Java序列化与反序列化原理</title><link>https://selfsolo.com/p/java%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%8E%9F%E7%90%86/</link><pubDate>Fri, 24 Aug 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/java%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%8E%9F%E7%90%86/</guid><description>基本 java序列化数据，是通过ObjectOutputStream和ObjectInputStream这两个类来实现的，
+举个例子:
+要序列化的对象data1
+public class data1 implements Serializable { private int id; private String name; private String pwd; private String pwd2; public int getId(){ return id; } public void setId(int id){ this.id = id; } public String getName(){ return name; } public void setName(String name){ this.name = name; } public String getPwd(){ return pwd; } public void setPwd(String pwd){ this.pwd = pwd; } public String getPwd2(){ return pwd2; } public void setPwd2(String pwd2){ this.</description></item><item><title>常见摘要/加密算法总结</title><link>https://selfsolo.com/p/%E5%B8%B8%E8%A7%81%E6%91%98%E8%A6%81/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</link><pubDate>Sat, 18 Aug 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%B8%B8%E8%A7%81%E6%91%98%E8%A6%81/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</guid><description>最近逛到某网站碰到一个叫JWTtoken的验证机制，然后百度了一波jwt，再解码此jwttoken后看到是RSA256加密，明明最近才看过现在又忘光了…于是对常见算法做个总结吧！原理不会特别详细，只会介绍简单原理，让我以后再碰上不至于太懵逼。
+基本概念 安全性原则：
+保密性 完整性(内容不被篡改) 身份认证 不可抵赖性 对称/非对称加密
+若加解密使用相同密钥，则称为对称密钥加密，否则称为非对称密钥加密。
+对称密钥加密:Diffie-Hellman算法
+因为密钥发布和密钥交换存在很多问题，所以要知道Diffie-Hellman密钥交换协议/算法。
+通信双发可用此方法确定对称密钥，此方法只能用于密钥交换，而非加解密消息。
+算法描述: 设A与B要确定密钥 1) A与B确定2个大素数 n 和 g 。 不必保密 2) A选择另一个大随机数X，计算: k1 = g^X mod n 后将k1发给B 3) B选择另一个大随机数Y，计算: k2 = g^Y mod n 后将k2发给A 4) 则密钥即为: kA = k2^X mod n kB = k1^Y mod n 且kA = kB 原理:
+kA = (g^Y mod n)^X mod n = g^YX mod n</description></item><item><title>浅析浏览器的编码与解码</title><link>https://selfsolo.com/p/%E6%B5%85%E6%9E%90%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81/</link><pubDate>Mon, 13 Aug 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%B5%85%E6%9E%90%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81/</guid><description>一直以来对url编码，html编码，js编码都存在着困惑，比如
+url/html/js是如何编码的? 浏览器又是什么时候按什么顺序进行url/html/js解码? 读完了the tangled web，翻了些博客，又各种google，我想暂时可以解除一点心中的疑惑了。
+整体简述 在开始之前，我想先简单说一下整体的一个过程:
+在浏览器的地址栏中输入url，发送http请求头(涉及tcp/ip/dns)
+http://example.com/test.php
+远程的web服务器(apache/iis等)接收到url，分析请求头，根据它找到对应资源，返回一个响应头和数据
+浏览器接收到响应的数据后，开始了接下来要讲的解析…
+如何编码 在开始解析前，我们先看看这些东西是如何编码的
+url编码:
+标准的url结构是:
+scheme://login:password@address:port/path?quesry_string#fragment
+以之前那串url为栗
+http://example.com/test.php?uid=27&amp;content=on#main
+这是一串普通的url，即我们平常所见的格式大多和这个类似，也就是说，像开头的 “ http: “，协议后面跟一个冒号，还有之后的两个正斜杠” // “, 后面再跟域名，再跟地址，再跟参数字符串，再跟片段id…
+可以看到，一些符号非常”常规”，比如冒号，正斜杠，问号…这些都是浏览器/服务器用来解析url用于语义分隔的保留字符，如果出现在url里就会破坏语法，影响正常解析，导致的各种有趣的后果以后有机会再讲。
+于是就有了url编码，因为有些保留字符可能确实有必要需要在url里出现，它以一个百分号%和该字符的ASCII对应的2位十六进制数去替换这些字符
+比如，等于号=的url编码为 %3D
+html编码
+我们拿常见的标签举例，
+跟url的问题类似，为了避免在标签内容中出现以及应对某些攻击，某些保留字符出现在文本节点和标签值里是不安全的，比如说多重标签，xss…
+于是就有了html编码，一般以 &amp;amp; 开头，以分号 ; 结尾，
+左尖括号 &amp;lt; 写作 &amp;lt;
+右尖括号 &amp;gt; 写作 &amp;gt;</description></item><item><title>利用越权漏洞下载vol.moe的所有漫画</title><link>https://selfsolo.com/p/%E5%88%A9%E7%94%A8%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E%E4%B8%8B%E8%BD%BDvol.moe%E7%9A%84%E6%89%80%E6%9C%89%E6%BC%AB%E7%94%BB/</link><pubDate>Sun, 05 Aug 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%88%A9%E7%94%A8%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E%E4%B8%8B%E8%BD%BDvol.moe%E7%9A%84%E6%89%80%E6%9C%89%E6%BC%AB%E7%94%BB/</guid><description>前几天想看一部漫画找到一个不错的站点，顺便就发现了一个越权漏洞，普通用户可以直接具有高级用户的下载权限。
+为了隐私，很多细节都不能放，因为暂时未允许公开，所以就先看一下效果吧。
+代码:
+执行代码
+获取到比如id为10000010的用户的cookie，我们放到bp里
+提交然后发现权限获取成功可以下任意漫画了~
+总结:
+这漏洞原理很简单，就是cookie明文未加密，解决方案就是cookie+salt再用个md5，sha1加密一波，加密过程最好后端执行。</description></item><item><title>校园杂记20: 这是一个认真的实训总结</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B020-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AE%A4%E7%9C%9F%E7%9A%84%E5%AE%9E%E8%AE%AD%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 27 Jul 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B020-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AE%A4%E7%9C%9F%E7%9A%84%E5%AE%9E%E8%AE%AD%E6%80%BB%E7%BB%93/</guid><description>今天我放假啦，除了听说上交的朋友小学期还没完之外，我应该算是最晚一批放假的大学生了…
+为什么这么晚，因为学校给安排了一个两周的实训，听过各种学长学姐吐槽过这个实训，有说水的有说坑的，大多数…不，应该说基本，都是负面的…于是实训还没开始我这crud小能手就在心里感到不屑。
+实训体验 当然我这十天也是这么过去的，日常同学拉我组队，日常早早写好自己份的，日常后续填需求，这十天写代码的时间占了1成，打游戏摸鱼的时间占了9成，恍恍惚惚不知道自己在干什么。
+前面一个礼拜是一位姓李的老师，后来说是项目急着上线，第二个礼拜就换了个老师，好像姓刘，叫刘清，年纪感觉快40了(?)如果说李老师给人的第一印象(因为我整天摸鱼，所以只有第一印象)是一个年轻的码农的话，这位刘老师的第一印象则是一个典型的中年程序员，不修边幅，给人一种很随意的感觉，上身深色polo衫，下身灰裤子，有点瘦，头发有点凌乱哈哈哈，总给人一种刚睡起来的赶脚，并且好像也许大概没有陷入知乎上说的程序员中年危机。
+在外包学院这位刘老师的眼皮子底下划了四天水，到了最后一天，大家都做的差不多了，上午项目展示加拍照，下午坐在教室里各自摸鱼，我中午临时接到了两个task，一个是学长的，另一个是学姐的，下午就在那儿写代码。
+这刘老师大概也无聊，就过来瞅瞅，他问了我旁边的朋友比赛进度怎么样了，对话就这样开始了，我突然神经刀的好奇，就问了些后端优化，比如redis啊，负载均衡啊，集群啊，公司安全一般怎么做呀，他都能讲的很详细很清楚，有时候还讲些自己的例子。我这时候才发现之前对外包学院的看法有了改变，也是有厉害的人在的，而实质上，打代码还是要靠经验，而这种经验很多时候是需要兴趣和热情，或者说别的动力驱动着来积累的。我猜想刘老师年轻时候应该也是个很拼的人吧。
+可以说我的很多疑问和不解都在和他的对话中消除了，还有一部分就得等到我自己成了个经验丰富的程序员再说了。
+讲真，这次对话比我在学校里问各种老师的体验好多了…学术和工业界，一个实战，一个理论，我只能说，我跟纯理论派相性不佳🤦‍，不是说不喜欢，只是说很多时候问老师获取不到想要的答案，更何况一些老师脱离一线太久，担任领导后有些老师甚至都不会看代码了，全凭十几年前的经验，所以这些也只有在这种经验老道的老程序员那里才能问到。
+这样想来，这的确是一次宝贵的经历，这波实训真的对我来说不亏了，起码让我懂得工业界经验还是挺有用的。
+刘老师给我讲了很多有趣的东西，语言风格当然和高校老师是不一样的哈哈哈，别具一格的体验。
+这些有趣的东西还是当以后饭桌上的谈资吧，写出来总感觉别扭的慌哈哈哈哈，真的感谢他，讲话原来是很随和的一个人，其实内心是感觉他跟我的伯伯很像，都有一种中年老男人的魅力在啊哈哈哈哈，如果我以后万一有幸成了个合格的程序员真想回去找他再好好聊一聊编程那些事啊。
+但总而言之，除了这位刘老师，其它体验一般，咳咳，这次实训如果是可选的话就好了…
+说到其它体验，我仿佛看到了以后的混吃等死的日子，白天摸鱼打代码，中午和同事去吃饭，下午摸鱼打代码，晚上加班，第二天继续，日复一日……啊啊啊啊不能这样想！！！以后我一定要找个work balance的工作啊！！！天天crud是会让人失去对编程的热情的！！！
+人生思考2 最近有开心的事，也有不开心的事，其实想来，不开心的居多吧…唯一开心的还是今天放假了，以及最重要的！！老姐又没放弃我TAT，跟老姐出去逛了一圈，可以说很开心了…愿望清单里加了一条(秘密)哈哈哈哈
+上帝是公平的，让你遇到了很好的朋友同时，也会让你遇到很极品的傻逼。——我说的
+我的diss观
+大学这两年，我遇到很多用嘴巴学习的同学，也遇到很多好为人师的同学…相处总是心累啊，也有可能是我比较斤斤计较…好了，不开心的少说点，做狗啊，最重要的就是开心。
+想做的事
+这几个月，可能长久以来受很多因素影响，我一直想做个有意思的项目，(开源，集星星，影响力大，拉投资，建公司，走上人生巅峰，娶….咳咳不yy了)
+就跟研究生学长学姐们愁的怎么开题一样，我也在想什么主题，更想做安全那块，之前有过几个idea，现在困了就不写了hhh(才不是因为idea太中二了)
+最后 我列过一个愿望清单…给老姐说过，最近还跟宁宁姐聊天说到，宁宁姐看了之后很有兴趣，第二天也列了一个给我看，说是这样有动力，互相勉励，哈哈哈哈，于是我加了一个小愿望，等我找到一个好实习了拿到工资了有机会要带宁宁姐去吃她想次的米其林！！
+真是很让人期待未来啊！！！がんばって！sera同学！为了愿望清单要好好努力呀！要去宁夏找老姐玩儿，要带宁宁姐去吃米其林，要跟未来女票去好多地方啊！</description></item><item><title>校园杂记19: 人生思考</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B019-%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/</link><pubDate>Sat, 16 Jun 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B019-%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/</guid><description>好久没写这个了，因为最近一段时间事情实在太多，现在解决了一坨东西之后，就有了点空闲。
+好吧刚开始写又有事情了…唉
+…
+…
+以上，是我五天前写的，当时没写完的，忙到(我也不知道在忙什么)现在，正好今天不怎么想复习，就把它写完吧。
+话说真是好久没写这个日记了，有两个月了吧，这两个月发生了很多很多的事情，比如 呆在了一个新地方，遇到了很厉害的学长，经常发零食的学姐。
+然后是技术上的，重新看了java，折腾了springboot，还有一个前端框架layui，算是第一次正式用框架写前后端（严格意义上说有了前后台的基本功能了…以及还能看得过去的前端）。以前都是原生拿起来就开始写，这次写的一个软工大作业，算是对MVC有了个更清楚的认识了吧。
+能学到新东西当然挺开心的，但好久没看安全相关的东西，虽然感觉可以从开发角度来学安全，但总是有种焦虑感，然后看着别人一直提交的各种漏洞艳羡不已…
+唉不能总是一直丧呀，突然感觉自己其实挺厉害的！厚厚一本800页的四天能够看完，学东西非常快上手，执行力挺强滴…还有…就想不出来还有什么能吹的了T-T
+一直都有人在不断鼓励我，老姐，身边的朋友，也有网上认识的。 感觉给他们添了好多麻烦了呀哈哈哈哈哈😄 那以后可能也要继续麻烦了！
+人和人就是互相支持互相帮助 因此而存在的啊。 因为感受过世界和许多人的温柔和善意，所以现在也会想将这样的美好分享给别人。
+现在呆的实验室啊，感觉挺棒的，暑假我还打算把ps4和ns带过来…
+有厉害的学长可以解决很多技术上的问题，还能给你提供很多建议！虽然学长现在去阿里实习了…有两个傻白甜学姐会发零食吃，经常要人帮她们看bug…代码打累了可以看视频，到饭点了聊聊天…
+有空调和超快的wifi，对我来说就够了hhhh
+最近本来想重温一下虫师来治愈一下自己，结果跑去看了夏目友人帐，发现也不错，同样会被治愈到。 这些作品都给人一种很温柔的感觉，和这个季节一样。
+今天看了日历，是夏至。 还没有听到蝉鸣，所以心里总感觉夏天还差点什么。 想起以前的夏天啊，凉席，空调，蝉鸣，看番，西瓜，那时候的互联网十分令人新奇。 想来如今也是，只是感觉有点不同了，不同的还有世界观的变化，从以前的黑白分明，到如今考虑的却是各种各样的原因。
+能体谅很多人，能考虑到很多人的感受，但脾气不变，看着不爽的就不会再多说一句。 对温柔的人会回以温柔，对善良的人会回以善良，对不好的便置之不理。
+想起来总有人好奇我以后会找个什么样的女票，其实我也很好奇。
+以后啊，会想跟女朋友夏天到日本看烟花大会！逛夏日祭典！想看她穿yukata的样子！ 冬天去北海道看雪！ 还想跟她去看拉斯维加斯的黑客大会DEFCON！去看E3游戏展！去看世界杯！去海边度假吃海鲜…
+给自己打鸡血啊，要变得更好啊…
+谢谢身边的和不在身边的我的朋友们！希望你们都能被世界的温柔包围，遇到困难的时候坚持下去，坚持不下去了那一定要来找我呀！我会告诉你坚持不下去的时候该怎么摸鱼哈哈哈。
+爱你们的Sera ：）</description></item><item><title>代码模拟PCB</title><link>https://selfsolo.com/p/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%8B%9Fpcb/</link><pubDate>Wed, 04 Apr 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%8B%9Fpcb/</guid><description>界面打算参考XAMPP的设计风格，具体核心如何实现先来看一下PCB如何运作的以及目标是要写个什么东西。
+PCB， 即进程控制块(Processing Control Block) ，是操作系统核心中一种数据结构，主要表示进程状态。
+这里是实验要求的内容:
+要求 1. 确定PCB内容及其组织方式； 2. 要求模拟进程”新建”、”就绪”、”运行”、”阻塞”和”退出”5个状态； 3. 设计并实现5个进程管理函数: 进程创建(Create()),进程终止(Terminate()),进程调度(Schedule()),进程阻塞(Block()),进程唤醒(Wakeup()); 4. 编写主函数，调用5个函数，实现进程管理。 关键点 1.如何组织进程 确定PCB内容：标识信息、状态和运行时间与存储地址等信息、现场信息、管理信息； PCB组织方式：链表，分 运行（running），就绪（ready），阻塞（block），空闲（spare）4个列表 我的理解：
+PCB保存内容: 标识信息(Process ID);
+状态 (进程的运行状态);
+运行时间就是此进程从开始进程到此时运行的时间;
+存储地址我觉得可以随便指定一个(因为模拟，所以就模拟个地址);
+现场信息的话，我对此问了下老师，老师让自己想要不要加个程序进去，我想了下，既然是模拟，那可以这样，我模拟五个程序，每个程序要跑的时间是不同的，可以这样实现，每条进程，如果我不中止它，那它的就永远不终止，比如开始时它的指令计数器为1，time.sleep(1)后，这个数字加一…管理信息，我就不是特别清楚，我都画个gui出来了总该清楚的吧
+2.如何创建进程 申请PCB -&amp;gt; 申请资源 -&amp;gt; 填写PCB -&amp;gt; 挂就绪(ready)队列 直接说就是，要创建了，点create，把它信息顺便就设置好(给它pid,记一下开始时间time.time),申请资源不是很懂，因为python我还没有看过数据结构是怎么实现的
+3.如何实现处理机调度 a. 按某种策略（如FCFS） 从就绪(ready)队列选择一个进程； b. 摘取PCB，挂运行（running）队列； c. 修改状态等PCB内容；设置时钟（运行时间）；恢复现场； d. 模拟运行： 比如输入”Esc” 进入 “阻塞(Block)”状态，输入”Enter”则运行结束回到就绪（ready）队列； e. 修改(剩余)运行(running)时间。 根据内容来看，调度(Schedule)这个函数，就是实现把进程从ready队列放到running队列，然后因为running队列内容变了，所以要相应改变PCB的内容，比如运行时间(相当于恢复现场)， 对于实现(d)来说，我不是很明白，模拟运行的意思是什么，我的理解是调用schedule(“esc”)，就会让此进程从running进入block，调用schedule(“enter”),就会让它进入ready队列。
+综上 于是我们对于我们要写的东西就有一个总结，所有进程都是一个类，初始化时配置它的标识符(PID),
+状态 运行态: running, 进程正在执行。因为是单处理器，同一时刻在运行的进程只有一个。
+就绪态: ready, 进程做好了准备，只要有机会就开始执行,这里要判断优先级，比如3个进程同时ready，的话，先根据优先级判断执行顺序，然后再按FCFS策略来执行进程
+阻塞态: block, 进程在某些时间发生前不能执行，如I/O操作完成</description></item><item><title>PHP-FileInclusion</title><link>https://selfsolo.com/p/php-fileinclusion/</link><pubDate>Mon, 26 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/php-fileinclusion/</guid><description>文件包含(File Inclusion)可能会出现在JSP、PHP、ASP等语言中，常见的导致文件包含的函数如下:
+PHP:
+include(),include_once(),require(),require_once().fopen(),readfile()…
+JSP/Servlet:
+ava.io.File(),java.io.FileReader()…
+ASP:
+include file,include virtual…
+以PHP为例，一般用上述函数来导入一个文件，比如一个全是函数的function.php。当使用上述函数包含一个新的文件时，该文件将作为PHP代码执行(重点!)，PHP内核不会在意被包含的文件类型是什么，所以就算包含了txt文件，图片文件，远程URL，也都将作为PHP代码执行。这一特性，在实施攻击时将非常有用。
+比如以下代码:
+&amp;lt;-?php include($_get['test']);=&amp;quot;&amp;quot; ?-=&amp;quot;&amp;quot;&amp;gt; 执行www.test.com/test.php?test=atk.jpg
+若atk.jpg中含有PHP攻击代码，则会被执行。
+可见，要想成功利用LFI漏洞，需满足条件:
+include()等函数通过动态变量的方式引入需要包含的文件； 用户能够控制该动态变量； 如果web应用没有正确防御，可能会被读出重要本地数据，或者直接被执行了一个webshell等等。
+再深入看看文件包含漏洞的后果。
+1.本地文件包含
+能够打开并包含本地文件的漏洞，被称为本地文件包含漏洞(Local File Inclusion,简称LFI)
+比如一下代码就存在LFI漏洞:
+&amp;lt;-?php $file=&amp;quot;$__GET['file'];&amp;quot; &amp;quot;..=&amp;quot;&amp;quot; ..=&amp;quot;&amp;quot; etc=&amp;quot;&amp;quot; passwd\0&amp;quot;=&amp;quot;&amp;quot; if(file_exists('=&amp;quot;&amp;quot; home=&amp;quot;&amp;quot; wwwrun=&amp;quot;&amp;quot; '.$file.'.php')){=&amp;quot;&amp;quot; include=&amp;quot;&amp;quot; '=&amp;quot;&amp;quot; '.$file.'.php';=&amp;quot;&amp;quot; }=&amp;quot;&amp;quot; ?-=&amp;quot;&amp;quot;&amp;gt; 此时如果用户控制$file变量为 ‘../../etc/passwd’,则会执行 include ‘/home/wwwrun/../../etc/passwd.php’。
+但passwd.php文件并不存在,所以什么事都没有了吗?
+…
+不，因为PHP内核是用C实现的，因此使用了C语言中的一些字符串处理函数。比如在连接字符串时，0字节(\x00)将作为字符串结束符。所以在这个地方，攻击者只要在最后加入一个0字节，就能截断file变量之后的字符，即
+../../etc/passwd\0
+通过web输入时，只需要Url编码，变成
+../../etc/passwd%00
+字符串截断配合LFI口味更佳
+所以web应用可以禁用0字节，因为用户其实是不需要使用它的。
+但这样实际上仍没有解决问题，还有个技巧就是利用操作系统对目录最大长度的限制，可以不需要0字节而达到截断的目的。目录字符串，在windows下256字节，linux下4096字节会达到最大值，最大值后的字符会被丢弃，于是构造 n个 ‘.</description></item><item><title>SQL注入-报错注入原理</title><link>https://selfsolo.com/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/</link><pubDate>Mon, 26 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/</guid><description>先解释几个概念和语句
+聚合函数 定义：SQL基本函数，聚合函数对一组值执行计算，并返回单个值。除了 COUNT 以外，聚合函数都会忽略空值。 聚合函数经常与 SELECT 语句的 GROUP BY 子句一起使用。
+性质: 所有聚合函数都具有确定性。任何时候用一组给定的输入值调用它们时，都返回相同的值。
+举例:
+count() 返回指定组中项目的数量
+select count(id) from users; // 11
+max() 返回指定数据的最大值
+select max(id) from users; //20
+min()同理，其它还有像sum()求和，一般都是用于数字列。
+group by 语句 “Group By”从字面意义上理解就是根据“By”指定的规则对数据进行分组，所谓的分组就是将一个“数据集”划分成若干个“小区域”，然后针对若干个“小区域”进行数据处理。
+实质上就是按照某种属性分类汇总
+比如说要统计在全体中统计几个小类的各自情况，可以
+select 列名(能化成几个分类的)，某种属性比如sum(数量) as 数量之和 from table_name group by 列名
+group by 列名就是按列名来分组。
+count(*) select count(*) from table_name;
+返回table_name的行数；
+也可以
+select count(*) from table_name where id &amp;gt; 10;</description></item><item><title>校园杂记17: 我想吐槽的‘Web安全’</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B017-%E6%88%91%E6%83%B3%E5%90%90%E6%A7%BD%E7%9A%84web%E5%AE%89%E5%85%A8/</link><pubDate>Mon, 26 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B017-%E6%88%91%E6%83%B3%E5%90%90%E6%A7%BD%E7%9A%84web%E5%AE%89%E5%85%A8/</guid><description>web安全是什么?
+是渗透测试? 是机器学习搜索webshell? 是fuzz testing? 是ctf?
+是找出各种漏洞? 是各种技巧? 是如何安全的在网络中”摸鱼”?
+…
+每个人的答案都不一样，对此，我一脸懵逼。
+这是个非常大的话题，甚至于我觉得web安全也可以分很多个方向，但是再细分未免就有点枯燥了，一个人只专注于xss，csrf整天想着钓鱼，想着发钓鱼邮件写钓鱼worm，不久就会厌倦吧…于是web安全又有了sql注入，本地文件包含，浏览器安全，html5安全，css安全，文件上传，内网渗透，服务器提权，一坨东西不知道什么鬼啊。
+要能看懂xss，csrf漏洞，得学js吧，jquery也要了解下吧，什么? 前端框架层安全?? 等等再说
+要能看懂sql注入漏洞，php文件漏洞，得学php mysql吧，java，asp也要了解下吧，什么? structs 2漏洞了解下?? 以后再说吧
+python写的框架也是一坨漏洞。exp要用python写吧，python了解下? Django框架用都没用过哪来的时间和project用Django啊
+安全代码安全代码，因为代码是人写的，所以就不那么安全了。再有经验的engineer也会犯错，于是web安全，系统安全，密码学安全，信息安全，又是一坨，可以说，有代码的地方，就会有漏洞。虽然不应该那么绝对，但是当时写出来的代码没问题，一更新，可能更新之后就会出来问题，那就不更新了? 当然ok啊，但别的环境在更新，由不得你，别的环境的更新，伴随着跟它耦合着的代码也会慢慢的出现问题，所以，tk教主说的 安全是动态的，一点没错。
+这条路望过去望不到尽头，这辈子可能都无法学完。想到了这种结果后，upset吗?
+答:
+还行。I’m fine
+之前想写个ali插件，写不来想问问学长，聊着聊着就聊到在上的这个操作系统课，房老师←_←去年被汤老师带着去”开会”,是谈项目的一个会，瑟瑟发抖的听学长(跟我聊的这个)说项目完成的情况，加密的技术手段，会上房老师气场爆棚，这就是第一印象了，结果就是今天上操作系统走神10分钟，发现在点人回答问题了，点了几个人回答不出来，于是就拍桌子啊，吓cry。以为要第二次爆气场了，还好没有，吼吼吼吼….吼个头啊。
+对操作系统挺有兴趣的，加上之前学的计组，慢慢的就会有个pc机的轮廓出来，也因为操作系统的安全是个大问题，比如二进制安全，缓冲区溢出攻击等等…好像还涉及逆向?misc?
+对这块不是很了解…聊完了房头，再来聊聊挖漏洞…
+之前的我真是异想天开，天天yy当个nb的白帽子是多酷的事情。现在，除了觉得自己naive，还是naive，也许可以再加上个stupid。
+挖漏洞是半个小时就能做到的吗? 不一定，但我这种半吊子肯定做不到半小时，别说第一个漏洞了，别的安全研究员花几个月挖出一个cve，我一个小白却想几天或者半小时，并因为挖不出而感到困惑迷茫，真是有够funny…
+一口吃不成个胖子，这么简单的道理为什么总是不明白，挖不出就慢慢来，先夯实了基础再谈挖不挖得出漏洞，有了基础，每个地方都能得心应手，也不用再那么盲目，不会再想搜索完一个目标信息后下一步要干啥? sql注入? 扫注入点? 扫后台? 还是什么? 感到迷茫，慢慢分析，慢慢来，浮躁永远是大忌。我要吃忌啊啊啊啊啊啊。
+每天都在找鸡血，仿佛一天不打就hold不住的样子，最近找到一个很触动我的，在此贴上:
+‘’’入门web安全 作者:张某滨’’’ 第一个问题无非就是怎么找目标？我目前也没有什么好方法。只能说多留心吧，前段时间买衣服，发现快递到货要装一个APP才能取件，于是我就装了。拿完衣服后，随手测试发现了该厂商存在的任意密码重置问题，在乌云上报了之后还说要给我发礼物。再分享一个故事，之前参加沙龙见到的核心白帽子：专业种田，听他介绍了Burpsuite的用法，怎么用搜索找洞等姿势，不过重点不是这个，重点是他在回深圳时需要去广州南站，然后他在广州南站发现了：广州高铁站手机充电终端沙盒绕过(可留后门控制手机)的漏洞，让我惊叹他真的是走到哪黑到哪。
+找到目标之后发现自己实力不够？这个需要基础知识加细心吧我觉得，绝大部分的漏洞并没有想象中的难，至少从我在乌云上看过的漏洞来说。SQL注入，名字大家都懂，工具sqlmap大家都可以用，可是用了之后知道内部原理吗？XSS打Cookies，需要懂前端知识吧？上传一句话GetShell，菜刀连接直捣黄龙，你需要知道人家用的什么后台吧，JSP/PHP/ASP/Python等等语言你得懂吧？正面刚人家找不到漏洞，可以找找旁域和C段，没有一点点DNS和IP地址的基础知识怎么能行呢？所以没有基础，即使漏洞摆在眼前也是白搭吧。
+所以，我觉得我还是要沉住气，不能浮夸，多多补充基础知识。
+看前人留下的资料：乌云上的漏洞很多精华的思路，多看，打开自己的眼界。（我目前只是看乌云园区里的讨论，乌云Wiki，乌云公开的漏洞）
+有条件复现漏洞环境的尽量进行测试，多动手才好玩啊！比如最近公开的漏洞：【乌云峰会】网易闪电邮远程命令执行附思路分析，完全可以找个旧版本的软件玩玩，玩一次的记忆绝对比你光看要强。
+尝试分享，目前自己做的还不够，希望自己能静下心来多写写东西。
+这是我最近一段时间的经验分享和自己的一点思考，只是发出来供参考。关于找人带入门的问题：我觉得没人带一样可以找到很多东西学，智商不足勤奋补上嘛！要学会搜索！还有，这篇文章不是乌云的广告贴，我只是把在乌云上刷Rank当成激励自己的目标。
+—————2016年02月17号 更新分割线—————— 在WooYun上我已经是一个普通白帽子，白帽子信息_zhchbin ，在我写下上面那个答案之后的这段时间，我发现了一个腾讯的XSS问题，若干个新浪微博的CSRF问题，知乎/bilibili/网易等厂商的用户微博OAuth2.</description></item><item><title>WriteUp - Seclab</title><link>https://selfsolo.com/p/writeup-seclab/</link><pubDate>Sun, 18 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/writeup-seclab/</guid><description>前言：重新开始学习安全，用这个水题来暖手，当初步复习。
+看了下自己五个月之前的状态:
+基础关 key在哪里？
+右键查看源代码，得到key
+再加密一次你就得到key啦~
+这题做不来，看的writeup，用的rot13加密，学习一下! rot13加密
+百科链接：http://www.baike.com/wiki/ROT13&amp;amp;prd=so_1_doc ROT13（回转13位，rotateby13places，有时中间加了个减号称作ROT-13）是一种简易的置换暗码。ROT13是它自己本身的逆反；也就是说，要还原ROT13，套用加密同样的演算法即可得，故同样的操作可用再加密与解密。该演算法并没有提供真正的密码学上的保全，故它不应该被套用在需要保全的用途上。它常常被当作弱加密范例的典型。 描述：套用ROT13到一段文字上仅仅只需要检查字元字母顺序并取代它在13位之后的对应字母，有需要超过时则重新绕回26英文字母开头即可[2]。A换成N、B换成O、依此类推到M换成Z，然后序列反转：N换成A、O换成B、最后Z换成M。只有这些出现在英文字母里头的字元受影响；数字、符号、空白字元以及所有其他字元都不变。因为只有在英文字母表里头只有26个，并且26=2×13，ROT13函数是它自己的逆反： 对任何字元x：ROT13(ROT13(x))=ROT26(x)=x。 换句话说，两个连续的ROT13应用函式会回复原始文字（在数学上，这有时称之为对合（involution）；在密码学上，这叫做对等加密（reciprocalcipher））。 所以最后结果是按照下表一一对应即可，数字不变
+猜猜这是经过了多少次加密？
+看到加密后字符串最后是个等号，依稀记得base64加密最后也是个等号，猜测是base64加密，于是脚本解密如下:
+脚本编写时要注意，base64碰到无法解密之后会报错
+import base64 code = 'Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYySkVUbGhoTVVwVVZtcEJlRll5U2tWVWJHaG9UVlZ3VlZacVFtRlRNbEpJVm10a1dHSkdjRTlaVjNSR1pVWmFkR05GU214U2JHdzFWVEowVjFaWFNraGhSemxWVmpOT00xcFZXbUZrUjA1R1drWndWMDFFUlRGV1ZFb3dWakZhV0ZOcmFHaFNlbXhXVm1wT1QwMHhjRlpYYlhSWFRWaENSbFpYZUZOVWJVWTJVbFJDVjAxdVVuWlZha1pYWkVaT2NscEdhR2xTTW1ob1YxWlNTMkl4U2tkWGJHUllZbFZhY1ZadGRHRk5SbFowWlVaT1ZXSlZXVEpWYkZKSFZqRmFSbUl6WkZkaGExcG9WakJhVDJOdFJraGhSazVzWWxob1dGWnRNWGRVTVZGM1RVaG9hbEpzY0ZsWmJGWmhZMnhXY1ZGVVJsTk5XRUpIVmpKNFQxWlhTa2RqUm14aFUwaENTRlpxUm1GU2JVbDZXa1prYUdFeGNHOVdha0poVkRKT2RGSnJhR2hTYXpWeldXeG9iMWRHV25STldHUlZUVlpHTTFSVmFHOWhiRXB6WTBac1dtSkdXbWhaTVZwaFpFZFNTRkpyTlZOaVJtOTNWMnhXYjJFeFdYZE5WVlpUWVRGd1YxbHJXa3RUUmxweFVtMUdVMkpWYkRaWGExcHJZVWRGZUdOSE9WZGhhMHBvVmtSS1QyUkdTbkpoUjJoVFlYcFdlbGRYZUc5aU1XUkhWMjVTVGxOSFVuTlZha0p6VGtaVmVXUkhkRmhTTUhCSlZsZDRjMWR0U2tkWGJXaGFUVzVvV0ZsNlJsZGpiSEJIV2tkc1UySnJTbUZXTW5oWFdWWlJlRmRzYUZSaVJuQlpWbXRXZDFZeGJISlhhM1JVVW14d2VGVXlkR0ZpUmxwelYyeHdXR0V4Y0hKWlZXUkdaVWRPUjJKR2FHaE5WbkJ2Vm10U1MxUnRWa2RqUld4VllsZG9WRlJYTlc5V1ZscEhXVE5vYVUxWFVucFdNV2h2VjBkS1dWVnJPVlpoYTFwSVZHeGFZVmRGTlZaUFYyaHBVbGhCZDFac1pEUmpNV1IwVTJ0b2FGSnNTbGhVVlZwM1ZrWmFjVk5yWkZOaVJrcDZWa2N4YzFVeVNuSlRiVVpYVFc1b1dGZFdXbEpsUm1SellVWlNhVkp1UWxwV2JYUlhaREZaZUdKSVNsaGhNMUpVVlcxNGQyVkdWbGRoUnpsb1RWWndlbFl5Y0VkV01ERjFZVWhLV2xaWFVrZGFWM2hIWTIxS1IyRkdhRlJTVlhCS1ZtMTBVMU14VlhoWFdHaFlZbXhhVjFsc1pHOVdSbXhaWTBaa2JHSkhVbGxhVldNMVlWVXhXRlZyYUZkTmFsWlVWa2Q0YTFOR1ZuTlhiRlpYWWtoQ1NWWkdVa2RWTVZwMFVtdG9VRll5YUhCVmJHaERUbXhrVlZGdFJtcE5WMUl3VlRKMGIyRkdTbk5UYkdoVlZsWndNMVpyV21GalZrNXlXa1pPYVZKcmNEWldhMk40WXpGVmVWTnVTbFJpVlZwWVZGYzFiMWRHWkZkWGJFcHNVbTFTZWxsVldsTmhWa3AxVVd4d1YySllVbGhhUkVaYVpVZEtTVk5zYUdoTk1VcFZWbGN4TkdReVZrZFdXR3hyVWpOU2IxbHNWbmRXTVZwMFkwZEdXR0pHY0ZoWk1HUnZWMnhhV0ZWclpHRldWMUpRVlRCVk5WWXhjRWhoUjJoT1UwVktNbFp0TVRCVk1VMTRWVmhzVm1FeVVsWlpiWFIzWVVaV2RHVkZkR3BTYkhCNFZrY3dOVll4V25OalJXaFlWa1UxZGxsV1ZYaFhSbFoxWTBaa1RsWXlhREpXTVZwaFV6RkplRlJ1VmxKaVJscFlWRlJHUzA1c1drZFZhMlJXVFZad01GVnRkRzlWUmxwMFlVWlNWVlpYYUVSVk1uaGhZekZ3UlZWdGNFNVdNVWwzVmxSS01HRXhaRWhUYkdob1VqQmFWbFp1Y0Zka2JGbDNWMjVLYkZKdFVubGFSV1IzWVZaYWNtTkZiRmRpUjFFd1ZrUktSMVl4VGxsalJuQk9UVzFvV1ZkV1VrZGtNa1pIVjJ4V1UySkdjSE5WYlRGVFRWWlZlV042UmxoU2EzQmFWVmMxYjFZeFdYcGhTRXBWWVRKU1NGVnFSbUZYVm5CSVlVWk9WMVpHV2xaV2JHTjRUa2RSZVZaclpGZGlSMUp2Vlc1d2MySXhVbGRYYm1Sc1lrWnNOVmt3Vm10V01ERkZVbXBHV2xaWGFFeFdNbmhoVjBaV2NscEhSbGROTW1oSlYxUkplRk14U1hoalJXUmhVbFJXVDFWc2FFTlRNVnAwVFZSQ1ZrMVZNVFJXYkdodlYwWmtTR0ZHYkZwaVdHaG9WbTE0YzJOc2NFaFBWM0JUWWtoQ05GWnJZM2RPVmxsNFYyNVNWbUpIYUZoV2FrNU9UVlphV0dNemFGaFNiRnA1V1ZWYWExUnRSbk5YYkZaWFlUSlJNRmRXV2t0ak1WSjFWRzFvVTJKR2NGbFhWM2hoVW0xUmVGZHVSbEppVlZwaFZtMHhVMU5XV2xoa1J6bG9UVlZ3TUZsVldsTldWbHBZWVVWU1ZrMXVhR2haZWtaM1VsWldkR05GTlZkTlZXd3pWbXhTUzAxSFNYbFNhMlJVWW1zMVZWbHJaRzlXYkZwMFpVaGtUazFXYkROV01qVkxZa1pLZEZWdWJHRlNWMUl6V1ZaYVlXTnRUa1ppUm1ScFVqRkZkMWRXVWt0U01WbDRWRzVXVm1KRlNsaFZiRkpYVjFaYVIxbDZSbWxOVjFKSVdXdG9SMVpIUlhoalNFNVdZbFJHVkZZeWVHdGpiRnBWVW14a1RsWnVRalpYVkVKaFZqRmtSMWRZY0ZaaWEzQllWbXRXWVdWc1duRlNiR1JxVFZkU2VsbFZaSE5XTVZwMVVXeEdWMkV4Y0doWFZtUlNaVlphY2xwR1pGaFNNMmg1VmxkMFYxTXhaRWRWYkdSWVltMVNjMVp0TVRCTk1WbDVUbGQwV0ZKcmJETldiWEJUVjJzeFIxTnNRbGROYWtaSFdsWmFWMk5zY0VoU2JHUk9UVzFvU2xZeFVrcGxSazE0VTFob2FsSlhhSEJWYlRGdlZrWmFjMkZGVGxSTlZuQXdWRlpTUTFack1WWk5WRkpYWWtkb2RsWXdXbXRUUjBaSFlrWndhVmRIYUc5V2JYQkhZekpOZUdORmFGQldiVkpVV1d4b2IxbFdaRlZSYlVab1RXdHdTVlV5ZEc5V2JVcElaVWRvVjJKSFVrOVVWbHB6VmpGYVdXRkdhRk5pUm5BMVYxWldZV0V4VW5SU2JrNVlZa1phV0ZsVVNsSk5SbFkyVW10MGFrMVlRa3BXYlhoVFlWWktjMk5HYkZoV00xSm9Xa1JCTVdNeFpISmhSM2hUVFVad2FGWnRNSGhWTVVsNFZXNU9XR0pWV2xkVmJYaHpUbFpzVm1GRlRsZGlWWEJKV1ZWV1QxbFdTa1pYYldoYVpXdGFNMVZzV2xka1IwNUdUbFprVGxaWGQzcFdiWGhUVXpBeFNGTlliRk5oTWxKVldXMXpNVlpXYkhKYVJ6bFhZa1p3ZWxZeU5XdFVhekZYWTBoc1YwMXFSa2haVjNoaFkyMU9SVkZ0UmxOV01VWXpWbTF3UzFNeVRuTlVia3BxVW0xb2NGVnRlSGRsVm1SWlkwVmtWMkpXV2xoV1J6VlBZVlpLZFZGck9WVldla1oyVmpGYWExWXhWbkphUjNST1lURndTVlpxU2pSV01WVjVVMnRrYWxORk5WZFpiRkpIVmtaU1YxZHNXbXhXTURReVZXMTRhMVJzV25WUmFscFlWa1ZLYUZacVJtdFNNV1IxVkd4U2FFMXRhRzlXVjNSWFdWZE9jMVp1UmxSaE0xSlZWbTE0UzAxR2JGWlhhemxYVFZad1NGWXljRXRXTWtwSVZHcFNWV0V5VWxOYVZscGhZMnh3UjFwR2FGTk5NbWcxVm14a2QxUXhWWGxUV0docFUwVTFXRmx0TVZOWFJsSlhWMjVrVGxKdGRETlhhMVpyVjBaSmQyTkZhRnBOUm5CMlZqSnplRk5HVm5WWGJHUk9ZbTFvYjFacVFtRldNazV6WTBWb1UySkhVbGhVVmxaM1ZXeGFjMVZyVG1oTlZXdzBWVEZvYzFVeVJYbGhTRUpXWWxoTmVGa3dXbk5XVmtaMVdrVTFhVkp1UVhkV1JscFRVVEZhY2sxV1drNVdSa3BZVm01d1YxWkdXbkZUYTFwc1ZteGFNVlZ0ZUdGaFZrbDRVbGhrVjJKVVJUQlpla3BPWlVkT1JtRkdRbGRpVmtwVlYxZDBWMlF4WkhOWGEyaHNVak5DVUZadGVITk9SbGw1VGxaT1YySlZjRWxaVlZwdlZqSkdjazVWT1ZWV2JIQm9WakJrVG1WdFJrZGhSazVwVW01Qk1sWXhXbGRaVjBWNFZXNU9XRmRIZUc5VmExWjNWMFpTVjFkdVpHaFNiRmt5VlcxME1HRnJNVmRUYWtaWFZqTm9VRmxXV2twbFJrNTFXa1prYUdFd2NGaFdSbFpXWlVaSmVGcElTbWhTTTFKVVZGVmFkMlJzV2tkYVNIQk9WakZhZWxZeGFITlVNVnB5VGxjNVZWWnNXak5VVlZwaFYwVTFWbFJzWkU1aE0wSktWMVpXVjFVeFdsaFRiR3hvVWpKb1dGbHJXbmRWUmxwelYydDBhazFXY0hsVWJGcHJZVmRGZDFkWWNGZGlXR2h4V2tSQmVGWXhVbGxoUm1ob1RXMW9WbGRYZEd0aU1rbDRWbTVHVW1KVldsaFphMXAzVFVad1ZtRkhkRlZoZWtaYVZWZDRjMWxXV2xoaFJYaGFZVEZ3WVZwVldtdGpiVTVIWVVkb1RsZEZTbEpXYlRGM1V6RktkRlpyYUZWaE1WcFlXV3RrVTFaR1ZuTlhibVJzVm0xU1dsa3dWbXRXTWtwWFVtcE9WVlpzV25wWlZscEtaVmRHUjFWc2NHbFNNbWd5Vm1wR1lXRXhaRWhXYTJoUVZtdHdUMVpzVWtaTlJtUlZVVzFHV2xac2JEUlhhMVp2WVVaS2MxTnNXbGRpVkVaVVZtdGFkMWRIVmtsVWJHUnBVakZLTmxaclkzaGlNVmw1VWxod1VsZEhhRmhXYlRGU1RVWndSVkpzY0d4V2F6VjZXV3RhWVdGV1NYbGhSemxYVmpOU1dGZFdaRTlqTVZwMVVteFNhRTB4U2xaV2JURjZUVlV4UjFadVVteFNWR3h3VldwQ2QxZHNiRlpWYkU1WFRVUkdXVlpXYUd0WFJscDBWV3hPWVZac2NHaFpNbmgzVWpGd1IyRkdUazVOYldjeFZtMTRhMlF4UlhoaVJtaFZZVEpTV0ZsdGVFdGpNVlYzV2taT2FrMVhlSGxXTWpWUFZERmFkVkZzWkZwV1YxRjNWakJhUzJOdFNrVlViR1JwVjBWS1ZWWnFTbnBsUmtsNFZHNU9VbUpIVWs5WlYzUmhVMFprYzFkdFJsZE5helY2V1RCV2IxVXlTa2hWYXpsVlZucEdkbFV5ZUZwbFJsWnlZMGQ0VTJGNlJUQldWRVp2WWpKR2MxTnNhRlppVjJoWFdXdGFTMWRHV2tWU2JHUnFUV3RhUjFaSGVGTlViRnAxVVZoa1YxSnNjRlJWVkVaaFkyc3hWMWRyTlZkU2EzQlpWMWQwYTJJeVVuTlhXR1JZWWxoU1ZWVnFRbUZUVm14V1YyMUdWV0pGY0RGVlZ6QTFWakpLVlZKVVFscGxhM0JRV1hwR2QxTldUblJrUms1T1RVVndWbFl4WkRCaU1VVjNUbFZrV0dKcmNHRlVWRXBUVlVaYWRHVklUazlTYkd3MVZHeFZOV0ZIU2taalJteGFWbFp3ZWxacVNrWmxSbHBaWVVkR1UwMHlhRFpXYlhCSFdWWmtXRkpyWkdoU2F6VndWVzAxUWsxc1dYaFhiR1JhVmpCV05GWlhOVTlYUm1SSVpVYzVWbUV4V2pOV01GcFRWakZrZFZwSGFGTmlSbXQ1VmxjeE1FMUhSbkpOVm1SVVlXdGFXRlpxVG05U1JscHhVMnQwVTAxck5VaFphMXB2VmpBd2VGTnFTbGRXYkVwSVZsUkdXbVZIVGtaaVJsWnBVakpvZDFadGVHRmtNV1JIVjJ0a1dHSlZXbkZVVlZKWFUwWlplR0ZJVGxWTlZuQjVWR3hqTlZaV1duTlhibkJWWWtad2VsWnRNVWRTYkZKeldrZHNWMWRGU2t0V01WcFhWakZWZUZkWVpFNVdiVkp4VldwS2IxbFdVbGRYYm1SV1VtMTBORll5ZUd0aGF6RllWVzVzVldKR2NISldSM2hoVjBkUmVtTkdaR2xYUjJoVlZsaHdRbVZHVGtkVWJHeHBVbXMxYjFSWGVFdFdiR1JZVFZod1RsWnNjRmhaYTJoTFdWWktObUpHYUZwaE1YQXpXbGQ0V21WVk5WaGtSbFpvWld0YVdsZHNWbUZoTVZsM1RWaEdWMkpyY0ZoV2ExWjNWRVpWZUZkclpHcGlWVnBJVjJ0YVQxUnJNWFJoUmxwWFlsUkdNMVY2Ums1bFZsSjFWR3hXYVdFelFuWldWekI0VlRGYVIxVnNWbFJpVkd4d1ZGWmFkMlZXV2xoa1JFSldUVVJHV1ZaWGRHOVdhekYxWVVod1dGWnNjRXRhVjNoSFl6RldjMXBIYUdobGJGbDVWbTF3UjFsWFJYaGFSV2hYWVRKb1VWWnRkSGRVTVZwMFpFaGtWRlp0VWxaVlZ6RkhZVlV4Y2xkcVFsZGlWRlpNVmpCa1MxTkhWa2RhUm5CcFVqSm9WVlpHVWtka01WbDRXa2hTYTFJelFuQlZha1pLWkRGYVJWSnRkR2xOVm13elZGWldhMkZGTUhsbFJtaGFZa1pLUTFwVlduTmpWa3B6WTBkNFUySldTalZXYWtvMFZUSkdXRk5yYkZKaVIyaFlXV3hvVTFkR1pGZGFSbVJxVFZkU01WVnRlRTloVmtsNFUyNW9WMUpzY0hKV1ZFcFhZekpLUjFkdFJsUlNWRloyVm0weE5HUXlWbGRoTTJSV1lsVmFXRlJWVWtkWFZscFhZVWQwV0ZKc2NEQldWM2hQV1ZaYWMyTkhhRnBOYm1nelZXcEdkMUl5UmtkVWF6Vk9ZbGRqZUZadE1UUmhNREZIVjFob1ZWZEhhR2hWYkdSVFZqRnNjbHBHVGxoV2JYZ3dWRlphVDJGck1WZGpSRUpoVmxkb1VGWkVSbUZrVmtaeldrWndWMVl4UmpOV2FrSmhVMjFSZVZScldtaFNia0pQVlcwMVEwMXNXbkZUYm5Cc1VtczFTVlZ0ZEdGaVJrcDBWV3M1V21KVVJuWlpha1poWTFaR2RGSnNaRTVoZWxZMlYxUkNWMkl4VlhsVGEyaFdZa2RvVmxadGVHRk5NVnBZWlVkR2FrMVdXbmxXUjNocllVZFdjMWRzYkZkaGExcDJXV3BLUjJNeFRuTmhSMmhUWlcxNFdGZFdaREJrTWxKelYydFdVMkpHY0hKVVZscDNaVlp3UmxaVVJtaFdhM0F4VlZab2ExZEhTa2RYYmtaVllrZFNSMXBFUVhoV01XUnlUbFprVTJFelFscFdiVEIzWlVkSmVWVnVUbGhYUjFKWldXeG9VMVpXVm5GUmJVWlVZa1phTUZwVlpFZGhSbHB5WWtSU1ZtSkhhSEpXYWtwTFZsWktWVkZzY0d4aE0wSlFWMnhXWVdFeVVsZFdiazVWWWxkNFZGUldWbmRXYkZsNFdrUkNWMDFzUmpSWGEyaFBWMGRGZVdGSVRsWmhhelZFVmxWYVlXUkZNVmRVYkZKVFlrZDNNVlpIZUZaT1YwWklVMnRhYWxKRlNtaFdiR1JUVTBaYWMxZHRSbGROYXpWSVYydGFWMVl5U2tsUmFscFhZbGhDU0ZkV1dtdFhSa3B5WVVkd1UwMXVhRmxXYWtKWFV6Rk9SMWR1VW14U00xSlFWV3BDVjA1R1dsaE9WazVXVFd0d2VWUnNXbk5YYlVWNFkwZG9WMDFXY0doYVJWVjRWakZPY2s1V1RtbFNiWFExVm14amQyVkdTWGxTYmxKVFlXeHdXRmxyWkc5WlZteFZVbTVrVlZKdGVGaFdNblF3WVdzeGNrNVZhRnBoTVhCMlZtcEJkMlZHVG5SUFZtaG9UVlZ3U1ZkV1VrZFhiVlpIWTBWc1ZHSlhhRlJVVkVaTFZsWmFSMVp0Um10TlYxSllWakowYTFsV1RrbFJiazVXWWtaS1dGWXdXbUZrUlRWWFZHMW9UbFpYT0hsWFYzUmhZVEZhZEZOc2JHaFRTRUpXV1d0YWQyVnNXblJOVldSVFlrWktlbGRyWkhOV01XUkdVMnQwVjAxV2NGaFdha1pXWlVaa1dWcEZOVmRpVmtwNFZsZHdTMkl4YkZkVmJHUllZbTFTVjFWdE1UQk9SbGw1WlVkMGFHRjZSbGxXVnpWelZsZEtSMk5JU2xkU00yaG9WakJrVW1WdFRrZGFSMnhZVWpKb1ZsWnNhSGRSYlZaSFZHdGtWR0pIZUc5VmFrSmhWa1phY1ZOdE9WZGlSMUpaV2tWa01HRlZNWEppUkZKWFlsUldWRlpIZUdGT2JVcElVbXhrYVZkSFozcFhiRnBoV1ZkU1JrMVdXbUZTYkZwdldsZDBZVmRzWkhOV2JVWm9UVlpzTTFSV2FFZFdNa3B5WTBab1YyRXhXak5XUlZwV1pVWmtjbHBIY0dsV1ZuQkpWakowWVZReFVuSk5XRkpvVW14d1dGbHNVa2ROTVZZMlVtczFiRlpzU2pGV1IzaFhZVmRGZWxGdWFGZFdla0kwV1dwS1QxSXhXblZWYlhoVVVqRktkMVpHV210Vk1XUkhWMnhvYTFKRlNsZFVWVkpIVjBac2NsVnNUbGROVld3MldWVm9kMWRzV1hwaFJYaGhVbXh3U0ZreWN6VldNVnB6V2tkNGFFMVhPVFZXYlRGM1VqRnNWMkpHWkZSWFIyaHdWV3RhZDFaR2JITmFSRkpWVFZad2VGVnRkREJXUmxwelkwaG9WazFXU2toV1ZFRjRWakZhY1Zac1drNWliRXB2VjFaa05GUXhTbkpPVm1SaFVtNUNjRlZ0ZEhkVFZscDBaRWRHV0dKV1dsbFdiWFJ2WVRGSmVsRnVRbFppVkZaRVZtcEdZVmRGTVZWVmJXeE9WbXhaTVZaWGVHOWtNVlowVTJ4YVdHSkhhRmhaYkZKSFZURlNWbGR1VGs5aVJYQXdXa1ZhVDFSc1dYaFRXR2hYWWtkUk1GZFdaRWRUUms1eVlrWkthVkl4U2xsWFYzaFRVbXN4UjJORlZsUmlSMUp4VkZaa1UwMVdWblJsUlRsb1ZtdHNORlV5Tlc5V01VcHpZMGhLVjFaRmNGaFpla3BMVWpGa2RGSnNVbE5XUmxveVZtMHdlRTVIVVhsV2JHUm9UVEpTV1ZsdE1WTlhSbEpZWkVoa1ZGWnNjRWxaTUZwUFZqRlpkMVpxVmxkV00yaFFWMVphWVdNeVRraGhSbkJPWW0xbmVsWlhjRWRrTVU1SVUydG9hVkpyTlZsVmJGWjNWVEZhZEUxSVpHeFNWRlpKVld4b2IxWXhaRWhoUjJoV1lrZFNWRlpxUm5OamJHUjFXa1prVGxZemFGZFdWRW8wVkRKR2NrMVdaR3BTUlVwb1ZteGFXbVF4YkhKYVJYUlRUV3MxUmxWWGVGZFdNVnB5WTBac1YySllRa05hVlZwTFZqRk9kVlJ0UmxOaWEwcDNWMWN4TUZNeFVsZFhibEpPVTBkb1ZWUldaRk5YUmxwMFRsWmtXRkl3Y0VsV1Z6QTFWMnhhUmxkcVRscGhhMXBvVmpCVmVGWldWblJoUlRWb1pXeFdNMVp0TUhoTlIwVjRZa1prVkZkSGVHOVZibkJ6Vm14YWNsWnJkRlZTYkhCWldsVmtSMkZyTVZoa1JGcGFWbFpWTVZaVVNrdFhWMFpIWTBaa2FFMVlRakpYVjNCTFVqSk5lRlJ1VG1oU01taFZWV3hXZDFkR1pGaGxSemxWWWxaYVNGWXlkRmRWTWtwV1YyNUdWVlp0VWxSYVYzaHlaREZ3UlZWdGFGZGhNMEY0VmxaYWIyRXhaRWhUYTJSWVltdHdWMWxYZEdGaFJtdDVZek5vVjAxWFVqQlphMXBQVlRKRmVsRnRPVmROVm5CVVZXcEtVbVZXVW5WVWJHaFlVakZLYjFaWGVHOVZNazVYWWtoT1YxWkZXbFJVVmxwSFRrWlplVTFVUW1oU2JIQXdWbGQwYzFkSFJuSk9WRTVYWVd0d1NGa3llRTlrUjBaSFkwZDRhRTFZUWpWV2JYQkRXVlpWZVZSdVRtcFNWMmhVV1d0Vk1XTkdXblJrU0dSWFlrWnNORmRyVWtOWGJGbDRVbXBPVldKR2NISldNR1JMWXpGT2NrOVdaR2hOVm5CTlZqRmFZVmxYVWtoV2ExcGhVbFJzVkZscmFFSmtNV1J6Vm0xR2FFMVdjRmxWTW5SaFlXeEtXR1ZIUmxWV1JUVkVXbFphVjFJeFNsVmlSa1pXVmtSQk5RPT0=' while True: try: code = base64.b64decode(code) except: print(code) break 据说MD5加密很安全，真的是么？
+那么很好判断了，md5加密的，拿到cmd5解密，得到key
+种族歧视
+改请求头，Accept-Language条目中的zh-CN,zh;删除之后访问即可
+HAHA浏览器
+依旧是改请求头，User-Agent条目一行的内容替换成HAHA之后访问即可
+key究竟在哪里呢？
+用firefox自带的web控制台查看页面返回头，看到有个key条目….
+key又找不到了
+bp，先抓一次search_key.php,过去发现里面一个a标签藏着个链接key_is_herenow.php访问得到key
+冒充登陆用户
+内容说必须要登录才能得到key，于是bp抓包发现请求头里的cookie
+cookie:Login=0 把0改成1访问得到key
+比较数字大小</description></item><item><title>校园杂记16: 没有最好，只有最合适</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B016-%E6%B2%A1%E6%9C%89%E6%9C%80%E5%A5%BD%E5%8F%AA%E6%9C%89%E6%9C%80%E5%90%88%E9%80%82/</link><pubDate>Sun, 18 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B016-%E6%B2%A1%E6%9C%89%E6%9C%80%E5%A5%BD%E5%8F%AA%E6%9C%89%E6%9C%80%E5%90%88%E9%80%82/</guid><description>爬虫写着写着，用bp再次想抓一波包的时候发现什么都抓不到了，ip貌似被屏蔽了…有点后悔没有用代理ip，不谨慎啊……
+想抓tb订单的念头断了，忧郁，之前ali的api平台还能看到获取订单的api，现在找不到了，两会过后页面变了特别多，很多网站都是这样，思路断了，但是一样要写，不写白不写，不然之前买会员的钱不就白花了吗…虽然这样只能靠用户自觉…
+最近写爬虫写的真是想吐血。写爬虫，目标反爬，反反爬，目标反反反爬，生命真的就是这样浪费的吧。
+但我也发现，很多网站它不可能对反爬是”一步到位”的，直接就用最严厉的手段来反爬，抓到封ip，这也许就是”没有最好，只有最合适”吧。
+实际做事要考虑的事情非常多，不是直接就查看所有请求头，查看目标访问次数能解决的，还要考虑写这些对网页带宽的影响，几个用户可能没感觉，到几千上万乃至上亿，可能影响就积少成多非常巨大了，维持服务器要费用，提高带宽就意味着成本的增加，既然如此不如降低点反爬的标准，或者”人工”反爬也许都会比脚本反爬来的性价比高。
+看到篇文章说”如今的安全圈简直就是安全娱乐圈”，说到底就是浮躁吧。虽然我想说，就算是安全娱乐圈我也进不去啊，门槛是真特么高啊。我对它门槛的定义就是挖到一个有点深度的漏洞，是真驮马的难啊。
+4个月没弄过安全，当初吹的nb忘了吗? 再不醒醒，大清就亡了。</description></item><item><title>校园杂记15: 摸鱼摸爆，于是剃了个光头</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B015-%E6%91%B8%E9%B1%BC%E6%91%B8%E7%88%86%E4%BA%8E%E6%98%AF%E5%89%83%E4%BA%86%E4%B8%AA%E5%85%89%E5%A4%B4/</link><pubDate>Sat, 24 Feb 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B015-%E6%91%B8%E9%B1%BC%E6%91%B8%E7%88%86%E4%BA%8E%E6%98%AF%E5%89%83%E4%BA%86%E4%B8%AA%E5%85%89%E5%A4%B4/</guid><description>…
+…
+…
+…
+剃完3秒就特么后悔了好吗!? 又冷又sb，光头hold不住: )
+光头的由来是这样的：
+上次撸完那个比赛的小程序，以为寒假所有task都解决了，躺床上想着，我要摸鱼摸爆，然后战ds2，战猎天使阿姨，下骑砍停不下来。
+摸了四天第一次看qq，消息多爆，看一条心里凉一下，什么寒假作业? 什么互联网+复赛? 什么改网页? 什么ps? 什么文档?
+摸了四天鱼我是做了什么错事了……于是脑子一热，理了波光头。
+现在感觉自己真是zz，头发做错了什么!
+…
+今天是不摸鱼日，于是把前面的打字软件的ui改好了，朋友说之前的ui有点丑，于是我也开始有点这么觉得，于是我就看着某金山打字通的ui，自己撸ps，撸了个初始界面，其实还能改一点，但是改不动了…感觉这样子看上去也还行了…
+软件链接: https://pan.baidu.com/s/1d3Vygu 密码: ynsc
+还改了点小bug。文档ReadMe撸好。
+总的来说，这个小程序写的时候还是挺开心的，毕竟不像之前有个转换程序的task那样要考虑几十种边界数据，也不像另一个爬虫se那样要考虑多个线程之间的协调性…于是本体写完，撸撸ui，但是因为寒假，还掺杂着一丝摸鱼的心态，其实还是想到有很多地方可以改，偷懒偷了很多…感觉有点对不起队友们……
+老妈说的淘宝店在几天前弄好了，其实就是点点鼠标输入点东西的事情…淘宝的ui和各种应用都是不错的，它给店铺弄页面，叫做“装修”，总觉得哪里还是有点怪怪的，应该说面面俱到还是说有钱真是好呢…
+不对…突然想到，淘宝店铺的pc端界面还没弄，手机端界面虽然不用弄只要有商品就好了…但是弄个界面出来肯定宣传的更方便…心态炸裂：(
+还有校创改网页的事情，上次弄已经是三四个月前的事了…当时两个website，一个用的cms，一个直接手撸。这次要改的就是那个cms的…怎么改…我很烦那…开学前几天才跟我说这个，思路呢啊，改个什么东西来着，我也没看，用的好像是74cms，之前研究过它的一波源码，记下了改文本的几个位置，现在全忘了，当时以为不会再碰的…以后不管什么都要记下来 T T
+看到b站的uid，点进去再看到b站用户个人空间有个注册时间，我就顺着uid看了看，第一个账号果然是bishi，不知道是否是他当年写出来的b站呢，如果是的话那真是很有成就感的呢。看了别的id，都是些远古up主，也就不细看了。
+就突然想写个爬虫扒一扒用户注册时间看看b站用户增速怎么样，结果发现它似乎是用异步之类的加载的内容，之前就遇到过这种问题没有解决…现在又遇上了，研究一波吧。
+话说我明明是白帽子日记，已经好久没有搞过安全的什么东西了。
+呵，web; 呵，安全。
+花了三天补完了日剧 《宽松世代又如何》，挺好看的！！安利
+还顺便看完了《勇者义彦与恶灵之钥》…这两部我觉得都是很好看的剧…后面这个算喜剧吧。
+今天逛某网站摸鱼头学到了…kindle上还可以看漫画！！体验超棒！ 网站叫 vol.moe！可以直接kindle内置浏览器打开下载里面的资源..
+最后!! 我打算以后关于技术什么的文章要更认真写了(代码和注释会清清楚楚，更明白的)!!!因为听说了某狗adsense这种东西，想着不好好写，这样不行啊。 这种想法…
+刚刚问朋友要来一个长头发的偏方！
+我去擦姜片了!!!</description></item><item><title>校园杂记14: 我把带宽提高了1M以后</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B014-%E6%88%91%E6%8A%8A%E5%B8%A6%E5%AE%BD%E6%8F%90%E9%AB%98%E4%BA%861m%E4%BB%A5%E5%90%8E/</link><pubDate>Tue, 13 Feb 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B014-%E6%88%91%E6%8A%8A%E5%B8%A6%E5%AE%BD%E6%8F%90%E9%AB%98%E4%BA%861m%E4%BB%A5%E5%90%8E/</guid><description>…
+…
+…
+…
+…
+是的没有错，一点感觉都没有，这破服务器，钱花的一年比一年多，结果用起来还是半死不活，资本主义下的社会主义服务器，什么用户体验，什么追逐潮流，蒸鹅心啊蒸鹅心。
+上次写完那个工具之后差不多摸了有4天鱼了?
+算上今天，5天了，寒假的日子一天天减少，看着日剧《海女》里女主角也在为暑假快结束了发愁，我也开始愁起来，愁什么，各种愁啊，没有做什么事情的欲望，又花了不少钱在自己本来不需要的地方，只是单纯为了自己爽一爽，尽管花完很心疼，也只能用开学了之后再节衣缩食，绝地求生，怒攒一波来安慰自己，虽然其实心里都明白的…开学了，自己还是那个该花花，该爽爽，该愁愁的自己。
+这是青春吗? No，这是死宅的惨痛回忆啊。我为自己是个四斋而感到鹅心。
+其实我觉得花钱也是一种释放压力的方式，尤其是把一半的零用钱花完之后，那酸爽，啧啧。为什么会释放压力?
+因为只剩下酸爽了，压力什么的，有比心疼自己的钱包还让人难受吗??
+昨天晚上陪妹妹还有表妹去看了部电影，半夜，恐怖片……醒过来已经放完了，感叹耳塞质量真是好的同时，被妹妹鄙视的眼神盯了半天。
+在闲鱼上卖了点东西，折腾一天，被一群人问来问去，讨价来讨价去，本来卖1k8的东西，被讨价还价到了1k4卖出去，…… ，还不知道这人快递拿到手了会不会又变主意，只能怪自己脑子是木鱼脑子。尽管每次卖东西，收到的评价都是”很超值”，”很豪爽的卖家”,”很nice的东西”。这会让我感觉很好。
+现在再看过来，东西nice是因为我品味高(很不要脸我知道的)，超值是因为我脑子鱼，豪爽是因为我就是**。
+冷静下来又想了想，可能这就是我的style，跟我coding的style一样，追求简单。
+实际上，我还是因为自己的水平很低而把很多代码写的十分复杂，让别人看起来难受，自己的心情也就会难受了，代码终究不止是写给机器执行就完事的，它还是要给人看的，可维护性也许就是这么回事。能力不够，那就一点点来，一点点化简，一切都会变得simple的，我想说的这一切，包括目标，生活，人。
+曾经，有个朋友从一个几千行代码量的文件里，截一个10行代码的图，问一行代码里，一个字符是什么意思… 我…无法回答。理解代码这件事，我的看法是，有些代码封装的好，比如函数式编程，一个个函数，清清楚楚，一个类里就是哪些哪些函数，该怎么样怎么样，不会去别的文件调些什么乱七八糟的变量出来，那让人看起来就舒服。倘若，只截个部分，如果目标文件代码太过复杂，除非是语法之类的问题，否则逻辑方面实在是会让人难以回复，因为这就和阅读理解一样，得要上下文语境，况且阅读理解也是要花时间的，可能有些问题需要通读一遍才能明白问题提的到底是什么。更有甚者，如果代码不好看，那阅读理解也是会让人做的心痛的…
+关于书 摸鱼的这几天，把雪国又看了一遍，’穿过县界长长的隧道，就是雪国。…’，开头的一段都已经能背下来了，只是自己心境不够，还是不能感悟到作品的一些魅力，我觉得是要往纯洁的人心，自然和人和谐的那种氛围，要往这块去想的，啊..还是不行，水平不够水平不够。看到一个解读，说叶子和驹子其实是同一个身体的两种人格。驹子纯洁而孤独，叶子却又有些虚无缥缈但不可或缺。…一套说下来说出了很多看的时候没有感觉到的一些感受。
+巷说百物语的三册终于是看完了，断断续续看了已有一年，主角山岗百介在第三册里已经变成了一个白发老翁，在最终回回归天府了。他在最后设了个局，从前都是好朋友又市设局，他只负责静静观察就好，如今好朋友已不在身旁，轮到他设局，这个局当然精彩，但是要牺牲自己，这样看来又市似乎永远都是那么厉害，设局设的天衣无缝，天时地利以及对人心的体察都是技高一筹的，他不会牺牲任何人，只会让作恶者被自己的内心吞噬。从结局看，百介和又市是一致的，成功地替小夜和她的母亲报了仇。
+想起自己没有看这套书之前，觉得这定是讲妖的故事，分外吸引人，后来读着读着发现，一则则妖，是一则则人心，于是就着了迷。心目中的满分书籍。系列还有两册尚未补完，趁着寒假的时间，要早点看了。 还想看又市布局，还想看阿银山猫般的表演，想看小右卫门炮轰恶人的豪烈，想看老头子继续一口吃掉一匹马的幻术把戏。
+前几天摸鱼的时候，突然发现，kindle里应该是可以放自己下载的书的……于是赶紧百度google了一坨想看的资源，通通塞了进去。可以，省了不少钱:) 心疼自己以前在kindle里还买了那么多书。，虽然有些书的排版肯定没有正版那么舒服，但是省钱QVQ 兔子就是这点好，资源多……三岛由纪夫，接下来看看他的哈哈哈，免费免费。
+最近在appstore里下了个v p n应用，搜索的时候发现应用超级多，于是感觉就有点不对劲，怎么会有这么多? 心里想到了一种可能性，就是这些开发者或者公司是不是那种赚一票就跑的呢?(等到用户增量不多了，服务器维持费用也上去了，就直接跑路了) 不知道appstore对于应用开发者有没有相关的要求呢…还是很好奇的，如果可以换个马甲给自己先前做的vpn应用改个名，换汤不换药，继续放出来，吸引一批客户进入以后，赚了一笔又跑路了…真可怕呢…
+现在v9p9n9这三个字都是涉及政治敏感会被封禁的。这些应用如果只靠用户的一次性支付下载应用来维持服务器运行的话，我没有做过也没有渠道了解其中的利润具体是怎么样的，不过估计应该是赚爆了的..服务器的维持费用可能也许就是利润的九牛一毛……于是我很心动啊!!!也想做一个QVQ，什么时候抽点时间做做看免费的? 不盈利的vpn应该不会被封禁吧……
+还得另租一台服务器搭代理，vultr的打折每次都能错过我也是服……
+话说标题本来想起的很高大上的，后来看着….就这样吧。</description></item><item><title>校园杂记13: 这几天开开心心聚会，顺便测试bug</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B013-%E8%BF%99%E5%87%A0%E5%A4%A9%E5%BC%80%E5%BC%80%E5%BF%83%E5%BF%83%E8%81%9A%E4%BC%9A%E9%A1%BA%E4%BE%BF%E6%B5%8B%E8%AF%95bug/</link><pubDate>Wed, 07 Feb 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B013-%E8%BF%99%E5%87%A0%E5%A4%A9%E5%BC%80%E5%BC%80%E5%BF%83%E5%BF%83%E8%81%9A%E4%BC%9A%E9%A1%BA%E4%BE%BF%E6%B5%8B%E8%AF%95bug/</guid><description>因为这几天聚会比较多，没什么时间写project，只是测试测试改改函数，多线程之间的协作被自己越写越复杂。把之前说好的几个功能加上，还有几个菜单项就暂时没弄了，多线程调绘图这个大bug始终修不掉啊修不掉。不认识几个python大神，菜鸡真是举步维艰。
+今天再测试一波，改一改代码，优化一下，然后再把文档更新一下吧…唉
+好久没跟高中同学吃过饭了，难得回家一次满足了他们一下哈哈哈。
+女神变得更更更好看惹，基友变得更更更厉害惹，只有我从来没变过!还是一条咸鱼哈哈哈。
+聊天的时候聊到专业，CS的帅哥美女们写的果然还是C++多一点，被指针劝退的我只能瑟瑟发抖，用’面向需求编程’来麻痹自己。还好，吃的苦大多都是一样的哈哈哈，熟悉的bug熟悉的error。开个玩笑，其实’面向需求编程’还是可以的!
+小剧场一:
+很多朋友对计算机的误解果然还是蛮大的哈哈哈，日哥说在做一个项目，需要iot那块的技术，然后找了同济女神二号，
+日哥:
+‘我跟别人说你计算机超牛逼的，你能做做看吗’
+‘…可是你这个是硬件啊，我学的c++啊，要写这个iot肯定要从头学单片机那块的语言’
+日哥:
+‘……’
+‘……’
+……
+在场的计算机狗全都 捂脸.jpg
+小剧场二:
+‘我看你steam那么久没上线，你是不好久没打do2了’
+‘…是啊’
+‘……’
+‘……’
+最怕空气突然安静…
+‘…但我还是看比赛的。’
+‘LGD强无敌!’
+‘LGD强无敌!’
+座位上响起了经久不息的掌声…
+心里苦啊，我大学里就没看见多少打dota的嘛……没了几个宿舍的人一起半夜看决赛的那种氛围还是让我有点伤感……
+………………
+但是我们还可以怪物猎人嘛，mhw宇宙第一!
+聊天的聊天，吹比的吹比，诉苦的诉苦，愉快的饭局在所有人都不吃饭抢红包中结束了…也是很难忘了。
+分班的时候，说过什么相忘于江湖，果然还是太中二了，真希望饭局能一直继续下去…愿二班所有人的大学生活一切都好~ 有困难一直互相扶持着走过去，所有班级里成绩永远都是最好的,也有着所有班级里颜值最高的女神们，还有所有班级里最gay的男生们。 以后的日子里，我的班级我的同学们一定依旧会是最优秀最棒的。
+小收获:
+吃了两波饭，怪物猎人狩猎团队壮大了不少…可以，等我开学了和你们一起狩猎!
+女神自拍，看了以后，bug什么的全都忘掉。
+(…太太太好看惹!右键右键! 统统右键!!! 我要专门在服务器上写个爬虫，自动爬! 😕!微!信!爬!爆!)
+真的…被bug搞得…心力交瘁……我好像又遇到了那个传说中的情况
+‘我上一秒跑着还好好的啊’…惊!了! 感觉自己真是在吃瘪啊
+运行了五六次，又错了?这是为什么呢?</description></item><item><title>Python-jieba库的使用</title><link>https://selfsolo.com/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Thu, 01 Feb 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>jieba库是一个python的中文分词库
+当我们需要进行中文语义分析的时候可以用到
+import jieba
+intro. 三种模式:
+精确(默认)模式: 将句子最精确地切开，适合文本分析; 全模式: 将句子中所有的可以成词的词语都扫描出来，但不能解决歧义; 搜索引擎模式: 在精确模式基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词。 它还支持繁体分词，也可以载入自定义词典。
+分词
+jieba.cut(‘需要分词的字符串’,cut_all=False,HMM=True)
+输入的三个参数为: 需要分词的字符串(utf8或unicode编码), cut_all参数选择是否开启全模式，HMM参数选择是否使用HMM模型。
+text = &amp;quot;小明硕士毕业于中国科学院计算所，后在日本京都大学深造&amp;quot; word_list = jieba.cut(text) #默认cut_all=False,HMM=True word_list2 = jieba.cut(text,cut_all=True) word_list3 = jieba.cut_for_search(text) print('精确模式:','/'.join(word_list)) print('全模式:','/'.join(word_list2)) print('搜索引擎模式:','/'.join(word_list3)) 需要注意的是，jieba.cut返回的是一个迭代器(生成器)generator
+这里说明一下，generator和list，tuple相比，是一种比较不消耗内存的存储方式，所以取值的方式也有点特殊。
+while True: try: print(next(generator)) except: break 当然，我们不需要用(‘/‘).join(word_list).split(‘/‘)这种方式来获得一个词语的list。不够pythonic。
+jieba库直接提供了返回list的cut方法，参数和上面例子中的完全相同。
+word_list = jieba.lcut(text) type(word_list) # 其它方法和此例相同。
+载入自定义词典
+开启HMM模式以后，jieba库就有了自动识别新词的能力，但是如果有自定义词典的话，识别的准确性就能提高的更多。
+jieba.load_userdict(‘dict_path’) #载入自定义词典
+dict_path是词典的路径
+词典的格式:
+和jieba库的dict.txt一样，一个词占一行。每一行分三部分:词语，词频(可省略)，词性(可省略)，用空格隔开，顺序不可颠倒。文件需为utf8或unicode编码。
+#coding:utf8 import jieba text = '穿过县界长长的隧道，便是雪国。夜空下一片白茫茫。火车在信号所前停了下来。 一位姑娘从对面座位上站起身子，把岛村座位前的玻璃窗打开。一股冷空气卷袭进来。姑娘将身子探出窗外，仿佛向远方呼唤似地喊道： “站长先生，站长先生！”' word_list = jieba.</description></item><item><title>Python-requests库的使用</title><link>https://selfsolo.com/p/python-requests%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Mon, 29 Jan 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/python-requests%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>requests库的官方中文文档半夜让我笑出声，可爱的编写人员!
+感谢kennethreitz大神的requests库，足够方便，足够有用，足够pythonic!
+官方中文文档链接:http://cn.python-requests.org/zh_CN/latest/
+official doc肯定比我的详细和细致，而我从一个requests库初学者的角度来写，当然，不管哪种方式，都欢迎你接触到了requests库!
+ps：有一些高级用法算是requests库的进阶，可以自行阅览。
+import requests #导入requests库
+发送请求
+常用的GET方式和POST方式举例:
+response = requests.get(url=’https://www.baidu.com/') response = requests.post(url=’https://www.baidu.com/') 其它http请求类型(put,delete,head,options)类似.
+传递url参数
+get方式 请求x.com?key1=value1&amp;amp;key2=value2
+params = {'key1':'value1','key2':'value2'} response = requests.get(url='https://www.baidu.com/',params=params) text属性(界面内容)
+requests相当方便的一点，它可以自动解码来自服务器的内容，大多数时候都不需要自己再因为目标url的编码问题而烦恼了!
+response = requests.get(url='https://www.baidu.com/') print(response.text) #打印解码后的界面内容 response.encoding 返回解码界面内容的相应的编码(比如ISO-8859-1)，可以改变值，再次打印时也会变成改变了的解码方式。
+注: 然而我在实际爬取过程中，偶尔也会遇到明明对应页面是charset=’utf8’，结果解码时变成’ISO-8859-1’，所以根据实际情况还是要有所变化，可以自己写一个识别编码头的函数一劳永逸…
+response.content 不解码直接得到界面内容的二进制相应数据,返回值类似于：b’界面内容’.
+定制http请求头
+url = 'http://www.baidu.com/' headers = {'User-Agent':'xxx','Cookie':'xxxx'} response = requests.get(url=url,headers=headers) post请求传递表单数据
+data = {'key1':'value1','key2':'value2'} response = requests.</description></item><item><title>校园杂记12: 最近的老师和书和游戏</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B012-%E6%9C%80%E8%BF%91%E7%9A%84%E8%80%81%E5%B8%88%E5%92%8C%E4%B9%A6%E5%92%8C%E6%B8%B8%E6%88%8F/</link><pubDate>Sun, 28 Jan 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B012-%E6%9C%80%E8%BF%91%E7%9A%84%E8%80%81%E5%B8%88%E5%92%8C%E4%B9%A6%E5%92%8C%E6%B8%B8%E6%88%8F/</guid><description>这篇日记就当是最近的吐槽还有总结好了。
+关于老师 昨天刚吃完年夜饭，年夜饭前收到了老师之前说过的一个task，写个爬虫，看了下需求，里面其中一项是要做数据清洗，然后分词的，还没接触过语义分词这个领域实在不清楚自己能做到什么样子。
+需求还没看完，想了想，手上事情还蛮多的。
+前两天为比赛写的一个应用大概进度是50%左右，属于有界面但不漂亮，有功能但没完善，还有一点功能没写，一些bug没修的状态。
+想先搁着了，跟朋友说好要用java写这个…但我感觉从头再学java还是太麻烦，用py和pyqt先偷偷摸了个界面和一点功能出来。钥匙时间不够，估计也只能继续这样写下去了。
+最近，先搞定老师的那个task再说（因为感觉这个要花点时间，怕时间预留的不够），其它慢慢再看吧。
+之前说好要看的tcpip没带回来有点候会，从学校回来的时候带了三本，一本数据库优化的，一本shell脚本编程的，一本python数据挖掘的，感觉现在一是没时间，二是我认为这些书的优先级也不是那么高…
+话说我整个17年在书上花的钱有点多了…收拾整理的时候，发现很多书优先级都挺低的，对我不是那么必要，以后还是多克制自己买书的手吧。
+关于最近看的书 因为放假回家实在带不动那么多实体书，于是捡起了一个学期没怎么用过的kindle…
+看完了超有名的日本推理大师江户川乱步先生的两部作品，一部《怪人二十面相》，一部《阴兽》。
+前者有点偏少年向，里面写的少年侦探团可以看作名侦探柯南里的那个的前身吧哈哈哈，还是蛮亲切的。
+《阴兽》这书，每篇的凶手都可以看作是一个”阴兽”，也即是表里比兴之人，或者更确切的，应该是表意识是个正常人，潜意识却带着一种野兽的姿态。
+我觉得，其实不止是凶手，所有人都可能是一个”阴兽”，也许我是性本恶论吧。在现代社会很多人不断压抑自己人的一面，最后被野兽的一面吞噬，再也无法挽回。这样的事情很多，希望人都能不忘初心。
+还看了我很喜欢的作者 京极夏彦 的《后巷说百物语》的”天火”篇。这书应该算我看的百物语系列的第三本，前两本也是个人很喜欢的书。
+“天火”篇讲的是年轻时候的山岗百介到了土井藩辖下的一个村落里，遇到了故人 诈术师——又市，然后又一次通过一些”鬼神之术”(实际上是”诈术”)完成了委托，帮助了村民的故事。
+概括能力实在捉急，又怕玷污了书，又怕自己的心情安利不出去=A=
+百物语讲的是 主角百介是个普普通通的剧作家，背景是江户幕府晚期，和 诈术师又市邂逅，一起经历了各种奇妙传闻，一起帮助了很多人，也被很多人帮助。
+我还记得的，有篇叫“洗豆妖”，主角路途中遇上下暴雨，屋子里有别的乡民避雨，乡民说起了他家附近的故事，说这洗豆妖本是山上寺庙里的小和尚，深得主持喜欢，但主持快去世时，被师兄骗去洗红豆，然后，被踢落水里溺死，小和尚之怨念变成了“洗豆妖”。每当下雨，他掉下去的那片水域，就会有哗啦啦的声音，像是在洗红豆的声音。
+每次都以一只妖的故事起篇，百介每逢遇到奇闻便记录下来。日本有八百万神灵，妖更是数不胜数，但妖多数都是人的怨念产生的。比起神，我更喜欢妖的故事，兴许是因为 妖比神更像人的缘故，给人的感觉就更加真实。
+而这类物语，总让我感觉自己也穿越到了江户时代，感受那时的四时风物，风土人情，浪迹天涯，见识各种各样的奇闻轶事，很有意思。
+以前看过一部动漫叫《虫师》，要说的话，给人的感觉 与百物语很类似，但是虫师里的故事更加治愈，更加温暖人心。
+这样想来，喜欢日本物语也不知从何开始，大概是小时候喜欢历史，喜欢历史里的那些英雄故事（斯巴达克斯，阿客琉斯之类的）。噢我懂了，大概是小孩都会憧憬着当英雄，而我正好读到了那些英雄故事的缘故吧。
+因为这个原因，加之各种人的影响，有高中语文老师安利过的川端康成的《雪国》，家里又有一个本来就在日本待过很多年的姑姑。后来又阴差阳错，读了很多日本文学书（川端康成）或者小说（东野圭吾），发现自己真的很喜欢这一类的书籍。
+其实要仔细深究，这类物语很容易满足我这种人的心情，因为如果真穿越到了古代，那时候肯定也不如现在这般太平，乡间行走，碰上三两山盗自己肯定就已束手无策。但是物语和动漫毕竟是可以美化的，书中人间，物语江户，亦令我憧憬。
+关于游戏 因为4放学校没带回家，只能拿出以前没怎么好好玩过的三公主，还是有不少经典之作的，黑魂2，幻痛，战神，凯瑟琳，二之国等等。
+最近沉迷幻痛无法自拔，以前psp上玩过一作合金装备，大部分精力还是在mh上，现在这作幻痛开头剧情就很吸引我，又是个开放世界rpg，加之游戏性一流，除了手柄有点飘，其它都是心目中神作级别的game! 强推! 打算以后有时间会在4上也入一作幻痛。</description></item><item><title>Python-threading库的使用</title><link>https://selfsolo.com/p/python-threading%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Sat, 27 Jan 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/python-threading%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>之前看过的多线程相关的记不大清了，重新学习吧。
+线程的概念
+线程是CPU分配资源的基本单位。但一个程序开始运行，这个程序就变成了一个进程，而一个进程有至少一个线程。
+当没有多线程编程时，一个进程也是一个主线程，但有多线程编程时，一个进程包含多个线程，包括主线程。
+使用线程可以实现程序的并发。
+创建线程
+第一种，创建thread.Thread实例
+import threading def func_thread(x,y): #定义线程运行函数 for i in range(x,y): print(i) #创建线程t1，用来跑func_thread(1,6) t1 = threading.Thread(target=func_thread,args=(1,6)) #创建线程t2,用来跑func_thread(10,15) t2 = threading.Thread(target=func_thread,args=(10,15)) t1.start() #调用start(),启动t1 t2.start() #调用start(),启动t2 刚接触，实际过程中，除了能传参，其它感觉不是特别方便.. 第二种，继承thread.Thread类 要点是是要重载threading.THread类的run方法，然后调用start()启动线程
+import threading class mythread(threading.Thread): def run(self): #这里写要运行的代码 print(111) t1 = mythread() #创建mythread()实例t1 t2 = mythread() #创建mythread()实例t2 t1.start() #启动mythread t2.start() #启动mythread threading.Thread类的一些相关属性
+join()方法：调用join()后，直到调用join的线程运行完了其他线程才能运行
+import threading class mythread(threading.Thread): def run(self): for i in range(30): print(i) t1 = mythread() t2 = mythread() t1.</description></item><item><title>Python-PIL库的使用</title><link>https://selfsolo.com/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Wed, 24 Jan 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>为了对付比赛，发现别人用qt写出来的应用挺好看的。昨天粗略看了一遍，记得不准确，今天重新开始看文档，一步步来吧。
+运行一个最基本的窗口 from PyQt5 import QtWidgets # 导入PyQt5库的QtWidgets通用窗口类 class firstwindow(QtWidgets.QWidget): #新建一个类，继承自QtWidgets.QWidget类方法 def __init__(self): super(firstwindow,self).__init__() #这里要重载一下mywindows,同时也包含了QtWidgets.QWidget的预加载项 import sys app = QtWidgets.QApplication(sys.argv) # pyqt 窗口必须在QApplication方法中使用，否则会报错 # QWidget:Must construct a QApplication before a QWidget windows = firstwindow() #新建一个firstwindow对象，命名为windows windows.show() #让窗口显示出来 sys.exit(app.exec_()) #启动事件循环，类似于Tkinter的mainloop()函数 Qt Designer 因为QtDesigner很方便，可以帮助开发，于是我们接下来就用用看Designer，新建一个Widget然后保存，是ui文件，我们需要用一行代码把它转成py文件
+在Python36/Lib/site-packages/PyQt5里打开cmd，
+pyuic5 ui文件名 -o 目标py文件名
+pyuic5 d:/python/pyqt/widget.ui -o d:/python/pyqt/widget.py
+转换后代码:
+# -*- coding: utf-8 -*- from PyQt5 import QtCore, QtGui, QtWidgets class Ui_Form(object): def setupUi(self, Form): Form.</description></item><item><title>校园杂记11: 考试考完，摸鱼摸完</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B011-%E8%80%83%E8%AF%95%E8%80%83%E5%AE%8C%E6%91%B8%E9%B1%BC%E6%91%B8%E5%AE%8C/</link><pubDate>Tue, 16 Jan 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B011-%E8%80%83%E8%AF%95%E8%80%83%E5%AE%8C%E6%91%B8%E9%B1%BC%E6%91%B8%E5%AE%8C/</guid><description>好久没更新，9号考完试，摸鱼摸的已经摸到晋太元中，不知代码为何物了:(
+先列一下寒假的任务（先后顺序）:
+老师要求写一个转换工具（完成） 另一个老师要求给团队写网页（还没开始想） 比赛：写一个打字软件（要用java写…一年半没碰java..我真的…） 做07-17年的web攻击分析，用python画出变化图（有思路） 看掉tcpip协议：卷一 今天是把第一个任务完成了，改了很多次bug还有细节，就是写了一个IEEE754格式16进制数和十进制的互转工具。
+学到了python怎么转exe! 这是今天唯一让我开心的(比起上面那些task来说)!
+先pip install pyinstaller 安装好pyinstaller脚本
+之后只要命令行执行下列这句就好了
+python your_path_here/pyinstaller-script.py -F -w target.py
+一般pyinstaller-script.py文件是在python语言目录下的Scripts文件夹内的
+-w 参数是避免在windows下执行exe跳出cmd影响美观 很简单吧！
+就算只会写一句hello world!
+我也要!
+把它转成exe!
+开启我的代码传播之路!
+链接: https://pan.baidu.com/s/1kWYdmtT 密码: dwxp
+好的，只剩四个task了，有点想史
+对了!!!
+血源真的很棒!!!!
+有生之年希望能出2
+预购了mhw，结果1.20就得回家，这是为什么!!!人类为什么要过年!!! 2.26返校才能玩到，内心是崩溃的，有没有大佬寒假借我台4啊QAQ我不想抱着一张光盘过年啊…</description></item><item><title>Python-PIL库的使用</title><link>https://selfsolo.com/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Fri, 01 Dec 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>只记录下我用到的，
+from PIL import Image,ImageDraw,ImageChops image = Image.open(“test.jpg”)
+打开图片.
+image = image.convert(“L”)
+转成灰度图片，和黑白图片有区别
+左边是convert的结果，右边是黑白（黑0/白255）图片。
+image.save(“result.png”)
+存储成图片文件
+image = image.point( array[] , ‘1’ )
+这个array[] 实际上要看你的图片是什么类型的。如果不是PNG最好先转成PNG，或者使用convert(“L”) 把 image 转成灰度图片。
+因此，这里的array[] 其实是一个长度为256的数组，也就是代表了0-255灰度值。
+这个函数的作用就是图片根据这个数组里每一位灰度值，比如array[27] 为0，那么图片的像素里所有灰度值等于array[27]的像素值都变成0（即变黑），否则就变成1。和二值（0/255）黑白图片很像，但实际上是（0/1）二值图片。
+`example:
+table = []
+for i in range(256):
+if i &amp;amp;lt; 180: # 所有灰度值小于180的都置0 table.append(0) else: table.append(1) image = image.point(table,’1’)`
+这个例子的结果就是将一张图片里所有灰度值小于180的都变成了黑色（0），其它都变成了像素值为1的颜色。即成了一张灰度图片。
+image.size</description></item><item><title>Mysql的注入姿势集</title><link>https://selfsolo.com/p/mysql%E7%9A%84%E6%B3%A8%E5%85%A5%E5%A7%BF%E5%8A%BF%E9%9B%86/</link><pubDate>Thu, 30 Nov 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/mysql%E7%9A%84%E6%B3%A8%E5%85%A5%E5%A7%BF%E5%8A%BF%E9%9B%86/</guid><description>一直想找个时间好好整理下搞的这些东西，只能想起来的时候偶尔写一下。
+起因是因为最近看到有个poc利用了报错注入, 而我却发现对它没多少记忆了….就把碰到的都记下来吧..
+http头注入：
+应用场景：某些网站有某些功能，这些功能会收集你的http头信息，带入数据库。
+基本原理：php有个$_SERVER变量可以接收http头的所有信息，它是个数组，具体某个信息比如 User-Agent头，就是 变量 $_SERVER[‘HTTP_USER_AGENT’]。网页某些功能可能会将它带入数据库查询，比如
+注入测试：利用抓包工具抓包修改User-Agent信息，在后面添加注入语句比如’and 1=1# 完成利用。
+Cookie注入：
+应用场景：其实这跟http头注入非常类似，我认为它们的区别在于，cookie注入比http头注入更常见，因为网站经常会验证用户的cookie，来维持登录状态或其他操作。
+基本原理：Cookie也是在http头里的，但独立出$_SERVER数组，cookie中的数据在php中被$_COOKIE变量接收为一个数组。 调用方法 $_SERVER[‘cookiename’] 。
+注入测试：在cookie中找到对应变量，其后添加注入语句。</description></item><item><title>用Python识别验证码</title><link>https://selfsolo.com/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/</link><pubDate>Thu, 30 Nov 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/</guid><description>前言 先科普一下几个概念：
+什么是验证码? 为什么要破解它?
+验证码现在很常见，很多网站的用户登录界面都要求输入正确的验证码，它可以通过脚本生成。
+我们写爬虫或者做某些不可描述的事情的时候往往需要登录，有时候验证码很难绕过，但我们又需要让爬虫或者工具能够顺利登录目标网站，所以就需要破解验证码。
+python有个库叫PIL。
+全称”Python Imaging Library”，如你所见，就是python的一个图片处理库。功能非常强大，使用非常方便，所以使用它。
+灰度值
+因为验证码通常是一个图片，所以就必须说明一下这个灰度值的概念。
+baike: 把白色与黑色之间按对数关系分成若干级,称为“灰度等级”。范围一般从0到255,白色为255,黑色为0,故黑白图片也称灰度图像,在医学、图像识别领域有很广泛的用途。
+操作 对于目标验证码，采取以下操作：
+1. 下载验证码图片 2. 对验证码图片进行降噪并切割 3. 根据相似度识别验证码 关门了，先挖好坑，我顺便再研究一波代码；
+…好的我回来了
+一晚上的结果，基本对比图库弄出来了
+…所以问题你们也发现了吧…400张4位验证码导出来的结果，“0”，“1”，“I”和“L”没有一个命中或者说能被肉眼看出来的…
+有了基本图库，接下来就是通过PIL库的帮助来写 对比像素的”相似度”脚本了。
+思路暂时是这样：
+同时遍历两个目标的图片，像素相同则相似度+1，最后相似度除以像素总数，则得到最后的相似度结果。
+马上要断电了。
+12/1
+… 降噪脚本完成 找不到优化的地方
+… 切割脚本简易版完成 找到可以优化的地方了
+… 识别脚本正在写。
+正确率惨不忍睹 D8DH -&amp;gt; U8UH 3JZU -&amp;gt; JJJU XG5X -&amp;gt; XCJX 95KU -&amp;gt; JJKU
+卧槽不测了，心态炸裂了谢谢。
+改了下代码，好多了。
+结果如下图：
+虽然准确率到了86%, 但与之而来了一个问题…现在验证码越来越高端，这方法对中文根本不适用，然后还有那么多倾斜的验证码，比如：</description></item><item><title>校园杂记10：找站策略+第一次看自(bie)己(ren)拿shell</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B010%E6%89%BE%E7%AB%99%E7%AD%96%E7%95%A5-%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%9C%8B%E8%87%AAbie%E5%B7%B1ren%E6%8B%BFshell/</link><pubDate>Sat, 25 Nov 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B010%E6%89%BE%E7%AB%99%E7%AD%96%E7%95%A5-%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%9C%8B%E8%87%AAbie%E5%B7%B1ren%E6%8B%BFshell/</guid><description>最近事情有点多，好久没更。总之，回归安全啦（其实连出发都没出发…&amp;lt;(_ _ )&amp;gt;）
+昨天晚上想了想，看了这么久的渗透，但是一直找不到一个合适的站点，很多cms的漏洞自己搭环境测试成功了。那怎么找一个合适的目标来测试一下呢?
+找站策略：
+google: search→ Copyright 20xx-20xx [cms名字] baidu: site:.cn [关键字，比如”商城”] 这下应该可以找到合适的target了……先感叹一下以前的自己真是蠢啊…好了我去试一下 ——9：05 am
+google失败了, 站也没找到多少个, 为什么shimakaze狗又炸了啊? 好烦啊难道要我自己搭vps了:( ——10:16 am
+尝试审计一波tscms，看看能不能找出漏洞来…真是难啊!为什么别人拿shell像喝水一样啊?人是崩溃的. ——12：31 am
+… ——14：28 pm
+…此处应有表情包，但是找了下没有合适的表情 ——21：53 pm
+吼烦, 怎么搞shell这么蛋疼的啊
+键盘一个礼拜还没到, 辣鸡圆通!!!
+我拓麻又坐了一天什么都没干, 挖不到洞好难过啊……
+周五的时候跟前辈聊了聊, 让我去学java….java….啊 记得不久前还说过这辈子都不想学这个语言(叹气), 人生真是艰难啊, 抽个空看一看吧. 噢对了…前几天看学校团委的网站, 它用的tscms，这cms不是那么出名，找个时间读一读源代码，当作第一次代码审计的作业好了。
+随便往学校网站里一看, 重点来了!!! 发现upload/file/下 11月12号有个奇怪的东西, 是个zip…下载下来解压发现是个叫 2013加密.php 的webshell，这是有人想搞事情啊!!!! 花了点钱买了cmd5的积分解密, 一看密码其实隐隐有种感觉，这个人可能是个script kid……算了，脚本小子也比我个没shell的辣鸡强 :(
+卧槽!</description></item><item><title>校园杂记9：成了一个 API Boy</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B09%E6%88%90%E4%BA%86%E4%B8%80%E4%B8%AA-api-boy/</link><pubDate>Sun, 05 Nov 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B09%E6%88%90%E4%BA%86%E4%B8%80%E4%B8%AA-api-boy/</guid><description>因为小挑加了两支队伍，每支都要做一个website←_←
+要做之前，大脑有点空…毕竟不知道多久没有写过js和php了…前段时间的漏洞和各种安全的书看的人头皮发麻.
+总之，重拾开发了…
+两个website大概都算把雏形做好了…
+第一个队伍的，也是自己花了最长时间的(实际上就是今天一天..)，
+链接：helpme
+这个废了很多心思啊，画数据库，画布局什么的，我可能是个画家。算了，也当作jquery的第一次实战ww（用jq来写动画效果真的很简单很舒服啊）
+第二个队伍的..花了半小时…装了cms，然后用python改了点页面。还有些深层次要改的话是真的棘手(要研究别人公司的cms代码)，先不管了。
+链接：经纬智网
+复习是什么?
+我错了。明天开始我会好好复习的T~T
+/ 1. 话说双十一买东西谁要一起凑单啊，买书买背包都行啊… /
+/ 2. 逛淘宝页面，看到一本《第一行android》，后来看了眼介绍，原来要用java写，告辞，拒绝三连，不想写java。=A= 谁叫它写个helloworld都那么麻烦 /
+补充:
+….想了一下，主开发，副挖洞说不定也很有意思…
+期中考结束的差不多啦!(只剩语文和概率论了)这段时间可以好好放松，愉快的打代码啦(｡･∀･)ﾉﾞ
+下次新开几个坑，一个php的笔记，一个js的笔记，再来个python的笔记…嗯(不管填不填的上，先挖了再说)
+希望自己能静下心来，踏踏实实学…这段时间确实浮躁了不少…稳住啊 19歳…</description></item><item><title>校园杂记8：Sera Crawler v1.0</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B08sera-crawler-v1.0/</link><pubDate>Sat, 28 Oct 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B08sera-crawler-v1.0/</guid><description>今天爬虫君1号v1.0 问世了。
+这爬虫的背景之前提过一点，就是偶尔聊出来的，然后老师似乎想做个收集情报的工具（?）想爬全部中国高校关于某个关键词的信息，于是这东西就这么被我慢慢磨出来了….
+其实爬虫早就写好了，只是猝不及防的一句话 于是又花了一天看了看官方文档，google百度查tkinter库,弄出来的这个，所以丑的不行是肯定的=。=
+使用简要： cmd py进入工具页面
+输入要查询的词
+比如“网络安全”，点search,因为要爬的url有点多，所以等待时间2分钟（其实这里有一个bug等等说） 2分钟后（看你网速）结果get
+双击可以察看details
+以上，好像是丑了一点。
+接下来会做的优化（设想中的）： 可以搜索指定url（不局限于固定url，提升爬行速度） 加入保存功能 把url上的文章直接就保存在数据库。 美化 前面说了有个bug，就是点完search界面会不能动，直到结果出来，我想了一下，可能这个改进需要改成两个线程。接下来着重看看多线程coding。 以上，复习当然是不存在的啊。
+happy coding ~
+对了对了，这个月学校的安全工作室好像成立了（?）名字叫0Sec，虽然是我起的，但是总觉得哪里不太对劲…（群主让每人说个名字，我说了一个，别人都不说，只好用我的，我能肿么办啊我也很绝望啊）
+欢迎喜欢安全的朋友一起讨论←_←
+噢噢对了，源码分享：
+链接: https://pan.baidu.com/s/1slHRpHr 密码: ef9u</description></item><item><title>校园杂记7：这是我等待爬虫爬完的第三个年头了...</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B07%E8%BF%99%E6%98%AF%E6%88%91%E7%AD%89%E5%BE%85%E7%88%AC%E8%99%AB%E7%88%AC%E5%AE%8C%E7%9A%84%E7%AC%AC%E4%B8%89%E4%B8%AA%E5%B9%B4%E5%A4%B4%E4%BA%86.../</link><pubDate>Sun, 22 Oct 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B07%E8%BF%99%E6%98%AF%E6%88%91%E7%AD%89%E5%BE%85%E7%88%AC%E8%99%AB%E7%88%AC%E5%AE%8C%E7%9A%84%E7%AC%AC%E4%B8%89%E4%B8%AA%E5%B9%B4%E5%A4%B4%E4%BA%86.../</guid><description>有人问我这几天在干嘛。
+我想了一下，三点一线的日子啊…python，食堂，洗手间，要是有睡袋我可能就睡在电脑前面了吧…
+码字之前，我比较想知道，python是不是光头最快的语言? 不是的话，那今天开始可以是了（雾）…
+写代码的时候遇到解决不了的bug翻墙出去搜google 搜stackoverflow 搜github，换了七八个关键词，发现在犄角旮旯里的一个页面里 2006年有一个苦逼问了跟我一样的问题，然后十多年无人回复。
+那时候感觉跨越时空两颗孤独的灵魂相通了……
+礼拜一跟老师聊着聊着，
+这个月你可以帮我写个（爬虫）工具吗，爬全国高校关于网络安全的通知。
+毕竟是借给我服务器的老师&amp;hellip; 该打工还是得打，task听上去很简单嘛，我就应了。那天是刚学了python写了个小crawler的第二天。
+第二天把看了两天的core python programming剩下的部分着重看完了，开始看第二本python的书「deep in python crawler」
+着重看了crawler部分之后，开始写task的代码了。
+思考了一下，全国高校 网络安全 通知
+全国高校，也就是要爬web上全部的.edu.cn后缀的网站，
+关键词是网络安全和通知，一次正则检索。
+为了省事，我百度了一下高校网址大全，把上面关于中国所有学校的链接爬了下来，放到edulinks.txt里，然后以此开始正式爬取关键词。
+开始之前，总得写个demo吧，于是挑了几个学校的web找找信息，发现信息一点都不友好，每个学校的网站写的都是不一样的。
+我就很奇怪，怎么还有学校的网站是gb2312编码的，爬出来一堆乱码，研究了一晚上request库如何decode和encode，才发现原来可以用requests库一句encoding搞定，utf-8大法好👌
+…
+…
+…
+于是一晚上就这么没了……
+今天想的准确了一点，手头上有了基本的url，思路大概是这样：
+待爬取url存进一个urllist列表里，爬取网站下的所有url，写一个筛选函数，把不符合或者重复的url删除，（比如说只能是这个域名下的） 筛选过的url添加进一个待爬列表，一轮爬取一个 筛选出关于关键字的信息，添加进一个信息列表，（这个列表是个二维数组，对应是学校名称） 然后实现过程中，
+报错？ 忽略，try except continue三连
+拒绝访问10054？ 加个time模块，爬一次睡一秒
+invalid error？ 加个UserAgent头再爬
+又是编码？ #coding=utf-8,encoding=’utf-8’
+…
+…
+找不到url?
+我：？？？？？？？？？？？？
+………
+平复了两个小时的心情，分析了一下，一个域名，它下面的有些网站，不会直接在url上显示，学校还好，一般不会加个js动态添加url，但还是有点麻烦，需要手动搜索search关键字，才会跳出那些搜索到的页面，我的爬虫，真的。。。做不到QAQ
+好吧，想了一下，需要再加几个函数……
+思路大概先这样：
+对于一个学校的网站，先正则找到搜索框，然后填数据post过去，也就获取了出现的url了，其中还有很多很多细节要注意..休息一下再想吧…
+…最后说句仿佛很有哲理的话..写代码就像人生，踩得坑多了，人也就歇菜了。</description></item><item><title>校园杂记6：摸了三天的脚本</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B06%E6%91%B8%E4%BA%86%E4%B8%89%E5%A4%A9%E7%9A%84%E8%84%9A%E6%9C%AC/</link><pubDate>Sun, 15 Oct 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B06%E6%91%B8%E4%BA%86%E4%B8%89%E5%A4%A9%E7%9A%84%E8%84%9A%E6%9C%AC/</guid><description>这几天，没上hacking lab，没上sbeam，没上课(一个月扣了四次分..人品不谈了,自律部的同学真是 认 真 啊 !)
+上个礼拜找了几个ctf站想刷刷题，然后找到了经典sql注入练习站redtiger。
+到第三关的时候，hint里说，Try to get an error，好那就让网站报错吧..结果钻牛角尖搞了半天post提交，想让它报一波mysql的错误…
+然而事情并没有这么简单，这道题的目的好像不是让你报mysql的错…
+懵逼了半天，看了一些writeup才知道————这道题其实是想让你报php的错….
+最后改了下get里的参数，报错成功，看到提示了一个文件，好找到这个文件，看了看源代码，嗯是个加密解密算法。
+作者还是挺可爱的， 于是感觉很爽！加密解密算法都知道了，不是随便注入？
+然后把poc加密了一波，咦？说好的flag呢？
+……并没有flag好吧，纳闷哪里出了问题，google了一波发现，这可能是linux和windows编码问题导致加密解密的php代码运行的结果不一致…..
+于是，咱先搁置一下吧..kali上装notepad还有apache好麻烦的感觉啊QAQ（不就是做不出来放弃了嘛你说这么多干啥）
+下次找个用linux的人问他借下机子跑一跑（借口
+最近这段时间越来越发现python方面的知识有点缺:
+第一个原因是之前hacking lab上做脚本题，一开始以为所谓的脚本题是xss，csrf这类的.然而实际上很多题都是用python写个脚本爆破的。 第二个原因是复制黏贴了别人的python脚本，多用了几次发现python真是好用啊
+于是最近看了波python，之前暑假快结束的时候实际上已经学过了python的语法，看了一个《python简明教程》的pdf学的。入门挺好的,现在再来看deeper一点的书就感觉轻松一点。
+今天写了个很简单的爬虫，可能是最简单的那种，只能爬指定url，获取指定data。
+写了个爬虫才发现一些事情，
+python写爬虫是真真真真真真真好用!!!!! 其实python通过url获取到的是类似于网页渲染过后的源码一类的file文件。 总的来说，发现这块儿挺有意思的哈哈，爬到了数据兴奋了半天。
+话说《python核心编程》这书还是不错的，作者超级萌啊哈哈哈，比如第六章聊到数据库编程的时候，副标题的文本是这样一段话：
+你真的为你儿子起名叫
+Robert’);DROP TABLE Students;- -
+吗？
+hhhhhhh
+今天又冒出了几个想法，
+想写个webpage，分享一些pdf..打算用ajax试试看，不知道ajax写文件下载是什么效果。。不好写的话再换php
+上个学期看到有同学发了个查分的exe..c研究的不多，我也没看源码，推测的话感觉不会是爬虫..
+个人感觉应该是从学校服务器上下载的成绩的数据库文件，然后写个c调用数据库查看成绩..于是我想，下次用爬虫爬一波成绩，但是有一个问题就是，
+怎么才能知道全年级学生的密码啊?
+不需要密码的话我也可以写个查分的脚本出来啊。
+这样一想好像也不对，用密码就能看到成绩那还要这个爬虫干嘛…（所以前面都想错了么..）应该是获取成绩的途径不知道，可能是被老师藏在哪个网页里了..好像上学期有人查分也不用密码的..改天问一波再说。
+对于爬虫，还是不清楚这东西具体有个什么用，爬数据？对于我现在用处真不大，或者说只是我个人比较鱼……
+哈哈哈哈一个礼拜前hacking lab上rank到了576(上次看还568呢..看来还是有不少人在做题的QVQ)</description></item><item><title>校园杂记5：さらばだ 我的国庆</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B05%E3%81%95%E3%82%89%E3%81%B0%E3%81%A0-%E6%88%91%E7%9A%84%E5%9B%BD%E5%BA%86/</link><pubDate>Sat, 07 Oct 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B05%E3%81%95%E3%82%89%E3%81%B0%E3%81%A0-%E6%88%91%E7%9A%84%E5%9B%BD%E5%BA%86/</guid><description>愉快的国庆日常，今天睡醒之后看了眼时间，”咦!!! 怎么已经7号了卧槽”
+…….
+好吧，理(ruo)智的大脑提醒我又该写(da)写(da)字(pai)了…
+就在放假前一天，sv突然说搞了个跟fsn的联动活动，这我能忍?肯定回归啊! 学习什么的当然是不存在的啊!
+于是国庆长假大概除了和舍友想着今天该吃啥了想一个小时然后果断又点了日常的外卖 还有睡觉，就是打牌了…(sv真好玩我要氪金)
+好吧概率论物理计组是啥都没看，渗透是看完了哈哈哈哈哈哈哈……唉(但是想了想作业全都堆到下礼拜了…)
+国庆偶尔几天玩了玩hacking lab，在上面做了十几道题。做着做着就从2w名到758名了…
+难道说其实后面那1，2万的人就是注册个账号看看好玩的?
+还是有一点小开心的…但是这点开心马上荡然无存啊…英语每学期都要做presentation是什么传统啊。撸了三小时的ppt，嗯就科普一下BeEF吧。
+最近，学校的信息安全社团好像要搞起来了的样子，我也发现了一个专业里，其实对安全感兴趣的人还挺多的，开心。
+又有点小纠结，渗透这块难道初中生都能随便玩的吗? 今天看到群里有一个16岁的妹子说自己只会服务器入侵….. 頑張って 19岁 /(ㄒoㄒ)/
+其实仔细想想，渗透只要会点工具，知道一点原理，搜一些漏洞，根据这些漏洞或者原理，拿下一些小站还是很容易的..于是就变成了今天这种渗透人才接近于饱和的局面（雾），都是拿些工具扫一扫，有漏洞，再拿工具注入测试一波，然后拿到数据了，插个马，提个权，控制一波服务器，清个日志美滋滋…
+渗透是挺好入门的，这就跟学一门语言一样，学习后做了点小程序，算入了语言的门了。
+那开发的门入了吗，我想还不够，拿了个webshell，好像是挺厉害，但是这漏洞是自己找的吗，这个站的安全级别怎么样…如果安全级别低，我觉得也体现不了什么水平。
+初级人才饱和，elite还是很缺的…这种情况似乎国内的IT行业都是这样…
+于是，又该思考下一波怎么搞了…我想接下来会多看看别人发布的漏洞…毕竟大牛当年也是菜鸡哈哈哈哈.
+keep quiet and just going on.</description></item><item><title>校园杂记4：中国的黑客是很cool的一群人</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B04%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%BB%91%E5%AE%A2%E6%98%AF%E5%BE%88cool%E7%9A%84%E4%B8%80%E7%BE%A4%E4%BA%BA/</link><pubDate>Mon, 25 Sep 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B04%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%BB%91%E5%AE%A2%E6%98%AF%E5%BE%88cool%E7%9A%84%E4%B8%80%E7%BE%A4%E4%BA%BA/</guid><description>翘课参加SSC 狗牌
+今天一个人去参加了ssc，还没到会场就看见陆陆续续的人往会场走，因为会场挺偏的在一个酒店，一般人不多，而且那些人身上就有股geek的气息，所以我感觉，嗯没错除了我都是大黑阔（现场的感觉贼棒哈哈哈）.
+戴上牌子入场前的签到，看见都是三三两两西电，西交，西工大那些信安的黑阔们，没有信安专业的不得不说有一点羡慕QAQ.
+有个跟我一起进场的，牛仔裤，头发超短，深色长袖，背个电脑包，像个大学生。
+但是，当我发现他是上午最后一个上去演讲的，蚂蚁金服的安全研究员…讲的fuzz代码发现漏洞…我只有 震!惊! 根本看不粗来!!! 果然黑阔都是不容易被看穿的属性啊。
+整个上午的演讲里，还有个特有意思的，就是360 team unicorn的杨卿大佬讲的独角兽团队管理（其实他讲了超多的unicorn在defcon的表现啊，还有很多攻击手段展示）
+…反正我是兴奋cry，原来IOT这!么!有!意!思!
+以前听汤老师讲过有人能让atm吐钱啊啥啥啥的, 今天杨卿就展示了一次用nfc开走别人的车（无线车钥），用nfc刷别人的卡用别人的钱…还展示了#CVD-0001的漏洞，绕过google认证系统 劫持手机（妈妈我要学IOT，我要学嵌入式，我要QVQ….）
+很兴奋的现场
+很兴奋的现场2
+中午兜兜转转找了家日式拉面店吃了碗玉子拉面=。=（原来玉子就是溏心蛋嘛，第一次知道）..感觉西安物价和上海差的不多（就吃玉子拉面而言）
+吃完了就回到了会场里，还算回的比较早的..两次演讲以后（感觉这届ssc的很多演讲都跟机器学习有关..）有工作人员开始往台子上摆椅子了，圆桌会议！！！
+椅子上的都是大佬…360的，百度的，万涛，冰河，还有个四叶草的ceo马坤…还有一个不知道叫啥, 聊了些大方向的问题，因为在陕西，又因为最近几年的一带一路，所以聊了很多这方面的问题.
+总结 今天的很多演讲，讲web安全的其实有两三个，还都跟机器学习相关，一个是用机器学习来找出webshell的page，还有一个是百度的人工智能相关，更多的像360杨卿讲的跟IOT很相关…
+总感觉web安全似乎前景不是那么广，门槛越来越高，现在看上去开发安全产品像安全狗那样的就能把一大部分像我这样的脚本小子给拒之门外了..
+而且随着人工智能越来越intellectual，网站开发肯定是越来越安全的，而反观IOT，嵌入式设备，它们的安全相较web来说就更弱一点，前景更大，所以我也在考虑什么时候再去请教一波学长，指点一下方向….
+最后，圆桌会议结束的时候，万涛按住了旁边想要起身的人,拿起话筒说了句，”我知道在座的很多都是学生，喜欢安全的，那么最后对大家说一句话，”
+“今天，人们能看到光明，是因为有人帮他们挡住了黑暗。 希望大家好好努力。”
+简直让人泪目啊啊啊.听到这些话，虽然我就是个刚了解安全两个月的小菜鸡，也想到了很多，有乌云的下线，有阿里月饼事件，有世纪佳缘事件里的白帽子，有办geekpwn的大牛蛙，有带着团队历经辛苦最终踏入hall of fame的360杨卿。
+黑客的世界就像一个江湖，每个黑客的背后都有一个自己的传奇.我们对黑客不了解的人，感觉会把他们当成像写出熊猫烧香那样或者做黑产的bad guys…实际上真正的黑客就是一群喜欢技术，ge里ge气的人.
+我知道的中国老黑客仿佛都有一种使命感，就是把自己身上的黑客精神传承下去，传给中国的下一代.
+白帽子这个群体的地位可能是有一点尴尬，但是我相信环境正在变得越来越好，希望我们都能把信息安全当作一种信仰，有所坚持.
+keep going on.</description></item><item><title>初识SQL注入</title><link>https://selfsolo.com/p/%E5%88%9D%E8%AF%86sql%E6%B3%A8%E5%85%A5/</link><pubDate>Tue, 19 Sep 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%88%9D%E8%AF%86sql%E6%B3%A8%E5%85%A5/</guid><description>盲注，报错注入，有时间再写写。
+sql注入的作用：
+它可以获取信息（用户名密码），也可以写信息（shell） sql注入根据数据库的不同也有区别，很流行的有两个组合，一是asp+access，二是php+mysql.
+今天总结的是后者
+php+mysql 我们知道mysql是这样分的：
+Mysql-&amp;gt;选择数据库-&amp;gt;选择表-&amp;gt;选择列-&amp;gt;存储信息
+要理解sql注入，首先要知道后台脚本语言和基本sql语句的知识。
+我们的目的就是获取最后一步的那个存储的信息，接下来我说一下一次比较完整的sql注入的过程：
+它首先可以在url中进行也可以抓包 (使用burpsuite之类的抓包工具，或者fx-hackbar) 进行，根据提交方式(get,post)和注入手段(cookie)的不同也要不同对待。
+比如目标网站有个文章功能，这个url是
+http://www.target.com/article.php?p=1 问号后面就是传递的参数p，值为1（这里根据参数的不同也要注意注入的区别，下面介绍最简单的纯数字参数的注入）
+对p=1做文章
+首先对目标url进行sql注入测试，像这样 http://www.target.com/article.php?p=1 and 1=1 和
+http://www.target.com/article.php?p=1 and 1=2 (下面都省略成？后面的内容) 根据这两句话判断页面变化，如果第一句返回结果是正常，第二句返回结果是无（页面正常，应该有的内容没显示）那就说明有sql注入。
+order by 语句判断当前表有多少列 p=1 order by 12 如果显示错误，那就说明当前表的列数&amp;lt;12，依次递减，
+如果order by 8显示正确，那就说明当前表的列数为8，然后才能进行下一步操作。
+union select 1,2,3 联合查询语句 mysql中有几个函数对于注入很有用
+database():显示当前使用的数据库名 user():显示当前的数据库用户名 version():显示当前的数据库版本 语句可以像
+p=1 union select database(),user(),version() 这样就可以爆出数据库名，用户名和数据库版本的信息。
+另外提一点，mysql5.0以上会自带一个叫做information_schema的数据库。 如果目标没有删除这个数据库的话，就可以根据此来进行下一步操作。
+用database()获取了数据库名，我们离目标还隔着一层表、列，所以接下来先获取表
+union select table_name,2,3 from information_schema.tables where table_schema='数据库名' 这样就获取到了数据库下的所有表名
+接下来根据表名获取它下面的列名
+union select column_name,2,3 from information_schema.</description></item><item><title>校园杂记3：文件上传漏洞以及一点碎碎念</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B03%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9%E7%A2%8E%E7%A2%8E%E5%BF%B5/</link><pubDate>Mon, 18 Sep 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B03%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9%E7%A2%8E%E7%A2%8E%E5%BF%B5/</guid><description>近况 今天烦心事特多，很惆怅啊…..
+上完物理看了眼手机，社团里要催着大早起来搬东西；要打分了才发现去年参加的比赛因为是外校的不能用；网站备案又双叒叕没通过。
+说不出话的事情一件跟着一件…还好今天概率论就是做几道题 easy work..
+事儿多，瞎忙活，看到余弦说的一句话 “人生苦短，远离噪音” 。&amp;lt;( _ _ )&amp;gt; 虽然这句话和今天想讲的都没啥关系（默默把它记在鸡汤小册子上）
+好了，玻璃心结束，今天我可是要写完总结的人（顺带一提，张少博老师的课依旧是很有意思&amp;gt;▽&amp;lt;）
+今天看了点文件上传漏洞，%00截断，还有js绕过验证方面的东西，心里想着要赶紧把sql注入那块整理完了，还要整理一下upload的的问题。
+对于文件上传漏洞呢，总的来说就是在上传文件类型和它的名字上做手脚，从这两块出发，慢慢会涉及到iis6.0和7.0的漏洞啊之类的，判断iis还是挺简单的，通过访问目标站的 request头就可以查到。
+文件文件漏洞 简单来说，fileupload漏洞的原理如下，
+比如url是：http://www.xxx.com/upload.php 这个页面是上传文件的页面，只能上传jpg类型的文件（它写了个检查），那么这时候，你可以用三种手段，比如你的攻击脚本是 atk.php
+① 文件名上做手脚，把后缀改成atk.php;.jpg，这是iis6.0的一个漏洞，这样你上传就能绕过文件后缀检查（如果目标安全级别很低的话）
+访问这个文件的链接就是 http://www.xxx.com/upload.php/atk.php;jpg 它会执行atk.php
+其实这种方法我没实验过，感觉应该不行。。
+② 动手文件名的可行版本：
+上传文件的时候，抓数据包，在数据包里改，你上传的文件是atk.php，在数据包里改成atk.php;.jpg，这种方法应该是可行的。
+③ %00截断：
+依旧是数据包，改名的时候改成 atk.php%00.jpg，一样能绕过后缀检查，而且实际上浏览器执行的是
+http://www.xxx.com/upload.php/atk.php%00.jpg，这个%00把后面的内容截断，浏览器只解析到php，所以就成功执行啦。
+注意！在数据包里不能直接写%00，因为它传到浏览器的时候还会进行url编码，所以先进行一次url转换，burpsuite里面选取了字符以后右键就会有一个url转码的功能。
+最近听到学长说，大三了选网络方向能听到攻防课！哇！！！心里开出了发，贼开心啊 😄
+明天要6点30起床帮社团弄帐篷…..
+希望明天能吃上早饭&amp;hellip;&amp;hellip;</description></item><item><title>校园杂记2：好像找到学安全的感觉了?（雾）</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B02%E5%A5%BD%E5%83%8F%E6%89%BE%E5%88%B0%E5%AD%A6%E5%AE%89%E5%85%A8%E7%9A%84%E6%84%9F%E8%A7%89%E4%BA%86%E9%9B%BE/</link><pubDate>Sat, 09 Sep 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B02%E5%A5%BD%E5%83%8F%E6%89%BE%E5%88%B0%E5%AD%A6%E5%AE%89%E5%85%A8%E7%9A%84%E6%84%9F%E8%A7%89%E4%BA%86%E9%9B%BE/</guid><description>近况 4号的时候渗透学着学着卡住了，觉得有点崩溃就跟学长晚上聊了一下….被鼓励的感觉还是很棒的（又有了动力）
+于是就在想是不是该停下来思考一下下一步该怎么学&amp;hellip;
+…
+…
+…
+在群里找着了个比我接触渗透早了几年的大佬（十六岁…不知道为什么听到这个有点悲伤 XD）给了我几个视频。
+找视频不是没找过，找到的很多都是偏理论的。我关于各种注入的理论和原理通过暑假里读的书已经了解很多，我想现在更缺的就是实战方面的学习
+然后，跟着学了五天。嗯…我把自己网站的账户密码爆出来了，同时发现，原来用sqlmap都爆不出来的密码，自己post注入爆出来还是很轻松的。。那么问题来了，是sqlmap太僵了，还是我用的太蠢了呢（认真脸）
+我跟舍友去看刀剑了谢谢, 晚上再写。
+好的刀剑看完了，我觉得前二十分钟挺好看的！
+咳咳，今天把两周前的坑补好（整理了一篇http请求模型的笔记）顺带复习了一下。
+下次再整理一下sql注入顺带又给自己复习一遍。
+每个周末都要在作业上花掉好多时间…这就更气了，感觉某些朋友天生就物理和数学专精了QAQ
+每次做完题，和人一对答案就是“卧槽我怎么又和你不一样”。。自信满满写的答案全是错的😭…
+今天终于算是blog走上正途了…起码比以前自己写的那个好看多了…还能装各种插件，wordpress真是强大啊…但是安全性不知道怎么样，下次试试看再尝试入侵一波嗯。
+买了好多月饼…中秋想吃的可以随便call我：）
+HTTP请求模型 当我们浏览一个网页的时候实际上经过了这些步骤：
+① 浏览器打开了一个套接字（这个是指ip地址或域名和端口的一个组合，比如192.168.1.1：8080）连接Web服务器； ② 发送一个HTTP请求（请求头）； ③ Web服务端接收请求并返回HTTP响应（响应头Request）； ④ Web服务器关闭连接，浏览器解析响应。 好的了解了这个以后我们来详细看一下
+HTTP请求头 一个请求由4个部分组成：请求行、请求头标、空行和请求数据
+① 请求行：
+由三个标记组成：请求方法、请求URI（URL是URI的一种）、HTTP版本, 它们用空格分隔； example： GET /index.html HTTP/1.1 ② 请求头标：
+由 关键字/值 对 组成，每行一对； example： User-Agent 浏览器版本 Accept 浏览器可识别的内容类型列表 Content-Length 附加到请求的数据字节数 ③ 空行：
+一般放在最后一个请求头标之后，发送回车符和退行，通知服务器以下不再有头标。 ④ 请求数据：
+请求方法是POST的时候，就会有这行。 HTTP响应 一个响应由4部分组成：状态行、响应头标、空行、响应数据
+① 状态行：由HTTP版本、响应代码和响应描述组成
+HTTP版本：由客户端指明其可理解的最高版本 响应代码：3位的数字代码，指出请求的成功或失败，如果失败则指出原因。（比如，404啊，200啊，500啊，有很多） 响应描述：为响应代码的可读性解释 example： 1xx：信息，请求收到，继续处理 2xx：成功，行为被接受 3xx：重定向，为完成请求，必须进一步执行的动作 4xx：客户端错误 5xx：服务器错误 ② 响应头标：</description></item><item><title>校园杂记1：这里就是我码字的地方了</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B01%E8%BF%99%E9%87%8C%E5%B0%B1%E6%98%AF%E6%88%91%E7%A0%81%E5%AD%97%E7%9A%84%E5%9C%B0%E6%96%B9%E4%BA%86/</link><pubDate>Tue, 05 Sep 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B01%E8%BF%99%E9%87%8C%E5%B0%B1%E6%98%AF%E6%88%91%E7%A0%81%E5%AD%97%E7%9A%84%E5%9C%B0%E6%96%B9%E4%BA%86/</guid><description>IP 用masscan扫IP一直有点困惑，今天Google + 各方请教后理清了一点关于IP的事情：
+对IP的了解 Windows cmd下 ipconfig可以查看 Linux terminal下 ifconfig -a 或者 ip addr 可以查看 IPv4就是本机IP地址 gateway（网关）就是电脑（或手机）连接的热点设备、路由器的IP地址 对于一台电脑 外网IP可以通过浏览器搜索“IP”得到 内网IP可以通过 ipconfig 或 ifconfig 得到 注：
+多台设备连接到同一台路由器时，它们的外网IP时不同的； 在浏览器中可以通过输入网关地址进入路由器的admin界面 关于最近两个礼拜 在虚拟机上装了kali，学习了很多工具的用法
+密码字典工具 Recon- NG，BruteScrape 端口扫描工具 masscan，nmap（用的比较熟悉） Web漏洞扫描工具 只熟悉OWASP ZAP，工具比较简单，但是扫出来的漏洞还不太会利用，在扫描大型站点时的速度比较慢，聊胜于无&amp;hellip; 目前扫出来的两个sql注入漏洞都是之前人肉照出来过的 sql注入工具 sqlmap，一些基本指令都记在小本子上了，感觉很强大，对自己网站测试了下，可以扫出很多信息 想法 昨天晚上找到了三四个网站的后台，今天请教了下群里的大佬，想绕过后台难度很大，一般也不怎么用除了搞到账户密码以外的方式去登后台。其它方法主要有前台插马，注入shell，还有一个编辑器（？不太理解这个是什么方式）
+有个想法就是给网站管理员发邮件，诱导点击脚本链接得到后台账户密码。。。但是。。。感觉是个正常人都不会被骗啊
+打算重新看WEB安全的书了，渗透测试碰到web有点卡住的感觉，安全真有意思！！！</description></item></channel></rss>

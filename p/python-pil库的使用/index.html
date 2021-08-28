@@ -1,0 +1,596 @@
+<!doctype html><html lang=en-us>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>Python-PIL库的使用</title>
+<link rel=canonical href=https://selfsolo.com/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Python-PIL库的使用">
+<meta property="og:description" content="读书时的碎碎念">
+<meta property="og:url" content="https://selfsolo.com/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
+<meta property="og:site_name" content="Sera Wang">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="开发"><meta property="article:tag" content="Python"><meta property="article:tag" content="pyqt5"><meta property="article:published_time" content="2018-01-24T21:14:23+08:00"><meta property="article:modified_time" content="2018-01-24T21:14:23+08:00">
+<meta name=twitter:title content="Python-PIL库的使用">
+<meta name=twitter:description content="读书时的碎碎念">
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+</head>
+<body class="article-page has-toc">
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+extended">
+<div id=article-toolbar>
+<a href=https://selfsolo.com class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<span>Back</span>
+</a>
+</div>
+<main class="main full-width">
+<article class=main-article>
+<header class=article-header>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/%E5%BC%80%E5%8F%91/ style=background-color:#2a9d8f;color:#fff>
+开发
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>Python-PIL库的使用</a>
+</h2>
+<h3 class=article-subtitle>
+读书时的碎碎念
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Dec 01, 2017</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+1 min read
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<p>为了对付比赛，发现别人用qt写出来的应用挺好看的。昨天粗略看了一遍，记得不准确，今天重新开始看文档，一步步来吧。</p>
+<h1 id=运行一个最基本的窗口>运行一个最基本的窗口</h1>
+<pre><code>from PyQt5 import QtWidgets 
+# 导入PyQt5库的QtWidgets通用窗口类
+
+class firstwindow(QtWidgets.QWidget):
+#新建一个类，继承自QtWidgets.QWidget类方法
+    def __init__(self):
+        super(firstwindow,self).__init__()
+        #这里要重载一下mywindows,同时也包含了QtWidgets.QWidget的预加载项
+
+import sys
+app = QtWidgets.QApplication(sys.argv)
+# pyqt 窗口必须在QApplication方法中使用，否则会报错
+# QWidget:Must construct a QApplication before a QWidget
+
+windows = firstwindow()  #新建一个firstwindow对象，命名为windows
+
+windows.show() #让窗口显示出来
+
+sys.exit(app.exec_())  #启动事件循环，类似于Tkinter的mainloop()函数
+</code></pre><h1 id=qt-designer>Qt Designer</h1>
+<p>因为QtDesigner很方便，可以帮助开发，于是我们接下来就用用看Designer，新建一个Widget然后保存，是ui文件，我们需要用一行代码把它转成py文件</p>
+<p>在Python36/Lib/site-packages/PyQt5里打开cmd，</p>
+<p>pyuic5 ui文件名 -o 目标py文件名</p>
+<blockquote>
+<p>pyuic5 d:/python/pyqt/widget.ui -o d:/python/pyqt/widget.py</p>
+</blockquote>
+<p>转换后代码:</p>
+<pre><code># -*- coding: utf-8 -*-
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_Form(object):
+    def setupUi(self, Form):
+        Form.setObjectName(&quot;Form&quot;)
+        Form.resize(400, 300)
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate(&quot;Form&quot;, &quot;Form&quot;))
+</code></pre><p>它就是一个类，但我们依旧可以把它当作一个ui，要运行一个窗口。我们依旧是要用QtWidgets.QWidget类的对象的show方法。</p>
+<p>所以代码这样写:</p>
+<pre><code>import sys
+app = QtWidgets.QApplication(sys.argv)
+window = QtWidgets.QWidget() #新建一个QtWidgets.QWidget类对象
+
+ui = Ui_Form() # 把这个Ui_Form()对象实例化
+ui.setupUi(window) #用这个ui的setupUi方法，参数是我们刚才新建的窗口window
+
+window.show()
+sys.exit(app.exec_())
+</code></pre><p>其它都不变，因为ui带来的改变，只是增加了两行相应的代码而已。</p>
+<p>如果想让逻辑和界面分离的话，可以尝试重新写一个py导入ui转换后的这个py文件。</p>
+<pre><code>#比如ui转换后保存为ui_window.py
+from PyQt5 import QtWidgets
+from ui_window import Ui_Form
+import sys
+
+class ui_window(QtWidgets.QWidget,Ui_Form): #多态继承
+    def __init__(self):
+        super(ui_window,self).__init__()
+        self.setupUi(self)
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    window = ui_window()
+    window.show()
+    sys.exit(app.exec_())
+</code></pre><p>注：</p>
+<p>感觉学了一点web前端以后再看类似应用界面ui设计的会轻松很多…</p>
+<p>比如各种布局，边距什么的，应该会理解的更好。所以在Qt Designer里的设计和布局就按个人喜好来吧。哪个布局不懂多尝试就好了。接下来说的都是非ui相关的。</p>
+<h1 id=按键事件绑定>按键事件绑定</h1>
+<p>在designer里刚才的ui_window基础上，拖动一个PushButton到窗口里然后开启绑定模式(Edit Buddies)将这个PushButton绑定一个事件（比如点击后将整个窗口关闭），然后转换代码。</p>
+<pre><code>#在setupUi方法里增加了四行代码，前三行是添加这个button按钮
+#着重看第四行，它是给button的clicked属性绑定了一个事件(Form.close)，Form.close也就是将窗口的关闭方法。
+#pushButton除了clicked属性还是pressed属性，还有released属性等等。。，相同的Form的动作也不止一个关闭，具体在Edit Buddies模式里可以看到。
+
+        self.pushButton = QtWidgets.QPushButton(Form)
+        self.pushButton.setGeometry(QtCore.QRect(40, 60, 93, 28))
+        self.pushButton.setObjectName(&quot;pushButton&quot;)
+        self.pushButton.clicked.connect(Form.close)
+        # self.按钮.点击.链接（窗口.关闭）
+
+#在retranslateUi方法里增加了一行代码，因为我修改了一下Button实例的名字
+        self.pushButton.setText(_translate(&quot;Form&quot;, &quot;Button&quot;))
+</code></pre><p>所以要执行自己的函数，也就是要修改一下Form.close</p>
+<p>比如，在之前为了逻辑与界面分离而写的一个runwindow脚本里这样修改(先把Form.close这一行代码去掉，也就是按钮点击以后不让它关闭窗口)。</p>
+<p>在ui_window类里新建一个函数</p>
+<pre><code>....
+    self.pushButton.clicked.connect(self.my_func)
+
+def my_func(self): #因为是在类里所以需要有参数self
+    print('按钮绑定函数已被执行！')
+</code></pre><p>这样点击按钮就执行了一次print。</p>
+<h1 id=信号signal和槽slot>信号(signal)和槽(slot)</h1>
+<p>pyqt5里其实有一个信号和槽的概念。相关的概念其实还有更多，但我想先了解这两个应该就能满足很多需求了。</p>
+<p>我说一下个人理解的，</p>
+<p>信号：当你打开了这个应用exe以后做的一个动作（比如对一次按钮的点击，或者一次输入）当你做了这个动作以后，你就发射（emit）了一个信号。当然信号和槽都是可以自定义的，你也可以选择不发射信号。</p>
+<p>槽：它可以是一个函数（一般我们也用它写函数），当我们做了一个动作发射了信号以后，肯定需要有东西接收啊，当然因为槽也可以自定义，所以也可以选择无视这些信号（但这样没有意义，因为这样不如不发射信号）。这个用来接收的东西就是槽。它和发射信号的函数事先绑定，从而一发射它就能接收到，然后执行这个槽函数。</p>
+<p>其实，化简一下这两个概念，就能很好理解。 点击一次，传参（也可以没参数）给响应的函数然后执行这个函数。</p>
+<p>而这个很简单的解释在pyqt里是需要用信号和槽来帮助编写的。我们来看一个基本的栗子。</p>
+<pre><code>#依旧是在原先runwindow脚本的基础上
+
+from PyQt5 import QtWidgets,QtCore #因为要使用信号所以要导入QtCore类
+from ui_window import Ui_Form
+import sys,time
+
+class ui_window(QtWidgets.QWidget,Ui_Form):
+    signal1 = QtCore.pyqtSignal() #定义信号1，要发射多个信号可以多次定义
+    def __init__(self):
+        super(ui_window,self).__init__()
+        self.setupUi(self)
+
+        self.my_button.clicked.connect(self.emit_func)
+        #将按钮绑定到emit_func（发射信号）这个函数上，也就是点击按钮就发射信号
+
+        self.signal1.connect(self.response_func) #这行也很重要！这一行确定了信号发给哪个函数！
+
+    def emit_func(self):
+        print('发射信号！\n等待5s...')
+        time.sleep(5)
+        self.signal1.emit() #这一步是真正的发射信号
+
+    def response_func(self):
+        print('收到信号!执行响应函数！')
+
+#剩下的和之前一样，让窗口显示出来的就不写了...
+</code></pre><p>运行一下看效果，发现点击以后，首先执行和按钮的点击属性绑定的那个函数，而在这个函数里我们发射了信号1，然后因为这个信号1和槽函数绑定过，所以槽函数接收到了信号1，开始执行槽函数。</p>
+<p>传参: 发射信号同时还想要传递参数的话，可以这样改.</p>
+<pre><code>.......
+    signal = QtCore.pyqtSignal(str)  
+    #定义信号，发射时带的参数为字符串型参数
+    #这个参数类型可以是:str int list float object tuple dict
+
+    self.signal.connect(self.response_func)
+
+def response_func(self,param): #槽函数定义接收参数param
+    print('接收参数',param)
+</code></pre><blockquote>
+<p>一个动作可以发射多个信号，一个信号可以发给多个槽，一个槽也可以绑定多个信号。</p>
+</blockquote>
+<h1 id=消息框控件-qmessagebox>消息框控件 QMessageBox</h1>
+<p>先看一个简单的例子,在runwindow基础上（接下来不具体说都是在runwindow基础上修改）</p>
+<pre><code>#只写增加的代码
+
+from PyQt5.QtWidgets import QMessageBox #导入消息框类
+
+......
+    self.my_button.clicked.connect(self.show_msg)
+    def show_msg(self):
+        result = QMessageBox.information(self,('标题'),('显示信息'),QMessageBox.StandardButtons(QMessageBox.Yes|QMessageBox.No))
+        # QMessageBox.information()显示消息框，其它参数不介绍了，最后一个参数QMessageBox.StandardButtons(),添加按钮，比如QMessageBox.Yes
+</code></pre><p>QMessageBox的对话框只是图标不同，其它没有太大差别：</p>
+<ol>
+<li>QMessageBox.information 信息框</li>
+<li>QMessageBox.question 问答框</li>
+<li>QMessageBox.warning 警告框</li>
+<li>QMessageBox.critical 危险框</li>
+<li>QMessageBox.about 关于</li>
+</ol>
+<h2 id=参数>参数</h2>
+<blockquote>
+<p>QMessageBox.XXX(QWidget对象,(‘标题’),(‘信息’),QMessageBox.StandardButtons(要显示的按钮))</p>
+</blockquote>
+<blockquote>
+<p>QMessageBox.about对于最后一个参数是没有的，其它相同</p>
+</blockquote>
+<h2 id=按钮种类>按钮种类:</h2>
+<ul>
+<li>QMessageBox.About</li>
+<li>QMessageBox.Apply</li>
+<li>QMessageBox.Cancel</li>
+<li>QMessageBox.Close</li>
+<li>QMessageBox.Discard</li>
+<li>QMessageBox.Help</li>
+<li>QMessageBox.Ignore</li>
+<li>QMessageBox.No</li>
+<li>QMessageBox.NoToAll</li>
+<li>QMessageBox.Ok</li>
+<li>QMessageBox.Open</li>
+<li>QMessageBox.Reset</li>
+<li>QMessageBox.RestoreDefaults</li>
+<li>QMessageBox.Retry</li>
+<li>QMessageBox.Save</li>
+<li>QMessageBox.SaveAll</li>
+<li>QMessageBox.Yes</li>
+<li>QMessageBox.YesToAll</li>
+</ul>
+<p>按自己需求来用就好，另外每个按钮都有一个返回值，</p>
+<pre><code>result = QMessageBox.information(...,QMessageBox.StandardButtons(QMessageBox.Yes))
+print(result)
+</code></pre><p>可以根据返回值来确认用户点击了哪个按钮。</p>
+<h1 id=标准输入框控件-qinputdialog>标准输入框控件 QInputDialog</h1>
+<p>例子（designer里拖四个PushButton到Widget上）:</p>
+<pre><code>......
+        self.button1.clicked.connect(self.input)
+
+def input(self):
+    result = QInputDialog.getText(self,('标题'),('提示'),QLienEdit.Normal,('默认文字'))
+</code></pre><p>例子里是获取输入文本框，类似的还有三个:</p>
+<ol>
+<li>
+<p>QInputDialog.getInt(self,(‘标题’),(‘提示’),0,-65535,65536,1)</p>
+<blockquote>
+<p>0是默认数值，默认范围-65535~65536,1是步长</p>
+</blockquote>
+</li>
+<li>
+<p>QInputDialog.getDouble(self,(‘标题’),(‘提示’),0,-65535,65536,10)</p>
+<blockquote>
+<p>其它同上，10是小数点后位数</p>
+</blockquote>
+</li>
+<li>
+<p>item = [‘item1’,’item2’,’item3’]</p>
+<p>QInputDialog.getItem(self,(‘标题’),(‘提示’),item,1,True)</p>
+<blockquote>
+<p>这个可以当成有选择项的输入框，item是自定义列表，1是默认选中项目，True/False指 列表框是否可编辑</p>
+</blockquote>
+</li>
+</ol>
+<p>它们都是有返回值的，返回一个list,list[0]是输入的内容(字符串)，list[1]是个布尔值，代表是否输入</p>
+<h1 id=标准文件打开保存框-qfiledialog>标准文件打开保存框 QFileDialog</h1>
+<p>先看例子吧</p>
+<ol>
+<li>
+<p>打开文件框</p>
+<pre><code>#一般都是和按键绑定的函数，所以接下来都只写一个函数
+from PyQt5.QtWidgets import QFileDialog
+
+def open_file(self):
+    result = QFileDialog.getOpenFileName(self,('标题'),('d:/'),('jpg(*.jpg);;bmp(*.bmp)'),None)
+
+#d:/是默认搜索目录
+#打开单个文件。返回list，result[0]是文件路径，result[1]是过滤类型（字符串，和代码里的定义相同，比如: 'jpg(*.jpg)'）
+</code></pre><blockquote>
+</blockquote>
+<p>打开多个文件的话，改成getOpenFileNames就好了,区别是返回的list[0]是一个字符串列表（多个文件名）
+要过滤多个文件类型用两个分号 ;; 隔开类型。</p>
+</li>
+<li>
+<p>保存文件框</p>
+<pre><code>def save_file(self):
+    result = QFileDialog.getSaveFileName(self,('标题'),('d:/'),('*.exe;;*.*'),None,QFileDialog.Options(QFileDialog.DontConfirmOverwrite))
+
+#返回值是个list，list[0]是文件名，list[1]是文件类型('*.exe')
+</code></pre></li>
+</ol>
+<p>事实上，无论是打开文件框还是保存文件框，它都是只返回一个文件名和文件类型的list，并不会执行打开和保存操作，这是需要注意的…它只是提供一个图形化界面给用户不错的体验而已。实际打开或保存文件还是要我们通过获取到的文件名来用python写具体处理。</p>
+<h1 id=主窗口-mainwindow>主窗口 MainWindow</h1>
+<p>它不同于Widget，包含了菜单栏，工具栏，任务栏等等,也是我们比较常见的应用的模板</p>
+<p>在designer里重新创建一个新的文件 ui_mainwindow.ui 在里面创建一个mainwindow。</p>
+<p>pyuic5转换成py文件以后，要显示这个窗口需要有一点变动。</p>
+<pre><code>#runmainwindow.py
+
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QMainWindow #从QtWidgets里导入QMainWindow类
+from ui_mainwindow import Ui_MainWindow
+import sys
+
+class ui_mainwindow(QMainWindow,Ui_MainWindow): #继承QMainWindow类
+    def __init__(self):
+        super(ui_mainwindow,self).__init__()
+        self.setupUi(self)
+
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    window = ui_mainwindow()
+    window.show()
+    sys.exit(app.exec_())
+</code></pre><p>代码变化不大</p>
+<h2 id=菜单栏>【菜单栏】</h2>
+<p>直接输入文字就可以了，还可以在Action Editor里编辑快捷键Short Cut。
+但是要注意的是，它的PushButton是不同的，编写函数的代码也不同，直接看例子吧</p>
+<pre><code>#菜单项名称: Open_File，我们要为它编写一个函数
+
+#......前面都是相同的代码
+        self.actionOpen_File.triggered.connect(self.show_message) #绑定函数show_message
+    def show_message(self):
+        print('here is message')
+#这样就为Open File这个菜单项绑定了一个函数，想怎么写这个函数就看个人吧
+#比如Open File打开文件，我们可以打开一个打开文件框控件，诸如此类的...
+</code></pre><p>可以看到，MainWindow里菜单项和Widget的button项的不同之处仅仅只有绑定函数的代码不一样而已。（triggered/clicked）</p>
+<h1 id=动态加载子窗口>动态加载子窗口</h1>
+<p>我们在创建了一个主窗口MainWindow的基础上，想要增加一个功能，就是能够通过一次点击，打开或者隐藏一个子窗口（这个使用场景非常多），要做什么呢？</p>
+<p>在designer里要做的事：
+拖一个布局layout（比如栅格布局gridlayout）到主窗口里，命名为 main_grid
+新建一个widget窗口，命名为ui_childwindow,为了结果明显，我们在childwindow里拖点东西进去，比如几个pushbutton，这些随意。
+然后我们将主窗口和子窗口的ui文件转换成py，开始编写代码:</p>
+<pre><code>from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QMainWindow
+from ui_mainwindow import Ui_mainwindow
+from ui_childwindow import Ui_childwindow
+import sys
+
+#子窗口类的编写，子窗口是widget所以继承QtWidgets.QWidget类
+class ui_childwindow(QtWidgets.QWidget,Ui_childwindow):
+    def __init__(self):
+        super(ui_childwindow,self).__init__()
+        self.setupUi(self)
+
+class ui_mainwindow(QMainWindow,Ui_mainwindow):
+    def __init__(self):
+        super(ui_mainwindow,self).__init__()
+        self.setupUi(self)
+        self.childwindow = ui_childwindow() #实例化一个子窗口
+        self.run()
+    def run(self):
+        self.actionOpen.triggered.connect(self.show_childwindow)
+        #给菜单项按钮绑定一个show_childwindow函数，功能和它名字一样
+        self.actionExit.triggered.connect(self.hide_childwindow)
+        #给菜单项按钮绑定一个hide_childwindow函数，隐藏子窗口
+
+    def show_childwindow(self):
+        self.main_grid.addWidget(self.childwindow)
+        #上面这一行是将实例好的子窗口添加到了主窗口的名为main_grid的布局里！
+
+        self.childwindow.show() #显示子窗口
+
+    def hide_childwindow(self):
+        self.childwindow.hide() #隐藏子窗口
+
+#显示主窗口的代码和之前的一样，可参照之前的代码
+</code></pre><p>也就是说，动态加载子窗口是很容易的，只需要三行代码。</p>
+<pre><code>self.childwindow = ui_childwindow() #实例化一个子窗口
+
+self.main_grid.addWidget(self.childwindow) #添加子窗口到主窗口的一个布局里
+
+self.childwindow.show() #让子窗口显示出来
+</code></pre><h1 id=底端状态显示-statusbar>底端状态显示 statusbar</h1>
+<p>新建一个MainWindow以后就自带了一个statusbar属性，一般可以用它来显示一些状态</p>
+<pre><code>self.statusbar.showMessage('this is statusbar.')
+</code></pre><p>使用很简单</p>
+<h1 id=radiobutton-控件>RadioButton 控件</h1>
+<p>单选按钮，如果在一个布局里放三个按钮，那同时只能一个被选中，这是自动实现的。</p>
+<p>radiobutton的属性:</p>
+<ol>
+<li>isChecked() 返回True/False,判断按钮是否被选中</li>
+<li>setChecked(True) True/False设置按钮是否被选中</li>
+</ol>
+<p>其它和普通PushButton基本无异，比如clicked属性，依旧可以用来connect自己的函数。</p>
+<h1 id=checkbox-控件>CheckBox 控件</h1>
+<p>复选框按钮，可以复选，除此以外和RadioButton,PushButton无异。</p>
+<h1 id=单行文本输入框控件-qlineedit>单行文本输入框控件 QLineEdit</h1>
+<p>属性：</p>
+<ol>
+<li>textChanged 很实用的一个属性，用来绑定文本状态change以后需要执行的函数</li>
+<li>text() 返回文本内容，字符串类型</li>
+<li>setText(‘文本’) 设置内容</li>
+</ol>
+<blockquote>
+<p>example</p>
+</blockquote>
+<pre><code>self.lineEdit.textChanged.connect(self.showDynamicText)
+def showDynamicText(self):
+    print('content:',self.lineEdit.text())
+</code></pre><h1 id=combobox控件>combobox控件</h1>
+<ol>
+<li>
+<p>currentText()</p>
+<pre><code>self.combobox.currentText() #返回当前选项值(str)
+</code></pre></li>
+<li>
+<p>currentTextChanged属性 如果用户选择了combobox中的其它选项，则会触发该事件。</p>
+<pre><code>self.combobox.currentTextChanged.connect(self.my_func)
+</code></pre></li>
+</ol>
+<h1 id=listwidget控件>listWidget控件</h1>
+<p>即列表框，我通常用它来显示一些结果。</p>
+<p>大小还有其他一些什么设置都可以在qt designer里实现。</p>
+<p>这里讲一个比较有用的需要代码实现的，就是自己给listWidget添加新的值</p>
+<pre><code>item = QtWidgets.QListWidgetItem() #实例化一个QListWidgetItem()对象
+self.listWidget.addItem(item) #把实例好的这个对象添加进listWidget里
+self.listWidget.item(0).setText('新添加值') #给新对象添加一个值。
+</code></pre><ol>
+<li>
+<p>len(self.listWidget)</p>
+<p>可以用来来获得它的长度，但它并不能用列表表示..</p>
+</li>
+<li>
+<p>self.listWidget.row(item)</p>
+<p>可以获得一个item在列表里的行数(从0开始)</p>
+</li>
+<li>
+<p>self.listWidget.removeItemWidget(item)</p>
+<p>移除一个item，无返回值（将item这个占用删除）</p>
+<p>删除listWidget里的一个item的值</p>
+<pre><code>self.listWidget.removeItemWidget(self.listWidget.takeItem(len(self.listWidget)-1)) #删除listWidget最后一项item，并解除它的占用
+len(self.listWidget) #这时候再看list长度，发现的确减了1，同时显示的最后一项item也消失了。
+</code></pre></li>
+</ol>
+<p>对listWidget里的一个item赋鼠标操作，本来想这么写的…后来发现只需要一行代码就好了。</p>
+<p>listwidget本身就有doubleClicked属性，connect一个函数就相当于给所有listWidget的item都赋了这么一个函数…很方便…</p>
+<p>唉，我花了2个小时找文章..结果偶然在动作模式里发现pyQt5的这个功能…真是想吐血。</p>
+<pre><code>self.listWidget.doubleClicked.connect(self.your_function)
+</code></pre><h1 id=样式表-stylesheet>样式表 stylesheet</h1>
+<p>可以直接在designer里设置，比较方便，具体语法可以参照css</p>
+<p>background-color:red #背景颜色:红</p>
+<p>color:red #字体:红</p>
+<p>不在designer里设置的话就是这样</p>
+<pre><code>self.setStyleSheet('QWidget{background-color:red}')
+</code></pre><h1 id=控件获取焦点>控件获取焦点</h1>
+<p>一般输入控件都是会有setFocus()属性，想让它获取焦点只要，x.setFocus()就好</p>
+<h1 id=qplaintextedit>QPlainTextEdit</h1>
+<p>纯文本输入框控件</p>
+<ol>
+<li>
+<p>addPlainText</p>
+<p>可以从文本最后添加内容，每次add最后自动会有个换行</p>
+</li>
+<li>
+<p>setText</p>
+<p>直接设置文本，原有文本会被覆盖</p>
+</li>
+</ol>
+<h1 id=some-tips>some tips</h1>
+<p>(写在最后，也当作提醒自己一些地方要注意)</p>
+<ul>
+<li>不管什么控件，要绑定一个函数，一般都是要这个控件的某一个动作后面跟.connect(要绑定的函数)，直接在动作里填函数是完全没效果的，可能会让你想不停地捶地。</li>
+<li>如果要在一个窗口里，给它的一个比如按钮绑定一个事件，这个事件要弹出一个新窗口(非MessageBox)，有一种方法是新建一个窗口的ui，然后在要绑定的窗口的<strong>init</strong>方法里就要先生成这个窗口（创建这个新窗口的实例），绑定事件里再只要选择让这个窗口show()或者hide()就可以了。 否则会出现很多问题。</li>
+</ul>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/%E5%BC%80%E5%8F%91/>开发</a>
+<a href=/tags/python/>Python</a>
+<a href=/tags/pyqt5/>pyqt5</a>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>Related contents</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article>
+<a href=/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-jieba库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/python-requests%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-requests库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/python-threading%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-threading库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-PIL库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/>
+<div class=article-details>
+<h2 class=article-title>用Python识别验证码</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2017 -
+2021 Sera Wang
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.5.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+</div>
+<h2 class="widget-title section-title">Table of contents</h2>
+<div class=widget--toc>
+<nav id=TableOfContents>
+<ol>
+<li><a href=#参数>参数</a></li>
+<li><a href=#按钮种类>按钮种类:</a></li>
+</ol>
+<ol>
+<li><a href=#菜单栏>【菜单栏】</a></li>
+</ol>
+</nav>
+</div>
+</section>
+</aside>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

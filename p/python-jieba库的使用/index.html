@@ -1,0 +1,290 @@
+<!doctype html><html lang=en-us>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>Python-jieba库的使用</title>
+<link rel=canonical href=https://selfsolo.com/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Python-jieba库的使用">
+<meta property="og:description" content="读书时的碎碎念">
+<meta property="og:url" content="https://selfsolo.com/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
+<meta property="og:site_name" content="Sera Wang">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="开发"><meta property="article:tag" content="Python"><meta property="article:tag" content="jieba"><meta property="article:published_time" content="2018-02-01T21:14:23+08:00"><meta property="article:modified_time" content="2018-02-01T21:14:23+08:00">
+<meta name=twitter:title content="Python-jieba库的使用">
+<meta name=twitter:description content="读书时的碎碎念">
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+on-phone--column compact">
+<aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header class=site-info>
+<figure class=site-avatar>
+<img src=https://ser4wang.oss-cn-beijing.aliyuncs.com/20210731222602.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</figure>
+<h1 class=site-name><a href=https://selfsolo.com>Sera Wang</a></h1>
+<h2 class=site-description>Le vent se lève, il faut tenter de vivre.</h2>
+</header>
+<ol class=menu id=main-menu>
+<li>
+<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span>
+</a>
+</li>
+<li>
+<a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span>
+</a>
+</li>
+<li>
+<a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span>
+</a>
+</li>
+<li>
+<a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About</span>
+</a>
+</li>
+</ol>
+</aside>
+<main class="main full-width">
+<article class=main-article>
+<header class=article-header>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/%E5%BC%80%E5%8F%91/ style=background-color:#2a9d8f;color:#fff>
+开发
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>Python-jieba库的使用</a>
+</h2>
+<h3 class=article-subtitle>
+读书时的碎碎念
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Feb 01, 2018</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+1 min read
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<p>jieba库是一个python的中文分词库</p>
+<p>当我们需要进行中文语义分析的时候可以用到</p>
+<blockquote>
+<p>import jieba</p>
+</blockquote>
+<h2 id=intro>intro.</h2>
+<p>三种模式:</p>
+<pre><code>精确(默认)模式: 将句子最精确地切开，适合文本分析;
+
+全模式: 将句子中所有的可以成词的词语都扫描出来，但不能解决歧义;
+
+搜索引擎模式: 在精确模式基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词。
+</code></pre><p>它还支持繁体分词，也可以载入自定义词典。</p>
+<ol>
+<li>
+<p>分词</p>
+<p>jieba.cut(‘需要分词的字符串’,cut_all=False,HMM=True)</p>
+<p>输入的三个参数为: 需要分词的字符串(utf8或unicode编码), cut_all参数选择是否开启全模式，HMM参数选择是否使用HMM模型。</p>
+<pre><code> text = &quot;小明硕士毕业于中国科学院计算所，后在日本京都大学深造&quot;
+
+ word_list = jieba.cut(text) #默认cut_all=False,HMM=True
+ word_list2 = jieba.cut(text,cut_all=True)
+ word_list3 = jieba.cut_for_search(text)
+
+ print('精确模式:','/'.join(word_list))
+ print('全模式:','/'.join(word_list2))
+ print('搜索引擎模式:','/'.join(word_list3))
+
+</code></pre><p>需要注意的是，jieba.cut返回的是一个迭代器(生成器)generator</p>
+<p>这里说明一下，generator和list，tuple相比，是一种比较不消耗内存的存储方式，所以取值的方式也有点特殊。</p>
+<pre><code> while True:
+     try:
+         print(next(generator))
+     except:
+         break
+
+</code></pre><p>当然，我们不需要用(‘/‘).join(word_list).split(‘/‘)这种方式来获得一个词语的list。不够pythonic。</p>
+<p>jieba库直接提供了返回list的cut方法，参数和上面例子中的完全相同。</p>
+<pre><code> word_list = jieba.lcut(text)
+ type(word_list) #
+
+</code></pre><p>其它方法和此例相同。</p>
+</li>
+<li>
+<p>载入自定义词典</p>
+<p>开启HMM模式以后，jieba库就有了自动识别新词的能力，但是如果有自定义词典的话，识别的准确性就能提高的更多。</p>
+<p>jieba.load_userdict(‘dict_path’) #载入自定义词典</p>
+<p>dict_path是词典的路径</p>
+<p>词典的格式:</p>
+<p>和jieba库的dict.txt一样，一个词占一行。每一行分三部分:词语，词频(可省略)，词性(可省略)，用空格隔开，顺序不可颠倒。文件需为utf8或unicode编码。</p>
+<pre><code> #coding:utf8
+
+ import jieba
+
+ text = '穿过县界长长的隧道，便是雪国。夜空下一片白茫茫。火车在信号所前停了下来。
+ 一位姑娘从对面座位上站起身子，把岛村座位前的玻璃窗打开。一股冷空气卷袭进来。姑娘将身子探出窗外，仿佛向远方呼唤似地喊道：
+ “站长先生，站长先生！”'
+
+ word_list = jieba.lcut(text)
+ print('/'.join(word_list))
+
+ print('\n——————————————\n')
+
+ jieba.load_userdict('mydict.txt') #载入自定义词典mydict.txt
+
+ word_list2 = jieba.lcut(text)
+ print('/'.join(word_list2))
+
+ '''mydict.txt
+ 站长先生
+ 临时宿舍
+ '''
+
+</code></pre></li>
+<li>
+<p>动态修改词典</p>
+<p>add_word(word,freq=None,tag=None)和del_word(word)，可以动态修改词典</p>
+<p>suggest_freq(segment,tune=True) 可以调节单个词语的词频，使其能/不能被分出来</p>
+<pre><code> jieba.add_word('你好')
+
+ jieba.suggest_freq('女神',tune=True)
+
+</code></pre></li>
+<li>
+<p>关键词抽取</p>
+<blockquote>
+<p>import jieba.analyse</p>
+</blockquote>
+<p>a.基于TF-IDF算法
+jieba.analyse.extract_tags(sentence,topK=20,withWeight=False,allowPOS=())</p>
+<p>参数:
+sentence为待提取的文本，topK为返回几个TF/IDF权重最大的关键词，默认为20个，withWeight为是否一并返回关键词权重值，默认False, allow POS仅包括指定词性的词，默认值为空，即不筛选。</p>
+<p>b.TextRank算法
+jieba.analyse.textranke(sentence,topK=20,withWeight=False,allowPOS=(‘ns’,’n’,’vn’,’v’))</p>
+<p>参数同上</p>
+<p>TF-IDF算法:</p>
+<blockquote>
+<p><a class=link href=http://blog.csdn.net/sangyongjia/article/details/52440063 target=_blank rel=noopener>http://blog.csdn.net/sangyongjia/article/details/52440063</a></p>
+</blockquote>
+<p>TextRank算法:</p>
+<blockquote>
+<p><a class=link href=http://blog.csdn.net/kamendula/article/details/51756552 target=_blank rel=noopener>http://blog.csdn.net/kamendula/article/details/51756552</a></p>
+</blockquote>
+</li>
+</ol>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/%E5%BC%80%E5%8F%91/>开发</a>
+<a href=/tags/python/>Python</a>
+<a href=/tags/jieba/>jieba</a>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>Related contents</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article>
+<a href=/p/python-requests%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-requests库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/python-threading%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-threading库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-PIL库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-PIL库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/>
+<div class=article-details>
+<h2 class=article-title>用Python识别验证码</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2017 -
+2021 Sera Wang
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.5.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

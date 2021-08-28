@@ -1,0 +1,229 @@
+<!doctype html><html lang=en-us>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>校园杂记10：找站策略+第一次看自(bie)己(ren)拿shell</title>
+<link rel=canonical href=https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B010%E6%89%BE%E7%AB%99%E7%AD%96%E7%95%A5-%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%9C%8B%E8%87%AAbie%E5%B7%B1ren%E6%8B%BFshell/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="校园杂记10：找站策略+第一次看自(bie)己(ren)拿shell">
+<meta property="og:description" content="读书时的碎碎念">
+<meta property="og:url" content="https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B010%E6%89%BE%E7%AB%99%E7%AD%96%E7%95%A5-%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%9C%8B%E8%87%AAbie%E5%B7%B1ren%E6%8B%BFshell/">
+<meta property="og:site_name" content="Sera Wang">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="杂记"><meta property="article:published_time" content="2017-11-25T21:14:23+08:00"><meta property="article:modified_time" content="2017-11-25T21:14:23+08:00">
+<meta name=twitter:title content="校园杂记10：找站策略+第一次看自(bie)己(ren)拿shell">
+<meta name=twitter:description content="读书时的碎碎念">
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+on-phone--column compact">
+<aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header class=site-info>
+<figure class=site-avatar>
+<img src=https://ser4wang.oss-cn-beijing.aliyuncs.com/20210731222602.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</figure>
+<h1 class=site-name><a href=https://selfsolo.com>Sera Wang</a></h1>
+<h2 class=site-description>Le vent se lève, il faut tenter de vivre.</h2>
+</header>
+<ol class=menu id=main-menu>
+<li>
+<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span>
+</a>
+</li>
+<li>
+<a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span>
+</a>
+</li>
+<li>
+<a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span>
+</a>
+</li>
+<li>
+<a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About</span>
+</a>
+</li>
+</ol>
+</aside>
+<main class="main full-width">
+<article class=main-article>
+<header class=article-header>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/%E6%9D%82%E8%AE%B0/ style=background-color:#2a9d8f;color:#fff>
+杂记
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B010%E6%89%BE%E7%AB%99%E7%AD%96%E7%95%A5-%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%9C%8B%E8%87%AAbie%E5%B7%B1ren%E6%8B%BFshell/>校园杂记10：找站策略+第一次看自(bie)己(ren)拿shell</a>
+</h2>
+<h3 class=article-subtitle>
+读书时的碎碎念
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Nov 25, 2017</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+1 min read
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<p>最近事情有点多，好久没更。总之，回归安全啦（其实连出发都没出发…&lt;(_ _ )>）</p>
+<hr>
+<p>昨天晚上想了想，看了这么久的渗透，但是一直找不到一个合适的站点，很多cms的漏洞自己搭环境测试成功了。那怎么找一个合适的目标来测试一下呢?</p>
+<p>找站策略：</p>
+<ol>
+<li>google: search→ Copyright 20xx-20xx [cms名字]</li>
+<li>baidu: site:.cn [关键字，比如”商城”]</li>
+</ol>
+<p>这下应该可以找到合适的target了……先感叹一下以前的自己真是蠢啊…好了我去试一下 ——9：05 am</p>
+<hr>
+<p>google失败了, 站也没找到多少个, 为什么shimakaze狗又炸了啊? 好烦啊难道要我自己搭vps了:( ——10:16 am</p>
+<hr>
+<p>尝试审计一波tscms，看看能不能找出漏洞来…真是难啊!为什么别人拿shell像喝水一样啊?人是崩溃的. ——12：31 am</p>
+<hr>
+<p>… ——14：28 pm</p>
+<hr>
+<p>…此处应有表情包，但是找了下没有合适的表情 ——21：53 pm</p>
+<hr>
+<p>吼烦, 怎么搞shell这么蛋疼的啊</p>
+<p>键盘一个礼拜还没到, 辣鸡圆通!!!</p>
+<p>我拓麻又坐了一天什么都没干, 挖不到洞好难过啊……</p>
+<hr>
+<ol>
+<li>周五的时候跟前辈聊了聊, 让我去学java….java….啊</li>
+</ol>
+<pre><code>记得不久前还说过这辈子都不想学这个语言(叹气), 人生真是艰难啊, 抽个空看一看吧.
+</code></pre><ol>
+<li>
+<p>噢对了…前几天看学校团委的网站, 它用的tscms，这cms不是那么出名，找个时间读一读源代码，当作第一次代码审计的作业好了。</p>
+<p>随便往学校网站里一看, 重点来了!!! 发现upload/file/下 11月12号有个奇怪的东西, 是个zip…下载下来解压发现是个叫 2013加密.php 的webshell，这是有人想搞事情啊!!!! 花了点钱买了cmd5的积分解密, 一看密码其实隐隐有种感觉，这个人可能是个script kid……算了，脚本小子也比我个没shell的辣鸡强 :(</p>
+</li>
+<li>
+<p>卧槽!!!!!!我发现了wooyun的镜像站!!!!!!!捡到宝了!!!!!!</p>
+<blockquote>
+<p><a class=link href=http://wooyun.chamd5.org/index.php target=_blank rel=noopener>http://wooyun.chamd5.org/index.php</a></p>
+</blockquote>
+</li>
+<li>
+<p>接下来又要忙碌起来了, 要干的事:</p>
+<p>① 继续看漏洞试着getshell;</p>
+<p>② 打算用python写个密码爆破工具, 现在密码字典下了一堆,想写个能过验证码的,这周有空的话就开始吧;</p>
+<p>③ 有空再研究一波md5加密算法…话说难道现在的md5都是通过数据库匹配 解密的吗?</p>
+</li>
+</ol>
+<p>今天我的键盘就要拿到手了吼吼, 作为入门的搞了个ikbc c87试试水.希望能带来好运(●ˇ∀ˇ●)</p>
+<p>静下心静下心.</p>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/%E6%9D%82%E8%AE%B0/>杂记</a>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>Related contents</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B021-%E6%88%91%E7%9A%84%E5%AE%89%E5%85%A8%E4%B9%8B%E8%B7%AF/>
+<div class=article-details>
+<h2 class=article-title>校园杂记21: 我的安全之路</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B020-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AE%A4%E7%9C%9F%E7%9A%84%E5%AE%9E%E8%AE%AD%E6%80%BB%E7%BB%93/>
+<div class=article-details>
+<h2 class=article-title>校园杂记20: 这是一个认真的实训总结</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B019-%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/>
+<div class=article-details>
+<h2 class=article-title>校园杂记19: 人生思考</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B017-%E6%88%91%E6%83%B3%E5%90%90%E6%A7%BD%E7%9A%84web%E5%AE%89%E5%85%A8/>
+<div class=article-details>
+<h2 class=article-title>校园杂记17: 我想吐槽的‘Web安全’</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B016-%E6%B2%A1%E6%9C%89%E6%9C%80%E5%A5%BD%E5%8F%AA%E6%9C%89%E6%9C%80%E5%90%88%E9%80%82/>
+<div class=article-details>
+<h2 class=article-title>校园杂记16: 没有最好，只有最合适</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2017 -
+2021 Sera Wang
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.5.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

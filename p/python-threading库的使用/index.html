@@ -1,0 +1,280 @@
+<!doctype html><html lang=en-us>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>Python-threading库的使用</title>
+<link rel=canonical href=https://selfsolo.com/p/python-threading%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Python-threading库的使用">
+<meta property="og:description" content="读书时的碎碎念">
+<meta property="og:url" content="https://selfsolo.com/p/python-threading%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
+<meta property="og:site_name" content="Sera Wang">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="开发"><meta property="article:tag" content="Python"><meta property="article:tag" content="threading"><meta property="article:published_time" content="2018-01-27T21:14:23+08:00"><meta property="article:modified_time" content="2018-01-27T21:14:23+08:00">
+<meta name=twitter:title content="Python-threading库的使用">
+<meta name=twitter:description content="读书时的碎碎念">
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+</head>
+<body class=article-page>
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+on-phone--column compact">
+<aside class="sidebar left-sidebar sticky">
+<button class="hamburger hamburger--spin" type=button id=toggle-menu aria-label="Toggle Menu">
+<span class=hamburger-box>
+<span class=hamburger-inner></span>
+</span>
+</button>
+<header class=site-info>
+<figure class=site-avatar>
+<img src=https://ser4wang.oss-cn-beijing.aliyuncs.com/20210731222602.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+</figure>
+<h1 class=site-name><a href=https://selfsolo.com>Sera Wang</a></h1>
+<h2 class=site-description>Le vent se lève, il faut tenter de vivre.</h2>
+</header>
+<ol class=menu id=main-menu>
+<li>
+<a href=/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="5 12 3 12 12 3 21 12 19 12"/><path d="M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/><path d="M9 21v-6a2 2 0 012-2h2a2 2 0 012 2v6"/></svg>
+<span>Home</span>
+</a>
+</li>
+<li>
+<a href=/archives/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><rect x="3" y="4" width="18" height="4" rx="2"/><path d="M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
+<span>Archives</span>
+</a>
+</li>
+<li>
+<a href=/search/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+<span>Search</span>
+</a>
+</li>
+<li>
+<a href=/about/><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+<span>About</span>
+</a>
+</li>
+</ol>
+</aside>
+<main class="main full-width">
+<article class=main-article>
+<header class=article-header>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/%E5%BC%80%E5%8F%91/ style=background-color:#2a9d8f;color:#fff>
+开发
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/python-threading%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>Python-threading库的使用</a>
+</h2>
+<h3 class=article-subtitle>
+读书时的碎碎念
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Jan 27, 2018</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+1 min read
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<p>之前看过的多线程相关的记不大清了，重新学习吧。</p>
+<ol>
+<li>
+<p>线程的概念</p>
+<p>线程是CPU分配资源的基本单位。但一个程序开始运行，这个程序就变成了一个进程，而一个进程有至少一个线程。</p>
+<p>当没有多线程编程时，一个进程也是一个主线程，但有多线程编程时，一个进程包含多个线程，包括主线程。</p>
+<p>使用线程可以实现程序的并发。</p>
+</li>
+<li>
+<p>创建线程</p>
+<p>第一种，创建thread.Thread实例</p>
+<pre><code> import threading
+
+ def func_thread(x,y): #定义线程运行函数
+     for i in range(x,y):
+         print(i)
+ #创建线程t1，用来跑func_thread(1,6)
+ t1 = threading.Thread(target=func_thread,args=(1,6))
+
+ #创建线程t2,用来跑func_thread(10,15)
+ t2 = threading.Thread(target=func_thread,args=(10,15))
+
+ t1.start() #调用start(),启动t1
+ t2.start() #调用start(),启动t2
+
+</code></pre><p>刚接触，实际过程中，除了能传参，其它感觉不是特别方便.. 第二种，继承thread.Thread类 要点是是要重载threading.THread类的run方法，然后调用start()启动线程</p>
+<pre><code> import threading
+
+ class mythread(threading.Thread):
+     def run(self):
+         #这里写要运行的代码
+         print(111)
+
+ t1 = mythread() #创建mythread()实例t1
+ t2 = mythread() #创建mythread()实例t2
+ t1.start() #启动mythread
+ t2.start() #启动mythread
+
+</code></pre></li>
+<li>
+<p>threading.Thread类的一些相关属性</p>
+<p>join()方法：调用join()后，直到调用join的线程运行完了其他线程才能运行</p>
+<pre><code> import threading
+
+ class mythread(threading.Thread):
+     def run(self):
+         for i in range(30):
+             print(i)
+
+ t1 = mythread()
+ t2 = mythread()
+ t1.start()
+ t2.start()
+
+ t1.join() #调用join()方法，这时候只能运行t1线程
+
+</code></pre><p>isAlive()方法： 用于判断线程是否运行，未调用start或者已经执行并结束，返回False</p>
+<p>name属性：表示线程名，默认是Thread-x x为序号，从1开始，第一个创建的县城就是Thread-1</p>
+<p>daemon属性：用来设置线程是否随主线程退出而退出</p>
+<p>daemon = False,默认，线程不会随主线程退出而推出，</p>
+<p>daemon = True，主线程结束时，其他子线程就会被强制结束</p>
+</li>
+<li>
+<p>锁</p>
+<p>如果在一个进程里创建多个线程，如果各个线程之间有一定顺序关系，涉及到谁先谁后操作数据的时候，这时候就要用到锁这个概念了。</p>
+<p>python3中的threading模块有RLock()对象，实例化后就是一个锁对象。
+对于这个lock，它有acquire()方法和release()方法，acquire()方法相当于上锁，release()方法相当于解锁。</p>
+<p>在lock.acquire()和lock.release()语句之间一次只能有一个线程进入，其余线程只能在acquire()处等待。</p>
+<p>代码:</p>
+<pre><code> import threading
+
+ class mythread(threading.Thread):
+     def run(self):
+         global x #声明全局变量
+         lock.acquire() #上锁
+         x+=10
+         print('%s:%d'%(self.name,x))
+         lock.release() #解锁
+
+ x = 0
+ lock = threading.RLock() #创建一个锁对象
+
+ thread_list = []
+ for i in range(5):
+     thread_list.append(mythread())
+ for i in thread_list:
+     i.start()
+
+</code></pre><p>一般lock.acquire()和lock.release()都放在thread对象的run方法里，毕竟，每个thread都是要运行run方法的。</p>
+</li>
+<li>
+<p>停止thread</p>
+<p>在继承threading.Thread类基础上，可以设置一个running标志，然后循环，为它编写要给terminate()方法很简单，running设置成False就ok了。</p>
+</li>
+</ol>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/%E5%BC%80%E5%8F%91/>开发</a>
+<a href=/tags/python/>Python</a>
+<a href=/tags/threading/>threading</a>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>Related contents</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article>
+<a href=/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-jieba库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/python-requests%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-requests库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-PIL库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<div class=article-details>
+<h2 class=article-title>Python-PIL库的使用</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/>
+<div class=article-details>
+<h2 class=article-title>用Python识别验证码</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2017 -
+2021 Sera Wang
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.5.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

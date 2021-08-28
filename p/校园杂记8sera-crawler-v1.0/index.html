@@ -1,0 +1,210 @@
+<!doctype html><html lang=en-us>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>校园杂记8：Sera Crawler v1.0</title>
+<link rel=canonical href=https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B08sera-crawler-v1.0/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="校园杂记8：Sera Crawler v1.0">
+<meta property="og:description" content="读书时的碎碎念">
+<meta property="og:url" content="https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B08sera-crawler-v1.0/">
+<meta property="og:site_name" content="Sera Wang">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="杂记"><meta property="article:published_time" content="2017-10-28T21:14:23+08:00"><meta property="article:modified_time" content="2017-10-28T21:14:23+08:00">
+<meta name=twitter:title content="校园杂记8：Sera Crawler v1.0">
+<meta name=twitter:description content="读书时的碎碎念">
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+</head>
+<body class="article-page has-toc">
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+extended">
+<div id=article-toolbar>
+<a href=https://selfsolo.com class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<span>Back</span>
+</a>
+</div>
+<main class="main full-width">
+<article class=main-article>
+<header class=article-header>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/%E6%9D%82%E8%AE%B0/ style=background-color:#2a9d8f;color:#fff>
+杂记
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B08sera-crawler-v1.0/>校园杂记8：Sera Crawler v1.0</a>
+</h2>
+<h3 class=article-subtitle>
+读书时的碎碎念
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Oct 28, 2017</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+1 min read
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<p>今天爬虫君1号v1.0 问世了。</p>
+<p>这爬虫的背景之前提过一点，就是偶尔聊出来的，然后老师似乎想做个收集情报的工具（?）想爬全部中国高校关于某个关键词的信息，于是这东西就这么被我慢慢磨出来了….</p>
+<p>其实爬虫早就写好了，只是猝不及防的一句话
+<img src=/![]%28http:/p6jpvwsnk.bkt.clouddn.com/18-5-21/48241435.jpg%29 alt=img></p>
+<p>于是又花了一天看了看官方文档，google百度查tkinter库,弄出来的这个，所以丑的不行是肯定的=。=</p>
+<hr>
+<h2 id=使用简要>使用简要：</h2>
+<ol>
+<li>
+<p>cmd py进入工具页面</p>
+<p><img src=/![]%28http:/p6jpvwsnk.bkt.clouddn.com/18-5-21/96040439.jpg%29 alt=img></p>
+</li>
+<li>
+<p>输入要查询的词</p>
+<p>比如“网络安全”，点search,因为要爬的url有点多，所以等待时间2分钟（其实这里有一个bug等等说）
+<img src=http://p6jpvwsnk.bkt.clouddn.com/18-5-21/92925654.jpg alt=img></p>
+</li>
+<li>
+<p>2分钟后（看你网速）结果get</p>
+<p><img src=http://p6jpvwsnk.bkt.clouddn.com/18-5-21/50520075.jpg alt=img></p>
+</li>
+<li>
+<p>双击可以察看details</p>
+<p><img src=http://p6jpvwsnk.bkt.clouddn.com/18-5-21/77511238.jpg alt=img></p>
+</li>
+</ol>
+<p>以上，好像是丑了一点。</p>
+<hr>
+<h2 id=接下来会做的优化设想中的>接下来会做的优化（设想中的）：</h2>
+<ol>
+<li>可以搜索指定url（不局限于固定url，提升爬行速度）</li>
+<li>加入保存功能</li>
+<li>把url上的文章直接就保存在数据库。</li>
+<li>美化</li>
+<li>前面说了有个bug，就是点完search界面会不能动，直到结果出来，我想了一下，可能这个改进需要改成两个线程。接下来着重看看多线程coding。</li>
+</ol>
+<p>以上，复习当然是不存在的啊。</p>
+<hr>
+<p>happy coding ~</p>
+<p>对了对了，这个月学校的安全工作室好像成立了（?）名字叫0Sec，虽然是我起的，但是总觉得哪里不太对劲…（群主让每人说个名字，我说了一个，别人都不说，只好用我的，我能肿么办啊我也很绝望啊）</p>
+<p>欢迎喜欢安全的朋友一起讨论←_←</p>
+<p>噢噢对了，源码分享：</p>
+<p>链接: <a class=link href=https://pan.baidu.com/s/1slHRpHr target=_blank rel=noopener>https://pan.baidu.com/s/1slHRpHr</a> 密码: ef9u</p>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/%E6%9D%82%E8%AE%B0/>杂记</a>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>Related contents</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B021-%E6%88%91%E7%9A%84%E5%AE%89%E5%85%A8%E4%B9%8B%E8%B7%AF/>
+<div class=article-details>
+<h2 class=article-title>校园杂记21: 我的安全之路</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B020-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AE%A4%E7%9C%9F%E7%9A%84%E5%AE%9E%E8%AE%AD%E6%80%BB%E7%BB%93/>
+<div class=article-details>
+<h2 class=article-title>校园杂记20: 这是一个认真的实训总结</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B019-%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/>
+<div class=article-details>
+<h2 class=article-title>校园杂记19: 人生思考</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B017-%E6%88%91%E6%83%B3%E5%90%90%E6%A7%BD%E7%9A%84web%E5%AE%89%E5%85%A8/>
+<div class=article-details>
+<h2 class=article-title>校园杂记17: 我想吐槽的‘Web安全’</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B016-%E6%B2%A1%E6%9C%89%E6%9C%80%E5%A5%BD%E5%8F%AA%E6%9C%89%E6%9C%80%E5%90%88%E9%80%82/>
+<div class=article-details>
+<h2 class=article-title>校园杂记16: 没有最好，只有最合适</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2017 -
+2021 Sera Wang
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.5.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+</div>
+<h2 class="widget-title section-title">Table of contents</h2>
+<div class=widget--toc>
+<nav id=TableOfContents>
+<ol>
+<li><a href=#使用简要>使用简要：</a></li>
+<li><a href=#接下来会做的优化设想中的>接下来会做的优化（设想中的）：</a></li>
+</ol>
+</nav>
+</div>
+</section>
+</aside>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

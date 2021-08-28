@@ -1,0 +1,198 @@
+<!doctype html><html lang=en-us>
+<head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>校园杂记3：文件上传漏洞以及一点碎碎念</title>
+<link rel=canonical href=https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B03%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9%E7%A2%8E%E7%A2%8E%E5%BF%B5/>
+<link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="校园杂记3：文件上传漏洞以及一点碎碎念">
+<meta property="og:description" content="读书时的碎碎念">
+<meta property="og:url" content="https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B03%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9%E7%A2%8E%E7%A2%8E%E5%BF%B5/">
+<meta property="og:site_name" content="Sera Wang">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="杂记"><meta property="article:published_time" content="2017-09-18T21:14:23+08:00"><meta property="article:modified_time" content="2017-09-18T21:14:23+08:00">
+<meta name=twitter:title content="校园杂记3：文件上传漏洞以及一点碎碎念">
+<meta name=twitter:description content="读书时的碎碎念">
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+</head>
+<body class="article-page has-toc">
+<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<div class="container main-container flex
+extended">
+<div id=article-toolbar>
+<a href=https://selfsolo.com class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<span>Back</span>
+</a>
+</div>
+<main class="main full-width">
+<article class=main-article>
+<header class=article-header>
+<div class=article-details>
+<header class=article-category>
+<a href=/categories/%E6%9D%82%E8%AE%B0/ style=background-color:#2a9d8f;color:#fff>
+杂记
+</a>
+</header>
+<h2 class=article-title>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B03%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9%E7%A2%8E%E7%A2%8E%E5%BF%B5/>校园杂记3：文件上传漏洞以及一点碎碎念</a>
+</h2>
+<h3 class=article-subtitle>
+读书时的碎碎念
+</h3>
+<footer class=article-time>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><path d="M11.795 21H5a2 2 0 01-2-2V7a2 2 0 012-2h12a2 2 0 012 2v4"/><circle cx="18" cy="18" r="4"/><path d="M15 3v4"/><path d="M7 3v4"/><path d="M3 11h16"/><path d="M18 16.496V18l1 1"/></svg>
+<time class=article-time--published>Sep 18, 2017</time>
+</div>
+<div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>
+<time class=article-time--reading>
+1 min read
+</time>
+</div>
+</footer>
+</div>
+</header>
+<section class=article-content>
+<h3 id=近况>近况</h3>
+<p>今天烦心事特多，很惆怅啊…..</p>
+<p>上完物理看了眼手机，社团里要催着大早起来搬东西；要打分了才发现去年参加的比赛因为是外校的不能用；网站备案又双叒叕没通过。</p>
+<p>说不出话的事情一件跟着一件…还好今天概率论就是做几道题 easy work..</p>
+<hr>
+<p>事儿多，瞎忙活，看到余弦说的一句话 “人生苦短，远离噪音” 。&lt;( _ _ )> 虽然这句话和今天想讲的都没啥关系（默默把它记在鸡汤小册子上）</p>
+<p>好了，玻璃心结束，今天我可是要写完总结的人（顺带一提，张少博老师的课依旧是很有意思>▽&lt;）</p>
+<hr>
+<p>今天看了点文件上传漏洞，%00截断，还有js绕过验证方面的东西，心里想着要赶紧把sql注入那块整理完了，还要整理一下upload的的问题。</p>
+<p>对于文件上传漏洞呢，总的来说就是在上传文件类型和它的名字上做手脚，从这两块出发，慢慢会涉及到iis6.0和7.0的漏洞啊之类的，判断iis还是挺简单的，通过访问目标站的 request头就可以查到。</p>
+<h3 id=文件文件漏洞>文件文件漏洞</h3>
+<p>简单来说，fileupload漏洞的原理如下，</p>
+<p>比如url是：http://www.xxx.com/upload.php 这个页面是上传文件的页面，只能上传jpg类型的文件（它写了个检查），那么这时候，你可以用三种手段，比如你的攻击脚本是 atk.php</p>
+<p>① 文件名上做手脚，把后缀改成atk.php;.jpg，这是iis6.0的一个漏洞，这样你上传就能绕过文件后缀检查（如果目标安全级别很低的话）</p>
+<p>访问这个文件的链接就是 <a class=link href=http://www.xxx.com/upload.php/atk.php;jpg target=_blank rel=noopener>http://www.xxx.com/upload.php/atk.php;jpg</a> 它会执行atk.php</p>
+<p>其实这种方法我没实验过，感觉应该不行。。</p>
+<p>② 动手文件名的可行版本：</p>
+<p>上传文件的时候，抓数据包，在数据包里改，你上传的文件是atk.php，在数据包里改成atk.php;.jpg，这种方法应该是可行的。</p>
+<p>③ %00截断：</p>
+<p>依旧是数据包，改名的时候改成 atk.php%00.jpg，一样能绕过后缀检查，而且实际上浏览器执行的是</p>
+<p><a class=link href=http://www.xxx.com/upload.php/atk.php%00.jpg%ef%bc%8c%e8%bf%99%e4%b8%aa%00%e6%8a%8a%e5%90%8e%e9%9d%a2%e7%9a%84%e5%86%85%e5%ae%b9%e6%88%aa%e6%96%ad%ef%bc%8c%e6%b5%8f%e8%a7%88%e5%99%a8%e5%8f%aa%e8%a7%a3%e6%9e%90%e5%88%b0php%ef%bc%8c%e6%89%80%e4%bb%a5%e5%b0%b1%e6%88%90%e5%8a%9f%e6%89%a7%e8%a1%8c%e5%95%a6%e3%80%82 target=_blank rel=noopener>http://www.xxx.com/upload.php/atk.php%00.jpg，这个%00把后面的内容截断，浏览器只解析到php，所以就成功执行啦。</a></p>
+<p>注意！在数据包里不能直接写%00，因为它传到浏览器的时候还会进行url编码，所以先进行一次url转换，burpsuite里面选取了字符以后右键就会有一个url转码的功能。</p>
+<h2 id=heading></h2>
+<p>最近听到学长说，大三了选网络方向能听到攻防课！哇！！！心里开出了发，贼开心啊 😄</p>
+<p>明天要6点30起床帮社团弄帐篷…..</p>
+<p>希望明天能吃上早饭&mldr;&mldr;</p>
+</section>
+<footer class=article-footer>
+<section class=article-tags>
+<a href=/tags/%E6%9D%82%E8%AE%B0/>杂记</a>
+</section>
+</footer>
+</article>
+<aside class=related-contents--wrapper>
+<h2 class=section-title>Related contents</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B021-%E6%88%91%E7%9A%84%E5%AE%89%E5%85%A8%E4%B9%8B%E8%B7%AF/>
+<div class=article-details>
+<h2 class=article-title>校园杂记21: 我的安全之路</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B020-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AE%A4%E7%9C%9F%E7%9A%84%E5%AE%9E%E8%AE%AD%E6%80%BB%E7%BB%93/>
+<div class=article-details>
+<h2 class=article-title>校园杂记20: 这是一个认真的实训总结</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B019-%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/>
+<div class=article-details>
+<h2 class=article-title>校园杂记19: 人生思考</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B017-%E6%88%91%E6%83%B3%E5%90%90%E6%A7%BD%E7%9A%84web%E5%AE%89%E5%85%A8/>
+<div class=article-details>
+<h2 class=article-title>校园杂记17: 我想吐槽的‘Web安全’</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B016-%E6%B2%A1%E6%9C%89%E6%9C%80%E5%A5%BD%E5%8F%AA%E6%9C%89%E6%9C%80%E5%90%88%E9%80%82/>
+<div class=article-details>
+<h2 class=article-title>校园杂记16: 没有最好，只有最合适</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<footer class=site-footer>
+<section class=copyright>
+&copy;
+2017 -
+2021 Sera Wang
+</section>
+<section class=powerby>
+Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=2.5.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+</section>
+</footer>
+<div class=pswp tabindex=-1 role=dialog aria-hidden=true>
+<div class=pswp__bg></div>
+<div class=pswp__scroll-wrap>
+<div class=pswp__container>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+<div class=pswp__item></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class=pswp__top-bar>
+<div class=pswp__counter></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title=Share></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class=pswp__preloader>
+<div class=pswp__preloader__icn>
+<div class=pswp__preloader__cut>
+<div class=pswp__preloader__donut></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class=pswp__share-tooltip></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class=pswp__caption>
+<div class=pswp__caption__center></div>
+</div>
+</div>
+</div>
+</div><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" crossorigin=anonymous defer></script><script src=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" crossorigin=anonymous defer></script><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css integrity="sha256-c0uckgykQ9v5k+IqViZOZKc47Jn7KQil4/MP3ySA3F8=" crossorigin=anonymous><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css integrity="sha256-SBLU4vv6CA6lHsZ1XyTdhyjJxCjPif/TRkjnsyGAGnE=" crossorigin=anonymous>
+</main>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class=widget-icon><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><line x1="5" y1="9" x2="19" y2="9"/><line x1="5" y1="15" x2="19" y2="15"/><line x1="11" y1="4" x2="7" y2="20"/><line x1="17" y1="4" x2="13" y2="20"/></svg>
+</div>
+<h2 class="widget-title section-title">Table of contents</h2>
+<div class=widget--toc>
+<nav id=TableOfContents>
+<ol>
+<li>
+<ol>
+<li><a href=#近况>近况</a></li>
+<li><a href=#文件文件漏洞>文件文件漏洞</a></li>
+</ol>
+</li>
+<li><a href=#heading></a></li>
+</ol>
+</nav>
+</div>
+</section>
+</aside>
+</div>
+<script src=https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin=anonymous defer></script><script type=text/javascript src=/ts/main.js defer></script>
+<script>(function(){const a=document.createElement('link');a.href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap",a.type="text/css",a.rel="stylesheet",document.head.appendChild(a)})()</script>
+</body>
+</html>

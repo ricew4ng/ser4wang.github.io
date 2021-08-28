@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on Sera Wang</title><link>https://selfsolo.com/tags/security/</link><description>Recent content in Security on Sera Wang</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 24 Feb 2019 21:14:23 +0800</lastBuildDate><atom:link href="https://selfsolo.com/tags/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Spring 漏洞总结</title><link>https://selfsolo.com/p/spring-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 24 Feb 2019 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/spring-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>Spring Data REST | RCE | CVE-2017-8046 漏洞简析 SpEL是独立于spring容器的一个可执行模块。 它使用SpelExpressionParser把字符串解析成表达式，当其中一个方法获取到值之后，表达式就会被执行，getValueType或者setValue会被调用：
+Expression expr = expressionParser.parseExpression(stringScript); expr.getValue(); //Execute the code in stringScript 通常，SpEL仅限于内部使用并且stringScript会被程序完全控制。 但如果 stringScript是用户可控的话，那么攻击者就可以在有漏洞的服务器上执行任意代码。
+即：
+String stringScript = &amp;quot;T(java.lang.Runtime).getRuntime().exec(&amp;quot;+cmd+&amp;quot;).x&amp;quot;; 之后cmd就被执行。
+这就是这个Spring Data REST漏洞的基本原理，Spring Data REST把远程输入的数据解析成SpEL表达式，并且将其解析。
+漏洞复现 使用的项目为 https://github.com/spring-guides/gs-accessing-data-rest.git 里面的complete，直接用IDEA导入，并修改pom.xml中版本信息为漏洞版本。 1.5.6.RELEASE，然后导入pom.xml
+运行项目
+新建一个people对象
+POST /people HTTP/1.1 Host: localhost:8080 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.9 Safari/537.36 Connection: close Content-type: application/json Content-Length: 32 {&amp;quot;firstName&amp;quot;:&amp;quot;test1&amp;quot;,&amp;quot;lastName&amp;quot;:&amp;quot;test2&amp;quot;} 发送payload</description></item><item><title>Yii2 漏洞总结</title><link>https://selfsolo.com/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 08 Feb 2019 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>欲寻框架之漏洞，必先用其开发一波。———— Rose家的程序喵
+框架基础 Yii2 版本: 2.0.16
+应用结构 下列是框架中最重要的目录和文件
+Yii 实现了MVC设计模式，这点在上述目录结构中也体现了。models目录包含了所有模型类，views目录包含了所有视图脚本，controllers目录包含了所有控制机器类。
+下图显示了一个应用的静态结构
+每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的PHP脚本。入口脚本接受一个Web请求并创建应用实例去处理它。应用在它的组建辅助下解析请求，并分派请求至MVC元素。视图使用小部件（即各种前台标签的类）去创建复杂和动态的用户界面。
+请求生命周期 用户向入口脚本 web/index.php 发起请求 入口脚本加载应用配置并创建一个应用实例去处理请求。 应用通过请求组件解析请求的路由。 应用创建一个控制器实例去处理请求。 控制器创建一个动作实例并针对操作执行过滤器。 如果任何一个过滤器返回失败，则动作取消。 如果所有过滤其都通过，动作将被执行。 动作会加载一个数据模型，或许是来自数据库。 动作会渲染一个视图，把数据模型提供给它。 渲染结果返回给响应组件。 响应组件发送渲染结果给用户浏览器。 HelloWorld 安装好Yii后，看看初始页面
+看上去就已经很漂亮了。
+话说回来，要在应用中创建一个HelloWorld页面，将需要创建一个操作和一个视图：
+应用将会分派页面请求给动作 动作将会依次渲染视图呈现”Hello”给最终用户 我们需要知道：
+如何创建一个动作去响应请求 如何创建一个视图去构造相应内容 以及一个应用如何分派请求给动作 创建动作 我们将要创建一个say操作，从请求中接收message参数并先显示给最终用户。如果请求没有提供message参数，操作将显示默认参数”Hello”
+操作是最终用户可以直接访问并执行的对象。操作被组织在控制器中，一个操作的执行结果就是最终用户收到的响应内容。
+操作必须声明在控制器中。为了简单起见，可以直接在SiteController控制器里生命say操作。 这个控制器是由文件 controllers/SiteController.php定义的。以下是一个操作的声明：
+&amp;lt;?php namespace app\controllers; use yii\web\Controller; class SiteController extends Controller{ // ...现存的代码... public function actionSay($message = 'Hello'){ return $this-&amp;gt;render('say',['message' =&amp;gt; $message]); } } 在上述代码中，say操作被定义为actionSay方法。 Yii使用action前缀区分普通方法和操作。action前缀后面的名称被映射为操作的ID。</description></item><item><title>ThinkPHP 漏洞总结</title><link>https://selfsolo.com/p/thinkphp-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Sat, 02 Feb 2019 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/thinkphp-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>对已经公开的tp漏洞的分析总结
+2019/1/11 thinkphp 5.0.0~5.0.23 RCE漏洞 payload:
+http://localhost:89/index.php?s=captcha
+post:
+_method=__construct&amp;amp;filter[]=system&amp;amp;method=get&amp;amp;get[]=whoami
+在thinkphp中，访问index.php，会调用App.php中的run方法
+其中，会调用routeCheck方法检测路由信息，跟进
+此处，会调用check方法检测路由，跟进
+857行调用了request类的method方法，跟进
+这处就比较关键了，我们发现，此method方法如果post了一个伪装变量 _method 就可以调用request类的任意方法，并且参数传递的是$_POST数组。
+config设置中的默认伪装变量为_method
+然后我们看看payload是如何构造并实现的。
+PAYLOAD 再看看payload，即post过去的数组
+_method=__construct&amp;amp;filter[]=system&amp;amp;method=get&amp;amp;get[]=whoami
+通过上文可知，tp会调用 伪装变量_method的值即__construct方法，参数是$_POST数组
+我们可以看到，在这个__construct方法其实只过了一件事情，就是在第一个foreach循环里将POST数组，赋值给了$this-&amp;gt;$name这个可变变量。
+接下来，我们一步步继续后，跑完了method，跑完了check，跑完了routeCheck，我们回到App.php的run方法。
+此处dispatch值会是method，这里不是特别清楚。 看到说是因为vendor/topthink/think-captcha/src/helper.php中配置了路由。
+继续往下看，执行了exec方法，跟进
+这里因为dispatch是method，所以到case method处继续执行代码，跟进param()
+重点关注$this-&amp;gt;param变量，它是空值，但是在红框处，通过一个array_merge，将$this-&amp;gt;get(false)，即$this-&amp;gt;get的值赋给了$this-&amp;gt;param变量。也即用户输入直接传递给了$this-&amp;gt;param
+再跟进末尾 return的input方法，我们继续跟进。
+1028行的getFilter会将$this-&amp;gt;filter，即我们之前的输入赋给filter变量，最后在1034行调用filterValue，跟进
+这里会遍历filter，如果它是一个可用方法，则会调用它，而它的确是的，这里$filter的值是 system，$value的值是 whoami，代码执行成功。
+2018/12/9 thinkphp 5.x 全版本 任意代码执行漏洞 官方12.9 github上发布了修复代码，对controller类进行过滤
+payload:
+http://localhost:89/index.php?s=index/\think\Container/invokefunction&amp;amp;function=call_user_func_array&amp;amp;vars[0]=phpinfo&amp;amp;vars[1][]=1
+下面从App.php的run方法开始分析
+我们跟进routeCheck
+这里关键的是两个方法，我们先跟进第一个path
+这里pathinfo方法会将默认的兼容模式值s赋给$pathinfo并返回。 即 path方法最终会获取到 GET提交的s参数值
+之后跟进check方法
+最关键的是return处，它最终会调用think\route\dispatch\Url.php的初始化方法，跟进
+关键代码有两行，跟进parseUrl方法
+这里会对刚才获取的path进行处理，parseUrlPath方法，会根据正斜杠对path进行切割，然后返回切割的数组
+然后tp会按顺序，pop刚才获取的path数组，依次得到$module，$controller，和$action的值
+在parseUrl这个方法里，接下来还会获取其它提交的参数。
+最后将module,controller,action封装并返回
+从parseUrl出来后，我们继续看刚才的第二个关键方法，就是Module类的初始化init方法，跟进
+这里没有对controller做什么过滤，返回后，</description></item><item><title>入门逆向</title><link>https://selfsolo.com/p/%E5%85%A5%E9%97%A8%E9%80%86%E5%90%91/</link><pubDate>Mon, 19 Nov 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%85%A5%E9%97%A8%E9%80%86%E5%90%91/</guid><description>我想成为魔法师！ 这个逆向专题用来记录自己学习逆向魔法的过程。
+关于魔法 有人问教主: “ 现在都是win10了，win7连debug都没有，学习汇编有什么用，对于手机app开发有什么帮助？ “
+教主:
+“ 学习魔法辛苦又困难， 而且似乎对当个铁匠、农夫、牧羊人也毫无帮助。 “ ———— 2016-01-18
+作为入门篇，这次逆向的是一个小pe，目标是改变它的执行逻辑，从而达到我们想要的效果（比如破解）。
+用C写一个小程序 crack.c 代码如下:
+#include &amp;lt;stdio.h&amp;gt; #define PASSWORD &amp;quot;1234567&amp;quot; int verify_password(char *password){ int authenticated; authenticated = strcmp(password,PASSWORD); return authenticated; } main(){ int valid_flag = 0; char password[1024]; while(1){ printf(&amp;quot;please input password: &amp;quot;); scanf(&amp;quot;%s&amp;quot;,password); valid_flag = verify_password(password); if(valid_flag){ printf(&amp;quot;incorrect password!\n\n&amp;quot;); }else{ printf(&amp;quot;Congradulation! You have passed the vrification\n&amp;quot;); break; } } } 编译获得 crack.exe ，也就是今天要破解的目标了。
+IDA PRO静态分析 打开ida pro，把这个exe拖进去，就获得了一张清晰的执行逻辑结构图</description></item><item><title>常见摘要/加密算法总结</title><link>https://selfsolo.com/p/%E5%B8%B8%E8%A7%81%E6%91%98%E8%A6%81/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</link><pubDate>Sat, 18 Aug 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%B8%B8%E8%A7%81%E6%91%98%E8%A6%81/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</guid><description>最近逛到某网站碰到一个叫JWTtoken的验证机制，然后百度了一波jwt，再解码此jwttoken后看到是RSA256加密，明明最近才看过现在又忘光了…于是对常见算法做个总结吧！原理不会特别详细，只会介绍简单原理，让我以后再碰上不至于太懵逼。
+基本概念 安全性原则：
+保密性 完整性(内容不被篡改) 身份认证 不可抵赖性 对称/非对称加密
+若加解密使用相同密钥，则称为对称密钥加密，否则称为非对称密钥加密。
+对称密钥加密:Diffie-Hellman算法
+因为密钥发布和密钥交换存在很多问题，所以要知道Diffie-Hellman密钥交换协议/算法。
+通信双发可用此方法确定对称密钥，此方法只能用于密钥交换，而非加解密消息。
+算法描述: 设A与B要确定密钥 1) A与B确定2个大素数 n 和 g 。 不必保密 2) A选择另一个大随机数X，计算: k1 = g^X mod n 后将k1发给B 3) B选择另一个大随机数Y，计算: k2 = g^Y mod n 后将k2发给A 4) 则密钥即为: kA = k2^X mod n kB = k1^Y mod n 且kA = kB 原理:
+kA = (g^Y mod n)^X mod n = g^YX mod n</description></item><item><title>利用越权漏洞下载vol.moe的所有漫画</title><link>https://selfsolo.com/p/%E5%88%A9%E7%94%A8%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E%E4%B8%8B%E8%BD%BDvol.moe%E7%9A%84%E6%89%80%E6%9C%89%E6%BC%AB%E7%94%BB/</link><pubDate>Sun, 05 Aug 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%88%A9%E7%94%A8%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E%E4%B8%8B%E8%BD%BDvol.moe%E7%9A%84%E6%89%80%E6%9C%89%E6%BC%AB%E7%94%BB/</guid><description>前几天想看一部漫画找到一个不错的站点，顺便就发现了一个越权漏洞，普通用户可以直接具有高级用户的下载权限。
+为了隐私，很多细节都不能放，因为暂时未允许公开，所以就先看一下效果吧。
+代码:
+执行代码
+获取到比如id为10000010的用户的cookie，我们放到bp里
+提交然后发现权限获取成功可以下任意漫画了~
+总结:
+这漏洞原理很简单，就是cookie明文未加密，解决方案就是cookie+salt再用个md5，sha1加密一波，加密过程最好后端执行。</description></item><item><title>PHP-FileInclusion</title><link>https://selfsolo.com/p/php-fileinclusion/</link><pubDate>Mon, 26 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/php-fileinclusion/</guid><description>文件包含(File Inclusion)可能会出现在JSP、PHP、ASP等语言中，常见的导致文件包含的函数如下:
+PHP:
+include(),include_once(),require(),require_once().fopen(),readfile()…
+JSP/Servlet:
+ava.io.File(),java.io.FileReader()…
+ASP:
+include file,include virtual…
+以PHP为例，一般用上述函数来导入一个文件，比如一个全是函数的function.php。当使用上述函数包含一个新的文件时，该文件将作为PHP代码执行(重点!)，PHP内核不会在意被包含的文件类型是什么，所以就算包含了txt文件，图片文件，远程URL，也都将作为PHP代码执行。这一特性，在实施攻击时将非常有用。
+比如以下代码:
+&amp;lt;-?php include($_get['test']);=&amp;quot;&amp;quot; ?-=&amp;quot;&amp;quot;&amp;gt; 执行www.test.com/test.php?test=atk.jpg
+若atk.jpg中含有PHP攻击代码，则会被执行。
+可见，要想成功利用LFI漏洞，需满足条件:
+include()等函数通过动态变量的方式引入需要包含的文件； 用户能够控制该动态变量； 如果web应用没有正确防御，可能会被读出重要本地数据，或者直接被执行了一个webshell等等。
+再深入看看文件包含漏洞的后果。
+1.本地文件包含
+能够打开并包含本地文件的漏洞，被称为本地文件包含漏洞(Local File Inclusion,简称LFI)
+比如一下代码就存在LFI漏洞:
+&amp;lt;-?php $file=&amp;quot;$__GET['file'];&amp;quot; &amp;quot;..=&amp;quot;&amp;quot; ..=&amp;quot;&amp;quot; etc=&amp;quot;&amp;quot; passwd\0&amp;quot;=&amp;quot;&amp;quot; if(file_exists('=&amp;quot;&amp;quot; home=&amp;quot;&amp;quot; wwwrun=&amp;quot;&amp;quot; '.$file.'.php')){=&amp;quot;&amp;quot; include=&amp;quot;&amp;quot; '=&amp;quot;&amp;quot; '.$file.'.php';=&amp;quot;&amp;quot; }=&amp;quot;&amp;quot; ?-=&amp;quot;&amp;quot;&amp;gt; 此时如果用户控制$file变量为 ‘../../etc/passwd’,则会执行 include ‘/home/wwwrun/../../etc/passwd.php’。
+但passwd.php文件并不存在,所以什么事都没有了吗?
+…
+不，因为PHP内核是用C实现的，因此使用了C语言中的一些字符串处理函数。比如在连接字符串时，0字节(\x00)将作为字符串结束符。所以在这个地方，攻击者只要在最后加入一个0字节，就能截断file变量之后的字符，即
+../../etc/passwd\0
+通过web输入时，只需要Url编码，变成
+../../etc/passwd%00
+字符串截断配合LFI口味更佳
+所以web应用可以禁用0字节，因为用户其实是不需要使用它的。
+但这样实际上仍没有解决问题，还有个技巧就是利用操作系统对目录最大长度的限制，可以不需要0字节而达到截断的目的。目录字符串，在windows下256字节，linux下4096字节会达到最大值，最大值后的字符会被丢弃，于是构造 n个 ‘.</description></item><item><title>SQL注入-报错注入原理</title><link>https://selfsolo.com/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/</link><pubDate>Mon, 26 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/</guid><description>先解释几个概念和语句
+聚合函数 定义：SQL基本函数，聚合函数对一组值执行计算，并返回单个值。除了 COUNT 以外，聚合函数都会忽略空值。 聚合函数经常与 SELECT 语句的 GROUP BY 子句一起使用。
+性质: 所有聚合函数都具有确定性。任何时候用一组给定的输入值调用它们时，都返回相同的值。
+举例:
+count() 返回指定组中项目的数量
+select count(id) from users; // 11
+max() 返回指定数据的最大值
+select max(id) from users; //20
+min()同理，其它还有像sum()求和，一般都是用于数字列。
+group by 语句 “Group By”从字面意义上理解就是根据“By”指定的规则对数据进行分组，所谓的分组就是将一个“数据集”划分成若干个“小区域”，然后针对若干个“小区域”进行数据处理。
+实质上就是按照某种属性分类汇总
+比如说要统计在全体中统计几个小类的各自情况，可以
+select 列名(能化成几个分类的)，某种属性比如sum(数量) as 数量之和 from table_name group by 列名
+group by 列名就是按列名来分组。
+count(*) select count(*) from table_name;
+返回table_name的行数；
+也可以
+select count(*) from table_name where id &amp;gt; 10;</description></item><item><title>WriteUp - Seclab</title><link>https://selfsolo.com/p/writeup-seclab/</link><pubDate>Sun, 18 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/writeup-seclab/</guid><description>前言：重新开始学习安全，用这个水题来暖手，当初步复习。
+看了下自己五个月之前的状态:
+基础关 key在哪里？
+右键查看源代码，得到key
+再加密一次你就得到key啦~
+这题做不来，看的writeup，用的rot13加密，学习一下! rot13加密
+百科链接：http://www.baike.com/wiki/ROT13&amp;amp;prd=so_1_doc ROT13（回转13位，rotateby13places，有时中间加了个减号称作ROT-13）是一种简易的置换暗码。ROT13是它自己本身的逆反；也就是说，要还原ROT13，套用加密同样的演算法即可得，故同样的操作可用再加密与解密。该演算法并没有提供真正的密码学上的保全，故它不应该被套用在需要保全的用途上。它常常被当作弱加密范例的典型。 描述：套用ROT13到一段文字上仅仅只需要检查字元字母顺序并取代它在13位之后的对应字母，有需要超过时则重新绕回26英文字母开头即可[2]。A换成N、B换成O、依此类推到M换成Z，然后序列反转：N换成A、O换成B、最后Z换成M。只有这些出现在英文字母里头的字元受影响；数字、符号、空白字元以及所有其他字元都不变。因为只有在英文字母表里头只有26个，并且26=2×13，ROT13函数是它自己的逆反： 对任何字元x：ROT13(ROT13(x))=ROT26(x)=x。 换句话说，两个连续的ROT13应用函式会回复原始文字（在数学上，这有时称之为对合（involution）；在密码学上，这叫做对等加密（reciprocalcipher））。 所以最后结果是按照下表一一对应即可，数字不变
+猜猜这是经过了多少次加密？
+看到加密后字符串最后是个等号，依稀记得base64加密最后也是个等号，猜测是base64加密，于是脚本解密如下:
+脚本编写时要注意，base64碰到无法解密之后会报错
+import base64 code = 'Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYySkVUbGhoTVVwVVZtcEJlRll5U2tWVWJHaG9UVlZ3VlZacVFtRlRNbEpJVm10a1dHSkdjRTlaVjNSR1pVWmFkR05GU214U2JHdzFWVEowVjFaWFNraGhSemxWVmpOT00xcFZXbUZrUjA1R1drWndWMDFFUlRGV1ZFb3dWakZhV0ZOcmFHaFNlbXhXVm1wT1QwMHhjRlpYYlhSWFRWaENSbFpYZUZOVWJVWTJVbFJDVjAxdVVuWlZha1pYWkVaT2NscEdhR2xTTW1ob1YxWlNTMkl4U2tkWGJHUllZbFZhY1ZadGRHRk5SbFowWlVaT1ZXSlZXVEpWYkZKSFZqRmFSbUl6WkZkaGExcG9WakJhVDJOdFJraGhSazVzWWxob1dGWnRNWGRVTVZGM1RVaG9hbEpzY0ZsWmJGWmhZMnhXY1ZGVVJsTk5XRUpIVmpKNFQxWlhTa2RqUm14aFUwaENTRlpxUm1GU2JVbDZXa1prYUdFeGNHOVdha0poVkRKT2RGSnJhR2hTYXpWeldXeG9iMWRHV25STldHUlZUVlpHTTFSVmFHOWhiRXB6WTBac1dtSkdXbWhaTVZwaFpFZFNTRkpyTlZOaVJtOTNWMnhXYjJFeFdYZE5WVlpUWVRGd1YxbHJXa3RUUmxweFVtMUdVMkpWYkRaWGExcHJZVWRGZUdOSE9WZGhhMHBvVmtSS1QyUkdTbkpoUjJoVFlYcFdlbGRYZUc5aU1XUkhWMjVTVGxOSFVuTlZha0p6VGtaVmVXUkhkRmhTTUhCSlZsZDRjMWR0U2tkWGJXaGFUVzVvV0ZsNlJsZGpiSEJIV2tkc1UySnJTbUZXTW5oWFdWWlJlRmRzYUZSaVJuQlpWbXRXZDFZeGJISlhhM1JVVW14d2VGVXlkR0ZpUmxwelYyeHdXR0V4Y0hKWlZXUkdaVWRPUjJKR2FHaE5WbkJ2Vm10U1MxUnRWa2RqUld4VllsZG9WRlJYTlc5V1ZscEhXVE5vYVUxWFVucFdNV2h2VjBkS1dWVnJPVlpoYTFwSVZHeGFZVmRGTlZaUFYyaHBVbGhCZDFac1pEUmpNV1IwVTJ0b2FGSnNTbGhVVlZwM1ZrWmFjVk5yWkZOaVJrcDZWa2N4YzFVeVNuSlRiVVpYVFc1b1dGZFdXbEpsUm1SellVWlNhVkp1UWxwV2JYUlhaREZaZUdKSVNsaGhNMUpVVlcxNGQyVkdWbGRoUnpsb1RWWndlbFl5Y0VkV01ERjFZVWhLV2xaWFVrZGFWM2hIWTIxS1IyRkdhRlJTVlhCS1ZtMTBVMU14VlhoWFdHaFlZbXhhVjFsc1pHOVdSbXhaWTBaa2JHSkhVbGxhVldNMVlWVXhXRlZyYUZkTmFsWlVWa2Q0YTFOR1ZuTlhiRlpYWWtoQ1NWWkdVa2RWTVZwMFVtdG9VRll5YUhCVmJHaERUbXhrVlZGdFJtcE5WMUl3VlRKMGIyRkdTbk5UYkdoVlZsWndNMVpyV21GalZrNXlXa1pPYVZKcmNEWldhMk40WXpGVmVWTnVTbFJpVlZwWVZGYzFiMWRHWkZkWGJFcHNVbTFTZWxsVldsTmhWa3AxVVd4d1YySllVbGhhUkVaYVpVZEtTVk5zYUdoTk1VcFZWbGN4TkdReVZrZFdXR3hyVWpOU2IxbHNWbmRXTVZwMFkwZEdXR0pHY0ZoWk1HUnZWMnhhV0ZWclpHRldWMUpRVlRCVk5WWXhjRWhoUjJoT1UwVktNbFp0TVRCVk1VMTRWVmhzVm1FeVVsWlpiWFIzWVVaV2RHVkZkR3BTYkhCNFZrY3dOVll4V25OalJXaFlWa1UxZGxsV1ZYaFhSbFoxWTBaa1RsWXlhREpXTVZwaFV6RkplRlJ1VmxKaVJscFlWRlJHUzA1c1drZFZhMlJXVFZad01GVnRkRzlWUmxwMFlVWlNWVlpYYUVSVk1uaGhZekZ3UlZWdGNFNVdNVWwzVmxSS01HRXhaRWhUYkdob1VqQmFWbFp1Y0Zka2JGbDNWMjVLYkZKdFVubGFSV1IzWVZaYWNtTkZiRmRpUjFFd1ZrUktSMVl4VGxsalJuQk9UVzFvV1ZkV1VrZGtNa1pIVjJ4V1UySkdjSE5WYlRGVFRWWlZlV042UmxoU2EzQmFWVmMxYjFZeFdYcGhTRXBWWVRKU1NGVnFSbUZYVm5CSVlVWk9WMVpHV2xaV2JHTjRUa2RSZVZaclpGZGlSMUp2Vlc1d2MySXhVbGRYYm1Sc1lrWnNOVmt3Vm10V01ERkZVbXBHV2xaWGFFeFdNbmhoVjBaV2NscEhSbGROTW1oSlYxUkplRk14U1hoalJXUmhVbFJXVDFWc2FFTlRNVnAwVFZSQ1ZrMVZNVFJXYkdodlYwWmtTR0ZHYkZwaVdHaG9WbTE0YzJOc2NFaFBWM0JUWWtoQ05GWnJZM2RPVmxsNFYyNVNWbUpIYUZoV2FrNU9UVlphV0dNemFGaFNiRnA1V1ZWYWExUnRSbk5YYkZaWFlUSlJNRmRXV2t0ak1WSjFWRzFvVTJKR2NGbFhWM2hoVW0xUmVGZHVSbEppVlZwaFZtMHhVMU5XV2xoa1J6bG9UVlZ3TUZsVldsTldWbHBZWVVWU1ZrMXVhR2haZWtaM1VsWldkR05GTlZkTlZXd3pWbXhTUzAxSFNYbFNhMlJVWW1zMVZWbHJaRzlXYkZwMFpVaGtUazFXYkROV01qVkxZa1pLZEZWdWJHRlNWMUl6V1ZaYVlXTnRUa1ppUm1ScFVqRkZkMWRXVWt0U01WbDRWRzVXVm1KRlNsaFZiRkpYVjFaYVIxbDZSbWxOVjFKSVdXdG9SMVpIUlhoalNFNVdZbFJHVkZZeWVHdGpiRnBWVW14a1RsWnVRalpYVkVKaFZqRmtSMWRZY0ZaaWEzQllWbXRXWVdWc1duRlNiR1JxVFZkU2VsbFZaSE5XTVZwMVVXeEdWMkV4Y0doWFZtUlNaVlphY2xwR1pGaFNNMmg1VmxkMFYxTXhaRWRWYkdSWVltMVNjMVp0TVRCTk1WbDVUbGQwV0ZKcmJETldiWEJUVjJzeFIxTnNRbGROYWtaSFdsWmFWMk5zY0VoU2JHUk9UVzFvU2xZeFVrcGxSazE0VTFob2FsSlhhSEJWYlRGdlZrWmFjMkZGVGxSTlZuQXdWRlpTUTFack1WWk5WRkpYWWtkb2RsWXdXbXRUUjBaSFlrWndhVmRIYUc5V2JYQkhZekpOZUdORmFGQldiVkpVV1d4b2IxbFdaRlZSYlVab1RXdHdTVlV5ZEc5V2JVcElaVWRvVjJKSFVrOVVWbHB6VmpGYVdXRkdhRk5pUm5BMVYxWldZV0V4VW5SU2JrNVlZa1phV0ZsVVNsSk5SbFkyVW10MGFrMVlRa3BXYlhoVFlWWktjMk5HYkZoV00xSm9Xa1JCTVdNeFpISmhSM2hUVFVad2FGWnRNSGhWTVVsNFZXNU9XR0pWV2xkVmJYaHpUbFpzVm1GRlRsZGlWWEJKV1ZWV1QxbFdTa1pYYldoYVpXdGFNMVZzV2xka1IwNUdUbFprVGxaWGQzcFdiWGhUVXpBeFNGTlliRk5oTWxKVldXMXpNVlpXYkhKYVJ6bFhZa1p3ZWxZeU5XdFVhekZYWTBoc1YwMXFSa2haVjNoaFkyMU9SVkZ0UmxOV01VWXpWbTF3UzFNeVRuTlVia3BxVW0xb2NGVnRlSGRsVm1SWlkwVmtWMkpXV2xoV1J6VlBZVlpLZFZGck9WVldla1oyVmpGYWExWXhWbkphUjNST1lURndTVlpxU2pSV01WVjVVMnRrYWxORk5WZFpiRkpIVmtaU1YxZHNXbXhXTURReVZXMTRhMVJzV25WUmFscFlWa1ZLYUZacVJtdFNNV1IxVkd4U2FFMXRhRzlXVjNSWFdWZE9jMVp1UmxSaE0xSlZWbTE0UzAxR2JGWlhhemxYVFZad1NGWXljRXRXTWtwSVZHcFNWV0V5VWxOYVZscGhZMnh3UjFwR2FGTk5NbWcxVm14a2QxUXhWWGxUV0docFUwVTFXRmx0TVZOWFJsSlhWMjVrVGxKdGRETlhhMVpyVjBaSmQyTkZhRnBOUm5CMlZqSnplRk5HVm5WWGJHUk9ZbTFvYjFacVFtRldNazV6WTBWb1UySkhVbGhVVmxaM1ZXeGFjMVZyVG1oTlZXdzBWVEZvYzFVeVJYbGhTRUpXWWxoTmVGa3dXbk5XVmtaMVdrVTFhVkp1UVhkV1JscFRVVEZhY2sxV1drNVdSa3BZVm01d1YxWkdXbkZUYTFwc1ZteGFNVlZ0ZUdGaFZrbDRVbGhrVjJKVVJUQlpla3BPWlVkT1JtRkdRbGRpVmtwVlYxZDBWMlF4WkhOWGEyaHNVak5DVUZadGVITk9SbGw1VGxaT1YySlZjRWxaVlZwdlZqSkdjazVWT1ZWV2JIQm9WakJrVG1WdFJrZGhSazVwVW01Qk1sWXhXbGRaVjBWNFZXNU9XRmRIZUc5VmExWjNWMFpTVjFkdVpHaFNiRmt5VlcxME1HRnJNVmRUYWtaWFZqTm9VRmxXV2twbFJrNTFXa1prYUdFd2NGaFdSbFpXWlVaSmVGcElTbWhTTTFKVVZGVmFkMlJzV2tkYVNIQk9WakZhZWxZeGFITlVNVnB5VGxjNVZWWnNXak5VVlZwaFYwVTFWbFJzWkU1aE0wSktWMVpXVjFVeFdsaFRiR3hvVWpKb1dGbHJXbmRWUmxwelYydDBhazFXY0hsVWJGcHJZVmRGZDFkWWNGZGlXR2h4V2tSQmVGWXhVbGxoUm1ob1RXMW9WbGRYZEd0aU1rbDRWbTVHVW1KVldsaFphMXAzVFVad1ZtRkhkRlZoZWtaYVZWZDRjMWxXV2xoaFJYaGFZVEZ3WVZwVldtdGpiVTVIWVVkb1RsZEZTbEpXYlRGM1V6RktkRlpyYUZWaE1WcFlXV3RrVTFaR1ZuTlhibVJzVm0xU1dsa3dWbXRXTWtwWFVtcE9WVlpzV25wWlZscEtaVmRHUjFWc2NHbFNNbWd5Vm1wR1lXRXhaRWhXYTJoUVZtdHdUMVpzVWtaTlJtUlZVVzFHV2xac2JEUlhhMVp2WVVaS2MxTnNXbGRpVkVaVVZtdGFkMWRIVmtsVWJHUnBVakZLTmxaclkzaGlNVmw1VWxod1VsZEhhRmhXYlRGU1RVWndSVkpzY0d4V2F6VjZXV3RhWVdGV1NYbGhSemxYVmpOU1dGZFdaRTlqTVZwMVVteFNhRTB4U2xaV2JURjZUVlV4UjFadVVteFNWR3h3VldwQ2QxZHNiRlpWYkU1WFRVUkdXVlpXYUd0WFJscDBWV3hPWVZac2NHaFpNbmgzVWpGd1IyRkdUazVOYldjeFZtMTRhMlF4UlhoaVJtaFZZVEpTV0ZsdGVFdGpNVlYzV2taT2FrMVhlSGxXTWpWUFZERmFkVkZzWkZwV1YxRjNWakJhUzJOdFNrVlViR1JwVjBWS1ZWWnFTbnBsUmtsNFZHNU9VbUpIVWs5WlYzUmhVMFprYzFkdFJsZE5helY2V1RCV2IxVXlTa2hWYXpsVlZucEdkbFV5ZUZwbFJsWnlZMGQ0VTJGNlJUQldWRVp2WWpKR2MxTnNhRlppVjJoWFdXdGFTMWRHV2tWU2JHUnFUV3RhUjFaSGVGTlViRnAxVVZoa1YxSnNjRlJWVkVaaFkyc3hWMWRyTlZkU2EzQlpWMWQwYTJJeVVuTlhXR1JZWWxoU1ZWVnFRbUZUVm14V1YyMUdWV0pGY0RGVlZ6QTFWakpLVlZKVVFscGxhM0JRV1hwR2QxTldUblJrUms1T1RVVndWbFl4WkRCaU1VVjNUbFZrV0dKcmNHRlVWRXBUVlVaYWRHVklUazlTYkd3MVZHeFZOV0ZIU2taalJteGFWbFp3ZWxacVNrWmxSbHBaWVVkR1UwMHlhRFpXYlhCSFdWWmtXRkpyWkdoU2F6VndWVzAxUWsxc1dYaFhiR1JhVmpCV05GWlhOVTlYUm1SSVpVYzVWbUV4V2pOV01GcFRWakZrZFZwSGFGTmlSbXQ1VmxjeE1FMUhSbkpOVm1SVVlXdGFXRlpxVG05U1JscHhVMnQwVTAxck5VaFphMXB2VmpBd2VGTnFTbGRXYkVwSVZsUkdXbVZIVGtaaVJsWnBVakpvZDFadGVHRmtNV1JIVjJ0a1dHSlZXbkZVVlZKWFUwWlplR0ZJVGxWTlZuQjVWR3hqTlZaV1duTlhibkJWWWtad2VsWnRNVWRTYkZKeldrZHNWMWRGU2t0V01WcFhWakZWZUZkWVpFNVdiVkp4VldwS2IxbFdVbGRYYm1SV1VtMTBORll5ZUd0aGF6RllWVzVzVldKR2NISldSM2hoVjBkUmVtTkdaR2xYUjJoVlZsaHdRbVZHVGtkVWJHeHBVbXMxYjFSWGVFdFdiR1JZVFZod1RsWnNjRmhaYTJoTFdWWktObUpHYUZwaE1YQXpXbGQ0V21WVk5WaGtSbFpvWld0YVdsZHNWbUZoTVZsM1RWaEdWMkpyY0ZoV2ExWjNWRVpWZUZkclpHcGlWVnBJVjJ0YVQxUnJNWFJoUmxwWFlsUkdNMVY2Ums1bFZsSjFWR3hXYVdFelFuWldWekI0VlRGYVIxVnNWbFJpVkd4d1ZGWmFkMlZXV2xoa1JFSldUVVJHV1ZaWGRHOVdhekYxWVVod1dGWnNjRXRhVjNoSFl6RldjMXBIYUdobGJGbDVWbTF3UjFsWFJYaGFSV2hYWVRKb1VWWnRkSGRVTVZwMFpFaGtWRlp0VWxaVlZ6RkhZVlV4Y2xkcVFsZGlWRlpNVmpCa1MxTkhWa2RhUm5CcFVqSm9WVlpHVWtka01WbDRXa2hTYTFJelFuQlZha1pLWkRGYVJWSnRkR2xOVm13elZGWldhMkZGTUhsbFJtaGFZa1pLUTFwVlduTmpWa3B6WTBkNFUySldTalZXYWtvMFZUSkdXRk5yYkZKaVIyaFlXV3hvVTFkR1pGZGFSbVJxVFZkU01WVnRlRTloVmtsNFUyNW9WMUpzY0hKV1ZFcFhZekpLUjFkdFJsUlNWRloyVm0weE5HUXlWbGRoTTJSV1lsVmFXRlJWVWtkWFZscFhZVWQwV0ZKc2NEQldWM2hQV1ZaYWMyTkhhRnBOYm1nelZXcEdkMUl5UmtkVWF6Vk9ZbGRqZUZadE1UUmhNREZIVjFob1ZWZEhhR2hWYkdSVFZqRnNjbHBHVGxoV2JYZ3dWRlphVDJGck1WZGpSRUpoVmxkb1VGWkVSbUZrVmtaeldrWndWMVl4UmpOV2FrSmhVMjFSZVZScldtaFNia0pQVlcwMVEwMXNXbkZUYm5Cc1VtczFTVlZ0ZEdGaVJrcDBWV3M1V21KVVJuWlpha1poWTFaR2RGSnNaRTVoZWxZMlYxUkNWMkl4VlhsVGEyaFdZa2RvVmxadGVHRk5NVnBZWlVkR2FrMVdXbmxXUjNocllVZFdjMWRzYkZkaGExcDJXV3BLUjJNeFRuTmhSMmhUWlcxNFdGZFdaREJrTWxKelYydFdVMkpHY0hKVVZscDNaVlp3UmxaVVJtaFdhM0F4VlZab2ExZEhTa2RYYmtaVllrZFNSMXBFUVhoV01XUnlUbFprVTJFelFscFdiVEIzWlVkSmVWVnVUbGhYUjFKWldXeG9VMVpXVm5GUmJVWlVZa1phTUZwVlpFZGhSbHB5WWtSU1ZtSkhhSEpXYWtwTFZsWktWVkZzY0d4aE0wSlFWMnhXWVdFeVVsZFdiazVWWWxkNFZGUldWbmRXYkZsNFdrUkNWMDFzUmpSWGEyaFBWMGRGZVdGSVRsWmhhelZFVmxWYVlXUkZNVmRVYkZKVFlrZDNNVlpIZUZaT1YwWklVMnRhYWxKRlNtaFdiR1JUVTBaYWMxZHRSbGROYXpWSVYydGFWMVl5U2tsUmFscFhZbGhDU0ZkV1dtdFhSa3B5WVVkd1UwMXVhRmxXYWtKWFV6Rk9SMWR1VW14U00xSlFWV3BDVjA1R1dsaE9WazVXVFd0d2VWUnNXbk5YYlVWNFkwZG9WMDFXY0doYVJWVjRWakZPY2s1V1RtbFNiWFExVm14amQyVkdTWGxTYmxKVFlXeHdXRmxyWkc5WlZteFZVbTVrVlZKdGVGaFdNblF3WVdzeGNrNVZhRnBoTVhCMlZtcEJkMlZHVG5SUFZtaG9UVlZ3U1ZkV1VrZFhiVlpIWTBWc1ZHSlhhRlJVVkVaTFZsWmFSMVp0Um10TlYxSllWakowYTFsV1RrbFJiazVXWWtaS1dGWXdXbUZrUlRWWFZHMW9UbFpYT0hsWFYzUmhZVEZhZEZOc2JHaFRTRUpXV1d0YWQyVnNXblJOVldSVFlrWktlbGRyWkhOV01XUkdVMnQwVjAxV2NGaFdha1pXWlVaa1dWcEZOVmRpVmtwNFZsZHdTMkl4YkZkVmJHUllZbTFTVjFWdE1UQk9SbGw1WlVkMGFHRjZSbGxXVnpWelZsZEtSMk5JU2xkU00yaG9WakJrVW1WdFRrZGFSMnhZVWpKb1ZsWnNhSGRSYlZaSFZHdGtWR0pIZUc5VmFrSmhWa1phY1ZOdE9WZGlSMUpaV2tWa01HRlZNWEppUkZKWFlsUldWRlpIZUdGT2JVcElVbXhrYVZkSFozcFhiRnBoV1ZkU1JrMVdXbUZTYkZwdldsZDBZVmRzWkhOV2JVWm9UVlpzTTFSV2FFZFdNa3B5WTBab1YyRXhXak5XUlZwV1pVWmtjbHBIY0dsV1ZuQkpWakowWVZReFVuSk5XRkpvVW14d1dGbHNVa2ROTVZZMlVtczFiRlpzU2pGV1IzaFhZVmRGZWxGdWFGZFdla0kwV1dwS1QxSXhXblZWYlhoVVVqRktkMVpHV210Vk1XUkhWMnhvYTFKRlNsZFVWVkpIVjBac2NsVnNUbGROVld3MldWVm9kMWRzV1hwaFJYaGhVbXh3U0ZreWN6VldNVnB6V2tkNGFFMVhPVFZXYlRGM1VqRnNWMkpHWkZSWFIyaHdWV3RhZDFaR2JITmFSRkpWVFZad2VGVnRkREJXUmxwelkwaG9WazFXU2toV1ZFRjRWakZhY1Zac1drNWliRXB2VjFaa05GUXhTbkpPVm1SaFVtNUNjRlZ0ZEhkVFZscDBaRWRHV0dKV1dsbFdiWFJ2WVRGSmVsRnVRbFppVkZaRVZtcEdZVmRGTVZWVmJXeE9WbXhaTVZaWGVHOWtNVlowVTJ4YVdHSkhhRmhaYkZKSFZURlNWbGR1VGs5aVJYQXdXa1ZhVDFSc1dYaFRXR2hYWWtkUk1GZFdaRWRUUms1eVlrWkthVkl4U2xsWFYzaFRVbXN4UjJORlZsUmlSMUp4VkZaa1UwMVdWblJsUlRsb1ZtdHNORlV5Tlc5V01VcHpZMGhLVjFaRmNGaFpla3BMVWpGa2RGSnNVbE5XUmxveVZtMHdlRTVIVVhsV2JHUm9UVEpTV1ZsdE1WTlhSbEpZWkVoa1ZGWnNjRWxaTUZwUFZqRlpkMVpxVmxkV00yaFFWMVphWVdNeVRraGhSbkJPWW0xbmVsWlhjRWRrTVU1SVUydG9hVkpyTlZsVmJGWjNWVEZhZEUxSVpHeFNWRlpKVld4b2IxWXhaRWhoUjJoV1lrZFNWRlpxUm5OamJHUjFXa1prVGxZemFGZFdWRW8wVkRKR2NrMVdaR3BTUlVwb1ZteGFXbVF4YkhKYVJYUlRUV3MxUmxWWGVGZFdNVnB5WTBac1YySllRa05hVlZwTFZqRk9kVlJ0UmxOaWEwcDNWMWN4TUZNeFVsZFhibEpPVTBkb1ZWUldaRk5YUmxwMFRsWmtXRkl3Y0VsV1Z6QTFWMnhhUmxkcVRscGhhMXBvVmpCVmVGWldWblJoUlRWb1pXeFdNMVp0TUhoTlIwVjRZa1prVkZkSGVHOVZibkJ6Vm14YWNsWnJkRlZTYkhCWldsVmtSMkZyTVZoa1JGcGFWbFpWTVZaVVNrdFhWMFpIWTBaa2FFMVlRakpYVjNCTFVqSk5lRlJ1VG1oU01taFZWV3hXZDFkR1pGaGxSemxWWWxaYVNGWXlkRmRWTWtwV1YyNUdWVlp0VWxSYVYzaHlaREZ3UlZWdGFGZGhNMEY0VmxaYWIyRXhaRWhUYTJSWVltdHdWMWxYZEdGaFJtdDVZek5vVjAxWFVqQlphMXBQVlRKRmVsRnRPVmROVm5CVVZXcEtVbVZXVW5WVWJHaFlVakZLYjFaWGVHOVZNazVYWWtoT1YxWkZXbFJVVmxwSFRrWlplVTFVUW1oU2JIQXdWbGQwYzFkSFJuSk9WRTVYWVd0d1NGa3llRTlrUjBaSFkwZDRhRTFZUWpWV2JYQkRXVlpWZVZSdVRtcFNWMmhVV1d0Vk1XTkdXblJrU0dSWFlrWnNORmRyVWtOWGJGbDRVbXBPVldKR2NISldNR1JMWXpGT2NrOVdaR2hOVm5CTlZqRmFZVmxYVWtoV2ExcGhVbFJzVkZscmFFSmtNV1J6Vm0xR2FFMVdjRmxWTW5SaFlXeEtXR1ZIUmxWV1JUVkVXbFphVjFJeFNsVmlSa1pXVmtSQk5RPT0=' while True: try: code = base64.b64decode(code) except: print(code) break 据说MD5加密很安全，真的是么？
+那么很好判断了，md5加密的，拿到cmd5解密，得到key
+种族歧视
+改请求头，Accept-Language条目中的zh-CN,zh;删除之后访问即可
+HAHA浏览器
+依旧是改请求头，User-Agent条目一行的内容替换成HAHA之后访问即可
+key究竟在哪里呢？
+用firefox自带的web控制台查看页面返回头，看到有个key条目….
+key又找不到了
+bp，先抓一次search_key.php,过去发现里面一个a标签藏着个链接key_is_herenow.php访问得到key
+冒充登陆用户
+内容说必须要登录才能得到key，于是bp抓包发现请求头里的cookie
+cookie:Login=0 把0改成1访问得到key
+比较数字大小</description></item><item><title>Mysql的注入姿势集</title><link>https://selfsolo.com/p/mysql%E7%9A%84%E6%B3%A8%E5%85%A5%E5%A7%BF%E5%8A%BF%E9%9B%86/</link><pubDate>Thu, 30 Nov 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/mysql%E7%9A%84%E6%B3%A8%E5%85%A5%E5%A7%BF%E5%8A%BF%E9%9B%86/</guid><description>一直想找个时间好好整理下搞的这些东西，只能想起来的时候偶尔写一下。
+起因是因为最近看到有个poc利用了报错注入, 而我却发现对它没多少记忆了….就把碰到的都记下来吧..
+http头注入：
+应用场景：某些网站有某些功能，这些功能会收集你的http头信息，带入数据库。
+基本原理：php有个$_SERVER变量可以接收http头的所有信息，它是个数组，具体某个信息比如 User-Agent头，就是 变量 $_SERVER[‘HTTP_USER_AGENT’]。网页某些功能可能会将它带入数据库查询，比如
+注入测试：利用抓包工具抓包修改User-Agent信息，在后面添加注入语句比如’and 1=1# 完成利用。
+Cookie注入：
+应用场景：其实这跟http头注入非常类似，我认为它们的区别在于，cookie注入比http头注入更常见，因为网站经常会验证用户的cookie，来维持登录状态或其他操作。
+基本原理：Cookie也是在http头里的，但独立出$_SERVER数组，cookie中的数据在php中被$_COOKIE变量接收为一个数组。 调用方法 $_SERVER[‘cookiename’] 。
+注入测试：在cookie中找到对应变量，其后添加注入语句。</description></item><item><title>初识SQL注入</title><link>https://selfsolo.com/p/%E5%88%9D%E8%AF%86sql%E6%B3%A8%E5%85%A5/</link><pubDate>Tue, 19 Sep 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%88%9D%E8%AF%86sql%E6%B3%A8%E5%85%A5/</guid><description>盲注，报错注入，有时间再写写。
+sql注入的作用：
+它可以获取信息（用户名密码），也可以写信息（shell） sql注入根据数据库的不同也有区别，很流行的有两个组合，一是asp+access，二是php+mysql.
+今天总结的是后者
+php+mysql 我们知道mysql是这样分的：
+Mysql-&amp;gt;选择数据库-&amp;gt;选择表-&amp;gt;选择列-&amp;gt;存储信息
+要理解sql注入，首先要知道后台脚本语言和基本sql语句的知识。
+我们的目的就是获取最后一步的那个存储的信息，接下来我说一下一次比较完整的sql注入的过程：
+它首先可以在url中进行也可以抓包 (使用burpsuite之类的抓包工具，或者fx-hackbar) 进行，根据提交方式(get,post)和注入手段(cookie)的不同也要不同对待。
+比如目标网站有个文章功能，这个url是
+http://www.target.com/article.php?p=1 问号后面就是传递的参数p，值为1（这里根据参数的不同也要注意注入的区别，下面介绍最简单的纯数字参数的注入）
+对p=1做文章
+首先对目标url进行sql注入测试，像这样 http://www.target.com/article.php?p=1 and 1=1 和
+http://www.target.com/article.php?p=1 and 1=2 (下面都省略成？后面的内容) 根据这两句话判断页面变化，如果第一句返回结果是正常，第二句返回结果是无（页面正常，应该有的内容没显示）那就说明有sql注入。
+order by 语句判断当前表有多少列 p=1 order by 12 如果显示错误，那就说明当前表的列数&amp;lt;12，依次递减，
+如果order by 8显示正确，那就说明当前表的列数为8，然后才能进行下一步操作。
+union select 1,2,3 联合查询语句 mysql中有几个函数对于注入很有用
+database():显示当前使用的数据库名 user():显示当前的数据库用户名 version():显示当前的数据库版本 语句可以像
+p=1 union select database(),user(),version() 这样就可以爆出数据库名，用户名和数据库版本的信息。
+另外提一点，mysql5.0以上会自带一个叫做information_schema的数据库。 如果目标没有删除这个数据库的话，就可以根据此来进行下一步操作。
+用database()获取了数据库名，我们离目标还隔着一层表、列，所以接下来先获取表
+union select table_name,2,3 from information_schema.tables where table_schema='数据库名' 这样就获取到了数据库下的所有表名
+接下来根据表名获取它下面的列名
+union select column_name,2,3 from information_schema.</description></item></channel></rss>

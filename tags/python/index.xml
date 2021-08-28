@@ -18,4 +18,100 @@ Python机器学习 第一章 机器学习 机器学习的概念 当前的时代�
 下图用图例阐述了线性回归（linear regression）的概念：给定一个自变量x和因变量y，拟合一条直线使得样例数据点与拟合直线之间的距离最短，最常用的就是采用平均平方距离来计算。这样，我们就可以通过对样本数据的训练来获得拟合直线的截距和斜率，从而对新的输入变量值所对应的输出变量值进行预测。
 强化学习 - Reinforcement Learning 强化学习的目的是构建一个系统（Agent），在于环境（environment）交互的国策和观念中提高系统的性能。环境的当前状态信息中通常包含一个反馈（reward）信号，我们可以将强化学习视为与监督学习相关的一个领域。然而，在强化学习中，这个反馈值不是一个确定的类标或连续的值，而是一个通过反馈函数产生的对当前系统行为的评价。通过与环境的交互，Agent可以通过强化学习来得到一系列行为，通过探索性的试错或者借助精心设计的激励系统使得正向反馈最大化。
 一个最常见的例子就是围棋对弈的游戏（还有Dota的Open AI）。在此，Agent根据棋盘上的当前局势（environment）决定落子的位置，而游戏结束时胜负的判定可以作为激励信号。
-无监督学习 - Unsupervised Learning 无监督学习的目的是在没有已知输出变量和反馈函数指导的情况下提取有效信息来探索数据的整体结构。</description></item></channel></rss>
+无监督学习 - Unsupervised Learning 无监督学习的目的是在没有已知输出变量和反馈函数指导的情况下提取有效信息来探索数据的整体结构。</description></item><item><title>Python-jieba库的使用</title><link>https://selfsolo.com/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Thu, 01 Feb 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>jieba库是一个python的中文分词库
+当我们需要进行中文语义分析的时候可以用到
+import jieba
+intro. 三种模式:
+精确(默认)模式: 将句子最精确地切开，适合文本分析; 全模式: 将句子中所有的可以成词的词语都扫描出来，但不能解决歧义; 搜索引擎模式: 在精确模式基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词。 它还支持繁体分词，也可以载入自定义词典。
+分词
+jieba.cut(‘需要分词的字符串’,cut_all=False,HMM=True)
+输入的三个参数为: 需要分词的字符串(utf8或unicode编码), cut_all参数选择是否开启全模式，HMM参数选择是否使用HMM模型。
+text = &amp;quot;小明硕士毕业于中国科学院计算所，后在日本京都大学深造&amp;quot; word_list = jieba.cut(text) #默认cut_all=False,HMM=True word_list2 = jieba.cut(text,cut_all=True) word_list3 = jieba.cut_for_search(text) print('精确模式:','/'.join(word_list)) print('全模式:','/'.join(word_list2)) print('搜索引擎模式:','/'.join(word_list3)) 需要注意的是，jieba.cut返回的是一个迭代器(生成器)generator
+这里说明一下，generator和list，tuple相比，是一种比较不消耗内存的存储方式，所以取值的方式也有点特殊。
+while True: try: print(next(generator)) except: break 当然，我们不需要用(‘/‘).join(word_list).split(‘/‘)这种方式来获得一个词语的list。不够pythonic。
+jieba库直接提供了返回list的cut方法，参数和上面例子中的完全相同。
+word_list = jieba.lcut(text) type(word_list) # 其它方法和此例相同。
+载入自定义词典
+开启HMM模式以后，jieba库就有了自动识别新词的能力，但是如果有自定义词典的话，识别的准确性就能提高的更多。
+jieba.load_userdict(‘dict_path’) #载入自定义词典
+dict_path是词典的路径
+词典的格式:
+和jieba库的dict.txt一样，一个词占一行。每一行分三部分:词语，词频(可省略)，词性(可省略)，用空格隔开，顺序不可颠倒。文件需为utf8或unicode编码。
+#coding:utf8 import jieba text = '穿过县界长长的隧道，便是雪国。夜空下一片白茫茫。火车在信号所前停了下来。 一位姑娘从对面座位上站起身子，把岛村座位前的玻璃窗打开。一股冷空气卷袭进来。姑娘将身子探出窗外，仿佛向远方呼唤似地喊道： “站长先生，站长先生！”' word_list = jieba.</description></item><item><title>Python-requests库的使用</title><link>https://selfsolo.com/p/python-requests%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Mon, 29 Jan 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/python-requests%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>requests库的官方中文文档半夜让我笑出声，可爱的编写人员!
+感谢kennethreitz大神的requests库，足够方便，足够有用，足够pythonic!
+官方中文文档链接:http://cn.python-requests.org/zh_CN/latest/
+official doc肯定比我的详细和细致，而我从一个requests库初学者的角度来写，当然，不管哪种方式，都欢迎你接触到了requests库!
+ps：有一些高级用法算是requests库的进阶，可以自行阅览。
+import requests #导入requests库
+发送请求
+常用的GET方式和POST方式举例:
+response = requests.get(url=’https://www.baidu.com/') response = requests.post(url=’https://www.baidu.com/') 其它http请求类型(put,delete,head,options)类似.
+传递url参数
+get方式 请求x.com?key1=value1&amp;amp;key2=value2
+params = {'key1':'value1','key2':'value2'} response = requests.get(url='https://www.baidu.com/',params=params) text属性(界面内容)
+requests相当方便的一点，它可以自动解码来自服务器的内容，大多数时候都不需要自己再因为目标url的编码问题而烦恼了!
+response = requests.get(url='https://www.baidu.com/') print(response.text) #打印解码后的界面内容 response.encoding 返回解码界面内容的相应的编码(比如ISO-8859-1)，可以改变值，再次打印时也会变成改变了的解码方式。
+注: 然而我在实际爬取过程中，偶尔也会遇到明明对应页面是charset=’utf8’，结果解码时变成’ISO-8859-1’，所以根据实际情况还是要有所变化，可以自己写一个识别编码头的函数一劳永逸…
+response.content 不解码直接得到界面内容的二进制相应数据,返回值类似于：b’界面内容’.
+定制http请求头
+url = 'http://www.baidu.com/' headers = {'User-Agent':'xxx','Cookie':'xxxx'} response = requests.get(url=url,headers=headers) post请求传递表单数据
+data = {'key1':'value1','key2':'value2'} response = requests.</description></item><item><title>Python-threading库的使用</title><link>https://selfsolo.com/p/python-threading%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Sat, 27 Jan 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/python-threading%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>之前看过的多线程相关的记不大清了，重新学习吧。
+线程的概念
+线程是CPU分配资源的基本单位。但一个程序开始运行，这个程序就变成了一个进程，而一个进程有至少一个线程。
+当没有多线程编程时，一个进程也是一个主线程，但有多线程编程时，一个进程包含多个线程，包括主线程。
+使用线程可以实现程序的并发。
+创建线程
+第一种，创建thread.Thread实例
+import threading def func_thread(x,y): #定义线程运行函数 for i in range(x,y): print(i) #创建线程t1，用来跑func_thread(1,6) t1 = threading.Thread(target=func_thread,args=(1,6)) #创建线程t2,用来跑func_thread(10,15) t2 = threading.Thread(target=func_thread,args=(10,15)) t1.start() #调用start(),启动t1 t2.start() #调用start(),启动t2 刚接触，实际过程中，除了能传参，其它感觉不是特别方便.. 第二种，继承thread.Thread类 要点是是要重载threading.THread类的run方法，然后调用start()启动线程
+import threading class mythread(threading.Thread): def run(self): #这里写要运行的代码 print(111) t1 = mythread() #创建mythread()实例t1 t2 = mythread() #创建mythread()实例t2 t1.start() #启动mythread t2.start() #启动mythread threading.Thread类的一些相关属性
+join()方法：调用join()后，直到调用join的线程运行完了其他线程才能运行
+import threading class mythread(threading.Thread): def run(self): for i in range(30): print(i) t1 = mythread() t2 = mythread() t1.</description></item><item><title>Python-PIL库的使用</title><link>https://selfsolo.com/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Wed, 24 Jan 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>为了对付比赛，发现别人用qt写出来的应用挺好看的。昨天粗略看了一遍，记得不准确，今天重新开始看文档，一步步来吧。
+运行一个最基本的窗口 from PyQt5 import QtWidgets # 导入PyQt5库的QtWidgets通用窗口类 class firstwindow(QtWidgets.QWidget): #新建一个类，继承自QtWidgets.QWidget类方法 def __init__(self): super(firstwindow,self).__init__() #这里要重载一下mywindows,同时也包含了QtWidgets.QWidget的预加载项 import sys app = QtWidgets.QApplication(sys.argv) # pyqt 窗口必须在QApplication方法中使用，否则会报错 # QWidget:Must construct a QApplication before a QWidget windows = firstwindow() #新建一个firstwindow对象，命名为windows windows.show() #让窗口显示出来 sys.exit(app.exec_()) #启动事件循环，类似于Tkinter的mainloop()函数 Qt Designer 因为QtDesigner很方便，可以帮助开发，于是我们接下来就用用看Designer，新建一个Widget然后保存，是ui文件，我们需要用一行代码把它转成py文件
+在Python36/Lib/site-packages/PyQt5里打开cmd，
+pyuic5 ui文件名 -o 目标py文件名
+pyuic5 d:/python/pyqt/widget.ui -o d:/python/pyqt/widget.py
+转换后代码:
+# -*- coding: utf-8 -*- from PyQt5 import QtCore, QtGui, QtWidgets class Ui_Form(object): def setupUi(self, Form): Form.</description></item><item><title>Python-PIL库的使用</title><link>https://selfsolo.com/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</link><pubDate>Fri, 01 Dec 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/</guid><description>只记录下我用到的，
+from PIL import Image,ImageDraw,ImageChops image = Image.open(“test.jpg”)
+打开图片.
+image = image.convert(“L”)
+转成灰度图片，和黑白图片有区别
+左边是convert的结果，右边是黑白（黑0/白255）图片。
+image.save(“result.png”)
+存储成图片文件
+image = image.point( array[] , ‘1’ )
+这个array[] 实际上要看你的图片是什么类型的。如果不是PNG最好先转成PNG，或者使用convert(“L”) 把 image 转成灰度图片。
+因此，这里的array[] 其实是一个长度为256的数组，也就是代表了0-255灰度值。
+这个函数的作用就是图片根据这个数组里每一位灰度值，比如array[27] 为0，那么图片的像素里所有灰度值等于array[27]的像素值都变成0（即变黑），否则就变成1。和二值（0/255）黑白图片很像，但实际上是（0/1）二值图片。
+`example:
+table = []
+for i in range(256):
+if i &amp;amp;lt; 180: # 所有灰度值小于180的都置0 table.append(0) else: table.append(1) image = image.point(table,’1’)`
+这个例子的结果就是将一张图片里所有灰度值小于180的都变成了黑色（0），其它都变成了像素值为1的颜色。即成了一张灰度图片。
+image.size</description></item><item><title>用Python识别验证码</title><link>https://selfsolo.com/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/</link><pubDate>Thu, 30 Nov 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/</guid><description>前言 先科普一下几个概念：
+什么是验证码? 为什么要破解它?
+验证码现在很常见，很多网站的用户登录界面都要求输入正确的验证码，它可以通过脚本生成。
+我们写爬虫或者做某些不可描述的事情的时候往往需要登录，有时候验证码很难绕过，但我们又需要让爬虫或者工具能够顺利登录目标网站，所以就需要破解验证码。
+python有个库叫PIL。
+全称”Python Imaging Library”，如你所见，就是python的一个图片处理库。功能非常强大，使用非常方便，所以使用它。
+灰度值
+因为验证码通常是一个图片，所以就必须说明一下这个灰度值的概念。
+baike: 把白色与黑色之间按对数关系分成若干级,称为“灰度等级”。范围一般从0到255,白色为255,黑色为0,故黑白图片也称灰度图像,在医学、图像识别领域有很广泛的用途。
+操作 对于目标验证码，采取以下操作：
+1. 下载验证码图片 2. 对验证码图片进行降噪并切割 3. 根据相似度识别验证码 关门了，先挖好坑，我顺便再研究一波代码；
+…好的我回来了
+一晚上的结果，基本对比图库弄出来了
+…所以问题你们也发现了吧…400张4位验证码导出来的结果，“0”，“1”，“I”和“L”没有一个命中或者说能被肉眼看出来的…
+有了基本图库，接下来就是通过PIL库的帮助来写 对比像素的”相似度”脚本了。
+思路暂时是这样：
+同时遍历两个目标的图片，像素相同则相似度+1，最后相似度除以像素总数，则得到最后的相似度结果。
+马上要断电了。
+12/1
+… 降噪脚本完成 找不到优化的地方
+… 切割脚本简易版完成 找到可以优化的地方了
+… 识别脚本正在写。
+正确率惨不忍睹 D8DH -&amp;gt; U8UH 3JZU -&amp;gt; JJJU XG5X -&amp;gt; XCJX 95KU -&amp;gt; JJKU
+卧槽不测了，心态炸裂了谢谢。
+改了下代码，好多了。
+结果如下图：
+虽然准确率到了86%, 但与之而来了一个问题…现在验证码越来越高端，这方法对中文根本不适用，然后还有那么多倾斜的验证码，比如：</description></item></channel></rss>
