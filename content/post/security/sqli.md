@@ -5,7 +5,7 @@ date: 2017-09-19T21:14:23+08:00
 tags:
     - Security
 Categories:
-    - Security
+    - security
 ---
 
 盲注，报错注入，有时间再写写。

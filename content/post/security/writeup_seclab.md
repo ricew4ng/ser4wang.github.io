@@ -5,7 +5,7 @@ date: 2018-03-18T21:14:23+08:00
 tags:
     - Security
 Categories:
-    - Security
+    - security
 ---
 
 前言：重新开始学习安全，用这个水题来暖手，当初步复习。

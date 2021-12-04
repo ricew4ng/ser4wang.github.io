@@ -6,7 +6,7 @@ tags:
     - Security
     - PHP
 Categories:
-    - Security
+    - security
 ---
 
 文件包含(File Inclusion)可能会出现在JSP、PHP、ASP等语言中，常见的导致文件包含的函数如下:

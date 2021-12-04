@@ -5,7 +5,7 @@ date: 2019-02-02T21:14:23+08:00
 tags:
     - Security
 Categories:
-    - Security
+    - security
 ---
 
 对已经公开的tp漏洞的分析总结

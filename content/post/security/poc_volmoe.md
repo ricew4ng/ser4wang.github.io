@@ -5,7 +5,7 @@ date: 2018-08-05T21:14:23+08:00
 tags:
     - Security
 Categories:
-    - Security
+    - security
 ---
 
 前几天想看一部漫画找到一个不错的站点，顺便就发现了一个越权漏洞，普通用户可以直接具有高级用户的下载权限。

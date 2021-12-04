@@ -1,4 +1,4 @@
-baseurl: https://selfsolo.com
+baseurl: https://sera.wang
 languageCode: en-us
 theme: hugo-theme-stack
 paginate: 5
@@ -23,7 +23,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon: https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG
+    favicon: https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png
 
     footer:
         since: 2017
@@ -35,11 +35,11 @@ params:
 
     sidebar:
         emoji: 
-        subtitle: Le vent se lève, il faut tenter de vivre.
+        subtitle: Practice makes perfect.
         avatar:
             enabled: true
             local: false
-            src: https://ser4wang.oss-cn-beijing.aliyuncs.com/20210731222602.png
+            src: https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png
 
     article:
         math: false
@@ -111,11 +111,11 @@ params:
         opengraph:
             enabled: false
             local: false
-            src: https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG
+            src: https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png
 
     colorScheme:
         # Display toggle
-        toggle: false
+        toggle: true
 
         # Available values: auto, light, dark
         default: dark
