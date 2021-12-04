@@ -1,18 +1,18 @@
 <!doctype html><html lang=en-us>
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>Python-jieba库的使用</title>
-<link rel=canonical href=https://selfsolo.com/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
+<link rel=canonical href=https://sera.wang/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
 <link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Python-jieba库的使用">
 <meta property="og:description" content="读书时的碎碎念">
-<meta property="og:url" content="https://selfsolo.com/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
+<meta property="og:url" content="https://sera.wang/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/">
 <meta property="og:site_name" content="Sera Wang">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="开发"><meta property="article:tag" content="Python"><meta property="article:tag" content="jieba"><meta property="article:published_time" content="2018-02-01T21:14:23+08:00"><meta property="article:modified_time" content="2018-02-01T21:14:23+08:00">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Python"><meta property="article:tag" content="jieba"><meta property="article:published_time" content="2018-02-01T21:14:23+08:00"><meta property="article:modified_time" content="2018-02-01T21:14:23+08:00">
 <meta name=twitter:title content="Python-jieba库的使用">
 <meta name=twitter:description content="读书时的碎碎念">
-<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png>
 </head>
 <body class=article-page>
-<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
 <div class="container main-container flex
 on-phone--column compact">
 <aside class="sidebar left-sidebar sticky">
@@ -23,10 +23,10 @@ on-phone--column compact">
 </button>
 <header class=site-info>
 <figure class=site-avatar>
-<img src=https://ser4wang.oss-cn-beijing.aliyuncs.com/20210731222602.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+<img src=https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
 </figure>
-<h1 class=site-name><a href=https://selfsolo.com>Sera Wang</a></h1>
-<h2 class=site-description>Le vent se lève, il faut tenter de vivre.</h2>
+<h1 class=site-name><a href=https://sera.wang>Sera Wang</a></h1>
+<h2 class=site-description>Practice makes perfect.</h2>
 </header>
 <ol class=menu id=main-menu>
 <li>
@@ -49,6 +49,9 @@ on-phone--column compact">
 <span>About</span>
 </a>
 </li>
+<li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span>
+</li>
 </ol>
 </aside>
 <main class="main full-width">
@@ -56,8 +59,8 @@ on-phone--column compact">
 <header class=article-header>
 <div class=article-details>
 <header class=article-category>
-<a href=/categories/%E5%BC%80%E5%8F%91/ style=background-color:#2a9d8f;color:#fff>
-开发
+<a href=/categories/school_notes/ style=background-color:#2a9d8f;color:#fff>
+上学归档
 </a>
 </header>
 <h2 class=article-title>
@@ -86,7 +89,7 @@ on-phone--column compact">
 </blockquote>
 <h2 id=intro>intro.</h2>
 <p>三种模式:</p>
-<pre><code>精确(默认)模式: 将句子最精确地切开，适合文本分析;
+<pre tabindex=0><code>精确(默认)模式: 将句子最精确地切开，适合文本分析;
 
 全模式: 将句子中所有的可以成词的词语都扫描出来，但不能解决歧义;
 
@@ -97,7 +100,7 @@ on-phone--column compact">
 <p>分词</p>
 <p>jieba.cut(‘需要分词的字符串’,cut_all=False,HMM=True)</p>
 <p>输入的三个参数为: 需要分词的字符串(utf8或unicode编码), cut_all参数选择是否开启全模式，HMM参数选择是否使用HMM模型。</p>
-<pre><code> text = &quot;小明硕士毕业于中国科学院计算所，后在日本京都大学深造&quot;
+<pre tabindex=0><code> text = &quot;小明硕士毕业于中国科学院计算所，后在日本京都大学深造&quot;
 
  word_list = jieba.cut(text) #默认cut_all=False,HMM=True
  word_list2 = jieba.cut(text,cut_all=True)
@@ -109,7 +112,7 @@ on-phone--column compact">
 
 </code></pre><p>需要注意的是，jieba.cut返回的是一个迭代器(生成器)generator</p>
 <p>这里说明一下，generator和list，tuple相比，是一种比较不消耗内存的存储方式，所以取值的方式也有点特殊。</p>
-<pre><code> while True:
+<pre tabindex=0><code> while True:
      try:
          print(next(generator))
      except:
@@ -117,7 +120,7 @@ on-phone--column compact">
 
 </code></pre><p>当然，我们不需要用(‘/‘).join(word_list).split(‘/‘)这种方式来获得一个词语的list。不够pythonic。</p>
 <p>jieba库直接提供了返回list的cut方法，参数和上面例子中的完全相同。</p>
-<pre><code> word_list = jieba.lcut(text)
+<pre tabindex=0><code> word_list = jieba.lcut(text)
  type(word_list) #
 
 </code></pre><p>其它方法和此例相同。</p>
@@ -129,7 +132,7 @@ on-phone--column compact">
 <p>dict_path是词典的路径</p>
 <p>词典的格式:</p>
 <p>和jieba库的dict.txt一样，一个词占一行。每一行分三部分:词语，词频(可省略)，词性(可省略)，用空格隔开，顺序不可颠倒。文件需为utf8或unicode编码。</p>
-<pre><code> #coding:utf8
+<pre tabindex=0><code> #coding:utf8
 
  import jieba
 
@@ -157,7 +160,7 @@ on-phone--column compact">
 <p>动态修改词典</p>
 <p>add_word(word,freq=None,tag=None)和del_word(word)，可以动态修改词典</p>
 <p>suggest_freq(segment,tune=True) 可以调节单个词语的词频，使其能/不能被分出来</p>
-<pre><code> jieba.add_word('你好')
+<pre tabindex=0><code> jieba.add_word('你好')
 
  jieba.suggest_freq('女神',tune=True)
 
@@ -187,7 +190,6 @@ jieba.analyse.textranke(sentence,topK=20,withWeight=False,allowPOS=(‘ns’,’
 </section>
 <footer class=article-footer>
 <section class=article-tags>
-<a href=/tags/%E5%BC%80%E5%8F%91/>开发</a>
 <a href=/tags/python/>Python</a>
 <a href=/tags/jieba/>jieba</a>
 </section>
@@ -197,6 +199,13 @@ jieba.analyse.textranke(sentence,topK=20,withWeight=False,allowPOS=(‘ns’,’
 <h2 class=section-title>Related contents</h2>
 <div class=related-contents>
 <div class="flex article-list--tile">
+<article>
+<a href=/p/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%8B%9Fpcb/>
+<div class=article-details>
+<h2 class=article-title>代码模拟PCB</h2>
+</div>
+</a>
+</article>
 <article>
 <a href=/p/python-requests%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
 <div class=article-details>
@@ -222,13 +231,6 @@ jieba.analyse.textranke(sentence,topK=20,withWeight=False,allowPOS=(‘ns’,’
 <a href=/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
 <div class=article-details>
 <h2 class=article-title>Python-PIL库的使用</h2>
-</div>
-</a>
-</article>
-<article>
-<a href=/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/>
-<div class=article-details>
-<h2 class=article-title>用Python识别验证码</h2>
 </div>
 </a>
 </article>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>杂记 on Sera Wang</title><link>https://selfsolo.com/tags/%E6%9D%82%E8%AE%B0/</link><description>Recent content in 杂记 on Sera Wang</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 04 Sep 2018 21:14:23 +0800</lastBuildDate><atom:link href="https://selfsolo.com/tags/%E6%9D%82%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>校园杂记21: 我的安全之路</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B021-%E6%88%91%E7%9A%84%E5%AE%89%E5%85%A8%E4%B9%8B%E8%B7%AF/</link><pubDate>Tue, 04 Sep 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B021-%E6%88%91%E7%9A%84%E5%AE%89%E5%85%A8%E4%B9%8B%E8%B7%AF/</guid><description>下午日常逛着freebuf，看别人的挖洞经验。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>杂记 on Sera Wang</title><link>https://sera.wang/tags/%E6%9D%82%E8%AE%B0/</link><description>Recent content in 杂记 on Sera Wang</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 04 Sep 2018 21:14:23 +0800</lastBuildDate><atom:link href="https://sera.wang/tags/%E6%9D%82%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>校园杂记21: 我的安全之路</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B021-%E6%88%91%E7%9A%84%E5%AE%89%E5%85%A8%E4%B9%8B%E8%B7%AF/</link><pubDate>Tue, 04 Sep 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B021-%E6%88%91%E7%9A%84%E5%AE%89%E5%85%A8%E4%B9%8B%E8%B7%AF/</guid><description>下午日常逛着freebuf，看别人的挖洞经验。
 看累了，随手点开了我的”拿shell”文件夹里的一个站，是个不知名公司，用的某php框架，google hacking找到了后台，看到了框架的版本，神不知鬼不觉的搜了波这框架的漏洞，找到一个exp，一用就拿到了后台，连nmap和whois都没开……
 然而，并没有一种喜悦的感觉，这一切来得似乎太容易。
 以至于后来，吃完饭就直奔操场散了会儿步，慢慢地，心境渐渐开阔，前所未有的明朗，和一位一直以来很感谢的前辈又交流了下，问了点小白问题，确定了自己接下来主要的研究方向: 代码审计 以及 机器学习。
@@ -13,7 +13,7 @@
 于是，没过多久，退了群，自己折腾，中间尝试数次没有拿过shell，觉得自己没有学习安全的”天赋”，流过眼泪，第二天继续研究下去。
 暑假里找到了几个业务逻辑方面的漏洞，原理很简单，同时薅了波漏洞平台的羊毛(40包辣条)…也总算有了点信心。
 读了很多很多的书，总希望自己能靠着阅读量来速成，然而现实总是喜欢打幻想者的脸。 一次次的弱口令爆破失败，一次次的漏洞尝试，渐渐放弃了拿shell的想法，准备专门找漏洞，因此研究更多的细节，钻研更多的原理，今天却仿佛缘分到了，拿到了后台。 没有太多的喜悦，但这算是给自己坚定了信心。
-两年前听过了汤老师讲的专业导读，喜欢上了安全，见过很多大佬写的关于自己起初如何学习安全的故事。 回顾这一年，我终于在今天确定了，自己一定是有所成长的，而这所有的一切，我的代码，我读的书，我写的字，我的体会，我的感受，我遇到的人，就是属于我自己的安全之路。</description></item><item><title>校园杂记20: 这是一个认真的实训总结</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B020-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AE%A4%E7%9C%9F%E7%9A%84%E5%AE%9E%E8%AE%AD%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 27 Jul 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B020-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AE%A4%E7%9C%9F%E7%9A%84%E5%AE%9E%E8%AE%AD%E6%80%BB%E7%BB%93/</guid><description>今天我放假啦，除了听说上交的朋友小学期还没完之外，我应该算是最晚一批放假的大学生了…
+两年前听过了汤老师讲的专业导读，喜欢上了安全，见过很多大佬写的关于自己起初如何学习安全的故事。 回顾这一年，我终于在今天确定了，自己一定是有所成长的，而这所有的一切，我的代码，我读的书，我写的字，我的体会，我的感受，我遇到的人，就是属于我自己的安全之路。</description></item><item><title>校园杂记20: 这是一个认真的实训总结</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B020-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AE%A4%E7%9C%9F%E7%9A%84%E5%AE%9E%E8%AE%AD%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 27 Jul 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B020-%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E8%AE%A4%E7%9C%9F%E7%9A%84%E5%AE%9E%E8%AE%AD%E6%80%BB%E7%BB%93/</guid><description>今天我放假啦，除了听说上交的朋友小学期还没完之外，我应该算是最晚一批放假的大学生了…
 为什么这么晚，因为学校给安排了一个两周的实训，听过各种学长学姐吐槽过这个实训，有说水的有说坑的，大多数…不，应该说基本，都是负面的…于是实训还没开始我这crud小能手就在心里感到不屑。
 实训体验 当然我这十天也是这么过去的，日常同学拉我组队，日常早早写好自己份的，日常后续填需求，这十天写代码的时间占了1成，打游戏摸鱼的时间占了9成，恍恍惚惚不知道自己在干什么。
 前面一个礼拜是一位姓李的老师，后来说是项目急着上线，第二个礼拜就换了个老师，好像姓刘，叫刘清，年纪感觉快40了(?)如果说李老师给人的第一印象(因为我整天摸鱼，所以只有第一印象)是一个年轻的码农的话，这位刘老师的第一印象则是一个典型的中年程序员，不修边幅，给人一种很随意的感觉，上身深色polo衫，下身灰裤子，有点瘦，头发有点凌乱哈哈哈，总给人一种刚睡起来的赶脚，并且好像也许大概没有陷入知乎上说的程序员中年危机。
@@ -34,7 +34,7 @@
 这几个月，可能长久以来受很多因素影响，我一直想做个有意思的项目，(开源，集星星，影响力大，拉投资，建公司，走上人生巅峰，娶….咳咳不yy了)
 就跟研究生学长学姐们愁的怎么开题一样，我也在想什么主题，更想做安全那块，之前有过几个idea，现在困了就不写了hhh(才不是因为idea太中二了)
 最后 我列过一个愿望清单…给老姐说过，最近还跟宁宁姐聊天说到，宁宁姐看了之后很有兴趣，第二天也列了一个给我看，说是这样有动力，互相勉励，哈哈哈哈，于是我加了一个小愿望，等我找到一个好实习了拿到工资了有机会要带宁宁姐去吃她想次的米其林！！
-真是很让人期待未来啊！！！がんばって！sera同学！为了愿望清单要好好努力呀！要去宁夏找老姐玩儿，要带宁宁姐去吃米其林，要跟未来女票去好多地方啊！</description></item><item><title>校园杂记19: 人生思考</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B019-%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/</link><pubDate>Sat, 16 Jun 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B019-%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/</guid><description>好久没写这个了，因为最近一段时间事情实在太多，现在解决了一坨东西之后，就有了点空闲。
+真是很让人期待未来啊！！！がんばって！sera同学！为了愿望清单要好好努力呀！要去宁夏找老姐玩儿，要带宁宁姐去吃米其林，要跟未来女票去好多地方啊！</description></item><item><title>校园杂记19: 人生思考</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B019-%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/</link><pubDate>Sat, 16 Jun 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B019-%E4%BA%BA%E7%94%9F%E6%80%9D%E8%80%83/</guid><description>好久没写这个了，因为最近一段时间事情实在太多，现在解决了一坨东西之后，就有了点空闲。
 好吧刚开始写又有事情了…唉
 …
 …
@@ -55,7 +55,7 @@
 以后啊，会想跟女朋友夏天到日本看烟花大会！逛夏日祭典！想看她穿yukata的样子！ 冬天去北海道看雪！ 还想跟她去看拉斯维加斯的黑客大会DEFCON！去看E3游戏展！去看世界杯！去海边度假吃海鲜…
 给自己打鸡血啊，要变得更好啊…
 谢谢身边的和不在身边的我的朋友们！希望你们都能被世界的温柔包围，遇到困难的时候坚持下去，坚持不下去了那一定要来找我呀！我会告诉你坚持不下去的时候该怎么摸鱼哈哈哈。
-爱你们的Sera ：）</description></item><item><title>校园杂记17: 我想吐槽的‘Web安全’</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B017-%E6%88%91%E6%83%B3%E5%90%90%E6%A7%BD%E7%9A%84web%E5%AE%89%E5%85%A8/</link><pubDate>Mon, 26 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B017-%E6%88%91%E6%83%B3%E5%90%90%E6%A7%BD%E7%9A%84web%E5%AE%89%E5%85%A8/</guid><description>web安全是什么?
+爱你们的Sera ：）</description></item><item><title>校园杂记17: 我想吐槽的‘Web安全’</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B017-%E6%88%91%E6%83%B3%E5%90%90%E6%A7%BD%E7%9A%84web%E5%AE%89%E5%85%A8/</link><pubDate>Mon, 26 Mar 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B017-%E6%88%91%E6%83%B3%E5%90%90%E6%A7%BD%E7%9A%84web%E5%AE%89%E5%85%A8/</guid><description>web安全是什么?
 是渗透测试? 是机器学习搜索webshell? 是fuzz testing? 是ctf?
 是找出各种漏洞? 是各种技巧? 是如何安全的在网络中”摸鱼”?
 …
@@ -82,13 +82,13 @@ python写的框架也是一坨漏洞。exp要用python写吧，python了解下? 
 有条件复现漏洞环境的尽量进行测试，多动手才好玩啊！比如最近公开的漏洞：【乌云峰会】网易闪电邮远程命令执行附思路分析，完全可以找个旧版本的软件玩玩，玩一次的记忆绝对比你光看要强。
 尝试分享，目前自己做的还不够，希望自己能静下心来多写写东西。
 这是我最近一段时间的经验分享和自己的一点思考，只是发出来供参考。关于找人带入门的问题：我觉得没人带一样可以找到很多东西学，智商不足勤奋补上嘛！要学会搜索！还有，这篇文章不是乌云的广告贴，我只是把在乌云上刷Rank当成激励自己的目标。
-—————2016年02月17号 更新分割线—————— 在WooYun上我已经是一个普通白帽子，白帽子信息_zhchbin ，在我写下上面那个答案之后的这段时间，我发现了一个腾讯的XSS问题，若干个新浪微博的CSRF问题，知乎/bilibili/网易等厂商的用户微博OAuth2.</description></item><item><title>校园杂记16: 没有最好，只有最合适</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B016-%E6%B2%A1%E6%9C%89%E6%9C%80%E5%A5%BD%E5%8F%AA%E6%9C%89%E6%9C%80%E5%90%88%E9%80%82/</link><pubDate>Sun, 18 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B016-%E6%B2%A1%E6%9C%89%E6%9C%80%E5%A5%BD%E5%8F%AA%E6%9C%89%E6%9C%80%E5%90%88%E9%80%82/</guid><description>爬虫写着写着，用bp再次想抓一波包的时候发现什么都抓不到了，ip貌似被屏蔽了…有点后悔没有用代理ip，不谨慎啊……
+—————2016年02月17号 更新分割线—————— 在WooYun上我已经是一个普通白帽子，白帽子信息_zhchbin ，在我写下上面那个答案之后的这段时间，我发现了一个腾讯的XSS问题，若干个新浪微博的CSRF问题，知乎/bilibili/网易等厂商的用户微博OAuth2.</description></item><item><title>校园杂记16: 没有最好，只有最合适</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B016-%E6%B2%A1%E6%9C%89%E6%9C%80%E5%A5%BD%E5%8F%AA%E6%9C%89%E6%9C%80%E5%90%88%E9%80%82/</link><pubDate>Sun, 18 Mar 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B016-%E6%B2%A1%E6%9C%89%E6%9C%80%E5%A5%BD%E5%8F%AA%E6%9C%89%E6%9C%80%E5%90%88%E9%80%82/</guid><description>爬虫写着写着，用bp再次想抓一波包的时候发现什么都抓不到了，ip貌似被屏蔽了…有点后悔没有用代理ip，不谨慎啊……
 想抓tb订单的念头断了，忧郁，之前ali的api平台还能看到获取订单的api，现在找不到了，两会过后页面变了特别多，很多网站都是这样，思路断了，但是一样要写，不写白不写，不然之前买会员的钱不就白花了吗…虽然这样只能靠用户自觉…
 最近写爬虫写的真是想吐血。写爬虫，目标反爬，反反爬，目标反反反爬，生命真的就是这样浪费的吧。
 但我也发现，很多网站它不可能对反爬是”一步到位”的，直接就用最严厉的手段来反爬，抓到封ip，这也许就是”没有最好，只有最合适”吧。
 实际做事要考虑的事情非常多，不是直接就查看所有请求头，查看目标访问次数能解决的，还要考虑写这些对网页带宽的影响，几个用户可能没感觉，到几千上万乃至上亿，可能影响就积少成多非常巨大了，维持服务器要费用，提高带宽就意味着成本的增加，既然如此不如降低点反爬的标准，或者”人工”反爬也许都会比脚本反爬来的性价比高。
 看到篇文章说”如今的安全圈简直就是安全娱乐圈”，说到底就是浮躁吧。虽然我想说，就算是安全娱乐圈我也进不去啊，门槛是真特么高啊。我对它门槛的定义就是挖到一个有点深度的漏洞，是真驮马的难啊。
-4个月没弄过安全，当初吹的nb忘了吗? 再不醒醒，大清就亡了。</description></item><item><title>校园杂记15: 摸鱼摸爆，于是剃了个光头</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B015-%E6%91%B8%E9%B1%BC%E6%91%B8%E7%88%86%E4%BA%8E%E6%98%AF%E5%89%83%E4%BA%86%E4%B8%AA%E5%85%89%E5%A4%B4/</link><pubDate>Sat, 24 Feb 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B015-%E6%91%B8%E9%B1%BC%E6%91%B8%E7%88%86%E4%BA%8E%E6%98%AF%E5%89%83%E4%BA%86%E4%B8%AA%E5%85%89%E5%A4%B4/</guid><description>…
+4个月没弄过安全，当初吹的nb忘了吗? 再不醒醒，大清就亡了。</description></item><item><title>校园杂记15: 摸鱼摸爆，于是剃了个光头</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B015-%E6%91%B8%E9%B1%BC%E6%91%B8%E7%88%86%E4%BA%8E%E6%98%AF%E5%89%83%E4%BA%86%E4%B8%AA%E5%85%89%E5%A4%B4/</link><pubDate>Sat, 24 Feb 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B015-%E6%91%B8%E9%B1%BC%E6%91%B8%E7%88%86%E4%BA%8E%E6%98%AF%E5%89%83%E4%BA%86%E4%B8%AA%E5%85%89%E5%A4%B4/</guid><description>…
 …
 …
 …
@@ -115,7 +115,7 @@ python写的框架也是一坨漏洞。exp要用python写吧，python了解下? 
 今天逛某网站摸鱼头学到了…kindle上还可以看漫画！！体验超棒！ 网站叫 vol.moe！可以直接kindle内置浏览器打开下载里面的资源..
 最后!! 我打算以后关于技术什么的文章要更认真写了(代码和注释会清清楚楚，更明白的)!!!因为听说了某狗adsense这种东西，想着不好好写，这样不行啊。 这种想法…
 刚刚问朋友要来一个长头发的偏方！
-我去擦姜片了!!!</description></item><item><title>校园杂记14: 我把带宽提高了1M以后</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B014-%E6%88%91%E6%8A%8A%E5%B8%A6%E5%AE%BD%E6%8F%90%E9%AB%98%E4%BA%861m%E4%BB%A5%E5%90%8E/</link><pubDate>Tue, 13 Feb 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B014-%E6%88%91%E6%8A%8A%E5%B8%A6%E5%AE%BD%E6%8F%90%E9%AB%98%E4%BA%861m%E4%BB%A5%E5%90%8E/</guid><description>…
+我去擦姜片了!!!</description></item><item><title>校园杂记14: 我把带宽提高了1M以后</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B014-%E6%88%91%E6%8A%8A%E5%B8%A6%E5%AE%BD%E6%8F%90%E9%AB%98%E4%BA%861m%E4%BB%A5%E5%90%8E/</link><pubDate>Tue, 13 Feb 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B014-%E6%88%91%E6%8A%8A%E5%B8%A6%E5%AE%BD%E6%8F%90%E9%AB%98%E4%BA%861m%E4%BB%A5%E5%90%8E/</guid><description>…
 …
 …
 …
@@ -139,7 +139,7 @@ python写的框架也是一坨漏洞。exp要用python写吧，python了解下? 
 最近在appstore里下了个v p n应用，搜索的时候发现应用超级多，于是感觉就有点不对劲，怎么会有这么多? 心里想到了一种可能性，就是这些开发者或者公司是不是那种赚一票就跑的呢?(等到用户增量不多了，服务器维持费用也上去了，就直接跑路了) 不知道appstore对于应用开发者有没有相关的要求呢…还是很好奇的，如果可以换个马甲给自己先前做的vpn应用改个名，换汤不换药，继续放出来，吸引一批客户进入以后，赚了一笔又跑路了…真可怕呢…
 现在v9p9n9这三个字都是涉及政治敏感会被封禁的。这些应用如果只靠用户的一次性支付下载应用来维持服务器运行的话，我没有做过也没有渠道了解其中的利润具体是怎么样的，不过估计应该是赚爆了的..服务器的维持费用可能也许就是利润的九牛一毛……于是我很心动啊!!!也想做一个QVQ，什么时候抽点时间做做看免费的? 不盈利的vpn应该不会被封禁吧……
 还得另租一台服务器搭代理，vultr的打折每次都能错过我也是服……
-话说标题本来想起的很高大上的，后来看着….就这样吧。</description></item><item><title>校园杂记13: 这几天开开心心聚会，顺便测试bug</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B013-%E8%BF%99%E5%87%A0%E5%A4%A9%E5%BC%80%E5%BC%80%E5%BF%83%E5%BF%83%E8%81%9A%E4%BC%9A%E9%A1%BA%E4%BE%BF%E6%B5%8B%E8%AF%95bug/</link><pubDate>Wed, 07 Feb 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B013-%E8%BF%99%E5%87%A0%E5%A4%A9%E5%BC%80%E5%BC%80%E5%BF%83%E5%BF%83%E8%81%9A%E4%BC%9A%E9%A1%BA%E4%BE%BF%E6%B5%8B%E8%AF%95bug/</guid><description>因为这几天聚会比较多，没什么时间写project，只是测试测试改改函数，多线程之间的协作被自己越写越复杂。把之前说好的几个功能加上，还有几个菜单项就暂时没弄了，多线程调绘图这个大bug始终修不掉啊修不掉。不认识几个python大神，菜鸡真是举步维艰。
+话说标题本来想起的很高大上的，后来看着….就这样吧。</description></item><item><title>校园杂记13: 这几天开开心心聚会，顺便测试bug</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B013-%E8%BF%99%E5%87%A0%E5%A4%A9%E5%BC%80%E5%BC%80%E5%BF%83%E5%BF%83%E8%81%9A%E4%BC%9A%E9%A1%BA%E4%BE%BF%E6%B5%8B%E8%AF%95bug/</link><pubDate>Wed, 07 Feb 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B013-%E8%BF%99%E5%87%A0%E5%A4%A9%E5%BC%80%E5%BC%80%E5%BF%83%E5%BF%83%E8%81%9A%E4%BC%9A%E9%A1%BA%E4%BE%BF%E6%B5%8B%E8%AF%95bug/</guid><description>因为这几天聚会比较多，没什么时间写project，只是测试测试改改函数，多线程之间的协作被自己越写越复杂。把之前说好的几个功能加上，还有几个菜单项就暂时没弄了，多线程调绘图这个大bug始终修不掉啊修不掉。不认识几个python大神，菜鸡真是举步维艰。
 今天再测试一波，改一改代码，优化一下，然后再把文档更新一下吧…唉
 好久没跟高中同学吃过饭了，难得回家一次满足了他们一下哈哈哈。
 女神变得更更更好看惹，基友变得更更更厉害惹，只有我从来没变过!还是一条咸鱼哈哈哈。
@@ -175,7 +175,7 @@ python写的框架也是一坨漏洞。exp要用python写吧，python了解下? 
 (…太太太好看惹!右键右键! 统统右键!!! 我要专门在服务器上写个爬虫，自动爬! 😕!微!信!爬!爆!)
 真的…被bug搞得…心力交瘁……我好像又遇到了那个传说中的情况
 ‘我上一秒跑着还好好的啊’…惊!了! 感觉自己真是在吃瘪啊
-运行了五六次，又错了?这是为什么呢?</description></item><item><title>校园杂记12: 最近的老师和书和游戏</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B012-%E6%9C%80%E8%BF%91%E7%9A%84%E8%80%81%E5%B8%88%E5%92%8C%E4%B9%A6%E5%92%8C%E6%B8%B8%E6%88%8F/</link><pubDate>Sun, 28 Jan 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B012-%E6%9C%80%E8%BF%91%E7%9A%84%E8%80%81%E5%B8%88%E5%92%8C%E4%B9%A6%E5%92%8C%E6%B8%B8%E6%88%8F/</guid><description>这篇日记就当是最近的吐槽还有总结好了。
+运行了五六次，又错了?这是为什么呢?</description></item><item><title>校园杂记12: 最近的老师和书和游戏</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B012-%E6%9C%80%E8%BF%91%E7%9A%84%E8%80%81%E5%B8%88%E5%92%8C%E4%B9%A6%E5%92%8C%E6%B8%B8%E6%88%8F/</link><pubDate>Sun, 28 Jan 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B012-%E6%9C%80%E8%BF%91%E7%9A%84%E8%80%81%E5%B8%88%E5%92%8C%E4%B9%A6%E5%92%8C%E6%B8%B8%E6%88%8F/</guid><description>这篇日记就当是最近的吐槽还有总结好了。
 关于老师 昨天刚吃完年夜饭，年夜饭前收到了老师之前说过的一个task，写个爬虫，看了下需求，里面其中一项是要做数据清洗，然后分词的，还没接触过语义分词这个领域实在不清楚自己能做到什么样子。
 需求还没看完，想了想，手上事情还蛮多的。
 前两天为比赛写的一个应用大概进度是50%左右，属于有界面但不漂亮，有功能但没完善，还有一点功能没写，一些bug没修的状态。
@@ -200,7 +200,7 @@ python写的框架也是一坨漏洞。exp要用python写吧，python了解下? 
 因为这个原因，加之各种人的影响，有高中语文老师安利过的川端康成的《雪国》，家里又有一个本来就在日本待过很多年的姑姑。后来又阴差阳错，读了很多日本文学书（川端康成）或者小说（东野圭吾），发现自己真的很喜欢这一类的书籍。
 其实要仔细深究，这类物语很容易满足我这种人的心情，因为如果真穿越到了古代，那时候肯定也不如现在这般太平，乡间行走，碰上三两山盗自己肯定就已束手无策。但是物语和动漫毕竟是可以美化的，书中人间，物语江户，亦令我憧憬。
 关于游戏 因为4放学校没带回家，只能拿出以前没怎么好好玩过的三公主，还是有不少经典之作的，黑魂2，幻痛，战神，凯瑟琳，二之国等等。
-最近沉迷幻痛无法自拔，以前psp上玩过一作合金装备，大部分精力还是在mh上，现在这作幻痛开头剧情就很吸引我，又是个开放世界rpg，加之游戏性一流，除了手柄有点飘，其它都是心目中神作级别的game! 强推! 打算以后有时间会在4上也入一作幻痛。</description></item><item><title>校园杂记11: 考试考完，摸鱼摸完</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B011-%E8%80%83%E8%AF%95%E8%80%83%E5%AE%8C%E6%91%B8%E9%B1%BC%E6%91%B8%E5%AE%8C/</link><pubDate>Tue, 16 Jan 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B011-%E8%80%83%E8%AF%95%E8%80%83%E5%AE%8C%E6%91%B8%E9%B1%BC%E6%91%B8%E5%AE%8C/</guid><description>好久没更新，9号考完试，摸鱼摸的已经摸到晋太元中，不知代码为何物了:(
+最近沉迷幻痛无法自拔，以前psp上玩过一作合金装备，大部分精力还是在mh上，现在这作幻痛开头剧情就很吸引我，又是个开放世界rpg，加之游戏性一流，除了手柄有点飘，其它都是心目中神作级别的game! 强推! 打算以后有时间会在4上也入一作幻痛。</description></item><item><title>校园杂记11: 考试考完，摸鱼摸完</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B011-%E8%80%83%E8%AF%95%E8%80%83%E5%AE%8C%E6%91%B8%E9%B1%BC%E6%91%B8%E5%AE%8C/</link><pubDate>Tue, 16 Jan 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B011-%E8%80%83%E8%AF%95%E8%80%83%E5%AE%8C%E6%91%B8%E9%B1%BC%E6%91%B8%E5%AE%8C/</guid><description>好久没更新，9号考完试，摸鱼摸的已经摸到晋太元中，不知代码为何物了:(
 先列一下寒假的任务（先后顺序）:
 老师要求写一个转换工具（完成） 另一个老师要求给团队写网页（还没开始想） 比赛：写一个打字软件（要用java写…一年半没碰java..我真的…） 做07-17年的web攻击分析，用python画出变化图（有思路） 看掉tcpip协议：卷一 今天是把第一个任务完成了，改了很多次bug还有细节，就是写了一个IEEE754格式16进制数和十进制的互转工具。
 学到了python怎么转exe! 这是今天唯一让我开心的(比起上面那些task来说)!
@@ -218,7 +218,7 @@ python your_path_here/pyinstaller-script.py -F -w target.py
 对了!!!
 血源真的很棒!!!!
 有生之年希望能出2
-预购了mhw，结果1.20就得回家，这是为什么!!!人类为什么要过年!!! 2.26返校才能玩到，内心是崩溃的，有没有大佬寒假借我台4啊QAQ我不想抱着一张光盘过年啊…</description></item><item><title>校园杂记10：找站策略+第一次看自(bie)己(ren)拿shell</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B010%E6%89%BE%E7%AB%99%E7%AD%96%E7%95%A5-%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%9C%8B%E8%87%AAbie%E5%B7%B1ren%E6%8B%BFshell/</link><pubDate>Sat, 25 Nov 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B010%E6%89%BE%E7%AB%99%E7%AD%96%E7%95%A5-%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%9C%8B%E8%87%AAbie%E5%B7%B1ren%E6%8B%BFshell/</guid><description>最近事情有点多，好久没更。总之，回归安全啦（其实连出发都没出发…&amp;lt;(_ _ )&amp;gt;）
+预购了mhw，结果1.20就得回家，这是为什么!!!人类为什么要过年!!! 2.26返校才能玩到，内心是崩溃的，有没有大佬寒假借我台4啊QAQ我不想抱着一张光盘过年啊…</description></item><item><title>校园杂记10：找站策略+第一次看自(bie)己(ren)拿shell</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B010%E6%89%BE%E7%AB%99%E7%AD%96%E7%95%A5-%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%9C%8B%E8%87%AAbie%E5%B7%B1ren%E6%8B%BFshell/</link><pubDate>Sat, 25 Nov 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B010%E6%89%BE%E7%AB%99%E7%AD%96%E7%95%A5-%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%9C%8B%E8%87%AAbie%E5%B7%B1ren%E6%8B%BFshell/</guid><description>最近事情有点多，好久没更。总之，回归安全啦（其实连出发都没出发…&amp;lt;(_ _ )&amp;gt;）
 昨天晚上想了想，看了这么久的渗透，但是一直找不到一个合适的站点，很多cms的漏洞自己搭环境测试成功了。那怎么找一个合适的目标来测试一下呢?
 找站策略：
 google: search→ Copyright 20xx-20xx [cms名字] baidu: site:.cn [关键字，比如”商城”] 这下应该可以找到合适的target了……先感叹一下以前的自己真是蠢啊…好了我去试一下 ——9：05 am
@@ -231,7 +231,7 @@ google失败了, 站也没找到多少个, 为什么shimakaze狗又炸了啊? �
 我拓麻又坐了一天什么都没干, 挖不到洞好难过啊……
 周五的时候跟前辈聊了聊, 让我去学java….java….啊 记得不久前还说过这辈子都不想学这个语言(叹气), 人生真是艰难啊, 抽个空看一看吧. 噢对了…前几天看学校团委的网站, 它用的tscms，这cms不是那么出名，找个时间读一读源代码，当作第一次代码审计的作业好了。
 随便往学校网站里一看, 重点来了!!! 发现upload/file/下 11月12号有个奇怪的东西, 是个zip…下载下来解压发现是个叫 2013加密.php 的webshell，这是有人想搞事情啊!!!! 花了点钱买了cmd5的积分解密, 一看密码其实隐隐有种感觉，这个人可能是个script kid……算了，脚本小子也比我个没shell的辣鸡强 :(
-卧槽!</description></item><item><title>校园杂记9：成了一个 API Boy</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B09%E6%88%90%E4%BA%86%E4%B8%80%E4%B8%AA-api-boy/</link><pubDate>Sun, 05 Nov 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B09%E6%88%90%E4%BA%86%E4%B8%80%E4%B8%AA-api-boy/</guid><description>因为小挑加了两支队伍，每支都要做一个website←_←
+卧槽!</description></item><item><title>校园杂记9：成了一个 API Boy</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B09%E6%88%90%E4%BA%86%E4%B8%80%E4%B8%AA-api-boy/</link><pubDate>Sun, 05 Nov 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B09%E6%88%90%E4%BA%86%E4%B8%80%E4%B8%AA-api-boy/</guid><description>因为小挑加了两支队伍，每支都要做一个website←_←
 要做之前，大脑有点空…毕竟不知道多久没有写过js和php了…前段时间的漏洞和各种安全的书看的人头皮发麻.
 总之，重拾开发了…
 两个website大概都算把雏形做好了…
@@ -248,7 +248,7 @@ google失败了, 站也没找到多少个, 为什么shimakaze狗又炸了啊? �
 ….想了一下，主开发，副挖洞说不定也很有意思…
 期中考结束的差不多啦!(只剩语文和概率论了)这段时间可以好好放松，愉快的打代码啦(｡･∀･)ﾉﾞ
 下次新开几个坑，一个php的笔记，一个js的笔记，再来个python的笔记…嗯(不管填不填的上，先挖了再说)
-希望自己能静下心来，踏踏实实学…这段时间确实浮躁了不少…稳住啊 19歳…</description></item><item><title>校园杂记8：Sera Crawler v1.0</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B08sera-crawler-v1.0/</link><pubDate>Sat, 28 Oct 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B08sera-crawler-v1.0/</guid><description>今天爬虫君1号v1.0 问世了。
+希望自己能静下心来，踏踏实实学…这段时间确实浮躁了不少…稳住啊 19歳…</description></item><item><title>校园杂记8：Sera Crawler v1.0</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B08sera-crawler-v1.0/</link><pubDate>Sat, 28 Oct 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B08sera-crawler-v1.0/</guid><description>今天爬虫君1号v1.0 问世了。
 这爬虫的背景之前提过一点，就是偶尔聊出来的，然后老师似乎想做个收集情报的工具（?）想爬全部中国高校关于某个关键词的信息，于是这东西就这么被我慢慢磨出来了….
 其实爬虫早就写好了，只是猝不及防的一句话 于是又花了一天看了看官方文档，google百度查tkinter库,弄出来的这个，所以丑的不行是肯定的=。=
 使用简要： cmd py进入工具页面
@@ -261,7 +261,7 @@ happy coding ~
 对了对了，这个月学校的安全工作室好像成立了（?）名字叫0Sec，虽然是我起的，但是总觉得哪里不太对劲…（群主让每人说个名字，我说了一个，别人都不说，只好用我的，我能肿么办啊我也很绝望啊）
 欢迎喜欢安全的朋友一起讨论←_←
 噢噢对了，源码分享：
-链接: https://pan.baidu.com/s/1slHRpHr 密码: ef9u</description></item><item><title>校园杂记7：这是我等待爬虫爬完的第三个年头了...</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B07%E8%BF%99%E6%98%AF%E6%88%91%E7%AD%89%E5%BE%85%E7%88%AC%E8%99%AB%E7%88%AC%E5%AE%8C%E7%9A%84%E7%AC%AC%E4%B8%89%E4%B8%AA%E5%B9%B4%E5%A4%B4%E4%BA%86.../</link><pubDate>Sun, 22 Oct 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B07%E8%BF%99%E6%98%AF%E6%88%91%E7%AD%89%E5%BE%85%E7%88%AC%E8%99%AB%E7%88%AC%E5%AE%8C%E7%9A%84%E7%AC%AC%E4%B8%89%E4%B8%AA%E5%B9%B4%E5%A4%B4%E4%BA%86.../</guid><description>有人问我这几天在干嘛。
+链接: https://pan.baidu.com/s/1slHRpHr 密码: ef9u</description></item><item><title>校园杂记7：这是我等待爬虫爬完的第三个年头了..</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B07%E8%BF%99%E6%98%AF%E6%88%91%E7%AD%89%E5%BE%85%E7%88%AC%E8%99%AB%E7%88%AC%E5%AE%8C%E7%9A%84%E7%AC%AC%E4%B8%89%E4%B8%AA%E5%B9%B4%E5%A4%B4%E4%BA%86../</link><pubDate>Sun, 22 Oct 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B07%E8%BF%99%E6%98%AF%E6%88%91%E7%AD%89%E5%BE%85%E7%88%AC%E8%99%AB%E7%88%AC%E5%AE%8C%E7%9A%84%E7%AC%AC%E4%B8%89%E4%B8%AA%E5%B9%B4%E5%A4%B4%E4%BA%86../</guid><description>有人问我这几天在干嘛。
 我想了一下，三点一线的日子啊…python，食堂，洗手间，要是有睡袋我可能就睡在电脑前面了吧…
 码字之前，我比较想知道，python是不是光头最快的语言? 不是的话，那今天开始可以是了（雾）…
 写代码的时候遇到解决不了的bug翻墙出去搜google 搜stackoverflow 搜github，换了七八个关键词，发现在犄角旮旯里的一个页面里 2006年有一个苦逼问了跟我一样的问题，然后十多年无人回复。
@@ -296,7 +296,7 @@ invalid error？ 加个UserAgent头再爬
 好吧，想了一下，需要再加几个函数……
 思路大概先这样：
 对于一个学校的网站，先正则找到搜索框，然后填数据post过去，也就获取了出现的url了，其中还有很多很多细节要注意..休息一下再想吧…
-…最后说句仿佛很有哲理的话..写代码就像人生，踩得坑多了，人也就歇菜了。</description></item><item><title>校园杂记6：摸了三天的脚本</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B06%E6%91%B8%E4%BA%86%E4%B8%89%E5%A4%A9%E7%9A%84%E8%84%9A%E6%9C%AC/</link><pubDate>Sun, 15 Oct 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B06%E6%91%B8%E4%BA%86%E4%B8%89%E5%A4%A9%E7%9A%84%E8%84%9A%E6%9C%AC/</guid><description>这几天，没上hacking lab，没上sbeam，没上课(一个月扣了四次分..人品不谈了,自律部的同学真是 认 真 啊 !)
+…最后说句仿佛很有哲理的话..写代码就像人生，踩得坑多了，人也就歇菜了。</description></item><item><title>校园杂记6：摸了三天的脚本</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B06%E6%91%B8%E4%BA%86%E4%B8%89%E5%A4%A9%E7%9A%84%E8%84%9A%E6%9C%AC/</link><pubDate>Sun, 15 Oct 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B06%E6%91%B8%E4%BA%86%E4%B8%89%E5%A4%A9%E7%9A%84%E8%84%9A%E6%9C%AC/</guid><description>这几天，没上hacking lab，没上sbeam，没上课(一个月扣了四次分..人品不谈了,自律部的同学真是 认 真 啊 !)
 上个礼拜找了几个ctf站想刷刷题，然后找到了经典sql注入练习站redtiger。
 到第三关的时候，hint里说，Try to get an error，好那就让网站报错吧..结果钻牛角尖搞了半天post提交，想让它报一波mysql的错误…
 然而事情并没有这么简单，这道题的目的好像不是让你报mysql的错…
@@ -326,7 +326,7 @@ hhhhhhh
 不需要密码的话我也可以写个查分的脚本出来啊。
 这样一想好像也不对，用密码就能看到成绩那还要这个爬虫干嘛…（所以前面都想错了么..）应该是获取成绩的途径不知道，可能是被老师藏在哪个网页里了..好像上学期有人查分也不用密码的..改天问一波再说。
 对于爬虫，还是不清楚这东西具体有个什么用，爬数据？对于我现在用处真不大，或者说只是我个人比较鱼……
-哈哈哈哈一个礼拜前hacking lab上rank到了576(上次看还568呢..看来还是有不少人在做题的QVQ)</description></item><item><title>校园杂记5：さらばだ 我的国庆</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B05%E3%81%95%E3%82%89%E3%81%B0%E3%81%A0-%E6%88%91%E7%9A%84%E5%9B%BD%E5%BA%86/</link><pubDate>Sat, 07 Oct 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B05%E3%81%95%E3%82%89%E3%81%B0%E3%81%A0-%E6%88%91%E7%9A%84%E5%9B%BD%E5%BA%86/</guid><description>愉快的国庆日常，今天睡醒之后看了眼时间，”咦!!! 怎么已经7号了卧槽”
+哈哈哈哈一个礼拜前hacking lab上rank到了576(上次看还568呢..看来还是有不少人在做题的QVQ)</description></item><item><title>校园杂记5：さらばだ 我的国庆</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B05%E3%81%95%E3%82%89%E3%81%B0%E3%81%A0-%E6%88%91%E7%9A%84%E5%9B%BD%E5%BA%86/</link><pubDate>Sat, 07 Oct 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B05%E3%81%95%E3%82%89%E3%81%B0%E3%81%A0-%E6%88%91%E7%9A%84%E5%9B%BD%E5%BA%86/</guid><description>愉快的国庆日常，今天睡醒之后看了眼时间，”咦!!! 怎么已经7号了卧槽”
 …….
 好吧，理(ruo)智的大脑提醒我又该写(da)写(da)字(pai)了…
 就在放假前一天，sv突然说搞了个跟fsn的联动活动，这我能忍?肯定回归啊! 学习什么的当然是不存在的啊!
@@ -342,7 +342,7 @@ hhhhhhh
 那开发的门入了吗，我想还不够，拿了个webshell，好像是挺厉害，但是这漏洞是自己找的吗，这个站的安全级别怎么样…如果安全级别低，我觉得也体现不了什么水平。
 初级人才饱和，elite还是很缺的…这种情况似乎国内的IT行业都是这样…
 于是，又该思考下一波怎么搞了…我想接下来会多看看别人发布的漏洞…毕竟大牛当年也是菜鸡哈哈哈哈.
-keep quiet and just going on.</description></item><item><title>校园杂记4：中国的黑客是很cool的一群人</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B04%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%BB%91%E5%AE%A2%E6%98%AF%E5%BE%88cool%E7%9A%84%E4%B8%80%E7%BE%A4%E4%BA%BA/</link><pubDate>Mon, 25 Sep 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B04%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%BB%91%E5%AE%A2%E6%98%AF%E5%BE%88cool%E7%9A%84%E4%B8%80%E7%BE%A4%E4%BA%BA/</guid><description>翘课参加SSC 狗牌
+keep quiet and just going on.</description></item><item><title>校园杂记4：中国的黑客是很cool的一群人</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B04%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%BB%91%E5%AE%A2%E6%98%AF%E5%BE%88cool%E7%9A%84%E4%B8%80%E7%BE%A4%E4%BA%BA/</link><pubDate>Mon, 25 Sep 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B04%E4%B8%AD%E5%9B%BD%E7%9A%84%E9%BB%91%E5%AE%A2%E6%98%AF%E5%BE%88cool%E7%9A%84%E4%B8%80%E7%BE%A4%E4%BA%BA/</guid><description>翘课参加SSC 狗牌
 今天一个人去参加了ssc，还没到会场就看见陆陆续续的人往会场走，因为会场挺偏的在一个酒店，一般人不多，而且那些人身上就有股geek的气息，所以我感觉，嗯没错除了我都是大黑阔（现场的感觉贼棒哈哈哈）.
 戴上牌子入场前的签到，看见都是三三两两西电，西交，西工大那些信安的黑阔们，没有信安专业的不得不说有一点羡慕QAQ.
 有个跟我一起进场的，牛仔裤，头发超短，深色长袖，背个电脑包，像个大学生。
@@ -364,7 +364,7 @@ keep quiet and just going on.</description></item><item><title>校园杂记4：�
 黑客的世界就像一个江湖，每个黑客的背后都有一个自己的传奇.我们对黑客不了解的人，感觉会把他们当成像写出熊猫烧香那样或者做黑产的bad guys…实际上真正的黑客就是一群喜欢技术，ge里ge气的人.
 我知道的中国老黑客仿佛都有一种使命感，就是把自己身上的黑客精神传承下去，传给中国的下一代.
 白帽子这个群体的地位可能是有一点尴尬，但是我相信环境正在变得越来越好，希望我们都能把信息安全当作一种信仰，有所坚持.
-keep going on.</description></item><item><title>校园杂记3：文件上传漏洞以及一点碎碎念</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B03%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9%E7%A2%8E%E7%A2%8E%E5%BF%B5/</link><pubDate>Mon, 18 Sep 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B03%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9%E7%A2%8E%E7%A2%8E%E5%BF%B5/</guid><description>近况 今天烦心事特多，很惆怅啊…..
+keep going on.</description></item><item><title>校园杂记3：文件上传漏洞以及一点碎碎念</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B03%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9%E7%A2%8E%E7%A2%8E%E5%BF%B5/</link><pubDate>Mon, 18 Sep 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B03%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E4%BB%A5%E5%8F%8A%E4%B8%80%E7%82%B9%E7%A2%8E%E7%A2%8E%E5%BF%B5/</guid><description>近况 今天烦心事特多，很惆怅啊…..
 上完物理看了眼手机，社团里要催着大早起来搬东西；要打分了才发现去年参加的比赛因为是外校的不能用；网站备案又双叒叕没通过。
 说不出话的事情一件跟着一件…还好今天概率论就是做几道题 easy work..
 事儿多，瞎忙活，看到余弦说的一句话 “人生苦短，远离噪音” 。&amp;lt;( _ _ )&amp;gt; 虽然这句话和今天想讲的都没啥关系（默默把它记在鸡汤小册子上）
@@ -384,7 +384,7 @@ http://www.xxx.com/upload.php/atk.php%00.jpg，这个%00把后面的内容截断
 注意！在数据包里不能直接写%00，因为它传到浏览器的时候还会进行url编码，所以先进行一次url转换，burpsuite里面选取了字符以后右键就会有一个url转码的功能。
 最近听到学长说，大三了选网络方向能听到攻防课！哇！！！心里开出了发，贼开心啊 😄
 明天要6点30起床帮社团弄帐篷…..
-希望明天能吃上早饭&amp;hellip;&amp;hellip;</description></item><item><title>校园杂记2：好像找到学安全的感觉了?（雾）</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B02%E5%A5%BD%E5%83%8F%E6%89%BE%E5%88%B0%E5%AD%A6%E5%AE%89%E5%85%A8%E7%9A%84%E6%84%9F%E8%A7%89%E4%BA%86%E9%9B%BE/</link><pubDate>Sat, 09 Sep 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B02%E5%A5%BD%E5%83%8F%E6%89%BE%E5%88%B0%E5%AD%A6%E5%AE%89%E5%85%A8%E7%9A%84%E6%84%9F%E8%A7%89%E4%BA%86%E9%9B%BE/</guid><description>近况 4号的时候渗透学着学着卡住了，觉得有点崩溃就跟学长晚上聊了一下….被鼓励的感觉还是很棒的（又有了动力）
+希望明天能吃上早饭&amp;hellip;&amp;hellip;</description></item><item><title>校园杂记2：好像找到学安全的感觉了?（雾）</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B02%E5%A5%BD%E5%83%8F%E6%89%BE%E5%88%B0%E5%AD%A6%E5%AE%89%E5%85%A8%E7%9A%84%E6%84%9F%E8%A7%89%E4%BA%86%E9%9B%BE/</link><pubDate>Sat, 09 Sep 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B02%E5%A5%BD%E5%83%8F%E6%89%BE%E5%88%B0%E5%AD%A6%E5%AE%89%E5%85%A8%E7%9A%84%E6%84%9F%E8%A7%89%E4%BA%86%E9%9B%BE/</guid><description>近况 4号的时候渗透学着学着卡住了，觉得有点崩溃就跟学长晚上聊了一下….被鼓励的感觉还是很棒的（又有了动力）
 于是就在想是不是该停下来思考一下下一步该怎么学&amp;hellip;
 …
 …
@@ -409,7 +409,7 @@ HTTP请求头 一个请求由4个部分组成：请求行、请求头标、空�
 一般放在最后一个请求头标之后，发送回车符和退行，通知服务器以下不再有头标。 ④ 请求数据：
 请求方法是POST的时候，就会有这行。 HTTP响应 一个响应由4部分组成：状态行、响应头标、空行、响应数据
 ① 状态行：由HTTP版本、响应代码和响应描述组成
-HTTP版本：由客户端指明其可理解的最高版本 响应代码：3位的数字代码，指出请求的成功或失败，如果失败则指出原因。（比如，404啊，200啊，500啊，有很多） 响应描述：为响应代码的可读性解释 example： 1xx：信息，请求收到，继续处理 2xx：成功，行为被接受 3xx：重定向，为完成请求，必须进一步执行的动作 4xx：客户端错误 5xx：服务器错误 ② 响应头标：</description></item><item><title>校园杂记1：这里就是我码字的地方了</title><link>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B01%E8%BF%99%E9%87%8C%E5%B0%B1%E6%98%AF%E6%88%91%E7%A0%81%E5%AD%97%E7%9A%84%E5%9C%B0%E6%96%B9%E4%BA%86/</link><pubDate>Tue, 05 Sep 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B01%E8%BF%99%E9%87%8C%E5%B0%B1%E6%98%AF%E6%88%91%E7%A0%81%E5%AD%97%E7%9A%84%E5%9C%B0%E6%96%B9%E4%BA%86/</guid><description>IP 用masscan扫IP一直有点困惑，今天Google + 各方请教后理清了一点关于IP的事情：
+HTTP版本：由客户端指明其可理解的最高版本 响应代码：3位的数字代码，指出请求的成功或失败，如果失败则指出原因。（比如，404啊，200啊，500啊，有很多） 响应描述：为响应代码的可读性解释 example： 1xx：信息，请求收到，继续处理 2xx：成功，行为被接受 3xx：重定向，为完成请求，必须进一步执行的动作 4xx：客户端错误 5xx：服务器错误 ② 响应头标：</description></item><item><title>校园杂记1：这里就是我码字的地方了</title><link>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B01%E8%BF%99%E9%87%8C%E5%B0%B1%E6%98%AF%E6%88%91%E7%A0%81%E5%AD%97%E7%9A%84%E5%9C%B0%E6%96%B9%E4%BA%86/</link><pubDate>Tue, 05 Sep 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%A0%A1%E5%9B%AD%E6%9D%82%E8%AE%B01%E8%BF%99%E9%87%8C%E5%B0%B1%E6%98%AF%E6%88%91%E7%A0%81%E5%AD%97%E7%9A%84%E5%9C%B0%E6%96%B9%E4%BA%86/</guid><description>IP 用masscan扫IP一直有点困惑，今天Google + 各方请教后理清了一点关于IP的事情：
 对IP的了解 Windows cmd下 ipconfig可以查看 Linux terminal下 ifconfig -a 或者 ip addr 可以查看 IPv4就是本机IP地址 gateway（网关）就是电脑（或手机）连接的热点设备、路由器的IP地址 对于一台电脑 外网IP可以通过浏览器搜索“IP”得到 内网IP可以通过 ipconfig 或 ifconfig 得到 注：
 多台设备连接到同一台路由器时，它们的外网IP时不同的； 在浏览器中可以通过输入网关地址进入路由器的admin界面 关于最近两个礼拜 在虚拟机上装了kali，学习了很多工具的用法
 密码字典工具 Recon- NG，BruteScrape 端口扫描工具 masscan，nmap（用的比较熟悉） Web漏洞扫描工具 只熟悉OWASP ZAP，工具比较简单，但是扫出来的漏洞还不太会利用，在扫描大型站点时的速度比较慢，聊胜于无&amp;hellip; 目前扫出来的两个sql注入漏洞都是之前人肉照出来过的 sql注入工具 sqlmap，一些基本指令都记在小本子上了，感觉很强大，对自己网站测试了下，可以扫出很多信息 想法 昨天晚上找到了三四个网站的后台，今天请教了下群里的大佬，想绕过后台难度很大，一般也不怎么用除了搞到账户密码以外的方式去登后台。其它方法主要有前台插马，注入shell，还有一个编辑器（？不太理解这个是什么方式）

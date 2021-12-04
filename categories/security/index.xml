@@ -1,19 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on Sera Wang</title><link>https://selfsolo.com/categories/security/</link><description>Recent content in Security on Sera Wang</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 15 Sep 2019 11:02:51 +0000</lastBuildDate><atom:link href="https://selfsolo.com/categories/security/index.xml" rel="self" type="application/rss+xml"/><item><title>如何实现一个黑盒扫描器?</title><link>https://selfsolo.com/p/blackbox-scanner/</link><pubDate>Sun, 15 Sep 2019 11:02:51 +0000</pubDate><guid>https://selfsolo.com/p/blackbox-scanner/</guid><description>整体架构 黑盒扫描的目的主要有两个：
-资产发现 漏洞扫描 扫描器的效率和表现方面，单机可以用多进程+协程的方式去提qps，资源够也可以使用分布式，如：kafka / celery（后者感觉更重一点，虽然能帮你做很多事情）
-我踩坑设计了一个主要依靠redis做任务的分发和pull执行（主要想糙快猛地实现），现在看来效率的确是因为架构设计有问题导致整体表现不尽如人意。
-自己后来想的一个理想的架构设计：
-子域名搜集 子域名搜集是信息搜集里很关键的一步，因为它拓展了很大一部分的攻击面。下面是我对子域名搜集的实践。
-我用python实现了一个子域名搜集工具，主要用到的方法有：
-基于字典 开源情报 和 搜索引擎 IP反查 TLS证书获取 我使用的前者，部署最方便。
-整体架构：
-这是单机跑的非理想情况，4核8g，60%cpu，800-1500qps
-几个大小问题：
-域名泛解析 域名去重 比较依赖redis 泛解析有两种解决方式，一种是ip-domain的hash map超过了阈值，最后做清洗；另一种是查完了，就做一次 &amp;lt;随机前缀.目标域名&amp;gt;的查询，判断是否存在，这样（和清洗一个道理）。实际做下来是1方便，因为第二种方式，如果在做判断的同时，有其他做dns query的查到了结果，就会被绕过存入data。
-域名去重是因为首先引入了开源情报和搜索引擎，还有后续得到的CNAME啊，NS啊之类的，不做去重，任务队列可能就大了两三倍。我去重主要依赖redis的set，这样又回引入大key问题，解决大key，可以根据域名的级数（多少个&amp;lt;.&amp;gt;）分去重set，也可以大key分小key，因为并发，暂时没想到好的设计，优化考虑用布隆过滤器去做去重。
-依赖redis，前面有提到，后面就不赘述了。
-敏感文件扫描 这个我实现的很简单，主要看了github上几个老前辈的实现，总结了一下，可以这样做：
-对目标做一次全站链接爬取（需要考虑url去重） 根据links生成一级级目录 配合对应字典，做验证。 其实有了目录+对应漏洞的字典，主要就是验证了。这块同时可以验证的漏洞有很多，除了敏感文件泄漏，还有目录遍历，未授权访问等等。后者可以通过打分策略来做（实现比较low，也可以用图像识别，ML做）。
-漏洞验证 可以找一个社区比较大的（poc贡献多），因为一个是自己写poc需要很多时间。</description></item><item><title>Spring 漏洞总结</title><link>https://selfsolo.com/p/spring-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 24 Feb 2019 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/spring-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>Spring Data REST | RCE | CVE-2017-8046 漏洞简析 SpEL是独立于spring容器的一个可执行模块。 它使用SpelExpressionParser把字符串解析成表达式，当其中一个方法获取到值之后，表达式就会被执行，getValueType或者setValue会被调用：
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on Sera Wang</title><link>https://sera.wang/categories/security/</link><description>Recent content in Security on Sera Wang</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 24 Feb 2019 21:14:23 +0800</lastBuildDate><atom:link href="https://sera.wang/categories/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Spring 漏洞总结</title><link>https://sera.wang/p/spring-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 24 Feb 2019 21:14:23 +0800</pubDate><guid>https://sera.wang/p/spring-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>Spring Data REST | RCE | CVE-2017-8046 漏洞简析 SpEL是独立于spring容器的一个可执行模块。 它使用SpelExpressionParser把字符串解析成表达式，当其中一个方法获取到值之后，表达式就会被执行，getValueType或者setValue会被调用：
 Expression expr = expressionParser.parseExpression(stringScript); expr.getValue(); //Execute the code in stringScript 通常，SpEL仅限于内部使用并且stringScript会被程序完全控制。 但如果 stringScript是用户可控的话，那么攻击者就可以在有漏洞的服务器上执行任意代码。
 即：
 String stringScript = &amp;quot;T(java.lang.Runtime).getRuntime().exec(&amp;quot;+cmd+&amp;quot;).x&amp;quot;; 之后cmd就被执行。
@@ -21,7 +6,7 @@ String stringScript = &amp;quot;T(java.lang.Runtime).getRuntime().exec(&amp;quot
 漏洞复现 使用的项目为 https://github.com/spring-guides/gs-accessing-data-rest.git 里面的complete，直接用IDEA导入，并修改pom.xml中版本信息为漏洞版本。 1.5.6.RELEASE，然后导入pom.xml
 运行项目
 新建一个people对象
-POST /people HTTP/1.1 Host: localhost:8080 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.9 Safari/537.36 Connection: close Content-type: application/json Content-Length: 32 {&amp;quot;firstName&amp;quot;:&amp;quot;test1&amp;quot;,&amp;quot;lastName&amp;quot;:&amp;quot;test2&amp;quot;} 发送payload</description></item><item><title>Yii2 漏洞总结</title><link>https://selfsolo.com/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 08 Feb 2019 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>欲寻框架之漏洞，必先用其开发一波。———— Rose家的程序喵
+POST /people HTTP/1.1 Host: localhost:8080 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.9 Safari/537.36 Connection: close Content-type: application/json Content-Length: 32 {&amp;quot;firstName&amp;quot;:&amp;quot;test1&amp;quot;,&amp;quot;lastName&amp;quot;:&amp;quot;test2&amp;quot;} 发送payload</description></item><item><title>Yii2 漏洞总结</title><link>https://sera.wang/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 08 Feb 2019 21:14:23 +0800</pubDate><guid>https://sera.wang/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>欲寻框架之漏洞，必先用其开发一波。———— Rose家的程序喵
 框架基础 Yii2 版本: 2.0.16
 应用结构 下列是框架中最重要的目录和文件
 Yii 实现了MVC设计模式，这点在上述目录结构中也体现了。models目录包含了所有模型类，views目录包含了所有视图脚本，controllers目录包含了所有控制机器类。
@@ -34,7 +19,7 @@ Yii 实现了MVC设计模式，这点在上述目录结构中也体现了。mode
 如何创建一个动作去响应请求 如何创建一个视图去构造相应内容 以及一个应用如何分派请求给动作 创建动作 我们将要创建一个say操作，从请求中接收message参数并先显示给最终用户。如果请求没有提供message参数，操作将显示默认参数”Hello”
 操作是最终用户可以直接访问并执行的对象。操作被组织在控制器中，一个操作的执行结果就是最终用户收到的响应内容。
 操作必须声明在控制器中。为了简单起见，可以直接在SiteController控制器里生命say操作。 这个控制器是由文件 controllers/SiteController.php定义的。以下是一个操作的声明：
-&amp;lt;?php namespace app\controllers; use yii\web\Controller; class SiteController extends Controller{ // ...现存的代码... public function actionSay($message = 'Hello'){ return $this-&amp;gt;render('say',['message' =&amp;gt; $message]); } } 在上述代码中，say操作被定义为actionSay方法。 Yii使用action前缀区分普通方法和操作。action前缀后面的名称被映射为操作的ID。</description></item><item><title>ThinkPHP 漏洞总结</title><link>https://selfsolo.com/p/thinkphp-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Sat, 02 Feb 2019 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/thinkphp-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>对已经公开的tp漏洞的分析总结
+&amp;lt;?php namespace app\controllers; use yii\web\Controller; class SiteController extends Controller{ // ...现存的代码... public function actionSay($message = 'Hello'){ return $this-&amp;gt;render('say',['message' =&amp;gt; $message]); } } 在上述代码中，say操作被定义为actionSay方法。 Yii使用action前缀区分普通方法和操作。action前缀后面的名称被映射为操作的ID。</description></item><item><title>ThinkPHP 漏洞总结</title><link>https://sera.wang/p/thinkphp-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</link><pubDate>Sat, 02 Feb 2019 21:14:23 +0800</pubDate><guid>https://sera.wang/p/thinkphp-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/</guid><description>对已经公开的tp漏洞的分析总结
 2019/1/11 thinkphp 5.0.0~5.0.23 RCE漏洞 payload:
 http://localhost:89/index.php?s=captcha
 post:
@@ -73,29 +58,14 @@ http://localhost:89/index.php?s=index/\think\Container/invokefunction&amp;amp;fu
 在parseUrl这个方法里，接下来还会获取其它提交的参数。
 最后将module,controller,action封装并返回
 从parseUrl出来后，我们继续看刚才的第二个关键方法，就是Module类的初始化init方法，跟进
-这里没有对controller做什么过滤，返回后，</description></item><item><title>入门逆向</title><link>https://selfsolo.com/p/%E5%85%A5%E9%97%A8%E9%80%86%E5%90%91/</link><pubDate>Mon, 19 Nov 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%85%A5%E9%97%A8%E9%80%86%E5%90%91/</guid><description>我想成为魔法师！ 这个逆向专题用来记录自己学习逆向魔法的过程。
-关于魔法 有人问教主: “ 现在都是win10了，win7连debug都没有，学习汇编有什么用，对于手机app开发有什么帮助？ “
-教主:
-“ 学习魔法辛苦又困难， 而且似乎对当个铁匠、农夫、牧羊人也毫无帮助。 “ ———— 2016-01-18
-作为入门篇，这次逆向的是一个小pe，目标是改变它的执行逻辑，从而达到我们想要的效果（比如破解）。
-用C写一个小程序 crack.c 代码如下:
-#include &amp;lt;stdio.h&amp;gt; #define PASSWORD &amp;quot;1234567&amp;quot; int verify_password(char *password){ int authenticated; authenticated = strcmp(password,PASSWORD); return authenticated; } main(){ int valid_flag = 0; char password[1024]; while(1){ printf(&amp;quot;please input password: &amp;quot;); scanf(&amp;quot;%s&amp;quot;,password); valid_flag = verify_password(password); if(valid_flag){ printf(&amp;quot;incorrect password!\n\n&amp;quot;); }else{ printf(&amp;quot;Congradulation! You have passed the vrification\n&amp;quot;); break; } } } 编译获得 crack.exe ，也就是今天要破解的目标了。
-IDA PRO静态分析 打开ida pro，把这个exe拖进去，就获得了一张清晰的执行逻辑结构图</description></item><item><title>常见摘要/加密算法总结</title><link>https://selfsolo.com/p/%E5%B8%B8%E8%A7%81%E6%91%98%E8%A6%81/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</link><pubDate>Sat, 18 Aug 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%B8%B8%E8%A7%81%E6%91%98%E8%A6%81/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/</guid><description>最近逛到某网站碰到一个叫JWTtoken的验证机制，然后百度了一波jwt，再解码此jwttoken后看到是RSA256加密，明明最近才看过现在又忘光了…于是对常见算法做个总结吧！原理不会特别详细，只会介绍简单原理，让我以后再碰上不至于太懵逼。
-基本概念 安全性原则：
-保密性 完整性(内容不被篡改) 身份认证 不可抵赖性 对称/非对称加密
-若加解密使用相同密钥，则称为对称密钥加密，否则称为非对称密钥加密。
-对称密钥加密:Diffie-Hellman算法
-因为密钥发布和密钥交换存在很多问题，所以要知道Diffie-Hellman密钥交换协议/算法。
-通信双发可用此方法确定对称密钥，此方法只能用于密钥交换，而非加解密消息。
-算法描述: 设A与B要确定密钥 1) A与B确定2个大素数 n 和 g 。 不必保密 2) A选择另一个大随机数X，计算: k1 = g^X mod n 后将k1发给B 3) B选择另一个大随机数Y，计算: k2 = g^Y mod n 后将k2发给A 4) 则密钥即为: kA = k2^X mod n kB = k1^Y mod n 且kA = kB 原理:
-kA = (g^Y mod n)^X mod n = g^YX mod n</description></item><item><title>利用越权漏洞下载vol.moe的所有漫画</title><link>https://selfsolo.com/p/%E5%88%A9%E7%94%A8%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E%E4%B8%8B%E8%BD%BDvol.moe%E7%9A%84%E6%89%80%E6%9C%89%E6%BC%AB%E7%94%BB/</link><pubDate>Sun, 05 Aug 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%88%A9%E7%94%A8%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E%E4%B8%8B%E8%BD%BDvol.moe%E7%9A%84%E6%89%80%E6%9C%89%E6%BC%AB%E7%94%BB/</guid><description>前几天想看一部漫画找到一个不错的站点，顺便就发现了一个越权漏洞，普通用户可以直接具有高级用户的下载权限。
+这里没有对controller做什么过滤，返回后，</description></item><item><title>利用越权漏洞下载vol.moe的所有漫画</title><link>https://sera.wang/p/%E5%88%A9%E7%94%A8%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E%E4%B8%8B%E8%BD%BDvol.moe%E7%9A%84%E6%89%80%E6%9C%89%E6%BC%AB%E7%94%BB/</link><pubDate>Sun, 05 Aug 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E5%88%A9%E7%94%A8%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E%E4%B8%8B%E8%BD%BDvol.moe%E7%9A%84%E6%89%80%E6%9C%89%E6%BC%AB%E7%94%BB/</guid><description>前几天想看一部漫画找到一个不错的站点，顺便就发现了一个越权漏洞，普通用户可以直接具有高级用户的下载权限。
 为了隐私，很多细节都不能放，因为暂时未允许公开，所以就先看一下效果吧。
 代码:
 执行代码
 获取到比如id为10000010的用户的cookie，我们放到bp里
 提交然后发现权限获取成功可以下任意漫画了~
 总结:
-这漏洞原理很简单，就是cookie明文未加密，解决方案就是cookie+salt再用个md5，sha1加密一波，加密过程最好后端执行。</description></item><item><title>PHP-FileInclusion</title><link>https://selfsolo.com/p/php-fileinclusion/</link><pubDate>Mon, 26 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/php-fileinclusion/</guid><description>文件包含(File Inclusion)可能会出现在JSP、PHP、ASP等语言中，常见的导致文件包含的函数如下:
+这漏洞原理很简单，就是cookie明文未加密，解决方案就是cookie+salt再用个md5，sha1加密一波，加密过程最好后端执行。</description></item><item><title>PHP-FileInclusion</title><link>https://sera.wang/p/php-fileinclusion/</link><pubDate>Mon, 26 Mar 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/php-fileinclusion/</guid><description>文件包含(File Inclusion)可能会出现在JSP、PHP、ASP等语言中，常见的导致文件包含的函数如下:
 PHP:
 include(),include_once(),require(),require_once().fopen(),readfile()…
 JSP/Servlet:
@@ -121,7 +91,7 @@ include()等函数通过动态变量的方式引入需要包含的文件； 用�
 ../../etc/passwd%00
 字符串截断配合LFI口味更佳
 所以web应用可以禁用0字节，因为用户其实是不需要使用它的。
-但这样实际上仍没有解决问题，还有个技巧就是利用操作系统对目录最大长度的限制，可以不需要0字节而达到截断的目的。目录字符串，在windows下256字节，linux下4096字节会达到最大值，最大值后的字符会被丢弃，于是构造 n个 ‘.</description></item><item><title>SQL注入-报错注入原理</title><link>https://selfsolo.com/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/</link><pubDate>Mon, 26 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/</guid><description>先解释几个概念和语句
+但这样实际上仍没有解决问题，还有个技巧就是利用操作系统对目录最大长度的限制，可以不需要0字节而达到截断的目的。目录字符串，在windows下256字节，linux下4096字节会达到最大值，最大值后的字符会被丢弃，于是构造 n个 ‘.</description></item><item><title>SQL注入-报错注入原理</title><link>https://sera.wang/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/</link><pubDate>Mon, 26 Mar 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/</guid><description>先解释几个概念和语句
 聚合函数 定义：SQL基本函数，聚合函数对一组值执行计算，并返回单个值。除了 COUNT 以外，聚合函数都会忽略空值。 聚合函数经常与 SELECT 语句的 GROUP BY 子句一起使用。
 性质: 所有聚合函数都具有确定性。任何时候用一组给定的输入值调用它们时，都返回相同的值。
 举例:
@@ -138,7 +108,7 @@ group by 列名就是按列名来分组。
 count(*) select count(*) from table_name;
 返回table_name的行数；
 也可以
-select count(*) from table_name where id &amp;gt; 10;</description></item><item><title>WriteUp - Seclab</title><link>https://selfsolo.com/p/writeup-seclab/</link><pubDate>Sun, 18 Mar 2018 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/writeup-seclab/</guid><description>前言：重新开始学习安全，用这个水题来暖手，当初步复习。
+select count(*) from table_name where id &amp;gt; 10;</description></item><item><title>WriteUp - Seclab</title><link>https://sera.wang/p/writeup-seclab/</link><pubDate>Sun, 18 Mar 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/writeup-seclab/</guid><description>前言：重新开始学习安全，用这个水题来暖手，当初步复习。
 看了下自己五个月之前的状态:
 基础关 key在哪里？
 右键查看源代码，得到key
@@ -161,7 +131,7 @@ bp，先抓一次search_key.php,过去发现里面一个a标签藏着个链接ke
 冒充登陆用户
 内容说必须要登录才能得到key，于是bp抓包发现请求头里的cookie
 cookie:Login=0 把0改成1访问得到key
-比较数字大小</description></item><item><title>Mysql的注入姿势集</title><link>https://selfsolo.com/p/mysql%E7%9A%84%E6%B3%A8%E5%85%A5%E5%A7%BF%E5%8A%BF%E9%9B%86/</link><pubDate>Thu, 30 Nov 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/mysql%E7%9A%84%E6%B3%A8%E5%85%A5%E5%A7%BF%E5%8A%BF%E9%9B%86/</guid><description>一直想找个时间好好整理下搞的这些东西，只能想起来的时候偶尔写一下。
+比较数字大小</description></item><item><title>Mysql的注入姿势集</title><link>https://sera.wang/p/mysql%E7%9A%84%E6%B3%A8%E5%85%A5%E5%A7%BF%E5%8A%BF%E9%9B%86/</link><pubDate>Thu, 30 Nov 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/mysql%E7%9A%84%E6%B3%A8%E5%85%A5%E5%A7%BF%E5%8A%BF%E9%9B%86/</guid><description>一直想找个时间好好整理下搞的这些东西，只能想起来的时候偶尔写一下。
 起因是因为最近看到有个poc利用了报错注入, 而我却发现对它没多少记忆了….就把碰到的都记下来吧..
 http头注入：
 应用场景：某些网站有某些功能，这些功能会收集你的http头信息，带入数据库。
@@ -170,7 +140,7 @@ http头注入：
 Cookie注入：
 应用场景：其实这跟http头注入非常类似，我认为它们的区别在于，cookie注入比http头注入更常见，因为网站经常会验证用户的cookie，来维持登录状态或其他操作。
 基本原理：Cookie也是在http头里的，但独立出$_SERVER数组，cookie中的数据在php中被$_COOKIE变量接收为一个数组。 调用方法 $_SERVER[‘cookiename’] 。
-注入测试：在cookie中找到对应变量，其后添加注入语句。</description></item><item><title>初识SQL注入</title><link>https://selfsolo.com/p/%E5%88%9D%E8%AF%86sql%E6%B3%A8%E5%85%A5/</link><pubDate>Tue, 19 Sep 2017 21:14:23 +0800</pubDate><guid>https://selfsolo.com/p/%E5%88%9D%E8%AF%86sql%E6%B3%A8%E5%85%A5/</guid><description>盲注，报错注入，有时间再写写。
+注入测试：在cookie中找到对应变量，其后添加注入语句。</description></item><item><title>初识SQL注入</title><link>https://sera.wang/p/%E5%88%9D%E8%AF%86sql%E6%B3%A8%E5%85%A5/</link><pubDate>Tue, 19 Sep 2017 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E5%88%9D%E8%AF%86sql%E6%B3%A8%E5%85%A5/</guid><description>盲注，报错注入，有时间再写写。
 sql注入的作用：
 它可以获取信息（用户名密码），也可以写信息（shell） sql注入根据数据库的不同也有区别，很流行的有两个组合，一是asp+access，二是php+mysql.
 今天总结的是后者

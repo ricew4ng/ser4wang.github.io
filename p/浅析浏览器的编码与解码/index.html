@@ -1,18 +1,18 @@
 <!doctype html><html lang=en-us>
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="对浏览器编码原理的探索"><title>浅析浏览器的编码与解码</title>
-<link rel=canonical href=https://selfsolo.com/p/%E6%B5%85%E6%9E%90%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81/>
+<link rel=canonical href=https://sera.wang/p/%E6%B5%85%E6%9E%90%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81/>
 <link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="浅析浏览器的编码与解码">
 <meta property="og:description" content="对浏览器编码原理的探索">
-<meta property="og:url" content="https://selfsolo.com/p/%E6%B5%85%E6%9E%90%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81/">
+<meta property="og:url" content="https://sera.wang/p/%E6%B5%85%E6%9E%90%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81/">
 <meta property="og:site_name" content="Sera Wang">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="浏览器"><meta property="article:published_time" content="2018-08-13T21:14:23+08:00"><meta property="article:modified_time" content="2018-08-13T21:14:23+08:00">
 <meta name=twitter:title content="浅析浏览器的编码与解码">
 <meta name=twitter:description content="对浏览器编码原理的探索">
-<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png>
 </head>
 <body class=article-page>
-<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
 <div class="container main-container flex
 on-phone--column compact">
 <aside class="sidebar left-sidebar sticky">
@@ -23,10 +23,10 @@ on-phone--column compact">
 </button>
 <header class=site-info>
 <figure class=site-avatar>
-<img src=https://ser4wang.oss-cn-beijing.aliyuncs.com/20210731222602.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
+<img src=https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png width=300 height=300 class=site-logo loading=lazy alt=Avatar>
 </figure>
-<h1 class=site-name><a href=https://selfsolo.com>Sera Wang</a></h1>
-<h2 class=site-description>Le vent se lève, il faut tenter de vivre.</h2>
+<h1 class=site-name><a href=https://sera.wang>Sera Wang</a></h1>
+<h2 class=site-description>Practice makes perfect.</h2>
 </header>
 <ol class=menu id=main-menu>
 <li>
@@ -49,12 +49,20 @@ on-phone--column compact">
 <span>About</span>
 </a>
 </li>
+<li id=dark-mode-toggle><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="8" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><circle cx="16" cy="12" r="2"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+<span>Dark Mode</span>
+</li>
 </ol>
 </aside>
 <main class="main full-width">
 <article class=main-article>
 <header class=article-header>
 <div class=article-details>
+<header class=article-category>
+<a href=/categories/develop_notes/ style=background-color:#2a9d8f;color:#fff>
+开发笔记
+</a>
+</header>
 <h2 class=article-title>
 <a href=/p/%E6%B5%85%E6%9E%90%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81/>浅析浏览器的编码与解码</a>
 </h2>
@@ -159,7 +167,7 @@ on-phone--column compact">
 <p>说的生动点，HTML和CSS两种面粉各自先揉成一团，然后用JS这根擀面棍逐一敲打，最后再把两个揉成一团，最后做成面条。（这可能是我讲例子的极限了…）</p>
 <p><strong>那么，这当中我们目前最关心的解码都发生在什么过程中呢?</strong></p>
 <p>先看一段html代码（为了方便，不严格遵从规范了）</p>
-<pre><code>&lt;html&gt;
+<pre tabindex=0><code>&lt;html&gt;
     &lt;h1&gt;Main Title&lt;/h1&gt;
     &lt;div class=&quot;content&quot;&gt;
         &lt;h2&gt;Second Title&lt;/h2&gt;
@@ -169,25 +177,25 @@ on-phone--column compact">
 </code></pre><p>通过解析器的解析后，它生成了DOM树，长这样</p>
 <p><img src=http://p6jpvwsnk.bkt.clouddn.com/18-8-13/84732141.jpg alt=img></p>
 <p>如果修改一下，比如说把下面这段一部分用html编码</p>
-<pre><code>&lt;h1&gt;Main Title&lt;/h1&gt; 
+<pre tabindex=0><code>&lt;h1&gt;Main Title&lt;/h1&gt; 
 </code></pre><p>变成</p>
-<pre><code>&lt;&amp;#104;1&gt;Main Title&lt;/h1&gt;
+<pre tabindex=0><code>&lt;&amp;#104;1&gt;Main Title&lt;/h1&gt;
 </code></pre><p>或者</p>
-<pre><code>&lt;h1&gt;M&amp;#97;in T&amp;#105;tle&lt;/h1&gt;
+<pre tabindex=0><code>&lt;h1&gt;M&amp;#97;in T&amp;#105;tle&lt;/h1&gt;
 </code></pre><p>感兴趣的不妨试一下，看看两者有什么区别</p>
 <p>试过了之后，会发现前者没有了html标签的作用，后者是正常的，说到这里其实就可以明白一点html解码的时机了。</p>
 <p><strong>它是在浏览器构建完DOM树以后才进行解码的</strong>，当解析器对前者(对标签进行html编码)进行解析时，无法识别为html标签，所以构建不了DOM节点，后者不同，于是成功构建了DOM节点。 而在解析器解析完后，就会进行html解码，于是两者都会解码显示。</p>
 <p>接下来再来讲讲JS的编码与解码，不管是外部引用还是直接写在script标签里，又或者是在html标签的属性里，对于js编码的解码都是相同的，</p>
 <p>同上，先来看一段js代码</p>
-<pre><code>&lt;script&gt;
+<pre tabindex=0><code>&lt;script&gt;
 alert(&quot;Hello World&quot;);
 &lt;/script&gt;
 </code></pre><p>通过js编码变成</p>
-<pre><code>&lt;script&gt;
+<pre tabindex=0><code>&lt;script&gt;
 \u0061lert(&quot;Hello World&quot;);
 &lt;/script&gt;
 </code></pre><p>或者</p>
-<pre><code>&lt;script&gt;
+<pre tabindex=0><code>&lt;script&gt;
 alert(&quot;\u0048ello World&quot;);
 &lt;/script&gt;
 </code></pre><p>感兴趣的依旧可以试试看</p>
@@ -195,7 +203,7 @@ alert(&quot;\u0048ello World&quot;);
 <p>我们知道，js的脚本处理模型是按照 源码处理-函数解析-代码执行这个执行流来的，每块代码都自成体系处理…所以可能需要看一下Gecko里是怎么处理的…而这个跟我们现在要讲的关系不大，日后再讨论吧！尽管我对此也充满了好奇！但是，先继续我们的内容吧。</p>
 <p><strong>html和js各自的部分都讲完了，那两者”混合”起来是怎样做的呢?</strong></p>
 <p>我们来看这段代码</p>
-<pre><code>&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
+<pre tabindex=0><code>&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
 
 &lt;img src=&quot;y.com&quot; onerror=&quot;alert(2)&quot;/&gt;
 &lt;p&gt;Hello Parser!&lt;/p&gt;
@@ -220,6 +228,32 @@ content.appendChild(img);
 </footer>
 </article>
 <aside class=related-contents--wrapper>
+<h2 class=section-title>Related contents</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article>
+<a href=/p/what_powerdns_do/>
+<div class=article-details>
+<h2 class=article-title>【WIP】开源DNS服务器源码解析</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/blackbox-scanner/>
+<div class=article-details>
+<h2 class=article-title>如何实现一个黑盒扫描器?</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/java%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%8E%9F%E7%90%86/>
+<div class=article-details>
+<h2 class=article-title>Java序列化与反序列化原理</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
 </aside>
 <footer class=site-footer>
 <section class=copyright>

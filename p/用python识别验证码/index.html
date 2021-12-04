@@ -1,22 +1,22 @@
 <!doctype html><html lang=en-us>
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>用Python识别验证码</title>
-<link rel=canonical href=https://selfsolo.com/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/>
+<link rel=canonical href=https://sera.wang/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/>
 <link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="用Python识别验证码">
 <meta property="og:description" content="读书时的碎碎念">
-<meta property="og:url" content="https://selfsolo.com/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/">
+<meta property="og:url" content="https://sera.wang/p/%E7%94%A8python%E8%AF%86%E5%88%AB%E9%AA%8C%E8%AF%81%E7%A0%81/">
 <meta property="og:site_name" content="Sera Wang">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="开发"><meta property="article:tag" content="Python"><meta property="article:tag" content="识别码"><meta property="article:published_time" content="2017-11-30T21:14:23+08:00"><meta property="article:modified_time" content="2017-11-30T21:14:23+08:00">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Python"><meta property="article:tag" content="识别码"><meta property="article:published_time" content="2017-11-30T21:14:23+08:00"><meta property="article:modified_time" content="2017-11-30T21:14:23+08:00">
 <meta name=twitter:title content="用Python识别验证码">
 <meta name=twitter:description content="读书时的碎碎念">
-<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png>
 </head>
 <body class="article-page has-toc">
-<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
 <div class="container main-container flex
 extended">
 <div id=article-toolbar>
-<a href=https://selfsolo.com class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<a href=https://sera.wang class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
 <span>Back</span>
 </a>
 </div>
@@ -25,8 +25,8 @@ extended">
 <header class=article-header>
 <div class=article-details>
 <header class=article-category>
-<a href=/categories/%E5%BC%80%E5%8F%91/ style=background-color:#2a9d8f;color:#fff>
-开发
+<a href=/categories/school_notes/ style=background-color:#2a9d8f;color:#fff>
+上学归档
 </a>
 </header>
 <h2 class=article-title>
@@ -70,7 +70,7 @@ extended">
 </ol>
 <h2 id=操作>操作</h2>
 <p>对于目标验证码，采取以下操作：</p>
-<pre><code>1. 下载验证码图片
+<pre tabindex=0><code>1. 下载验证码图片
 2. 对验证码图片进行降噪并切割
 3. 根据相似度识别验证码
 </code></pre><p>关门了，先挖好坑，我顺便再研究一波代码；</p>
@@ -113,7 +113,6 @@ XG5X -> XCJX
 </section>
 <footer class=article-footer>
 <section class=article-tags>
-<a href=/tags/%E5%BC%80%E5%8F%91/>开发</a>
 <a href=/tags/python/>Python</a>
 <a href=/tags/%E8%AF%86%E5%88%AB%E7%A0%81/>识别码</a>
 </section>
@@ -123,6 +122,13 @@ XG5X -> XCJX
 <h2 class=section-title>Related contents</h2>
 <div class=related-contents>
 <div class="flex article-list--tile">
+<article>
+<a href=/p/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%8B%9Fpcb/>
+<div class=article-details>
+<h2 class=article-title>代码模拟PCB</h2>
+</div>
+</a>
+</article>
 <article>
 <a href=/p/python-jieba%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
 <div class=article-details>
@@ -141,13 +147,6 @@ XG5X -> XCJX
 <a href=/p/python-threading%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
 <div class=article-details>
 <h2 class=article-title>Python-threading库的使用</h2>
-</div>
-</a>
-</article>
-<article>
-<a href=/p/python-pil%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8/>
-<div class=article-details>
-<h2 class=article-title>Python-PIL库的使用</h2>
 </div>
 </a>
 </article>

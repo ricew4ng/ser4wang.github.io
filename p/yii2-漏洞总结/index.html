@@ -1,22 +1,22 @@
 <!doctype html><html lang=en-us>
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>Yii2 漏洞总结</title>
-<link rel=canonical href=https://selfsolo.com/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/>
+<link rel=canonical href=https://sera.wang/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/>
 <link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="Yii2 漏洞总结">
 <meta property="og:description" content="读书时的碎碎念">
-<meta property="og:url" content="https://selfsolo.com/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">
+<meta property="og:url" content="https://sera.wang/p/yii2-%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">
 <meta property="og:site_name" content="Sera Wang">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Security"><meta property="article:published_time" content="2019-02-08T21:14:23+08:00"><meta property="article:modified_time" content="2019-02-08T21:14:23+08:00">
 <meta name=twitter:title content="Yii2 漏洞总结">
 <meta name=twitter:description content="读书时的碎碎念">
-<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png>
 </head>
 <body class="article-page has-toc">
-<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
 <div class="container main-container flex
 extended">
 <div id=article-toolbar>
-<a href=https://selfsolo.com class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<a href=https://sera.wang class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
 <span>Back</span>
 </a>
 </div>
@@ -97,7 +97,7 @@ Security
 </blockquote>
 <p>操作必须声明在控制器中。为了简单起见，可以直接在SiteController控制器里生命say操作。
 这个控制器是由文件 controllers/SiteController.php定义的。以下是一个操作的声明：</p>
-<pre><code>&lt;?php
+<pre tabindex=0><code>&lt;?php
 
 namespace app\controllers;
 
@@ -116,7 +116,7 @@ class SiteController extends Controller{
 <p>在操作方法中，render()被用来渲染一个名为say的视图文件。 message参数也被传入视图，这样就可以在里面使用。 操作方法会返回渲染结果。 结果会被应用接收并显示给最终用户的浏览器（作为整页HTML的一部分）。</p>
 <h2 id=创建视图>创建视图</h2>
 <p>视图是用来生成响应内容的脚本，为了”HelloWorld”，我们需要创建一个say视图，以便显示从操作方法中传来的message参数。</p>
-<pre><code>&lt;?php
+<pre tabindex=0><code>&lt;?php
 use yii\helpers\Html;
 ?&gt;
 &lt;?= Html::encode($message) ?&gt;
@@ -139,7 +139,7 @@ use yii\helpers\Html;
 <h1 id=创建模型>创建模型</h1>
 <p>这里通过表单提交，创建一个模型代表用户通过表单输入的数据。</p>
 <p>模型类 EntryForm 代表从用户那请求的数据，该类存储在 models/EntryForm.php 文件中。</p>
-<pre><code>&lt;?php
+<pre tabindex=0><code>&lt;?php
 
 namespace app\models;
 
@@ -166,7 +166,7 @@ class EntryForm extends Model{
 <p>如果你有一个处理用户提交数据的EntryForm对象，可以调用它的validate()方法触发数据验证。 如果有数据验证失败，则会将hasErrors属性设为 true，想要知道具体发生什么错误就调用 getErrors.</p>
 </blockquote>
 <p>eg:</p>
-<pre><code>&lt;?php
+<pre tabindex=0><code>&lt;?php
 
 $model = new EntryForm();
 $model-&gt;name = &quot;test&quot;;
@@ -178,7 +178,7 @@ if($model-&gt;validate()){
 }
 </code></pre><h2 id=动作方法>动作方法</h2>
 <p>SiteController中</p>
-<pre><code>use app\models\EntryForm;
+<pre tabindex=0><code>use app\models\EntryForm;
 
 ...
 
@@ -198,7 +198,7 @@ public function actionEntry(){
 </blockquote>
 <h2 id=创建视图-1>创建视图</h2>
 <p>views/site/entry-confirm.php 视图显示提交的name和email数据。</p>
-<pre><code>&lt;?php
+<pre tabindex=0><code>&lt;?php
 use yii\helpers\Html;
 ?&gt;
 &lt;p&gt;You have entered the following information: &lt;/p&gt;
@@ -208,7 +208,7 @@ use yii\helpers\Html;
     &lt;li&gt;&lt;label&gt;Email&lt;/label&gt;: &lt;?= Html::encode($model-&gt;email) ?&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre><p>views/site/entry.php视图显示一个HTML表单</p>
-<pre><code>&lt;?php
+<pre tabindex=0><code>&lt;?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?&gt;
@@ -231,7 +231,7 @@ use yii\widgets\ActiveForm;
 <p>接下来，我们比如要展示数据库中的一个country表。我们要自己写脚本创建表等等。</p>
 <h2 id=创建activerecord>创建ActiveRecord</h2>
 <p>创建一个Country类，存储在models/Country.php，去代表和读取country表的数据</p>
-<pre><code>&lt;?php
+<pre tabindex=0><code>&lt;?php
 
 namespace app\models;
 
@@ -244,7 +244,7 @@ class Country extends ActiveRecord{}
 <p>ActiveRecord（活动记录）是面向对象、功能强大的访问和操作数据库数据的方式</p>
 <h2 id=controller>Controller</h2>
 <p>controllers/CountryController.php</p>
-<pre><code>&lt;?php
+<pre tabindex=0><code>&lt;?php
 
 namespace app\controllers;
 
@@ -276,7 +276,7 @@ class CountryController extends Controller
 }
 </code></pre><h2 id=视图>视图</h2>
 <p>views/country/index.php</p>
-<pre><code>&lt;?php
+<pre tabindex=0><code>&lt;?php
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
 ?&gt;
@@ -331,7 +331,7 @@ use yii\widgets\LinkPager;
 <p><strong>应用主体</strong>是管理Yii应用系统整体结构和生命周期的对象。每个Yii应用系统只能包含一个应用主体，应用主体在入口脚本中创建并能通过表达式 \Yii::$app全局范围内访问。</p>
 <h2 id=应用主体配置>应用主体配置</h2>
 <p>入口脚本index.php代码</p>
-<pre><code>require __DIR__ . '/../vendor/autoload.php';
+<pre tabindex=0><code>require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 
 $config = require __DIR__ . '/../config/web.php';
@@ -385,7 +385,7 @@ $config = require __DIR__ . '/../config/web.php';
 <li>
 <p>应用组件可以是任意对象，可以在 应用主体配置 配置 yii\base\Application::$components属性。</p>
 <p>eg:</p>
-<pre><code>[
+<pre tabindex=0><code>[
     'components' =&gt; [
         // 使用类名注册 &quot;cache&quot; 组件
         'cache' =&gt; 'yii\caching\ApcCache',
@@ -451,7 +451,7 @@ $config = require __DIR__ . '/../config/web.php';
 <h2 id=控制器部署><strong>控制器部署</strong></h2>
 <p>可通过配置<code>controller map</code>来强制上述的控制器ID和类名对应，通常用在使用第三方不能掌控类名的控制器上</p>
 <p>eg:</p>
-<pre><code>[
+<pre tabindex=0><code>[
     'controllerMap' =&gt; [
         // 用类名申明 &quot;account&quot; 控制器
         'account' =&gt; 'app\controllers\UserController',
@@ -502,7 +502,7 @@ $config = require __DIR__ . '/../config/web.php';
 <p>独立动作</p>
 <p>独立操作通过继承 <code>yii\base\Action</code> 或它的子类来定义。 例如Yii发布的 <code>yii\web\ViewAction</code> 和 <code>yii\web\ErrorAction</code> 都是独立操作</p>
 <p>要使用独立操作，需要通过控制器中覆盖 <code>yii\base\Controller::actions()</code> 方法在 action map中声明，如下例所示：</p>
-<pre><code>public function actions()
+<pre tabindex=0><code>public function actions()
 {
     return [
         // 用类来申明&quot;error&quot; 动作
@@ -517,7 +517,7 @@ $config = require __DIR__ . '/../config/web.php';
 }
 </code></pre><p>如上所示，actions()方法返回 键为操作ID、值为对应操作类名或数组 configurations 的数组。 和内联操作不同，独立操作ID可包含任意字符，只要在actions()方法中声明。</p>
 <p>为创建一个独立操作类，需要继承 <code>yii\base\Action</code> 或它的子类，并实现公有的名称为run()的方法，run()方法的角色和操作方法类似，例如：</p>
-<pre><code>&lt;?php
+<pre tabindex=0><code>&lt;?php
 namespace app\components;
 
 use yii\base\Action;
@@ -543,7 +543,7 @@ class HelloWorldAction extends Action
 <p>在上面的例子中，操作结果都为字符串，作为响应数据发送给终端用户，下例显示一个操作通过返回响应对象（因为redirect()方法返回一个响应对象）可将用户浏览器跳转到新的URL</p>
 <p>public function actionForward()
 {</p>
-<pre><code>// 用户浏览器跳转到 http://example.com
+<pre tabindex=0><code>// 用户浏览器跳转到 http://example.com
 return $this-&gt;redirect('http://example.com');
 </code></pre><p>}</p>
 </li>
@@ -553,7 +553,7 @@ return $this-&gt;redirect('http://example.com');
 <p>动作参数</p>
 <p>内联动作的操作方法和独立动作的run()方法可以带参数，成为动作参数。 参数值从请求中获取，对于 网页应用，每个动作参数的值从$_GET中获得，参数名作为键；对于控制台应用，动作参数对应命令行参数。</p>
 <p>如下例，动作view（内联动作）声明了两个参数 $id 和 $version</p>
-<pre><code>namespace app\controllers;
+<pre tabindex=0><code>namespace app\controllers;
 
 use yii\web\Controller;
 
@@ -567,7 +567,7 @@ class PostController extends Controller
 </code></pre><p>动作参数会被不同的参数填入，如下所示：</p>
 </li>
 </ol>
-<pre><code>+ http://hostname/index.php?r=post/view&amp;id=123: $id 会填入'123'， $version 仍为 null 空因为没有version请求参数;
+<pre tabindex=0><code>+ http://hostname/index.php?r=post/view&amp;id=123: $id 会填入'123'， $version 仍为 null 空因为没有version请求参数;
 + http://hostname/index.php?r=post/view&amp;id=123&amp;version=2: $id 和 $version 分别填入 '123' 和 '2'`；
 + http://hostname/index.php?r=post/view: 会抛出yii\web\BadRequestHttpException 异常 因为请求没有提供参数给必须赋值参数$id；
 + http://hostname/index.php?r=post/view&amp;id[]=123: 会抛出yii\web\BadRequestHttpException 异常 因为 $id 参数收到数组值 ['123'] 而不是字符串.
@@ -631,7 +631,7 @@ class PostController extends Controller
 </ul>
 <h2 id=块赋值>块赋值</h2>
 <p>块赋值只用一行代码将用户所有输入填充到一个模型，非常方便，它直接将输入数据对应填充到 <code>yii\base\Model::attributes()</code> 属性。</p>
-<pre><code>$model = new \app\models\ContactForm;
+<pre tabindex=0><code>$model = new \app\models\ContactForm;
 $model-&gt;attributes = \Yii::$app-&gt;request-&gt;post('ContactForm'); # ContactForm是定义好的模型名称
 </code></pre><h2 id=practice>PRACTICE</h2>
 <p>模型是代表业务数据、规则和逻辑的中心地方，通常在很多地方重用，在一个设计良好的应用中，模型通常比<strong>控制器</strong>代码多。</p>
@@ -657,7 +657,7 @@ $model-&gt;attributes = \Yii::$app-&gt;request-&gt;post('ContactForm'); # Contac
 <li>对于 小部件 渲染的视图文件默认放在 <code>WidgetPath/views</code> 目录， 其中 <code>WidgetPath</code> 代表小部件类文件所在的目录；</li>
 </ul>
 <h2 id=渲染视图>渲染视图</h2>
-<pre><code>namespace app\controllers;
+<pre tabindex=0><code>namespace app\controllers;
 
 use Yii;
 use app\models\Post;
@@ -764,7 +764,7 @@ class PostController extends Controller
 <li>
 <p>创建URL</p>
 <p>Yii提供了一个助手方法yii\helpers\Url::to()，用来根据提供的路由和参数创建各种各样的URL。 例如：</p>
-<pre><code>use yii\helpers\Url;
+<pre tabindex=0><code>use yii\helpers\Url;
 
 // 创建一个普通的路由URL：/index.php?r=post%2Findex
 echo Url::to(['post/index']);
@@ -792,7 +792,7 @@ echo Url::to(['post/index'], 'https');
 <p>一条URL规则可以对匹配模式中的参数设置格式为 <code>&lt;ParamName:RegExp></code> 的命名， 其中 <code>ParamName</code> 指定参数的名称，<code>RegExp</code> 是可选的用来匹配参数值得正则表达式。 如果没有设置 <code>RegExp</code>，表示参数值为不包含 <code>/</code> 的字符串。</p>
 <p>当一条规则用来匹配<code>URL</code>时，符合匹配规则的相关的参数值被填充到规则中， 并且这些参数可以在 <code>request</code> 组件中使用 <code>$_GET</code> 获取到。 当规则用来创建 <code>URL</code> 时， 提供的参数值将被插入到规则定义的指定位置。</p>
 <p>让我们使用一些例子来说明命名参数是如何工作的。假设我们定义了以下三条 <code>URL</code> 规则：</p>
-<pre><code>[
+<pre tabindex=0><code>[
     'posts/&lt;year:\d{4}&gt;/&lt;category&gt;' =&gt; 'post/index',
     'posts' =&gt; 'post/index',
     'post/&lt;id:\d+&gt;' =&gt; 'post/view',
@@ -831,7 +831,7 @@ echo Url::to(['post/index'], 'https');
 </li>
 </ol>
 <h2 id=practice-3>PRACTICE</h2>
-<pre><code>在开发复杂的 Web 应用程序时，优化 URL 规则非常重要，以便解析请求和创建 URL 所需 的时间更少。
+<pre tabindex=0><code>在开发复杂的 Web 应用程序时，优化 URL 规则非常重要，以便解析请求和创建 URL 所需 的时间更少。
 
 通过使用参数化路由，您可以减少 URL 规则的数量，这可以显著提高性能。
 
@@ -867,7 +867,7 @@ echo Url::to(['post/index'], 'https');
 </section>
 <footer class=article-footer>
 <section class=article-tags>
-<a href=/tags/security/>Security</a>
+<a href=/tags/security/>security</a>
 </section>
 </footer>
 </article>
@@ -890,23 +890,23 @@ echo Url::to(['post/index'], 'https');
 </a>
 </article>
 <article>
-<a href=/p/%E5%85%A5%E9%97%A8%E9%80%86%E5%90%91/>
-<div class=article-details>
-<h2 class=article-title>入门逆向</h2>
-</div>
-</a>
-</article>
-<article>
-<a href=/p/%E5%B8%B8%E8%A7%81%E6%91%98%E8%A6%81/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/>
-<div class=article-details>
-<h2 class=article-title>常见摘要/加密算法总结</h2>
-</div>
-</a>
-</article>
-<article>
 <a href=/p/%E5%88%A9%E7%94%A8%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E%E4%B8%8B%E8%BD%BDvol.moe%E7%9A%84%E6%89%80%E6%9C%89%E6%BC%AB%E7%94%BB/>
 <div class=article-details>
 <h2 class=article-title>利用越权漏洞下载vol.moe的所有漫画</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/php-fileinclusion/>
+<div class=article-details>
+<h2 class=article-title>PHP-FileInclusion</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/sql%E6%B3%A8%E5%85%A5-%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%8E%9F%E7%90%86/>
+<div class=article-details>
+<h2 class=article-title>SQL注入-报错注入原理</h2>
 </div>
 </a>
 </article>

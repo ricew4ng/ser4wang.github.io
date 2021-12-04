@@ -1,22 +1,22 @@
 <!doctype html><html lang=en-us>
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>WriteUp - Seclab</title>
-<link rel=canonical href=https://selfsolo.com/p/writeup-seclab/>
+<link rel=canonical href=https://sera.wang/p/writeup-seclab/>
 <link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="WriteUp - Seclab">
 <meta property="og:description" content="读书时的碎碎念">
-<meta property="og:url" content="https://selfsolo.com/p/writeup-seclab/">
+<meta property="og:url" content="https://sera.wang/p/writeup-seclab/">
 <meta property="og:site_name" content="Sera Wang">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Security"><meta property="article:published_time" content="2018-03-18T21:14:23+08:00"><meta property="article:modified_time" content="2018-03-18T21:14:23+08:00">
 <meta name=twitter:title content="WriteUp - Seclab">
 <meta name=twitter:description content="读书时的碎碎念">
-<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png>
 </head>
 <body class="article-page has-toc">
-<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
 <div class="container main-container flex
 extended">
 <div id=article-toolbar>
-<a href=https://selfsolo.com class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<a href=https://sera.wang class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
 <span>Back</span>
 </a>
 </div>
@@ -62,7 +62,7 @@ Security
 <li>
 <p>再加密一次你就得到key啦~</p>
 <p>这题做不来，看的writeup，用的rot13加密，学习一下! rot13加密</p>
-<pre><code> 百科链接：http://www.baike.com/wiki/ROT13&amp;prd=so_1_doc
+<pre tabindex=0><code> 百科链接：http://www.baike.com/wiki/ROT13&amp;prd=so_1_doc
 
  ROT13（回转13位，rotateby13places，有时中间加了个减号称作ROT-13）是一种简易的置换暗码。ROT13是它自己本身的逆反；也就是说，要还原ROT13，套用加密同样的演算法即可得，故同样的操作可用再加密与解密。该演算法并没有提供真正的密码学上的保全，故它不应该被套用在需要保全的用途上。它常常被当作弱加密范例的典型。
 
@@ -77,7 +77,7 @@ Security
 <p>猜猜这是经过了多少次加密？</p>
 <p>看到加密后字符串最后是个等号，依稀记得base64加密最后也是个等号，猜测是base64加密，于是脚本解密如下:</p>
 <p>脚本编写时要注意，base64碰到无法解密之后会报错</p>
-<pre><code> import base64
+<pre tabindex=0><code> import base64
 
  code = 'Vm0wd2QyUXlVWGxWV0d4V1YwZDRWMVl3WkRSV01WbDNXa1JTVjAxV2JETlhhMUpUVmpBeFYySkVUbGhoTVVwVVZtcEJlRll5U2tWVWJHaG9UVlZ3VlZacVFtRlRNbEpJVm10a1dHSkdjRTlaVjNSR1pVWmFkR05GU214U2JHdzFWVEowVjFaWFNraGhSemxWVmpOT00xcFZXbUZrUjA1R1drWndWMDFFUlRGV1ZFb3dWakZhV0ZOcmFHaFNlbXhXVm1wT1QwMHhjRlpYYlhSWFRWaENSbFpYZUZOVWJVWTJVbFJDVjAxdVVuWlZha1pYWkVaT2NscEdhR2xTTW1ob1YxWlNTMkl4U2tkWGJHUllZbFZhY1ZadGRHRk5SbFowWlVaT1ZXSlZXVEpWYkZKSFZqRmFSbUl6WkZkaGExcG9WakJhVDJOdFJraGhSazVzWWxob1dGWnRNWGRVTVZGM1RVaG9hbEpzY0ZsWmJGWmhZMnhXY1ZGVVJsTk5XRUpIVmpKNFQxWlhTa2RqUm14aFUwaENTRlpxUm1GU2JVbDZXa1prYUdFeGNHOVdha0poVkRKT2RGSnJhR2hTYXpWeldXeG9iMWRHV25STldHUlZUVlpHTTFSVmFHOWhiRXB6WTBac1dtSkdXbWhaTVZwaFpFZFNTRkpyTlZOaVJtOTNWMnhXYjJFeFdYZE5WVlpUWVRGd1YxbHJXa3RUUmxweFVtMUdVMkpWYkRaWGExcHJZVWRGZUdOSE9WZGhhMHBvVmtSS1QyUkdTbkpoUjJoVFlYcFdlbGRYZUc5aU1XUkhWMjVTVGxOSFVuTlZha0p6VGtaVmVXUkhkRmhTTUhCSlZsZDRjMWR0U2tkWGJXaGFUVzVvV0ZsNlJsZGpiSEJIV2tkc1UySnJTbUZXTW5oWFdWWlJlRmRzYUZSaVJuQlpWbXRXZDFZeGJISlhhM1JVVW14d2VGVXlkR0ZpUmxwelYyeHdXR0V4Y0hKWlZXUkdaVWRPUjJKR2FHaE5WbkJ2Vm10U1MxUnRWa2RqUld4VllsZG9WRlJYTlc5V1ZscEhXVE5vYVUxWFVucFdNV2h2VjBkS1dWVnJPVlpoYTFwSVZHeGFZVmRGTlZaUFYyaHBVbGhCZDFac1pEUmpNV1IwVTJ0b2FGSnNTbGhVVlZwM1ZrWmFjVk5yWkZOaVJrcDZWa2N4YzFVeVNuSlRiVVpYVFc1b1dGZFdXbEpsUm1SellVWlNhVkp1UWxwV2JYUlhaREZaZUdKSVNsaGhNMUpVVlcxNGQyVkdWbGRoUnpsb1RWWndlbFl5Y0VkV01ERjFZVWhLV2xaWFVrZGFWM2hIWTIxS1IyRkdhRlJTVlhCS1ZtMTBVMU14VlhoWFdHaFlZbXhhVjFsc1pHOVdSbXhaWTBaa2JHSkhVbGxhVldNMVlWVXhXRlZyYUZkTmFsWlVWa2Q0YTFOR1ZuTlhiRlpYWWtoQ1NWWkdVa2RWTVZwMFVtdG9VRll5YUhCVmJHaERUbXhrVlZGdFJtcE5WMUl3VlRKMGIyRkdTbk5UYkdoVlZsWndNMVpyV21GalZrNXlXa1pPYVZKcmNEWldhMk40WXpGVmVWTnVTbFJpVlZwWVZGYzFiMWRHWkZkWGJFcHNVbTFTZWxsVldsTmhWa3AxVVd4d1YySllVbGhhUkVaYVpVZEtTVk5zYUdoTk1VcFZWbGN4TkdReVZrZFdXR3hyVWpOU2IxbHNWbmRXTVZwMFkwZEdXR0pHY0ZoWk1HUnZWMnhhV0ZWclpHRldWMUpRVlRCVk5WWXhjRWhoUjJoT1UwVktNbFp0TVRCVk1VMTRWVmhzVm1FeVVsWlpiWFIzWVVaV2RHVkZkR3BTYkhCNFZrY3dOVll4V25OalJXaFlWa1UxZGxsV1ZYaFhSbFoxWTBaa1RsWXlhREpXTVZwaFV6RkplRlJ1VmxKaVJscFlWRlJHUzA1c1drZFZhMlJXVFZad01GVnRkRzlWUmxwMFlVWlNWVlpYYUVSVk1uaGhZekZ3UlZWdGNFNVdNVWwzVmxSS01HRXhaRWhUYkdob1VqQmFWbFp1Y0Zka2JGbDNWMjVLYkZKdFVubGFSV1IzWVZaYWNtTkZiRmRpUjFFd1ZrUktSMVl4VGxsalJuQk9UVzFvV1ZkV1VrZGtNa1pIVjJ4V1UySkdjSE5WYlRGVFRWWlZlV042UmxoU2EzQmFWVmMxYjFZeFdYcGhTRXBWWVRKU1NGVnFSbUZYVm5CSVlVWk9WMVpHV2xaV2JHTjRUa2RSZVZaclpGZGlSMUp2Vlc1d2MySXhVbGRYYm1Sc1lrWnNOVmt3Vm10V01ERkZVbXBHV2xaWGFFeFdNbmhoVjBaV2NscEhSbGROTW1oSlYxUkplRk14U1hoalJXUmhVbFJXVDFWc2FFTlRNVnAwVFZSQ1ZrMVZNVFJXYkdodlYwWmtTR0ZHYkZwaVdHaG9WbTE0YzJOc2NFaFBWM0JUWWtoQ05GWnJZM2RPVmxsNFYyNVNWbUpIYUZoV2FrNU9UVlphV0dNemFGaFNiRnA1V1ZWYWExUnRSbk5YYkZaWFlUSlJNRmRXV2t0ak1WSjFWRzFvVTJKR2NGbFhWM2hoVW0xUmVGZHVSbEppVlZwaFZtMHhVMU5XV2xoa1J6bG9UVlZ3TUZsVldsTldWbHBZWVVWU1ZrMXVhR2haZWtaM1VsWldkR05GTlZkTlZXd3pWbXhTUzAxSFNYbFNhMlJVWW1zMVZWbHJaRzlXYkZwMFpVaGtUazFXYkROV01qVkxZa1pLZEZWdWJHRlNWMUl6V1ZaYVlXTnRUa1ppUm1ScFVqRkZkMWRXVWt0U01WbDRWRzVXVm1KRlNsaFZiRkpYVjFaYVIxbDZSbWxOVjFKSVdXdG9SMVpIUlhoalNFNVdZbFJHVkZZeWVHdGpiRnBWVW14a1RsWnVRalpYVkVKaFZqRmtSMWRZY0ZaaWEzQllWbXRXWVdWc1duRlNiR1JxVFZkU2VsbFZaSE5XTVZwMVVXeEdWMkV4Y0doWFZtUlNaVlphY2xwR1pGaFNNMmg1VmxkMFYxTXhaRWRWYkdSWVltMVNjMVp0TVRCTk1WbDVUbGQwV0ZKcmJETldiWEJUVjJzeFIxTnNRbGROYWtaSFdsWmFWMk5zY0VoU2JHUk9UVzFvU2xZeFVrcGxSazE0VTFob2FsSlhhSEJWYlRGdlZrWmFjMkZGVGxSTlZuQXdWRlpTUTFack1WWk5WRkpYWWtkb2RsWXdXbXRUUjBaSFlrWndhVmRIYUc5V2JYQkhZekpOZUdORmFGQldiVkpVV1d4b2IxbFdaRlZSYlVab1RXdHdTVlV5ZEc5V2JVcElaVWRvVjJKSFVrOVVWbHB6VmpGYVdXRkdhRk5pUm5BMVYxWldZV0V4VW5SU2JrNVlZa1phV0ZsVVNsSk5SbFkyVW10MGFrMVlRa3BXYlhoVFlWWktjMk5HYkZoV00xSm9Xa1JCTVdNeFpISmhSM2hUVFVad2FGWnRNSGhWTVVsNFZXNU9XR0pWV2xkVmJYaHpUbFpzVm1GRlRsZGlWWEJKV1ZWV1QxbFdTa1pYYldoYVpXdGFNMVZzV2xka1IwNUdUbFprVGxaWGQzcFdiWGhUVXpBeFNGTlliRk5oTWxKVldXMXpNVlpXYkhKYVJ6bFhZa1p3ZWxZeU5XdFVhekZYWTBoc1YwMXFSa2haVjNoaFkyMU9SVkZ0UmxOV01VWXpWbTF3UzFNeVRuTlVia3BxVW0xb2NGVnRlSGRsVm1SWlkwVmtWMkpXV2xoV1J6VlBZVlpLZFZGck9WVldla1oyVmpGYWExWXhWbkphUjNST1lURndTVlpxU2pSV01WVjVVMnRrYWxORk5WZFpiRkpIVmtaU1YxZHNXbXhXTURReVZXMTRhMVJzV25WUmFscFlWa1ZLYUZacVJtdFNNV1IxVkd4U2FFMXRhRzlXVjNSWFdWZE9jMVp1UmxSaE0xSlZWbTE0UzAxR2JGWlhhemxYVFZad1NGWXljRXRXTWtwSVZHcFNWV0V5VWxOYVZscGhZMnh3UjFwR2FGTk5NbWcxVm14a2QxUXhWWGxUV0docFUwVTFXRmx0TVZOWFJsSlhWMjVrVGxKdGRETlhhMVpyVjBaSmQyTkZhRnBOUm5CMlZqSnplRk5HVm5WWGJHUk9ZbTFvYjFacVFtRldNazV6WTBWb1UySkhVbGhVVmxaM1ZXeGFjMVZyVG1oTlZXdzBWVEZvYzFVeVJYbGhTRUpXWWxoTmVGa3dXbk5XVmtaMVdrVTFhVkp1UVhkV1JscFRVVEZhY2sxV1drNVdSa3BZVm01d1YxWkdXbkZUYTFwc1ZteGFNVlZ0ZUdGaFZrbDRVbGhrVjJKVVJUQlpla3BPWlVkT1JtRkdRbGRpVmtwVlYxZDBWMlF4WkhOWGEyaHNVak5DVUZadGVITk9SbGw1VGxaT1YySlZjRWxaVlZwdlZqSkdjazVWT1ZWV2JIQm9WakJrVG1WdFJrZGhSazVwVW01Qk1sWXhXbGRaVjBWNFZXNU9XRmRIZUc5VmExWjNWMFpTVjFkdVpHaFNiRmt5VlcxME1HRnJNVmRUYWtaWFZqTm9VRmxXV2twbFJrNTFXa1prYUdFd2NGaFdSbFpXWlVaSmVGcElTbWhTTTFKVVZGVmFkMlJzV2tkYVNIQk9WakZhZWxZeGFITlVNVnB5VGxjNVZWWnNXak5VVlZwaFYwVTFWbFJzWkU1aE0wSktWMVpXVjFVeFdsaFRiR3hvVWpKb1dGbHJXbmRWUmxwelYydDBhazFXY0hsVWJGcHJZVmRGZDFkWWNGZGlXR2h4V2tSQmVGWXhVbGxoUm1ob1RXMW9WbGRYZEd0aU1rbDRWbTVHVW1KVldsaFphMXAzVFVad1ZtRkhkRlZoZWtaYVZWZDRjMWxXV2xoaFJYaGFZVEZ3WVZwVldtdGpiVTVIWVVkb1RsZEZTbEpXYlRGM1V6RktkRlpyYUZWaE1WcFlXV3RrVTFaR1ZuTlhibVJzVm0xU1dsa3dWbXRXTWtwWFVtcE9WVlpzV25wWlZscEtaVmRHUjFWc2NHbFNNbWd5Vm1wR1lXRXhaRWhXYTJoUVZtdHdUMVpzVWtaTlJtUlZVVzFHV2xac2JEUlhhMVp2WVVaS2MxTnNXbGRpVkVaVVZtdGFkMWRIVmtsVWJHUnBVakZLTmxaclkzaGlNVmw1VWxod1VsZEhhRmhXYlRGU1RVWndSVkpzY0d4V2F6VjZXV3RhWVdGV1NYbGhSemxYVmpOU1dGZFdaRTlqTVZwMVVteFNhRTB4U2xaV2JURjZUVlV4UjFadVVteFNWR3h3VldwQ2QxZHNiRlpWYkU1WFRVUkdXVlpXYUd0WFJscDBWV3hPWVZac2NHaFpNbmgzVWpGd1IyRkdUazVOYldjeFZtMTRhMlF4UlhoaVJtaFZZVEpTV0ZsdGVFdGpNVlYzV2taT2FrMVhlSGxXTWpWUFZERmFkVkZzWkZwV1YxRjNWakJhUzJOdFNrVlViR1JwVjBWS1ZWWnFTbnBsUmtsNFZHNU9VbUpIVWs5WlYzUmhVMFprYzFkdFJsZE5helY2V1RCV2IxVXlTa2hWYXpsVlZucEdkbFV5ZUZwbFJsWnlZMGQ0VTJGNlJUQldWRVp2WWpKR2MxTnNhRlppVjJoWFdXdGFTMWRHV2tWU2JHUnFUV3RhUjFaSGVGTlViRnAxVVZoa1YxSnNjRlJWVkVaaFkyc3hWMWRyTlZkU2EzQlpWMWQwYTJJeVVuTlhXR1JZWWxoU1ZWVnFRbUZUVm14V1YyMUdWV0pGY0RGVlZ6QTFWakpLVlZKVVFscGxhM0JRV1hwR2QxTldUblJrUms1T1RVVndWbFl4WkRCaU1VVjNUbFZrV0dKcmNHRlVWRXBUVlVaYWRHVklUazlTYkd3MVZHeFZOV0ZIU2taalJteGFWbFp3ZWxacVNrWmxSbHBaWVVkR1UwMHlhRFpXYlhCSFdWWmtXRkpyWkdoU2F6VndWVzAxUWsxc1dYaFhiR1JhVmpCV05GWlhOVTlYUm1SSVpVYzVWbUV4V2pOV01GcFRWakZrZFZwSGFGTmlSbXQ1VmxjeE1FMUhSbkpOVm1SVVlXdGFXRlpxVG05U1JscHhVMnQwVTAxck5VaFphMXB2VmpBd2VGTnFTbGRXYkVwSVZsUkdXbVZIVGtaaVJsWnBVakpvZDFadGVHRmtNV1JIVjJ0a1dHSlZXbkZVVlZKWFUwWlplR0ZJVGxWTlZuQjVWR3hqTlZaV1duTlhibkJWWWtad2VsWnRNVWRTYkZKeldrZHNWMWRGU2t0V01WcFhWakZWZUZkWVpFNVdiVkp4VldwS2IxbFdVbGRYYm1SV1VtMTBORll5ZUd0aGF6RllWVzVzVldKR2NISldSM2hoVjBkUmVtTkdaR2xYUjJoVlZsaHdRbVZHVGtkVWJHeHBVbXMxYjFSWGVFdFdiR1JZVFZod1RsWnNjRmhaYTJoTFdWWktObUpHYUZwaE1YQXpXbGQ0V21WVk5WaGtSbFpvWld0YVdsZHNWbUZoTVZsM1RWaEdWMkpyY0ZoV2ExWjNWRVpWZUZkclpHcGlWVnBJVjJ0YVQxUnJNWFJoUmxwWFlsUkdNMVY2Ums1bFZsSjFWR3hXYVdFelFuWldWekI0VlRGYVIxVnNWbFJpVkd4d1ZGWmFkMlZXV2xoa1JFSldUVVJHV1ZaWGRHOVdhekYxWVVod1dGWnNjRXRhVjNoSFl6RldjMXBIYUdobGJGbDVWbTF3UjFsWFJYaGFSV2hYWVRKb1VWWnRkSGRVTVZwMFpFaGtWRlp0VWxaVlZ6RkhZVlV4Y2xkcVFsZGlWRlpNVmpCa1MxTkhWa2RhUm5CcFVqSm9WVlpHVWtka01WbDRXa2hTYTFJelFuQlZha1pLWkRGYVJWSnRkR2xOVm13elZGWldhMkZGTUhsbFJtaGFZa1pLUTFwVlduTmpWa3B6WTBkNFUySldTalZXYWtvMFZUSkdXRk5yYkZKaVIyaFlXV3hvVTFkR1pGZGFSbVJxVFZkU01WVnRlRTloVmtsNFUyNW9WMUpzY0hKV1ZFcFhZekpLUjFkdFJsUlNWRloyVm0weE5HUXlWbGRoTTJSV1lsVmFXRlJWVWtkWFZscFhZVWQwV0ZKc2NEQldWM2hQV1ZaYWMyTkhhRnBOYm1nelZXcEdkMUl5UmtkVWF6Vk9ZbGRqZUZadE1UUmhNREZIVjFob1ZWZEhhR2hWYkdSVFZqRnNjbHBHVGxoV2JYZ3dWRlphVDJGck1WZGpSRUpoVmxkb1VGWkVSbUZrVmtaeldrWndWMVl4UmpOV2FrSmhVMjFSZVZScldtaFNia0pQVlcwMVEwMXNXbkZUYm5Cc1VtczFTVlZ0ZEdGaVJrcDBWV3M1V21KVVJuWlpha1poWTFaR2RGSnNaRTVoZWxZMlYxUkNWMkl4VlhsVGEyaFdZa2RvVmxadGVHRk5NVnBZWlVkR2FrMVdXbmxXUjNocllVZFdjMWRzYkZkaGExcDJXV3BLUjJNeFRuTmhSMmhUWlcxNFdGZFdaREJrTWxKelYydFdVMkpHY0hKVVZscDNaVlp3UmxaVVJtaFdhM0F4VlZab2ExZEhTa2RYYmtaVllrZFNSMXBFUVhoV01XUnlUbFprVTJFelFscFdiVEIzWlVkSmVWVnVUbGhYUjFKWldXeG9VMVpXVm5GUmJVWlVZa1phTUZwVlpFZGhSbHB5WWtSU1ZtSkhhSEpXYWtwTFZsWktWVkZzY0d4aE0wSlFWMnhXWVdFeVVsZFdiazVWWWxkNFZGUldWbmRXYkZsNFdrUkNWMDFzUmpSWGEyaFBWMGRGZVdGSVRsWmhhelZFVmxWYVlXUkZNVmRVYkZKVFlrZDNNVlpIZUZaT1YwWklVMnRhYWxKRlNtaFdiR1JUVTBaYWMxZHRSbGROYXpWSVYydGFWMVl5U2tsUmFscFhZbGhDU0ZkV1dtdFhSa3B5WVVkd1UwMXVhRmxXYWtKWFV6Rk9SMWR1VW14U00xSlFWV3BDVjA1R1dsaE9WazVXVFd0d2VWUnNXbk5YYlVWNFkwZG9WMDFXY0doYVJWVjRWakZPY2s1V1RtbFNiWFExVm14amQyVkdTWGxTYmxKVFlXeHdXRmxyWkc5WlZteFZVbTVrVlZKdGVGaFdNblF3WVdzeGNrNVZhRnBoTVhCMlZtcEJkMlZHVG5SUFZtaG9UVlZ3U1ZkV1VrZFhiVlpIWTBWc1ZHSlhhRlJVVkVaTFZsWmFSMVp0Um10TlYxSllWakowYTFsV1RrbFJiazVXWWtaS1dGWXdXbUZrUlRWWFZHMW9UbFpYT0hsWFYzUmhZVEZhZEZOc2JHaFRTRUpXV1d0YWQyVnNXblJOVldSVFlrWktlbGRyWkhOV01XUkdVMnQwVjAxV2NGaFdha1pXWlVaa1dWcEZOVmRpVmtwNFZsZHdTMkl4YkZkVmJHUllZbTFTVjFWdE1UQk9SbGw1WlVkMGFHRjZSbGxXVnpWelZsZEtSMk5JU2xkU00yaG9WakJrVW1WdFRrZGFSMnhZVWpKb1ZsWnNhSGRSYlZaSFZHdGtWR0pIZUc5VmFrSmhWa1phY1ZOdE9WZGlSMUpaV2tWa01HRlZNWEppUkZKWFlsUldWRlpIZUdGT2JVcElVbXhrYVZkSFozcFhiRnBoV1ZkU1JrMVdXbUZTYkZwdldsZDBZVmRzWkhOV2JVWm9UVlpzTTFSV2FFZFdNa3B5WTBab1YyRXhXak5XUlZwV1pVWmtjbHBIY0dsV1ZuQkpWakowWVZReFVuSk5XRkpvVW14d1dGbHNVa2ROTVZZMlVtczFiRlpzU2pGV1IzaFhZVmRGZWxGdWFGZFdla0kwV1dwS1QxSXhXblZWYlhoVVVqRktkMVpHV210Vk1XUkhWMnhvYTFKRlNsZFVWVkpIVjBac2NsVnNUbGROVld3MldWVm9kMWRzV1hwaFJYaGhVbXh3U0ZreWN6VldNVnB6V2tkNGFFMVhPVFZXYlRGM1VqRnNWMkpHWkZSWFIyaHdWV3RhZDFaR2JITmFSRkpWVFZad2VGVnRkREJXUmxwelkwaG9WazFXU2toV1ZFRjRWakZhY1Zac1drNWliRXB2VjFaa05GUXhTbkpPVm1SaFVtNUNjRlZ0ZEhkVFZscDBaRWRHV0dKV1dsbFdiWFJ2WVRGSmVsRnVRbFppVkZaRVZtcEdZVmRGTVZWVmJXeE9WbXhaTVZaWGVHOWtNVlowVTJ4YVdHSkhhRmhaYkZKSFZURlNWbGR1VGs5aVJYQXdXa1ZhVDFSc1dYaFRXR2hYWWtkUk1GZFdaRWRUUms1eVlrWkthVkl4U2xsWFYzaFRVbXN4UjJORlZsUmlSMUp4VkZaa1UwMVdWblJsUlRsb1ZtdHNORlV5Tlc5V01VcHpZMGhLVjFaRmNGaFpla3BMVWpGa2RGSnNVbE5XUmxveVZtMHdlRTVIVVhsV2JHUm9UVEpTV1ZsdE1WTlhSbEpZWkVoa1ZGWnNjRWxaTUZwUFZqRlpkMVpxVmxkV00yaFFWMVphWVdNeVRraGhSbkJPWW0xbmVsWlhjRWRrTVU1SVUydG9hVkpyTlZsVmJGWjNWVEZhZEUxSVpHeFNWRlpKVld4b2IxWXhaRWhoUjJoV1lrZFNWRlpxUm5OamJHUjFXa1prVGxZemFGZFdWRW8wVkRKR2NrMVdaR3BTUlVwb1ZteGFXbVF4YkhKYVJYUlRUV3MxUmxWWGVGZFdNVnB5WTBac1YySllRa05hVlZwTFZqRk9kVlJ0UmxOaWEwcDNWMWN4TUZNeFVsZFhibEpPVTBkb1ZWUldaRk5YUmxwMFRsWmtXRkl3Y0VsV1Z6QTFWMnhhUmxkcVRscGhhMXBvVmpCVmVGWldWblJoUlRWb1pXeFdNMVp0TUhoTlIwVjRZa1prVkZkSGVHOVZibkJ6Vm14YWNsWnJkRlZTYkhCWldsVmtSMkZyTVZoa1JGcGFWbFpWTVZaVVNrdFhWMFpIWTBaa2FFMVlRakpYVjNCTFVqSk5lRlJ1VG1oU01taFZWV3hXZDFkR1pGaGxSemxWWWxaYVNGWXlkRmRWTWtwV1YyNUdWVlp0VWxSYVYzaHlaREZ3UlZWdGFGZGhNMEY0VmxaYWIyRXhaRWhUYTJSWVltdHdWMWxYZEdGaFJtdDVZek5vVjAxWFVqQlphMXBQVlRKRmVsRnRPVmROVm5CVVZXcEtVbVZXVW5WVWJHaFlVakZLYjFaWGVHOVZNazVYWWtoT1YxWkZXbFJVVmxwSFRrWlplVTFVUW1oU2JIQXdWbGQwYzFkSFJuSk9WRTVYWVd0d1NGa3llRTlrUjBaSFkwZDRhRTFZUWpWV2JYQkRXVlpWZVZSdVRtcFNWMmhVV1d0Vk1XTkdXblJrU0dSWFlrWnNORmRyVWtOWGJGbDRVbXBPVldKR2NISldNR1JMWXpGT2NrOVdaR2hOVm5CTlZqRmFZVmxYVWtoV2ExcGhVbFJzVkZscmFFSmtNV1J6Vm0xR2FFMVdjRmxWTW5SaFlXeEtXR1ZIUmxWV1JUVkVXbFphVjFJeFNsVmlSa1pXVmtSQk5RPT0='
 
@@ -112,7 +112,7 @@ Security
 <li>
 <p>冒充登陆用户</p>
 <p>内容说必须要登录才能得到key，于是bp抓包发现请求头里的cookie</p>
-<pre><code> cookie:Login=0
+<pre tabindex=0><code> cookie:Login=0
 
 </code></pre><p>把0改成1访问得到key</p>
 </li>
@@ -138,7 +138,7 @@ Security
 <li>
 <p>快速口算</p>
 <p>脚本如下:</p>
-<pre><code> #coding:utf8
+<pre tabindex=0><code> #coding:utf8
 
  import requests
  import re
@@ -179,7 +179,7 @@ Security
 <li>
 <p>逗比验证码第一期</p>
 <p>tips说验证码有和没有一个样，也就是说也许可以一个验证码提交多次，于是真的可以.写个脚本循环即可得到key</p>
-<pre><code> #coding:utf8
+<pre tabindex=0><code> #coding:utf8
 
  import requests,re
 
@@ -221,11 +221,11 @@ Security
 <p>微笑一下就能过关了</p>
 <p><img src=http://p6jpvwsnk.bkt.clouddn.com/18-5-21/1757998.jpg alt=img></p>
 <p>题目长这样:)这题当初也没写出来，它的php源代码给了，是这样的</p>
-<pre><code> &lt;-?php header(&quot;content-type:=&quot;&quot; text=&quot;&quot; html;=&quot;&quot; charset=&quot;utf-8&quot;);&quot; if=&quot;&quot; (isset($_get['view-source']))=&quot;&quot; {=&quot;&quot; show_source(__file__);=&quot;&quot; exit();=&quot;&quot; }=&quot;&quot; include('flag.php');=&quot;&quot; $smile=&quot;1;&quot; (!isset=&quot;&quot; ($_get['^_^']))=&quot;&quot; (preg_match=&quot;&quot; ('=&quot;&quot; \.=&quot;&quot; ',=&quot;&quot; $_get['^_^']))=&quot;&quot; %=&quot;&quot; [0-9]=&quot;&quot; http=&quot;&quot; $_get['^_^'])=&quot;&quot; )=&quot;&quot; https=&quot;&quot; ftp=&quot;&quot; telnet=&quot;&quot; _=&quot;&quot; $_server['query_string']))=&quot;&quot; ($smile)=&quot;&quot; (@file_exists=&quot;&quot; ($_get['^_^']);=&quot;&quot; ($smile=&quot;==&quot; &quot;(●'◡'●)&quot;)=&quot;&quot; die($flag);=&quot;&quot; ?-=&quot;&quot;&gt;
+<pre tabindex=0><code> &lt;-?php header(&quot;content-type:=&quot;&quot; text=&quot;&quot; html;=&quot;&quot; charset=&quot;utf-8&quot;);&quot; if=&quot;&quot; (isset($_get['view-source']))=&quot;&quot; {=&quot;&quot; show_source(__file__);=&quot;&quot; exit();=&quot;&quot; }=&quot;&quot; include('flag.php');=&quot;&quot; $smile=&quot;1;&quot; (!isset=&quot;&quot; ($_get['^_^']))=&quot;&quot; (preg_match=&quot;&quot; ('=&quot;&quot; \.=&quot;&quot; ',=&quot;&quot; $_get['^_^']))=&quot;&quot; %=&quot;&quot; [0-9]=&quot;&quot; http=&quot;&quot; $_get['^_^'])=&quot;&quot; )=&quot;&quot; https=&quot;&quot; ftp=&quot;&quot; telnet=&quot;&quot; _=&quot;&quot; $_server['query_string']))=&quot;&quot; ($smile)=&quot;&quot; (@file_exists=&quot;&quot; ($_get['^_^']);=&quot;&quot; ($smile=&quot;==&quot; &quot;(●'◡'●)&quot;)=&quot;&quot; die($flag);=&quot;&quot; ?-=&quot;&quot;&gt;
 
 </code></pre><p>分析一下知道，要提交一个不同于它正则搜索内容的”微笑”才能过，那么一一尝试</p>
 <p>基本上是要提交一个这样的query_string</p>
-<pre><code> target.cn/index.php?^_^=(●'◡'●)
+<pre tabindex=0><code> target.cn/index.php?^_^=(●'◡'●)
 
 </code></pre><p>但是这个php里写了很多正则过滤查询，有哪些呢</p>
 <ol>
@@ -244,10 +244,10 @@ Security
 <p>…直到学到了data协议，这个协议是这样的，基本现在的流行浏览器都支持它，</p>
 <p>它定义的内容可以作为小文件插入到其它文档中，怎么定义呢?
 一般格式:</p>
-<pre><code>data:[][;charset=][;base64],
+<pre tabindex=0><code>data:[][;charset=][;base64],
 </code></pre><p>data: :协议头,它标识这个内容为一个data URI资源 mime type: test/plain 以文本格式展示, image/jpeg ,以jpeg图片形式展示 charset=</p>
 <p>设置编码，默认US-ASCII,可以设置charset=gbk或UTF-8,unicode等等 base64是一个可选项，设置base64编码设定 最后一项是要编写的内容，可以是纯文本编写的内容，也可以是经过base64编码的内容。 比如我们这里写成:</p>
-<pre><code>data:text/plain;charset=unicode,(●'◡'●)
+<pre tabindex=0><code>data:text/plain;charset=unicode,(●'◡'●)
 </code></pre><p>所以最后的query_string构造如下:</p>
 <p><img src=http://p6jpvwsnk.bkt.clouddn.com/18-5-21/78037407.jpg alt=img></p>
 <p>得到key</p>
@@ -264,7 +264,7 @@ Security
 <p><img src=http://p6jpvwsnk.bkt.clouddn.com/18-5-21/88350385.jpg alt=img></p>
 <p>于是，先尝试向login.php爆破</p>
 <p>爆破脚本:</p>
-<pre><code>#coding:utf8
+<pre tabindex=0><code>#coding:utf8
 
 import requests
 
@@ -304,7 +304,7 @@ for vcode in range(100,1000):
 <li>
 <p>XSS基础关</p>
 <p>题目中js代码如下:</p>
-<pre><code>orgAlert = window.alert;
+<pre tabindex=0><code>orgAlert = window.alert;
 ok = 0;
 var HackingLab=&quot;success!&quot;;
 function newAlert(a) {
@@ -334,7 +334,7 @@ function showkey(){
 <p>输入框试试能不能xss，发现可以，直接输入什么就直接打在原页面上。</p>
 </li>
 </ol>
-<pre><code>那么直接贴串alert进去就得到key了
+<pre tabindex=0><code>那么直接贴串alert进去就得到key了
 </code></pre><ol>
 <li>
 <p>XSS基础2:简单绕过</p>
@@ -358,7 +358,7 @@ function showkey(){
 onclick属性,
 alert函数,</p>
 <p>偶然间尝试了两个on事件，onmouseover和onmouseout发现可以执行，于是相当easy,用脚本转换一下js语句，</p>
-<pre><code>'''word2ascii.py'''
+<pre tabindex=0><code>'''word2ascii.py'''
 #coding:utf8
 
 string = 'alert(HackingLab)'
@@ -441,7 +441,7 @@ ps: 如果是onmouseover事件会被认为你想进行对这个网站的攻击�
 <p><a class=link href=http://www.freebuf.com/articles/web/57528.html target=_blank rel=noopener>http://www.freebuf.com/articles/web/57528.html</a></p>
 </blockquote>
 <p>这里记一下mysql5.x的语法</p>
-<pre><code> SELECT
+<pre tabindex=0><code> SELECT
      [ALL | DISTINCT | DISTINCTROW ]
        [HIGH_PRIORITY]
        [STRAIGHT_JOIN]
@@ -467,7 +467,7 @@ ps: 如果是onmouseover事件会被认为你想进行对这个网站的攻击�
 <p>into不考虑，一般没有写权限…重点是Procedure，Mysql默认可用的存储过程只有ANALYSE([max_elements,[max_memory]])</p>
 <p>PROCEDURE ANALYSE 通过分析select查询结果对现有的表的每一列给出优化的建议</p>
 <p>PROCEDURE ANALYSE的语法如下:</p>
-<pre><code> select ... from ... where ... procedure analyse([max_elements,[max_memory]])
+<pre tabindex=0><code> select ... from ... where ... procedure analyse([max_elements,[max_memory]])
 
 </code></pre><p>这些仍然不是重点，重点是要让sql语句产生报错啊，也就是所谓的报错注入。</p>
 <p>writeup中的测试语句:</p>
@@ -534,7 +534,7 @@ key是一串英文 myflagishere</p>
 <p>小明今天出门看见了一个漂亮的帅哥和漂亮的美女，于是他写到了他的日记本里。</p>
 </li>
 </ol>
-<pre><code>tips给的是 id=1
+<pre tabindex=0><code>tips给的是 id=1
 
 然而id后测试注入似乎并不行，id=2发现是另一组数组，有图片，于是思考是否是图片路径存在注入
 
@@ -663,7 +663,7 @@ select * from table_name union select if(1=1,sleep(3),0),1,1;</p>
 第三列，长度为5，列名 motto</p>
 </li>
 </ol>
-<pre><code>猜username列，值：admin,guest,test,
+<pre tabindex=0><code>猜username列，值：admin,guest,test,
 
 打了一遍都没有找到，第四个值，于是用ascii函数来搞
 
@@ -693,7 +693,7 @@ sql中 ascii(string),返回string最左边字符的ascii值
 上传关三个好像挺简单的，改一改请求头里的一些后缀或者用用%00截断就ok了
 </code></pre><h2 id=解密关>解密关</h2>
 <p>1.以管理员身份登录系统</p>
-<pre><code>分值: 450
+<pre tabindex=0><code>分值: 450
 
 以管理员身份登录即可获取通关密码(重置即可，无需登录)
 补充说明：假设除了admin用户，其它用户的邮箱都可被登录获取重置密码的链接。
@@ -742,14 +742,14 @@ reset.php?sukey=f0156cf8347e939e6720e614b804ac3c&amp;username=123
 <p>震惊! 当我更新文章时发现我上面的js脚本也被执行了。。。</p>
 </li>
 </ol>
-<pre><code>![](http://p6jpvwsnk.bkt.clouddn.com/18-5-21/11808368.jpg)
+<pre tabindex=0><code>![](http://p6jpvwsnk.bkt.clouddn.com/18-5-21/11808368.jpg)
 </code></pre><h2 id=总结>总结</h2>
 <p>学到了挺多的，比如rot13加密，注意到”逻辑漏洞”这个问题，还有弱口令暴力破解</p>
 <p>一些sql注入的技巧和相关原理，data协议，base64加密的特征等等。总之，收获还蛮多的，开心: )</p>
 </section>
 <footer class=article-footer>
 <section class=article-tags>
-<a href=/tags/security/>Security</a>
+<a href=/tags/security/>security</a>
 </section>
 </footer>
 </article>
@@ -779,16 +779,16 @@ reset.php?sukey=f0156cf8347e939e6720e614b804ac3c&amp;username=123
 </a>
 </article>
 <article>
-<a href=/p/%E5%85%A5%E9%97%A8%E9%80%86%E5%90%91/>
+<a href=/p/%E5%88%A9%E7%94%A8%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E%E4%B8%8B%E8%BD%BDvol.moe%E7%9A%84%E6%89%80%E6%9C%89%E6%BC%AB%E7%94%BB/>
 <div class=article-details>
-<h2 class=article-title>入门逆向</h2>
+<h2 class=article-title>利用越权漏洞下载vol.moe的所有漫画</h2>
 </div>
 </a>
 </article>
 <article>
-<a href=/p/%E5%B8%B8%E8%A7%81%E6%91%98%E8%A6%81/%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/>
+<a href=/p/php-fileinclusion/>
 <div class=article-details>
-<h2 class=article-title>常见摘要/加密算法总结</h2>
+<h2 class=article-title>PHP-FileInclusion</h2>
 </div>
 </a>
 </article>

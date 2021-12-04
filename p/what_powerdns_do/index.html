@@ -1,22 +1,22 @@
 <!doctype html><html lang=en-us>
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="DNS是网络的基础服务，通过阅读开源的DNS Server源码，可以更好地帮助我们了解其工作机制及原理。本篇的撰写源于一次事故，下面就听在下娓娓道来。"><title>【WIP】开源DNS服务器源码解析</title>
-<link rel=canonical href=https://selfsolo.com/p/what_powerdns_do/>
+<link rel=canonical href=https://sera.wang/p/what_powerdns_do/>
 <link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="【WIP】开源DNS服务器源码解析">
 <meta property="og:description" content="DNS是网络的基础服务，通过阅读开源的DNS Server源码，可以更好地帮助我们了解其工作机制及原理。本篇的撰写源于一次事故，下面就听在下娓娓道来。">
-<meta property="og:url" content="https://selfsolo.com/p/what_powerdns_do/">
+<meta property="og:url" content="https://sera.wang/p/what_powerdns_do/">
 <meta property="og:site_name" content="Sera Wang">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="DNS"><meta property="article:tag" content="PowerDNS"><meta property="article:published_time" content="2019-09-18T20:32:56+00:00"><meta property="article:modified_time" content="2019-09-18T20:32:56+00:00">
 <meta name=twitter:title content="【WIP】开源DNS服务器源码解析">
 <meta name=twitter:description content="DNS是网络的基础服务，通过阅读开源的DNS Server源码，可以更好地帮助我们了解其工作机制及原理。本篇的撰写源于一次事故，下面就听在下娓娓道来。">
-<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png>
 </head>
 <body class="article-page has-toc">
-<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
 <div class="container main-container flex
 extended">
 <div id=article-toolbar>
-<a href=https://selfsolo.com class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<a href=https://sera.wang class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
 <span>Back</span>
 </a>
 </div>
@@ -25,8 +25,8 @@ extended">
 <header class=article-header>
 <div class=article-details>
 <header class=article-category>
-<a href=/categories/dns/ style=background-color:#2a9d8f;color:#fff>
-DNS
+<a href=/categories/develop_notes/ style=background-color:#2a9d8f;color:#fff>
+开发笔记
 </a>
 </header>
 <h2 class=article-title>
@@ -134,6 +134,32 @@ DNS是网络的基础服务，通过阅读开源的DNS Server源码，可以更�
 </footer>
 </article>
 <aside class=related-contents--wrapper>
+<h2 class=section-title>Related contents</h2>
+<div class=related-contents>
+<div class="flex article-list--tile">
+<article>
+<a href=/p/blackbox-scanner/>
+<div class=article-details>
+<h2 class=article-title>如何实现一个黑盒扫描器?</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/java%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%8E%9F%E7%90%86/>
+<div class=article-details>
+<h2 class=article-title>Java序列化与反序列化原理</h2>
+</div>
+</a>
+</article>
+<article>
+<a href=/p/%E6%B5%85%E6%9E%90%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81/>
+<div class=article-details>
+<h2 class=article-title>浅析浏览器的编码与解码</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
 </aside>
 <footer class=site-footer>
 <section class=copyright>

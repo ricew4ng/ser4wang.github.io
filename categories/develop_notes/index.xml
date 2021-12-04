@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发笔记 on Sera Wang</title><link>https://sera.wang/categories/develop_notes/</link><description>Recent content in 开发笔记 on Sera Wang</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 18 Sep 2019 20:32:56 +0000</lastBuildDate><atom:link href="https://sera.wang/categories/develop_notes/index.xml" rel="self" type="application/rss+xml"/><item><title>【WIP】开源DNS服务器源码解析</title><link>https://sera.wang/p/what_powerdns_do/</link><pubDate>Wed, 18 Sep 2019 20:32:56 +0000</pubDate><guid>https://sera.wang/p/what_powerdns_do/</guid><description>我们选择一个开源的DNS服务器，这里笔者选择的是 PowerDNS，也是很多组织或企业搭建DNS服务的一个常见选择。
+编译安装 暂略
+分支：rec-4.0.x
+递归解析 源码 分析的几点，
+开启Lua与否的区别
+入口看 pdns_recursor.cc 文件，main() 函数主要读取各种配置以及各种初始化。
+startDoResolve 函数 1. Line 690-760 ![image-20200110211550470](/Users/wangwenqi/Library/Application Support/typora-user-images/image-20200110211550470.png)
+主要初始化一些变量，介绍一部分。
+edns是rfc里用来储存DNS额外信息（客户端IP）。默认不开。
+pw是 DNSPacketWriter，顾名思义，用来写返回包的。
+740 - 746行 设置了一些DNS包的标志位。
+下面初始化了一个SyncRes类（核心），初始化了Lua引擎
+756行 因为DNSSEC的默认值是 process-no-validate，所以默认会进行DNSSEC行为。
+2. Line 779-821 781行 shouldNotValidate变量设置默认值false
+3. Line 822-973 到了一个if判断。这是关键位置。
+if的条件是 没开Lua hook 或者 preresolve 这个Lua hook 直接return false，则执行。
+先进行了一次 wantsRPZ (默认true)，根据不同policy进行相应处理。
+下面的try catch会进入一个 beginResolve方法，即进行递归解析，先不跟进。
+874行 判断res，是否等于 -2。代码会switch policy的值进行不同操作。
+918行 如果res == RCode::NoError ，遍历结果，按情况会执行一个 nodata hook.</description></item><item><title>如何实现一个黑盒扫描器?</title><link>https://sera.wang/p/blackbox-scanner/</link><pubDate>Sun, 15 Sep 2019 11:02:51 +0000</pubDate><guid>https://sera.wang/p/blackbox-scanner/</guid><description>整体架构 黑盒扫描的目的主要有两个：
+资产发现 漏洞扫描 扫描器的效率和表现方面，单机可以用多进程+协程的方式去提qps，资源够也可以使用分布式，如：kafka / celery（后者感觉更重一点，虽然能帮你做很多事情）
+我踩坑设计了一个主要依靠redis做任务的分发和pull执行（主要想糙快猛地实现），现在看来效率的确是因为架构设计有问题导致整体表现不尽如人意。
+自己后来想的一个理想的架构设计：
+子域名搜集 子域名搜集是信息搜集里很关键的一步，因为它拓展了很大一部分的攻击面。下面是我对子域名搜集的实践。
+我用python实现了一个子域名搜集工具，主要用到的方法有：
+基于字典 开源情报 和 搜索引擎 IP反查 TLS证书获取 我使用的前者，部署最方便。
+整体架构：
+这是单机跑的非理想情况，4核8g，60%cpu，800-1500qps
+几个大小问题：
+域名泛解析 域名去重 比较依赖redis 泛解析有两种解决方式，一种是ip-domain的hash map超过了阈值，最后做清洗；另一种是查完了，就做一次 &amp;lt;随机前缀.目标域名&amp;gt;的查询，判断是否存在，这样（和清洗一个道理）。实际做下来是1方便，因为第二种方式，如果在做判断的同时，有其他做dns query的查到了结果，就会被绕过存入data。
+域名去重是因为首先引入了开源情报和搜索引擎，还有后续得到的CNAME啊，NS啊之类的，不做去重，任务队列可能就大了两三倍。我去重主要依赖redis的set，这样又回引入大key问题，解决大key，可以根据域名的级数（多少个&amp;lt;.&amp;gt;）分去重set，也可以大key分小key，因为并发，暂时没想到好的设计，优化考虑用布隆过滤器去做去重。
+依赖redis，前面有提到，后面就不赘述了。
+敏感文件扫描 这个我实现的很简单，主要看了github上几个老前辈的实现，总结了一下，可以这样做：
+对目标做一次全站链接爬取（需要考虑url去重） 根据links生成一级级目录 配合对应字典，做验证。 其实有了目录+对应漏洞的字典，主要就是验证了。这块同时可以验证的漏洞有很多，除了敏感文件泄漏，还有目录遍历，未授权访问等等。后者可以通过打分策略来做（实现比较low，也可以用图像识别，ML做）。
+漏洞验证 可以找一个社区比较大的（poc贡献多），因为一个是自己写poc需要很多时间。</description></item><item><title>Java序列化与反序列化原理</title><link>https://sera.wang/p/java%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%8E%9F%E7%90%86/</link><pubDate>Fri, 24 Aug 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/java%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%8E%9F%E7%90%86/</guid><description>基本 java序列化数据，是通过ObjectOutputStream和ObjectInputStream这两个类来实现的，
+举个例子:
+要序列化的对象data1
+public class data1 implements Serializable { private int id; private String name; private String pwd; private String pwd2; public int getId(){ return id; } public void setId(int id){ this.id = id; } public String getName(){ return name; } public void setName(String name){ this.name = name; } public String getPwd(){ return pwd; } public void setPwd(String pwd){ this.pwd = pwd; } public String getPwd2(){ return pwd2; } public void setPwd2(String pwd2){ this.</description></item><item><title>浅析浏览器的编码与解码</title><link>https://sera.wang/p/%E6%B5%85%E6%9E%90%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81/</link><pubDate>Mon, 13 Aug 2018 21:14:23 +0800</pubDate><guid>https://sera.wang/p/%E6%B5%85%E6%9E%90%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%96%E7%A0%81%E4%B8%8E%E8%A7%A3%E7%A0%81/</guid><description>一直以来对url编码，html编码，js编码都存在着困惑，比如
+url/html/js是如何编码的? 浏览器又是什么时候按什么顺序进行url/html/js解码? 读完了the tangled web，翻了些博客，又各种google，我想暂时可以解除一点心中的疑惑了。
+整体简述 在开始之前，我想先简单说一下整体的一个过程:
+在浏览器的地址栏中输入url，发送http请求头(涉及tcp/ip/dns)
+http://example.com/test.php
+远程的web服务器(apache/iis等)接收到url，分析请求头，根据它找到对应资源，返回一个响应头和数据
+浏览器接收到响应的数据后，开始了接下来要讲的解析…
+如何编码 在开始解析前，我们先看看这些东西是如何编码的
+url编码:
+标准的url结构是:
+scheme://login:password@address:port/path?quesry_string#fragment
+以之前那串url为栗
+http://example.com/test.php?uid=27&amp;content=on#main
+这是一串普通的url，即我们平常所见的格式大多和这个类似，也就是说，像开头的 “ http: “，协议后面跟一个冒号，还有之后的两个正斜杠” // “, 后面再跟域名，再跟地址，再跟参数字符串，再跟片段id…
+可以看到，一些符号非常”常规”，比如冒号，正斜杠，问号…这些都是浏览器/服务器用来解析url用于语义分隔的保留字符，如果出现在url里就会破坏语法，影响正常解析，导致的各种有趣的后果以后有机会再讲。
+于是就有了url编码，因为有些保留字符可能确实有必要需要在url里出现，它以一个百分号%和该字符的ASCII对应的2位十六进制数去替换这些字符
+比如，等于号=的url编码为 %3D
+html编码
+我们拿常见的标签举例，
+跟url的问题类似，为了避免在标签内容中出现以及应对某些攻击，某些保留字符出现在文本节点和标签值里是不安全的，比如说多重标签，xss…
+于是就有了html编码，一般以 &amp;amp; 开头，以分号 ; 结尾，
+左尖括号 &amp;lt; 写作 &amp;lt;
+右尖括号 &amp;gt; 写作 &amp;gt;</description></item></channel></rss>

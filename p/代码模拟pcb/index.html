@@ -1,22 +1,22 @@
 <!doctype html><html lang=en-us>
 <head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="读书时的碎碎念"><title>代码模拟PCB</title>
-<link rel=canonical href=https://selfsolo.com/p/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%8B%9Fpcb/>
+<link rel=canonical href=https://sera.wang/p/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%8B%9Fpcb/>
 <link rel=stylesheet href=/scss/style.min.css><meta property="og:title" content="代码模拟PCB">
 <meta property="og:description" content="读书时的碎碎念">
-<meta property="og:url" content="https://selfsolo.com/p/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%8B%9Fpcb/">
+<meta property="og:url" content="https://sera.wang/p/%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%8B%9Fpcb/">
 <meta property="og:site_name" content="Sera Wang">
-<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="开发"><meta property="article:published_time" content="2018-04-04T21:14:23+08:00"><meta property="article:modified_time" content="2018-04-04T21:14:23+08:00">
+<meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="Python"><meta property="article:published_time" content="2018-04-04T21:14:23+08:00"><meta property="article:modified_time" content="2018-04-04T21:14:23+08:00">
 <meta name=twitter:title content="代码模拟PCB">
 <meta name=twitter:description content="读书时的碎碎念">
-<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/IMG_3605.JPG>
+<link rel="shortcut icon" href=https://ser4wang.oss-cn-beijing.aliyuncs.com/20211204221119.png>
 </head>
 <body class="article-page has-toc">
-<script>(function(){const a='StackColorScheme';localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
+<script>(function(){const a='StackColorScheme';localStorage.getItem(a)||localStorage.setItem(a,"dark")})()</script><script>(function(){const b='StackColorScheme',a=localStorage.getItem(b),c=window.matchMedia('(prefers-color-scheme: dark)').matches===!0;a=='dark'||a==='auto'&&c?document.documentElement.dataset.scheme='dark':document.documentElement.dataset.scheme='light'})()</script>
 <div class="container main-container flex
 extended">
 <div id=article-toolbar>
-<a href=https://selfsolo.com class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
+<a href=https://sera.wang class=back-home><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z"/><polyline points="15 6 9 12 15 18"/></svg>
 <span>Back</span>
 </a>
 </div>
@@ -25,8 +25,8 @@ extended">
 <header class=article-header>
 <div class=article-details>
 <header class=article-category>
-<a href=/categories/%E5%BC%80%E5%8F%91/ style=background-color:#2a9d8f;color:#fff>
-开发
+<a href=/categories/school_notes/ style=background-color:#2a9d8f;color:#fff>
+上学归档
 </a>
 </header>
 <h2 class=article-title>
@@ -53,12 +53,12 @@ extended">
 <p>PCB， 即进程控制块(Processing Control Block) ，是操作系统核心中一种数据结构，主要表示进程状态。</p>
 <p>这里是实验要求的内容:</p>
 <h3 id=要求>要求</h3>
-<pre><code>1. 确定PCB内容及其组织方式；
+<pre tabindex=0><code>1. 确定PCB内容及其组织方式；
 2. 要求模拟进程”新建”、”就绪”、”运行”、”阻塞”和”退出”5个状态；
 3. 设计并实现5个进程管理函数: 进程创建(Create()),进程终止(Terminate()),进程调度(Schedule()),进程阻塞(Block()),进程唤醒(Wakeup());
 4. 编写主函数，调用5个函数，实现进程管理。
 </code></pre><h3 id=关键点>关键点</h3>
-<pre><code>1.如何组织进程
+<pre tabindex=0><code>1.如何组织进程
 确定PCB内容：标识信息、状态和运行时间与存储地址等信息、现场信息、管理信息；
 PCB组织方式：链表，分 运行（running），就绪（ready），阻塞（block），空闲（spare）4个列表
 </code></pre><p>我的理解：</p>
@@ -68,10 +68,10 @@ PCB组织方式：链表，分 运行（running），就绪（ready），阻塞�
 <p>运行时间就是此进程从开始进程到此时运行的时间;</p>
 <p>存储地址我觉得可以随便指定一个(因为模拟，所以就模拟个地址);</p>
 <p>现场信息的话，我对此问了下老师，老师让自己想要不要加个程序进去，我想了下，既然是模拟，那可以这样，我模拟五个程序，每个程序要跑的时间是不同的，可以这样实现，每条进程，如果我不中止它，那它的就永远不终止，比如开始时它的指令计数器为1，time.sleep(1)后，这个数字加一…管理信息，我就不是特别清楚，我都画个gui出来了总该清楚的吧</p>
-<pre><code>2.如何创建进程
+<pre tabindex=0><code>2.如何创建进程
 申请PCB -&gt; 申请资源 -&gt; 填写PCB -&gt; 挂就绪(ready)队列
 </code></pre><p>直接说就是，要创建了，点create，把它信息顺便就设置好(给它pid,记一下开始时间time.time),申请资源不是很懂，因为python我还没有看过数据结构是怎么实现的</p>
-<pre><code>3.如何实现处理机调度
+<pre tabindex=0><code>3.如何实现处理机调度
 a. 按某种策略（如FCFS） 从就绪(ready)队列选择一个进程；
 b. 摘取PCB，挂运行（running）队列；
 c. 修改状态等PCB内容；设置时钟（运行时间）；恢复现场；
@@ -96,7 +96,7 @@ e. 修改(剩余)运行(running)时间。
 </section>
 <footer class=article-footer>
 <section class=article-tags>
-<a href=/tags/%E5%BC%80%E5%8F%91/>开发</a>
+<a href=/tags/python/>Python</a>
 </section>
 </footer>
 </article>
