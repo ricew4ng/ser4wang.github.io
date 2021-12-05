@@ -5,7 +5,7 @@ paginate: 5
 title: Sera Wang
 
 # Change it to your Disqus shortname before using
-disqusShortname: hugo-theme-stack
+disqusShortname: serawang
 
 # GA Tracking ID
 googleAnalytics:
@@ -50,7 +50,7 @@ params:
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
-        enabled: false
+        enabled: true
         provider: disqus
 
         utterances:
