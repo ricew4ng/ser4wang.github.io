@@ -1,0 +1,12 @@
+name = "Rice"
+#license = "MIT"
+#licenselink = "https://github.com/chipzoller/hugo-clarity/blob/master/LICENSE.md"
+description = "test"
+# homepage = "https://github.com/chipzoller/hugo-clarity"
+# demosite = "https://neonmirrors.net/"
+tags = ["f1", "f2", "f3"]
+features = ["f1", "f2"]
+min_version = "0.91.0"
+
+# If the theme has multiple authors
+authors = []

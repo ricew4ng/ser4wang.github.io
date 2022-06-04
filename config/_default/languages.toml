@@ -1,0 +1,10 @@
+
+[en]
+  title = "Rice"
+  LanguageName = "English"
+  weight = 1
+
+[pt]
+  title = "Rice" # just for the sake of showing this is possible
+  LanguageName = "Português"
+  weight = 2
