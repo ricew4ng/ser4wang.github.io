@@ -11,7 +11,8 @@ disqusShortname = "serawang"
 DefaultContentLanguage = "en"
 
 [params]
-mainSections = ["post"]
+# mainSections = ["post"]
+body_classes = "avenir bg-near-white"
 
 # [languages]
 # config/_default/languages.toml
