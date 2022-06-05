@@ -1,10 +1,10 @@
 
 [en]
-  title = "Rice公式"
+  title = "米飯公式"
   LanguageName = "English"
   weight = 1
 
 [pt]
-  title = "Rice公式" # just for the sake of showing this is possible
+  title = "米飯公式" # just for the sake of showing this is possible
   LanguageName = "Português"
   weight = 2

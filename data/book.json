@@ -1,0 +1,24 @@
+[
+  {
+    "title": "第一本书的书名",
+    "author": "书的作者",
+    "public_year": "书的出版年份",
+    "press": "出版社",
+    "link": "豆瓣链接",
+    "isbn": "书的 ISBN 编号",
+    "mark_date": "我是哪一天读完的此书",
+    "my_score": "我给的星星数",
+    "my_comment": "我对此书的评价"
+  },
+  {
+    "title": "第二本书的书名",
+    "author": "书的作者",
+    "public_year": "书的出版年份",
+    "press": "出版社",
+    "link": "豆瓣链接",
+    "isbn": "书的 ISBN 编号",
+    "mark_date": "我是哪一天读完的此书",
+    "my_score": "我给的星星数",
+    "my_comment": "我对此书的评价"
+  }
+]

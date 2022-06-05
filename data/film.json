@@ -1,0 +1,28 @@
+[
+  {
+    "title": "第一部电影的电影中文名",
+    "ori_name": "电影的原名",
+    "public_year": "上映年份",
+    "produce_country": "发行地区",
+    "film_type": "电影的类型",
+    "director": "导演",
+    "link": "豆瓣链接",
+    "imdb_id": "IMDB 编号",
+    "mark_date": "我是哪一天看完的此电影",
+    "my_score": "我给的星星数",
+    "my_comment": "我对此电影的评价"
+  },
+  {
+    "title": "第二部电影的电影中文名",
+    "ori_name": "电影的原名",
+    "public_year": "上映年份",
+    "produce_country": "发行地区",
+    "film_type": "电影的类型",
+    "director": "导演",
+    "link": "豆瓣链接",
+    "imdb_id": "IMDB 编号",
+    "mark_date": "我是哪一天看完的此电影",
+    "my_score": "我给的星星数",
+    "my_comment": "我对此电影的评价"
+  }
+]
